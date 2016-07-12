@@ -1,5 +1,3 @@
-
-
 import UIKit
 import FirebaseAuth
 
@@ -9,28 +7,8 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
-    let imagePicker = UIImagePickerController()
-    var selectedPhoto: UIImage!
-    
-//    var storageRef: FIRStorageReference {
-//        return FIRStorage.storage().reference()
-//    }
-    
-    var fileUrl: String!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-//        
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.selectPhoto(_:)))
-//        tap.numberOfTapsRequired = 1
-//        profileImage.addGestureRecognizer(tap)
-        
-        //        profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
-        //        profileImage.clipsToBounds = true
-        
     }
     
     

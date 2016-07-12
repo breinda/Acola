@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		A7D27DD2CE4F11ABD87D5D64 /* Pods_ChallengeHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007A7E7652F5C10253E2FBED /* Pods_ChallengeHealth.framework */; };
 		E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */; };
-		E14948C11D35680E00BB8FB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14948C01D35680E00BB8FB2 /* ViewController.swift */; };
 		E14948C41D35680E00BB8FB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14948C21D35680E00BB8FB2 /* Main.storyboard */; };
 		E14948C61D35680E00BB8FB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E14948C51D35680E00BB8FB2 /* Assets.xcassets */; };
 		E14948C91D35680E00BB8FB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14948C71D35680E00BB8FB2 /* LaunchScreen.storyboard */; };
@@ -25,7 +24,6 @@
 		B9EFA970596509DFC9D39CF7 /* Pods-ChallengeHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth.release.xcconfig"; sourceTree = "<group>"; };
 		E14948BB1D35680D00BB8FB2 /* ChallengeHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E14948C01D35680E00BB8FB2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E14948C31D35680E00BB8FB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E14948C51D35680E00BB8FB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E14948C81D35680E00BB8FB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */,
-				E14948C01D35680E00BB8FB2 /* ViewController.swift */,
 				E14948D81D356B3C00BB8FB2 /* DAO.swift */,
 				E14948D41D356AFA00BB8FB2 /* LoginViewController.swift */,
 				E14948D61D356B1E00BB8FB2 /* SignUpViewController.swift */,
@@ -224,7 +221,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E14948D51D356AFA00BB8FB2 /* LoginViewController.swift in Sources */,
-				E14948C11D35680E00BB8FB2 /* ViewController.swift in Sources */,
 				E14948D71D356B1E00BB8FB2 /* SignUpViewController.swift in Sources */,
 				E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */,
 				E14948D91D356B3C00BB8FB2 /* DAO.swift in Sources */,

@@ -1,4 +1,3 @@
-
 import UIKit
 import FirebaseAuth
 
@@ -9,8 +8,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func loginButtonWasTapped(sender: AnyObject) {
@@ -29,8 +26,6 @@ class LoginViewController: UIViewController {
         
         func loginCallback (user: FIRUser?, error: NSError?) {
             if error == nil {
-                //performSegueWithIdentifier("goToHome", sender: self)
-                //self.dismissViewControllerAnimated(true, completion: nil)
                 let alertView = UIAlertController(title: "NOIX!", message: "LOGIN FEITO COM SUCESSO CAROLHO" as String, preferredStyle:.ActionSheet)
                 let okAction = UIAlertAction(title: "YES", style: .Default, handler: nil)
                 alertView.addAction(okAction)
