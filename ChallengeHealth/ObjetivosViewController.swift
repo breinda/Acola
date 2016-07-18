@@ -66,8 +66,10 @@ class ObjetivosViewController: UIViewController, UICollectionViewDelegate, UICol
             
             let cell = sender as! TarefaCollectionViewCell
             let indexPath = tarefasCollectionView?.indexPathForCell(cell)
-            //let request = tarefas[indexPath!.item]
-            //let chatViewController = segue.destinationViewController as! ObjetivoAtualViewController
+            let tarefa = tarefas[indexPath!.item]
+            let objetivoAtualVC = segue.destinationViewController as! ObjetivoAtualViewController
+            
+            objetivoAtualVC.objetivoFinal = tarefa.nome
         }
     }
     

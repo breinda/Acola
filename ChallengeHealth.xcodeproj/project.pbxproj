@@ -87,9 +87,8 @@
 			children = (
 				E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */,
 				E14948D81D356B3C00BB8FB2 /* DAO.swift */,
-				E1BD0CB81D3D463400EC26BA /* ObjetivosViewController.swift */,
-				E1BD0CC21D3D61C500EC26BA /* ObjetivoAtualViewController.swift */,
 				E1BD0CC11D3D616A00EC26BA /* Usuario */,
+				E1BD0CC41D3D679400EC26BA /* Objetivos */,
 				E1BD0CC01D3D614100EC26BA /* Tarefa */,
 				E14948C21D35680E00BB8FB2 /* Main.storyboard */,
 				E14948C51D35680E00BB8FB2 /* Assets.xcassets */,
@@ -117,6 +116,15 @@
 				E1BD0CBA1D3D48C300EC26BA /* ConfigViewController.swift */,
 			);
 			name = Usuario;
+			sourceTree = "<group>";
+		};
+		E1BD0CC41D3D679400EC26BA /* Objetivos */ = {
+			isa = PBXGroup;
+			children = (
+				E1BD0CB81D3D463400EC26BA /* ObjetivosViewController.swift */,
+				E1BD0CC21D3D61C500EC26BA /* ObjetivoAtualViewController.swift */,
+			);
+			name = Objetivos;
 			sourceTree = "<group>";
 		};
 		F09B35C105542325BE187980 /* Pods */ = {
