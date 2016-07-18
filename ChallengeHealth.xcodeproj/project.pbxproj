@@ -16,6 +16,8 @@
 		E14948D51D356AFA00BB8FB2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14948D41D356AFA00BB8FB2 /* LoginViewController.swift */; };
 		E14948D71D356B1E00BB8FB2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14948D61D356B1E00BB8FB2 /* SignUpViewController.swift */; };
 		E14948D91D356B3C00BB8FB2 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14948D81D356B3C00BB8FB2 /* DAO.swift */; };
+		E1BD0CB91D3D463400EC26BA /* ObjetivosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD0CB81D3D463400EC26BA /* ObjetivosViewController.swift */; };
+		E1BD0CBB1D3D48C300EC26BA /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD0CBA1D3D48C300EC26BA /* ConfigViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		E14948D41D356AFA00BB8FB2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E14948D61D356B1E00BB8FB2 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E14948D81D356B3C00BB8FB2 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		E1BD0CB81D3D463400EC26BA /* ObjetivosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjetivosViewController.swift; sourceTree = "<group>"; };
+		E1BD0CBA1D3D48C300EC26BA /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,11 +83,13 @@
 				E14948D81D356B3C00BB8FB2 /* DAO.swift */,
 				E14948D41D356AFA00BB8FB2 /* LoginViewController.swift */,
 				E14948D61D356B1E00BB8FB2 /* SignUpViewController.swift */,
+				E1BD0CB81D3D463400EC26BA /* ObjetivosViewController.swift */,
+				E1BD0CBA1D3D48C300EC26BA /* ConfigViewController.swift */,
+				E14948D21D35684500BB8FB2 /* GoogleService-Info.plist */,
 				E14948C21D35680E00BB8FB2 /* Main.storyboard */,
 				E14948C51D35680E00BB8FB2 /* Assets.xcassets */,
 				E14948C71D35680E00BB8FB2 /* LaunchScreen.storyboard */,
 				E14948CA1D35680E00BB8FB2 /* Info.plist */,
-				E14948D21D35684500BB8FB2 /* GoogleService-Info.plist */,
 			);
 			path = ChallengeHealth;
 			sourceTree = "<group>";
@@ -220,7 +226,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1BD0CB91D3D463400EC26BA /* ObjetivosViewController.swift in Sources */,
 				E14948D51D356AFA00BB8FB2 /* LoginViewController.swift in Sources */,
+				E1BD0CBB1D3D48C300EC26BA /* ConfigViewController.swift in Sources */,
 				E14948D71D356B1E00BB8FB2 /* SignUpViewController.swift in Sources */,
 				E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */,
 				E14948D91D356B3C00BB8FB2 /* DAO.swift in Sources */,

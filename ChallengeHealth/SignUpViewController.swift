@@ -31,7 +31,6 @@ class SignUpViewController: UIViewController {
     
     
     @IBAction func CancelWasTapped(sender: AnyObject) {
-        
         dismissViewControllerAnimated(true, completion: nil)
     }
     

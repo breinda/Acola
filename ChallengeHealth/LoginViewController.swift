@@ -25,15 +25,18 @@ class LoginViewController: UIViewController {
         }
         
         func loginCallback (user: FIRUser?, error: NSError?) {
+            // SUCESSO !!!
             if error == nil {
-                let alertView = UIAlertController(title: "NOIX!", message: "LOGIN FEITO COM SUCESSO CAROLHO" as String, preferredStyle:.ActionSheet)
-                let okAction = UIAlertAction(title: "YES", style: .Default, handler: nil)
-                alertView.addAction(okAction)
-                self.presentViewController(alertView, animated: true, completion: nil)
+//                let alertView = UIAlertController(title: "NOIX!", message: "LOGIN FEITO COM SUCESSO CAROLHO" as String, preferredStyle:.ActionSheet)
+//                let okAction = UIAlertAction(title: "YES", style: .Default, handler: nil)
+//                alertView.addAction(okAction)
+//                self.presentViewController(alertView, animated: true, completion: nil)
+                self.dismissViewControllerAnimated(true, completion: nil)
+                
             }
+            // DEU RUIM
             else {
                 let alert = UIAlertController(title: "Problema no login", message: "Combinação email-senha não reconhecida.", preferredStyle: UIAlertControllerStyle.Alert)
-                
                 let cancel = UIAlertAction(title: "Tentar novamente", style: UIAlertActionStyle.Cancel, handler: nil)
                 
                 alert.addAction(cancel)
@@ -43,5 +46,4 @@ class LoginViewController: UIViewController {
         
         DAO.login(email!, password: password!, callback: loginCallback)
     }
-    
 }
