@@ -18,6 +18,8 @@
 		E14948D91D356B3C00BB8FB2 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14948D81D356B3C00BB8FB2 /* DAO.swift */; };
 		E1BD0CB91D3D463400EC26BA /* ObjetivosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD0CB81D3D463400EC26BA /* ObjetivosViewController.swift */; };
 		E1BD0CBB1D3D48C300EC26BA /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD0CBA1D3D48C300EC26BA /* ConfigViewController.swift */; };
+		E1BD0CBD1D3D522300EC26BA /* Tarefa.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD0CBC1D3D522300EC26BA /* Tarefa.swift */; };
+		E1BD0CBF1D3D532700EC26BA /* TarefaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD0CBE1D3D532700EC26BA /* TarefaCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		E14948D81D356B3C00BB8FB2 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
 		E1BD0CB81D3D463400EC26BA /* ObjetivosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjetivosViewController.swift; sourceTree = "<group>"; };
 		E1BD0CBA1D3D48C300EC26BA /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		E1BD0CBC1D3D522300EC26BA /* Tarefa.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tarefa.swift; sourceTree = "<group>"; };
+		E1BD0CBE1D3D532700EC26BA /* TarefaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TarefaCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 			children = (
 				E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */,
 				E14948D81D356B3C00BB8FB2 /* DAO.swift */,
+				E1BD0CBC1D3D522300EC26BA /* Tarefa.swift */,
+				E1BD0CBE1D3D532700EC26BA /* TarefaCollectionViewCell.swift */,
 				E14948D41D356AFA00BB8FB2 /* LoginViewController.swift */,
 				E14948D61D356B1E00BB8FB2 /* SignUpViewController.swift */,
 				E1BD0CB81D3D463400EC26BA /* ObjetivosViewController.swift */,
@@ -228,6 +234,8 @@
 			files = (
 				E1BD0CB91D3D463400EC26BA /* ObjetivosViewController.swift in Sources */,
 				E14948D51D356AFA00BB8FB2 /* LoginViewController.swift in Sources */,
+				E1BD0CBD1D3D522300EC26BA /* Tarefa.swift in Sources */,
+				E1BD0CBF1D3D532700EC26BA /* TarefaCollectionViewCell.swift in Sources */,
 				E1BD0CBB1D3D48C300EC26BA /* ConfigViewController.swift in Sources */,
 				E14948D71D356B1E00BB8FB2 /* SignUpViewController.swift in Sources */,
 				E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */,
