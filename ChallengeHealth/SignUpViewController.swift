@@ -11,7 +11,6 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    
     // função auxiliar para analisar regex
     func containsMatch(pattern: String, inString string: String) -> Bool {
         let regex : NSRegularExpression
@@ -28,7 +27,6 @@ class SignUpViewController: UIViewController {
             return false
         }
     }
-    
     
     @IBAction func CancelWasTapped(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -111,4 +109,5 @@ class SignUpViewController: UIViewController {
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
 }

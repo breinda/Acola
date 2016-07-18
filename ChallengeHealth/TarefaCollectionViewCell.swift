@@ -14,4 +14,5 @@ class TarefaCollectionViewCell: UICollectionViewCell {
     func configureCell(tarefa: Tarefa){
         self.nomeTarefaLabel.text = tarefa.nome
     }
+    
 }

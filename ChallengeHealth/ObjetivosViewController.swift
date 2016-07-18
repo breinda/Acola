@@ -9,6 +9,8 @@ class ObjetivosViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tarefas.append(Tarefa(nome: "falar em sala", descricao: ""))
+        
         tarefasCollectionView.delegate = self
     }
     
@@ -19,9 +21,7 @@ class ObjetivosViewController: UIViewController, UICollectionViewDelegate, UICol
             let vc = storyboard.instantiateViewControllerWithIdentifier("LoginVC")
             self.presentViewController(vc, animated: false, completion: nil)
         }
-        
-        tarefas.append(Tarefa(nome: "falar em sala", descricao: ""))
-        
+
         print(tarefas[0].nome)
         
         tarefasCollectionView.backgroundColor = UIColor.clearColor()
@@ -30,6 +30,7 @@ class ObjetivosViewController: UIViewController, UICollectionViewDelegate, UICol
     
     
     // MARK: UICollectionView
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         print("AQUI")
@@ -38,7 +39,7 @@ class ObjetivosViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("tarefaCell", forIndexPath: indexPath) as! TarefaCollectionViewCell
+        let cell = tarefasCollectionView.dequeueReusableCellWithReuseIdentifier("tarefaCell", forIndexPath: indexPath) as! TarefaCollectionViewCell
         let tarefa = tarefas[indexPath.row]
         
         cell.configureCell(tarefa)
@@ -56,4 +57,18 @@ class ObjetivosViewController: UIViewController, UICollectionViewDelegate, UICol
         print("ENTAO NE........")
         return CGSizeMake(UIScreen.mainScreen().bounds.size.width, 150)
     }
+    
+    
+    // MARK: Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goToObjetivoAtual" {
+            
+            let cell = sender as! TarefaCollectionViewCell
+            let indexPath = tarefasCollectionView?.indexPathForCell(cell)
+            //let request = tarefas[indexPath!.item]
+            //let chatViewController = segue.destinationViewController as! ObjetivoAtualViewController
+        }
+    }
+    
 }

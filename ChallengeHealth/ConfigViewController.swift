@@ -1,11 +1,3 @@
-//
-//  ConfigViewController.swift
-//  ChallengeHealth
-//
-//  Created by Brenda Carrocino on 18/07/16.
-//  Copyright © 2016 Brenda Carrocino. All rights reserved.
-//
-
 import UIKit
 import FirebaseAuth
 
@@ -30,6 +22,7 @@ class ConfigViewController: UIViewController {
             }
         }
     }
+    
     @IBAction func voltarWasTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -38,4 +31,5 @@ class ConfigViewController: UIViewController {
         try! FIRAuth.auth()!.signOut()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
 }

@@ -2,7 +2,8 @@
 # platform :ios, '9.0'
 
 pod 'Firebase'
-pod 'FirebaseAuth’
+pod 'FirebaseAuth'
+pod 'Firebase/Database'
 
 target 'ChallengeHealth' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks

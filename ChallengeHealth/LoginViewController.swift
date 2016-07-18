@@ -27,12 +27,7 @@ class LoginViewController: UIViewController {
         func loginCallback (user: FIRUser?, error: NSError?) {
             // SUCESSO !!!
             if error == nil {
-//                let alertView = UIAlertController(title: "NOIX!", message: "LOGIN FEITO COM SUCESSO CAROLHO" as String, preferredStyle:.ActionSheet)
-//                let okAction = UIAlertAction(title: "YES", style: .Default, handler: nil)
-//                alertView.addAction(okAction)
-//                self.presentViewController(alertView, animated: true, completion: nil)
                 self.dismissViewControllerAnimated(true, completion: nil)
-                
             }
             // DEU RUIM
             else {
@@ -46,4 +41,5 @@ class LoginViewController: UIViewController {
         
         DAO.login(email!, password: password!, callback: loginCallback)
     }
+    
 }
