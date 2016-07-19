@@ -1,4 +1,5 @@
 import UIKit
+import Firebase
 import FirebaseAuth
 
 class ConfigViewController: UIViewController {
@@ -11,11 +12,7 @@ class ConfigViewController: UIViewController {
         
         if let user = FIRAuth.auth()?.currentUser {
             for profile in user.providerData {
-//                let providerID = profile.providerID
-//                let uid = profile.uid;  // Provider-specific UID
-//                let name = profile.displayName
                 let email = profile.email
-//                let photoURL = profile.photoURL
 //                
                 //nomeLabel.text! = name!
                 emailLabel.text! = email!
