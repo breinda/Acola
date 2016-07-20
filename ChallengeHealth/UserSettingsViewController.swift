@@ -12,3 +12,9 @@ class UserSettingsViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
+
+extension UserSettingsViewController: UITableView {
+
+    @IBOutlet weak var userSettingsTableView: UITableView!
+
+}
