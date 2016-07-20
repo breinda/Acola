@@ -143,12 +143,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E14948CD1D35680E00BB8FB2 /* Build configuration list for PBXNativeTarget "ChallengeHealth" */;
 			buildPhases = (
+				0F97B991B74E6C85317ADB10 /* [CP] Check Pods Manifest.lock */,
 				0FC09C221BE75A791AB8BF5D /* [CP] Check Pods Manifest.lock */,
 				E14948B71D35680D00BB8FB2 /* Sources */,
 				E14948B81D35680D00BB8FB2 /* Frameworks */,
 				E14948B91D35680D00BB8FB2 /* Resources */,
 				F94C38FEA94957B24BCDDDDF /* [CP] Embed Pods Frameworks */,
 				B4C2B1A8D97CD075B8243E44 /* [CP] Copy Pods Resources */,
+				2CBBE34B09D83F33F6F576D7 /* 📦 Embed Pods Frameworks */,
+				AB6AFDC61EAA61CE87CCA43D /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +210,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0F97B991B74E6C85317ADB10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		0FC09C221BE75A791AB8BF5D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -220,6 +238,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2CBBE34B09D83F33F6F576D7 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB6AFDC61EAA61CE87CCA43D /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B4C2B1A8D97CD075B8243E44 /* [CP] Copy Pods Resources */ = {
