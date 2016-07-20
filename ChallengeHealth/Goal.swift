@@ -8,14 +8,14 @@
 
 import UIKit
 
-struct Tarefa {
-    let nome : String!
-    let descricao : String!
+struct Goal {
+    let name : String!
+    let description : String!
     
-    init(nome: String, descricao: String) {
+    init(name: String, description: String) {
         
-        self.nome = nome
-        self.descricao = descricao
+        self.name = name
+        self.description = description
     }
     
 }

@@ -8,11 +8,11 @@
 
 import UIKit
 
-class TarefaCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var nomeTarefaLabel: UILabel!
+class GoalCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var goalNameLabel: UILabel!
     
-    func configureCell(tarefa: Tarefa){
-        self.nomeTarefaLabel.text = tarefa.nome
+    func configureCell(goal: Goal){
+        self.goalNameLabel.text = goal.name
     }
     
 }

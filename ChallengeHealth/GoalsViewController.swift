@@ -1,17 +1,18 @@
 import UIKit
 import FirebaseAuth
 
-class ObjetivosViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
-    @IBOutlet weak var tarefasCollectionView: UICollectionView!
-    var tarefas = [Tarefa]()
+    @IBOutlet weak var goalsCollectionView: UICollectionView!
+    var goals = [Goal]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tarefas.append(Tarefa(nome: "falar em sala", descricao: ""))
+        goals.append(Goal(name: "falar em sala", description: ""))
+        goals.append(Goal(name: "sair de casa", description: ""))
         
-        tarefasCollectionView.delegate = self
+        goalsCollectionView.delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -22,10 +23,10 @@ class ObjetivosViewController: UIViewController, UICollectionViewDelegate, UICol
             self.presentViewController(vc, animated: false, completion: nil)
         }
 
-        print(tarefas[0].nome)
+        print(goals[0].name)
         
-        tarefasCollectionView.backgroundColor = UIColor.clearColor()
-        tarefasCollectionView.reloadData()
+        goalsCollectionView.backgroundColor = UIColor.clearColor()
+        goalsCollectionView.reloadData()
     }
     
     
@@ -34,18 +35,18 @@ class ObjetivosViewController: UIViewController, UICollectionViewDelegate, UICol
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         print("AQUI")
-        return tarefas.count
+        return goals.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 
-        let cell = tarefasCollectionView.dequeueReusableCellWithReuseIdentifier("tarefaCell", forIndexPath: indexPath) as! TarefaCollectionViewCell
-        let tarefa = tarefas[indexPath.row]
+        let cell = goalsCollectionView.dequeueReusableCellWithReuseIdentifier("goalCell", forIndexPath: indexPath) as! GoalCollectionViewCell
+        let goal = goals[indexPath.row]
         
-        cell.configureCell(tarefa)
+        cell.configureCell(goal)
         cell.backgroundColor = UIColor.clearColor()
         
-        print(tarefa.nome)
+        print(goal.name)
         print("OIOIOI")
         
         return cell
@@ -64,12 +65,12 @@ class ObjetivosViewController: UIViewController, UICollectionViewDelegate, UICol
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "goToObjetivoAtual" {
             
-            let cell = sender as! TarefaCollectionViewCell
-            let indexPath = tarefasCollectionView?.indexPathForCell(cell)
-            let tarefa = tarefas[indexPath!.item]
-            let objetivoAtualVC = segue.destinationViewController as! ObjetivoAtualViewController
+            let cell = sender as! GoalCollectionViewCell
+            let indexPath = goalsCollectionView?.indexPathForCell(cell)
+            let goal = goals[indexPath!.item]
+            let currentStepVC = segue.destinationViewController as! CurrentStepViewController
             
-            objetivoAtualVC.objetivoFinal = tarefa.nome
+            currentStepVC.goal = goal.name
         }
     }
     

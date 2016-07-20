@@ -28,11 +28,11 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    @IBAction func CancelWasTapped(sender: AnyObject) {
+    @IBAction func backButtonWasTapped(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func SignUpWasTapped(sender: AnyObject) {
+    @IBAction func signUpButtonWasTapped(sender: AnyObject) {
         
         //let name = userNameTextField.text
         let email = emailTextField.text

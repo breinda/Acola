@@ -3,7 +3,7 @@ import FirebaseAuth
 
 class ConfigViewController: UIViewController {
 
-    @IBOutlet weak var nomeLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
     override func viewDidLoad() {
@@ -17,17 +17,17 @@ class ConfigViewController: UIViewController {
                 let email = profile.email
 //                let photoURL = profile.photoURL
 //                
-                //nomeLabel.text! = name!
+                //nameLabel.text! = name!
                 emailLabel.text! = email!
             }
         }
     }
     
-    @IBAction func voltarWasTapped(sender: AnyObject) {
+    @IBAction func backButtonWasTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func logoutWasTapped(sender: AnyObject) {
+    @IBAction func logoutButtonWasTapped(sender: AnyObject) {
         try! FIRAuth.auth()!.signOut()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
