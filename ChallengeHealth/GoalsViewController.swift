@@ -9,8 +9,8 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        goals.append(Goal(name: "falar em sala", description: ""))
-        goals.append(Goal(name: "sair de casa", description: ""))
+        goals.append(Goal(name: "falar em sala", description: "", steps: []))
+        goals.append(Goal(name: "sair de casa", description: "", steps: []))
         
         goalsCollectionView.delegate = self
     }

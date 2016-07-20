@@ -1,5 +1,5 @@
 //
-//  TarefaCollectionViewCell.swift
+//  GoalCollectionViewCell.swift
 //  ChallengeHealth
 //
 //  Created by Brenda Carrocino on 18/07/16.
