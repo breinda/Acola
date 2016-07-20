@@ -240,6 +240,24 @@
             </objects>
             <point key="canvasLocation" x="-1100" y="2175"/>
         </scene>
+        <!--User Settings View Controller-->
+        <scene sceneID="xhb-TC-DYx">
+            <objects>
+                <viewController id="O3X-8Z-xS2" customClass="UserSettingsViewController" customModule="ChallengeHealth" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sji-eN-B2O"/>
+                        <viewControllerLayoutGuide type="bottom" id="aCO-Gt-44w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jql-tg-cNc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1TY-XY-PVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-346" y="710"/>
+        </scene>
         <!--Config View Controller-->
         <scene sceneID="hIP-v9-Agt">
             <objects>
@@ -261,6 +279,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9t-7o-hfT">
                                 <rect key="frame" x="257" y="268" width="86" height="30"/>
                                 <state key="normal" title="editar dados"/>
+                                <connections>
+                                    <segue destination="O3X-8Z-xS2" kind="presentation" id="xe0-rG-AoN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBX-1a-0Fp">
                                 <rect key="frame" x="278" y="374" width="44" height="30"/>

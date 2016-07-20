@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		069B0FBA1D3F2F0F000818F0 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B0FB91D3F2F0F000818F0 /* UserSettingsViewController.swift */; };
 		A7D27DD2CE4F11ABD87D5D64 /* Pods_ChallengeHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007A7E7652F5C10253E2FBED /* Pods_ChallengeHealth.framework */; };
 		E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */; };
 		E14948C41D35680E00BB8FB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14948C21D35680E00BB8FB2 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		007A7E7652F5C10253E2FBED /* Pods_ChallengeHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChallengeHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		069B0FB91D3F2F0F000818F0 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		28BB55857FF9BEA5F2C9F59E /* Pods-ChallengeHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth.debug.xcconfig"; sourceTree = "<group>"; };
 		B9EFA970596509DFC9D39CF7 /* Pods-ChallengeHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth.release.xcconfig"; sourceTree = "<group>"; };
 		E14948BB1D35680D00BB8FB2 /* ChallengeHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 				E14948D41D356AFA00BB8FB2 /* LoginViewController.swift */,
 				E14948D61D356B1E00BB8FB2 /* SignUpViewController.swift */,
 				E1BD0CBA1D3D48C300EC26BA /* ConfigViewController.swift */,
+				069B0FB91D3F2F0F000818F0 /* UserSettingsViewController.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				E1BD0CBF1D3D532700EC26BA /* GoalCollectionViewCell.swift in Sources */,
 				E1BD0CBB1D3D48C300EC26BA /* ConfigViewController.swift in Sources */,
 				E14948D71D356B1E00BB8FB2 /* SignUpViewController.swift in Sources */,
+				069B0FBA1D3F2F0F000818F0 /* UserSettingsViewController.swift in Sources */,
 				E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */,
 				E1DCF4911D3F3EAF005479D6 /* Step.swift in Sources */,
 				E1BD0CC31D3D61C500EC26BA /* CurrentStepViewController.swift in Sources */,
