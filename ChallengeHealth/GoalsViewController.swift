@@ -63,7 +63,7 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
     // MARK: Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "goToObjetivoAtual" {
+        if segue.identifier == "goToCurrentStep" {
             
             let cell = sender as! GoalCollectionViewCell
             let indexPath = goalsCollectionView?.indexPathForCell(cell)

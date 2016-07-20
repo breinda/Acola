@@ -117,7 +117,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="goalNameLabel" destination="jaR-dl-i06" id="Jdj-Ys-nsd"/>
-                                            <segue destination="ccJ-zZ-euW" kind="presentation" identifier="goToObjetivoAtual" id="4XT-LD-S5C"/>
+                                            <segue destination="ccJ-zZ-euW" kind="presentation" identifier="goToCurrentStep" id="4XT-LD-S5C"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
