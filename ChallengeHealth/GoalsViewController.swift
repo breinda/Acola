@@ -28,7 +28,6 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
             
             self.goalsCollectionView.reloadData()
         })
-
         
         goalsCollectionView.delegate = self
     }
@@ -50,7 +49,6 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        print("AQUI")
         return goals.count
     }
     
@@ -63,15 +61,13 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
         cell.backgroundColor = UIColor.clearColor()
         
         print(goal.name)
-        print("OIOIOI")
-        
+
         return cell
     }
     
     // faz as células expandirem até os cantos da tela!
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        print("ENTAO NE........")
         return CGSizeMake(UIScreen.mainScreen().bounds.size.width, 150)
     }
     
@@ -87,6 +83,8 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
             let currentStepVC = segue.destinationViewController as! CurrentStepViewController
             
             currentStepVC.goal = goal.name
+            currentStepVC.step = goal.firstStep.name
+            
         }
     }
     

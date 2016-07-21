@@ -4,12 +4,18 @@ import FirebaseAuth
 class CurrentStepViewController: UIViewController {
 
     var goal: String = "objetivo final"
+    var step: String = "passo atual"
+    var stepIndex: String = "1"
     @IBOutlet weak var goalLabel: UILabel!
+    @IBOutlet weak var stepLabel: UILabel!
+    @IBOutlet weak var stepIndexLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         goalLabel.text! = goal
+        stepLabel.text! = step
+        stepIndexLabel.text! = stepIndex
     }
     
     override func viewDidAppear(animated: Bool) {
