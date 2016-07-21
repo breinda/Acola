@@ -257,6 +257,7 @@
                                 <items>
                                     <navigationItem title="Configurações da Conta" id="wax-xu-Qrc">
                                         <barButtonItem key="leftBarButtonItem" title="Voltar" id="79q-2v-sP4">
+                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="returnButton:" destination="O3X-8Z-xS2" id="m9v-Iv-yDg"/>
                                             </connections>
@@ -264,37 +265,40 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tB6-Ra-3M8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="141" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tB6-Ra-3M8">
                                 <rect key="frame" x="0.0" y="72" width="600" height="528"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="600" id="Y22-O0-htt"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userSettingsCell" rowHeight="120" id="WTQ-dH-Zgt">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="120"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="userSettingsCell" rowHeight="141" id="WTQ-dH-Zgt" customClass="UserSettingsTableViewCell" customModule="ChallengeHealth" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="141"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WTQ-dH-Zgt" id="3tK-e6-QHU">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="141"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hD-Nu-wIu" userLabel="Menu View">
-                                                    <rect key="frame" x="0.0" y="-8" width="600" height="85"/>
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hD-Nu-wIu" userLabel="Menu View">
+                                                    <rect key="frame" x="0.0" y="-8" width="600" height="62"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSs-Sf-hqL">
-                                                            <rect key="frame" x="279" y="32" width="42" height="21"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alterar e-mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSs-Sf-hqL">
+                                                            <rect key="frame" x="8" y="20" width="104" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="62" id="D3c-N8-Uqv"/>
+                                                    </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ox3-GE-PWu" userLabel="Sub-Menu View">
-                                                    <rect key="frame" x="0.0" y="76" width="600" height="43.5"/>
+                                                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ox3-GE-PWu" userLabel="Sub-Menu View">
+                                                    <rect key="frame" x="0.0" y="53" width="600" height="87"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SBg-XX-ER7" userLabel="Content View">
-                                                            <rect key="frame" x="66" y="0.0" width="413" height="43.5"/>
+                                                            <rect key="frame" x="66" y="0.0" width="413" height="44"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bO3-fZ-osk">
                                                                     <rect key="frame" x="39" y="11" width="42" height="21"/>
@@ -309,11 +313,37 @@
                                                                 </textField>
                                                             </subviews>
                                                         </view>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYp-Gh-jsx" userLabel="Content View">
+                                                            <rect key="frame" x="66" y="43" width="413" height="44"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DR5-9M-Xti">
+                                                                    <rect key="frame" x="39" y="11" width="42" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZRp-Lo-nhy">
+                                                                    <rect key="frame" x="133" y="8" width="280" height="30"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <textInputTraits key="textInputTraits"/>
+                                                                </textField>
+                                                            </subviews>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.85880287249999998" green="0.85880287249999998" blue="0.85880287249999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" priority="999" constant="87" id="CzW-Rq-g0Z" userLabel="detailViewHeightConstraint"/>
+                                                    </constraints>
                                                 </view>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="ox3-GE-PWu" secondAttribute="bottom" id="K2R-l8-kJV"/>
+                                                <constraint firstItem="9hD-Nu-wIu" firstAttribute="top" secondItem="3tK-e6-QHU" secondAttribute="top" id="c2g-eQ-WXW"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="detailViewHeightConstraint" destination="CzW-Rq-g0Z" id="WJX-tU-Mhv"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
