@@ -1,5 +1,6 @@
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class CurrentStepViewController: UIViewController {
 
@@ -10,6 +11,7 @@ class CurrentStepViewController: UIViewController {
     // vars pra que eu possa achar o step atual no DB
     var goalKey: String = "goalKey"
     var stepKey: String = "1"
+    var stepKeyInt: Int = 1
     
     var steps = [Step]()
     
@@ -17,7 +19,7 @@ class CurrentStepViewController: UIViewController {
     @IBOutlet weak var stepLabel: UILabel!
     @IBOutlet weak var stepIndexLabel: UILabel!
     
-    
+    var currentStep: Step!
     
     override func viewDidLoad() {
         super.viewDidLoad()

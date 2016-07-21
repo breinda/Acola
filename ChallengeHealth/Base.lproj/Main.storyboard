@@ -375,6 +375,7 @@
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="egx-JL-iLk" id="QmY-MZ-G4J"/>
                         <outlet property="emailTextField" destination="M1q-Ea-y1t" id="nzg-Rg-DhX"/>
+                        <outlet property="nameTextField" destination="5vb-sY-TRx" id="LCT-bT-qN7"/>
                         <outlet property="passwordTextField" destination="DA8-1i-F9R" id="mp2-nF-lGa"/>
                     </connections>
                 </viewController>

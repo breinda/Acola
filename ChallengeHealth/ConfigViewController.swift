@@ -13,7 +13,6 @@ class ConfigViewController: UIViewController {
         if let user = FIRAuth.auth()?.currentUser {
             for profile in user.providerData {
                 let email = profile.email
-//                
                 //nameLabel.text! = name!
                 emailLabel.text! = email!
             }

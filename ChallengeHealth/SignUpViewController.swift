@@ -1,8 +1,10 @@
 import UIKit
 import FirebaseAuth
+import Firebase
 
 class SignUpViewController: UIViewController {
     
+    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
@@ -34,14 +36,14 @@ class SignUpViewController: UIViewController {
     
     @IBAction func signUpButtonWasTapped(sender: AnyObject) {
         
-        //let name = userNameTextField.text
+        let name = nameTextField.text
         let email = emailTextField.text
         let password = passwordTextField.text
         let confirmPassword = confirmPasswordTextField.text
         
         
         // ALERTS PRA PROBLEMAS NO CADASTRO
-        if (email!.isEmpty || password!.isEmpty || confirmPassword!.isEmpty) {
+        if (name!.isEmpty || email!.isEmpty || password!.isEmpty || confirmPassword!.isEmpty) {
             
             let alertView = UIAlertController(title: "Problema no cadastro",
                                               message: "Preencha todos os campos." as String, preferredStyle:.Alert)
@@ -93,6 +95,31 @@ class SignUpViewController: UIViewController {
                 
                 alert.addAction(cancel)
                 self.presentViewController(alert, animated: true, completion: nil)
+                
+                // popula o database com os dados iniciais do usuário no ato do cadastro
+                var handle : FIRAuthStateDidChangeListenerHandle
+        
+                handle = (FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
+                    if let user = user {
+                        // User is signed in.
+                        //let name = user.displayName
+                        let email = user.email
+                        let uid = user.uid;
+
+                        print("email")
+                        print(email)
+                        print("uid")
+                        print(uid)
+                        
+                        let key = uid
+                        let userData = ["name": name!, "petName": "Serumaninho", "currentGoalKey": "", "currentStepNumber": "1", "customGoals": false]
+                        let childUpdates = ["\(key)": userData]
+                        
+                        DAO.STD_USERS_REF.updateChildValues(childUpdates)
+                    }
+                })!
+                
+                FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
             }
             else {
                 let alert = UIAlertController(title: "Erro", message: "vc conseguiu a façanha de achar um erro que eu não tratei???", preferredStyle: UIAlertControllerStyle.Alert)

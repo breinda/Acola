@@ -14,13 +14,6 @@ struct Goal {
     let description : String!
     let firstStep : Step!
     
-//    init(name: String, description: String, firstStep: Step) {
-//        
-//        self.name = name
-//        self.description = description
-//        self.firstStep = firstStep
-//    }
-    
     init(key: String, snapshot: Dictionary<String,AnyObject>) {
         self.key = key
         self.name = snapshot["name"] as! String
