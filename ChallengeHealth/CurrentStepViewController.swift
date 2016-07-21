@@ -35,7 +35,7 @@ class CurrentStepViewController: UIViewController {
             
             print("steps.last.name")
             print(self.steps.last?.name)
-            print("dteps.last.description")
+            print("steps.last.description")
             print(self.steps.last?.description)
             print("steps.last.key")
             print(self.steps.last?.index)
@@ -56,6 +56,17 @@ class CurrentStepViewController: UIViewController {
     }
     
     @IBAction func doneWasTapped(sender: AnyObject) {
+        let alertView = UIAlertController(title: "UAU!",
+            message: "você se sente totalmente confortável com o passo atual?" as String, preferredStyle:.ActionSheet)
+        let okAction = UIAlertAction(title: "sim, bora próximo passo", style: .Default) { UIAlertAction in
+            
+        }
+        let cancelAction = UIAlertAction(title: "pensando bem, não", style: .Cancel, handler: nil)
+        alertView.addAction(okAction)
+        alertView.addAction(cancelAction)
+        self.presentViewController(alertView, animated: true, completion: nil)
+        
         
     }
+    
 }
