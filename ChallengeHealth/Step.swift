@@ -13,11 +13,19 @@ struct Step {
     let description : String!
     let index : String!
     
+    init(index: String, snapshot: Dictionary<String,AnyObject>) {
+        
+        self.index = index
+        
+        self.name = snapshot["name"] as! String
+        self.description = snapshot["description"] as! String
+    }
+    
     init(name: String, description: String, index: String) {
         
+        self.index = index
         self.name = name
         self.description = description
-        self.index = index
     }
     
 }
