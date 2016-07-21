@@ -7,7 +7,7 @@ extension UserSettingsViewController: UITableViewDataSource, UITableViewDelegate
     //MARK: UITableView Data Source
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
