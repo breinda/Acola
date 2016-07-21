@@ -11,9 +11,9 @@ import UIKit
 struct Step {
     let name : String!
     let description : String!
-    let index : Int!
+    let index : String!
     
-    init(name: String, description: String, index: Int) {
+    init(name: String, description: String, index: String) {
         
         self.name = name
         self.description = description

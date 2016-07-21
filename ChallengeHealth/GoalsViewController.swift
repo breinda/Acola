@@ -1,5 +1,6 @@
 import UIKit
 import FirebaseAuth
+import Firebase
 
 class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
@@ -9,8 +10,25 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        goals.append(Goal(name: "falar em sala", description: "", steps: []))
-        goals.append(Goal(name: "sair de casa", description: "", steps: []))
+        // pega os goals do banco e os armazena no array goals
+        DAO.STD_GOALS_REF.observeEventType(.ChildAdded, withBlock: { (snapshot) in
+            
+            self.goals.append(Goal(key: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
+            
+            print("goals.last.name")
+            print(self.goals.last?.name)
+            print("goals.last.description")
+            print(self.goals.last?.description)
+            print("goals.last.key")
+            print(self.goals.last?.key)
+            print("goals.last.firstStep.name")
+            print(self.goals.last?.firstStep.name)
+            print("goals.last.firstStep.index")
+            print(self.goals.last?.firstStep.index)
+            
+            self.goalsCollectionView.reloadData()
+        })
+
         
         goalsCollectionView.delegate = self
     }
@@ -22,8 +40,6 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
             let vc = storyboard.instantiateViewControllerWithIdentifier("LoginVC")
             self.presentViewController(vc, animated: false, completion: nil)
         }
-
-        print(goals[0].name)
         
         goalsCollectionView.backgroundColor = UIColor.clearColor()
         goalsCollectionView.reloadData()
