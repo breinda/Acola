@@ -9,7 +9,7 @@ class CurrentStepViewController: UIViewController {
     
     // vars pra que eu possa achar o step atual no DB
     var goalKey: String = "goalKey"
-    var stepKey: String = "one"
+    var stepKey: String = "1"
     
     var steps = [Step]()
     
@@ -39,6 +39,8 @@ class CurrentStepViewController: UIViewController {
             print(self.steps.last?.description)
             print("steps.last.key")
             print(self.steps.last?.index)
+            print("steps.last.isLastStep")
+            print(self.steps.last?.isLastStep)
         })
     }
     
@@ -65,8 +67,6 @@ class CurrentStepViewController: UIViewController {
         alertView.addAction(okAction)
         alertView.addAction(cancelAction)
         self.presentViewController(alertView, animated: true, completion: nil)
-        
-        
     }
     
 }

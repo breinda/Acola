@@ -32,7 +32,7 @@ struct Goal {
         let descStep = firstStepDic["description"]
         let indStep = "one"
         
-        self.firstStep = Step(name: nameStep!, description: descStep!, index: indStep)
+        self.firstStep = Step(name: nameStep!, description: descStep!, index: indStep, isLastStep: false)
     }
     
 }
