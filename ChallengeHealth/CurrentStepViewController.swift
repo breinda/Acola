@@ -63,7 +63,34 @@ class CurrentStepViewController: UIViewController {
         let alertView = UIAlertController(title: "UAU!",
             message: "você se sente totalmente confortável com o passo atual?" as String, preferredStyle:.ActionSheet)
         let okAction = UIAlertAction(title: "sim, bora próximo passo", style: .Default) { UIAlertAction in
+            var handle : FIRAuthStateDidChangeListenerHandle
             
+            handle = (FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
+                if let user = user {
+                    // User is signed in.
+                    let uid = user.uid;
+                    
+                    DAO.USERS_REF.child(uid).observeEventType(.ChildAdded, withBlock: { (snapshot) in
+                        
+                        //let snapshotAux = snapshot.value as! NSDictionary
+                        print(snapshot.key)
+                        if snapshot.key == "currentStepNumber" {
+                            var updateStepString = snapshot.value as! String
+                            var updateStepInt = Int(updateStepString)
+                            updateStepInt = updateStepInt! + 1
+                            
+                            let childUpdates = [snapshot.key: String(updateStepInt!)]
+                            DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
+                        }
+
+                    })
+                    //let childUpdates = ["currentStepNumber": userData]
+                    
+                    //DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
+                }
+                })!
+            
+            FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
         }
         let cancelAction = UIAlertAction(title: "pensando bem, não", style: .Cancel, handler: nil)
         alertView.addAction(okAction)

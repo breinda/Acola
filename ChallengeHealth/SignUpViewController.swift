@@ -115,7 +115,7 @@ class SignUpViewController: UIViewController {
                         let userData = ["name": name!, "petName": "Serumaninho", "currentGoalKey": "", "currentStepNumber": "1", "customGoals": false]
                         let childUpdates = ["\(key)": userData]
                         
-                        DAO.STD_USERS_REF.updateChildValues(childUpdates)
+                        DAO.USERS_REF.updateChildValues(childUpdates)
                     }
                 })!
                 
