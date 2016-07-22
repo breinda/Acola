@@ -85,7 +85,6 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
             currentStepVC.goal = goal.name
             currentStepVC.step = goal.firstStep.name
             currentStepVC.goalKey = goal.key
-            
         }
     }
     

@@ -35,14 +35,14 @@ class CurrentStepViewController: UIViewController {
             
             self.steps.append(Step(index: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
             
-            print("steps.last.name")
-            print(self.steps.last?.name)
-            print("steps.last.description")
-            print(self.steps.last?.description)
-            print("steps.last.key")
-            print(self.steps.last?.index)
-            print("steps.last.isLastStep")
-            print(self.steps.last?.isLastStep)
+//            print("steps.last.name")
+//            print(self.steps.last?.name)
+//            print("steps.last.description")
+//            print(self.steps.last?.description)
+//            print("steps.last.key")
+//            print(self.steps.last?.index)
+//            print("steps.last.isLastStep")
+//            print(self.steps.last?.isLastStep)
         })
     }
     
@@ -53,6 +53,8 @@ class CurrentStepViewController: UIViewController {
             let vc = storyboard.instantiateViewControllerWithIdentifier("LoginVC")
             self.presentViewController(vc, animated: false, completion: nil)
         }
+        
+        
     }
     
     @IBAction func backButtonWasTapped(sender: AnyObject) {
@@ -72,10 +74,8 @@ class CurrentStepViewController: UIViewController {
                     
                     DAO.USERS_REF.child(uid).observeEventType(.ChildAdded, withBlock: { (snapshot) in
                         
-                        //let snapshotAux = snapshot.value as! NSDictionary
-                        print(snapshot.key)
                         if snapshot.key == "currentStepNumber" {
-                            var updateStepString = snapshot.value as! String
+                            let updateStepString = snapshot.value as! String
                             var updateStepInt = Int(updateStepString)
                             updateStepInt = updateStepInt! + 1
                             
@@ -84,9 +84,6 @@ class CurrentStepViewController: UIViewController {
                         }
 
                     })
-                    //let childUpdates = ["currentStepNumber": userData]
-                    
-                    //DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
                 }
                 })!
             

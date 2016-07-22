@@ -95,7 +95,6 @@
 				E1BD0CC41D3D679400EC26BA /* Goals and Steps */,
 				E1BD0CC01D3D614100EC26BA /* Goal Struct */,
 				E1DCF4921D3F3EC5005479D6 /* Step Struct */,
-				E1F849391D416D3700AF3E4D /* User.swift */,
 				E14948C21D35680E00BB8FB2 /* Main.storyboard */,
 				E14948C51D35680E00BB8FB2 /* Assets.xcassets */,
 				E14948C71D35680E00BB8FB2 /* LaunchScreen.storyboard */,
@@ -117,6 +116,7 @@
 		E1BD0CC11D3D616A00EC26BA /* User */ = {
 			isa = PBXGroup;
 			children = (
+				E1F849391D416D3700AF3E4D /* User.swift */,
 				E14948D41D356AFA00BB8FB2 /* LoginViewController.swift */,
 				E14948D61D356B1E00BB8FB2 /* SignUpViewController.swift */,
 				E1BD0CBA1D3D48C300EC26BA /* ConfigViewController.swift */,
