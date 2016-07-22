@@ -1,6 +1,5 @@
 import Foundation
 import Firebase
-import FirebaseAuth
 
 let rootReference = FIRDatabase.database().reference()
 
