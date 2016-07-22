@@ -1,13 +1,3 @@
-//
-//  Step.swift
-//  ChallengeHealth
-//
-//  Created by Brenda Carrocino on 20/07/16.
-//  Copyright © 2016 Brenda Carrocino. All rights reserved.
-//
-
-import UIKit
-
 struct Step {
     let name : String!
     let description : String!

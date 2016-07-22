@@ -1,13 +1,3 @@
-//
-//  Goal.swift
-//  ChallengeHealth
-//
-//  Created by Brenda Carrocino on 18/07/16.
-//  Copyright © 2016 Brenda Carrocino. All rights reserved.
-//
-
-import UIKit
-
 struct Goal {
     let key : String!
     let name : String!
