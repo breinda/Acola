@@ -85,6 +85,28 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
             currentStepVC.goal = goal.name
             currentStepVC.step = goal.firstStep.name
             currentStepVC.goalKey = goal.key
+            
+            
+            // seta o step atual do usuário como 1 -- saber se view inicial é a de goals ou a de currentStep
+            var handle : FIRAuthStateDidChangeListenerHandle
+            
+            handle = (FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
+                if let user = user {
+                    // User is signed in.
+                    let uid = user.uid;
+                    
+                    DAO.USERS_REF.child(uid).observeEventType(.ChildAdded, withBlock: { (snapshot) in
+                        
+                        if snapshot.key == "currentStepNumber" {
+                            let childUpdates = [snapshot.key: "1"]
+                            DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
+                        }
+                        
+                    })
+                }
+                })!
+            
+            FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
         }
     }
     
