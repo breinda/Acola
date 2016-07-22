@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="M09-aU-hvx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -57,7 +57,7 @@
         <!--Goals View Controller-->
         <scene sceneID="NKB-Qk-4jO">
             <objects>
-                <viewController id="M09-aU-hvx" customClass="GoalsViewController" customModule="ChallengeHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoalsVC" id="M09-aU-hvx" customClass="GoalsViewController" customModule="ChallengeHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YHy-lE-MdK"/>
                         <viewControllerLayoutGuide type="bottom" id="ppW-hH-TGv"/>
@@ -170,7 +170,7 @@
         <!--Current Step View Controller-->
         <scene sceneID="x8q-rl-f4q">
             <objects>
-                <viewController id="ccJ-zZ-euW" customClass="CurrentStepViewController" customModule="ChallengeHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="currentStepVC" id="ccJ-zZ-euW" customClass="CurrentStepViewController" customModule="ChallengeHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tdd-Q5-bFs"/>
                         <viewControllerLayoutGuide type="bottom" id="Imv-S6-AK6"/>
@@ -530,6 +530,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dn1-Py-aEp"/>
+        <segue reference="jaO-aH-N2k"/>
     </inferredMetricsTieBreakers>
 </document>
