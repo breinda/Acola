@@ -21,6 +21,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         emailPasswordView.hidden = true
     }
+    
     @IBAction func returnButtonWasTapped(sender: AnyObject) {
         
         if emailPasswordView.hidden == true {
@@ -165,7 +166,6 @@ class SignUpViewController: UIViewController {
                 self.presentViewController(alert, animated: true, completion: nil)
             }
         }
-        
         
         DAO.signUp(email!, password: password!, callback: registerCallback)
         

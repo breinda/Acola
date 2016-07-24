@@ -472,7 +472,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voK-dD-yjE" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="472.5" y="691.5"/>
+            <point key="canvasLocation" x="1135.5" y="687"/>
         </scene>
         <!--Current Step View Controller-->
         <scene sceneID="cXU-sI-SgQ">
@@ -951,6 +951,9 @@
                                         <include reference="LP8-NJ-qnI"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="2Xv-Bt-9UZ" kind="presentation" id="jQ7-aP-ObB"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Como posso lhe ajudar, Mariana?" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLE-EI-2Zc">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -1571,7 +1574,131 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krN-O4-eQt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="472.5" y="1402.5"/>
+            <point key="canvasLocation" x="1135.5" y="1402.5"/>
+        </scene>
+        <!--About Us View Controller-->
+        <scene sceneID="UKa-yb-bBX">
+            <objects>
+                <viewController id="2Xv-Bt-9UZ" customClass="AboutUsViewController" customModule="ChallengeHealth" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ftv-Ft-ejT"/>
+                        <viewControllerLayoutGuide type="bottom" id="SRG-oT-Rfv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dcg-88-Geo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_Health_Telas" translatesAutoresizingMaskIntoConstraints="NO" id="mNi-rn-t0Y">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sobre o nosso app" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exd-Eq-J0a">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.68704202589999996" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="56" y="43" width="289" height="33"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="117" y="28" width="166" height="25.5"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="33" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Az8-ta-urb">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <mutableString key="text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere</mutableString>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.79717133620000002" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="42" y="84" width="317" height="472"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="41" y="61.5" width="317" height="418.5"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAy-le-fFM">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="GillSans-UltraBold" family="Gill Sans" pointSize="15"/>
+                                <state key="normal" title="&lt;&lt;&lt;">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="20" y="10" width="59" height="100"/>
+                                </variation>
+                                <connections>
+                                    <action selector="returnButtonWasTapped:" destination="2Xv-Bt-9UZ" eventType="touchUpInside" id="jqE-Wo-kLI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Az8-ta-urb" firstAttribute="top" secondItem="exd-Eq-J0a" secondAttribute="bottom" constant="8" id="4AZ-Fs-bSQ"/>
+                            <constraint firstItem="mAy-le-fFM" firstAttribute="top" secondItem="ftv-Ft-ejT" secondAttribute="bottom" constant="8" id="4ry-oK-iYL"/>
+                            <constraint firstItem="mAy-le-fFM" firstAttribute="leading" secondItem="Dcg-88-Geo" secondAttribute="leadingMargin" id="BLW-cM-WIy"/>
+                            <constraint firstItem="exd-Eq-J0a" firstAttribute="top" secondItem="ftv-Ft-ejT" secondAttribute="bottom" constant="8" id="Bt0-zl-8N4"/>
+                            <constraint firstItem="mNi-rn-t0Y" firstAttribute="leading" secondItem="Dcg-88-Geo" secondAttribute="leading" id="DnX-LC-H8f"/>
+                            <constraint firstItem="exd-Eq-J0a" firstAttribute="centerX" secondItem="Dcg-88-Geo" secondAttribute="centerX" id="ae0-Vh-MsR"/>
+                            <constraint firstItem="Az8-ta-urb" firstAttribute="leading" secondItem="Dcg-88-Geo" secondAttribute="leadingMargin" constant="21.5" id="jaS-2p-g6c"/>
+                            <constraint firstItem="SRG-oT-Rfv" firstAttribute="top" secondItem="mNi-rn-t0Y" secondAttribute="bottom" id="mKF-0X-Hbg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Az8-ta-urb" secondAttribute="trailing" constant="21.5" id="oQy-nJ-5PU"/>
+                            <constraint firstAttribute="trailing" secondItem="mNi-rn-t0Y" secondAttribute="trailing" id="of1-QO-qDb"/>
+                            <constraint firstItem="SRG-oT-Rfv" firstAttribute="top" secondItem="Az8-ta-urb" secondAttribute="bottom" constant="25" id="qnT-AL-HLH"/>
+                            <constraint firstItem="mNi-rn-t0Y" firstAttribute="top" secondItem="Dcg-88-Geo" secondAttribute="top" id="t6L-yE-5jG"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="mNi-rn-t0Y"/>
+                                <exclude reference="exd-Eq-J0a"/>
+                                <exclude reference="Az8-ta-urb"/>
+                                <exclude reference="mAy-le-fFM"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="DnX-LC-H8f"/>
+                                <exclude reference="of1-QO-qDb"/>
+                                <exclude reference="t6L-yE-5jG"/>
+                                <exclude reference="4ry-oK-iYL"/>
+                                <exclude reference="BLW-cM-WIy"/>
+                                <exclude reference="4AZ-Fs-bSQ"/>
+                                <exclude reference="jaS-2p-g6c"/>
+                                <exclude reference="oQy-nJ-5PU"/>
+                                <exclude reference="Bt0-zl-8N4"/>
+                                <exclude reference="ae0-Vh-MsR"/>
+                                <exclude reference="mKF-0X-Hbg"/>
+                                <exclude reference="qnT-AL-HLH"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="mNi-rn-t0Y"/>
+                                <include reference="exd-Eq-J0a"/>
+                                <include reference="Az8-ta-urb"/>
+                                <include reference="mAy-le-fFM"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="DnX-LC-H8f"/>
+                                <include reference="of1-QO-qDb"/>
+                                <include reference="t6L-yE-5jG"/>
+                                <include reference="4ry-oK-iYL"/>
+                                <include reference="BLW-cM-WIy"/>
+                                <include reference="4AZ-Fs-bSQ"/>
+                                <include reference="jaS-2p-g6c"/>
+                                <include reference="oQy-nJ-5PU"/>
+                                <include reference="Bt0-zl-8N4"/>
+                                <include reference="ae0-Vh-MsR"/>
+                                <include reference="mKF-0X-Hbg"/>
+                                <include reference="qnT-AL-HLH"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dFI-QC-vrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="405" y="1402.5"/>
         </scene>
     </scenes>
     <resources>
