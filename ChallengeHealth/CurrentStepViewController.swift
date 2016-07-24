@@ -25,7 +25,7 @@ class CurrentStepViewController: UIViewController {
         
         goalLabel.text! = goal
         stepLabel.text! = step
-        stepIndexLabel.text! = stepIndex
+        //stepIndexLabel.text! = stepIndex
         
         print(goalKey)
         
@@ -53,7 +53,24 @@ class CurrentStepViewController: UIViewController {
             self.presentViewController(vc, animated: false, completion: nil)
         }
         
+        var handle : FIRAuthStateDidChangeListenerHandle
         
+        handle = (FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
+            if let user = user {
+                // User is signed in.
+                let uid = user.uid;
+                
+                DAO.USERS_REF.child(uid).observeEventType(.ChildAdded, withBlock: { (snapshot) in
+                    
+                    if snapshot.key == "currentStepNumber" {
+                        self.stepIndexLabel.text! = String(snapshot.value!)
+                    }
+                    
+                })
+            }
+        })!
+        
+        FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
     }
     
 //    @IBAction func backButtonWasTapped(sender: AnyObject) {

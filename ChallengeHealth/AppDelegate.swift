@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let user = user {
                 // User is signed in.
                 let uid = user.uid;
+                print("qqqqqqqq")
                 
                 DAO.USERS_REF.child(uid).observeEventType(.ChildAdded, withBlock: { (snapshot) in
                     
@@ -42,9 +43,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                 })
             }
-            })!
+            else {
+                print("OIR")
+                self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = mainStoryboard.instantiateViewControllerWithIdentifier("LoginVC")
+                self.window?.rootViewController = vc
+                
+                self.window?.makeKeyAndVisible()
+            }
+        })!
         
         FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
+        
+//         if FIRAuth.auth()?.currentUser == nil {
+//            print("OIR")
+//            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = mainStoryboard.instantiateViewControllerWithIdentifier("LoginVC")
+//            self.window?.rootViewController = vc
+//        }
+        
+        
         return true
     }
     
