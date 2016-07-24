@@ -11,6 +11,7 @@
 		0661FE7B1D4132250075DCCA /* UserSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0661FE7A1D4132250075DCCA /* UserSettingsTableViewCell.swift */; };
 		069B0FBA1D3F2F0F000818F0 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B0FB91D3F2F0F000818F0 /* UserSettingsViewController.swift */; };
 		06A9D4D01D4558AC00296130 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A9D4CF1D4558AC00296130 /* AboutUsViewController.swift */; };
+		06A9D4D21D45619400296130 /* EmergencyPhonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A9D4D11D45619400296130 /* EmergencyPhonesViewController.swift */; };
 		A7D27DD2CE4F11ABD87D5D64 /* Pods_ChallengeHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007A7E7652F5C10253E2FBED /* Pods_ChallengeHealth.framework */; };
 		E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */; };
 		E14948C41D35680E00BB8FB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14948C21D35680E00BB8FB2 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		0661FE7A1D4132250075DCCA /* UserSettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		069B0FB91D3F2F0F000818F0 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		06A9D4CF1D4558AC00296130 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		06A9D4D11D45619400296130 /* EmergencyPhonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyPhonesViewController.swift; sourceTree = "<group>"; };
 		28BB55857FF9BEA5F2C9F59E /* Pods-ChallengeHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth.debug.xcconfig"; sourceTree = "<group>"; };
 		B9EFA970596509DFC9D39CF7 /* Pods-ChallengeHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth.release.xcconfig"; sourceTree = "<group>"; };
 		E14948BB1D35680D00BB8FB2 /* ChallengeHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				06A9D4CF1D4558AC00296130 /* AboutUsViewController.swift */,
+				06A9D4D11D45619400296130 /* EmergencyPhonesViewController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				06A9D4D01D4558AC00296130 /* AboutUsViewController.swift in Sources */,
 				E1BD0CBB1D3D48C300EC26BA /* ConfigViewController.swift in Sources */,
 				E14948D71D356B1E00BB8FB2 /* SignUpViewController.swift in Sources */,
+				06A9D4D21D45619400296130 /* EmergencyPhonesViewController.swift in Sources */,
 				069B0FBA1D3F2F0F000818F0 /* UserSettingsViewController.swift in Sources */,
 				E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */,
 				060E2BF61D3F597D00097E81 /* extensionUserSettingsViewController.swift in Sources */,
