@@ -628,9 +628,8 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GM7-TS-y7z">
+                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balaozinhoBoddi" translatesAutoresizingMaskIntoConstraints="NO" id="GM7-TS-y7z">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="GM7-TS-y7z" secondAttribute="height" multiplier="329:136" id="P36-Jl-sVm"/>
                                 </constraints>
@@ -800,7 +799,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPR-Lz-qBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1101" y="2152.5"/>
+            <point key="canvasLocation" x="-1101" y="2127"/>
         </scene>
         <!--Config View Controller-->
         <scene sceneID="ge7-6A-zL0">
@@ -2189,7 +2188,7 @@
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="azd-dk-oUD">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ubG-du-kiW">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="11" minimumInteritemSpacing="0.0" id="ubG-du-kiW">
                                     <size key="itemSize" width="358" height="66"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -2215,7 +2214,7 @@
                                                                 <rect key="frame" x="68" y="271" width="185" height="118"/>
                                                             </variation>
                                                             <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                                <rect key="frame" x="49" y="0.0" width="262" height="46"/>
+                                                                <rect key="frame" x="49" y="-1" width="262" height="46"/>
                                                             </variation>
                                                         </label>
                                                     </subviews>
@@ -2226,7 +2225,7 @@
                                                         </mask>
                                                     </variation>
                                                     <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="39" y="13" width="319" height="46"/>
+                                                        <rect key="frame" x="39" y="13" width="319" height="43"/>
                                                         <mask key="subviews">
                                                             <include reference="O5y-rb-Soy"/>
                                                         </mask>

@@ -36,8 +36,15 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     // MARK: UICollectionView
     
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+<<<<<<< 9eb4bac8b40768a2b4e9ca7f1a2c4fd1cb1aaaff
         
+=======
+>>>>>>> Change Goals Collection View cells spacing
         return goals.count
     }
     
@@ -49,6 +56,7 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
         cell.configureCell(goal)
         cell.backgroundColor = UIColor.clearColor()
         
+<<<<<<< 9eb4bac8b40768a2b4e9ca7f1a2c4fd1cb1aaaff
         print(goal.name)
 
         return cell
@@ -59,6 +67,11 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         return CGSizeMake(UIScreen.mainScreen().bounds.size.width, 150)
     }
+=======
+        return cell
+    }
+
+>>>>>>> Change Goals Collection View cells spacing
     
     
     // MARK: Navigation
