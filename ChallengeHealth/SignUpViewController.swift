@@ -3,17 +3,45 @@ import Firebase
 
 class SignUpViewController: UIViewController {
     
+<<<<<<< 1923bc81d1d21250a2ce3bbfc444edc9f57f0fcd
     @IBOutlet weak var nameTextField: UITextField!
+=======
+    @IBOutlet weak var returnButton: UIButton!
+    @IBOutlet weak var nameView: UIView!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailPasswordView: UIView!
+>>>>>>> Add SignUpVC with proper constraints
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var confirmEmailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        emailPasswordView.hidden = true
+    }
+    @IBAction func returnButtonWasTapped(sender: AnyObject) {
+        
+        if emailPasswordView.hidden == true {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        else {
+            emailPasswordView.hidden = true
+            nameView.hidden = false
+        }
+    }
+    
+    @IBAction func confirmNameButtonWasTapped(sender: AnyObject) {
+        
+        nameView.hidden = true
+        returnButton.hidden = false
+        emailPasswordView.hidden = false
     }
     
     // função auxiliar para analisar regex
     func containsMatch(pattern: String, inString string: String) -> Bool {
+        
         let regex : NSRegularExpression
         
         do {
@@ -29,14 +57,11 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    @IBAction func backButtonWasTapped(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
     @IBAction func signUpButtonWasTapped(sender: AnyObject) {
         
         let name = nameTextField.text
         let email = emailTextField.text
+        let confirmEmail = confirmEmailTextField.text
         let password = passwordTextField.text
         let confirmPassword = confirmPasswordTextField.text
         
@@ -57,6 +82,17 @@ class SignUpViewController: UIViewController {
             
             let alertView = UIAlertController(title: "Problema no cadastro",
                                               message: "Formato de email não reconhecido." as String, preferredStyle:.Alert)
+            let okAction = UIAlertAction(title: "Tentar novamente", style: .Default, handler: nil)
+            alertView.addAction(okAction)
+            self.presentViewController(alertView, animated: true, completion: nil)
+            
+            return;
+        }
+        
+        if (email != confirmEmail) {
+            
+            let alertView = UIAlertController(title: "Problema no cadastro",
+                                              message: "Os emails inseridos não coincidem." as String, preferredStyle:.Alert)
             let okAction = UIAlertAction(title: "Tentar novamente", style: .Default, handler: nil)
             alertView.addAction(okAction)
             self.presentViewController(alertView, animated: true, completion: nil)
