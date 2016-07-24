@@ -208,7 +208,7 @@
                                     <navigationItem title="Title" id="IM2-GZ-MtJ">
                                         <barButtonItem key="leftBarButtonItem" title="voltar" id="fP4-6j-aUg">
                                             <connections>
-                                                <action selector="backButtonWasTapped:" destination="ccJ-zZ-euW" id="vAl-HF-zY9"/>
+                                                <segue destination="M09-aU-hvx" kind="presentation" identifier="goToGoals" id="3i2-ma-zgA"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="config" id="0SL-c2-r7U">
@@ -277,7 +277,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="141"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WTQ-dH-Zgt" id="3tK-e6-QHU">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="141"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="140.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hD-Nu-wIu" userLabel="Menu View">
@@ -530,6 +530,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jaO-aH-N2k"/>
+        <segue reference="dn1-Py-aEp"/>
     </inferredMetricsTieBreakers>
 </document>

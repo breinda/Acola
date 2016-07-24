@@ -107,6 +107,8 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
                 })!
             
             FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
     

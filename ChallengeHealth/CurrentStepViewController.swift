@@ -56,31 +56,61 @@ class CurrentStepViewController: UIViewController {
         
     }
     
-    @IBAction func backButtonWasTapped(sender: AnyObject) {
-        
-        // seta o step atual do usuário como 0 -- saber se view inicial é a de goals ou a de currentStep
-        var handle : FIRAuthStateDidChangeListenerHandle
-        
-        handle = (FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
-            if let user = user {
-                // User is signed in.
-                let uid = user.uid;
-                
-                DAO.USERS_REF.child(uid).observeEventType(.ChildAdded, withBlock: { (snapshot) in
+//    @IBAction func backButtonWasTapped(sender: AnyObject) {
+//        
+//        // seta o step atual do usuário como 0 -- saber se view inicial é a de goals ou a de currentStep
+//        var handle : FIRAuthStateDidChangeListenerHandle
+//        
+//        handle = (FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
+//            if let user = user {
+//                // User is signed in.
+//                let uid = user.uid;
+//                
+//                DAO.USERS_REF.child(uid).observeEventType(.ChildAdded, withBlock: { (snapshot) in
+//                    
+//                    if snapshot.key == "currentStepNumber" {
+//                        let childUpdates = [snapshot.key: "0"]
+//                        DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
+//                    }
+//                    
+//                })
+//            }
+//            })!
+//        
+//        FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
+//        
+//        self.dismissViewControllerAnimated(true, completion: nil)
+//    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "goToGoals" {
+            
+            // seta o step atual do usuário como 0 -- saber se view inicial é a de goals ou a de currentStep
+            var handle : FIRAuthStateDidChangeListenerHandle
+            
+            handle = (FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
+                if let user = user {
+                    // User is signed in.
+                    let uid = user.uid;
                     
-                    if snapshot.key == "currentStepNumber" {
-                        let childUpdates = [snapshot.key: "0"]
-                        DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
-                    }
-                    
-                })
-            }
-            })!
-        
-        FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
+                    DAO.USERS_REF.child(uid).observeEventType(.ChildAdded, withBlock: { (snapshot) in
+                        
+                        if snapshot.key == "currentStepNumber" {
+                            let childUpdates = [snapshot.key: "0"]
+                            DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
+                        }
+                        
+                    })
+                }
+                })!
+            
+            FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
+    
     
     @IBAction func doneWasTapped(sender: AnyObject) {
         let alertView = UIAlertController(title: "UAU!",
