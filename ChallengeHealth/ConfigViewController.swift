@@ -14,7 +14,7 @@ class ConfigViewController: UIViewController {
             for profile in user.providerData {
                 let email = profile.email
                 //nameLabel.text! = name!
-                emailLabel.text! = email!
+                //emailLabel.text! = email!
             }
         }
     }
