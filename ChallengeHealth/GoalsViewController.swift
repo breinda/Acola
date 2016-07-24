@@ -102,6 +102,11 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
                             DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
                         }
                         
+                        if snapshot.key == "currentGoalKey" {
+                            let childUpdates = [snapshot.key: goal.key]
+                            DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
+                        }
+                        
                     })
                 }
                 })!

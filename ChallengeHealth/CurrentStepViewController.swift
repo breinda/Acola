@@ -118,6 +118,11 @@ class CurrentStepViewController: UIViewController {
                             DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
                         }
                         
+                        if snapshot.key == "currentGoalKey" {
+                            let childUpdates = [snapshot.key: ""]
+                            DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
+                        }
+                        
                     })
                 }
                 })!
