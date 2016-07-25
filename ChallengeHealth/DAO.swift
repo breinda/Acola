@@ -1,5 +1,6 @@
 import Foundation
 import Firebase
+import FirebaseAuth
 
 let rootReference = FIRDatabase.database().reference()
 
@@ -17,12 +18,4 @@ class DAO {
     static func login(username: String, password: String, callback: FIRAuthResultCallback) {
         FIRAuth.auth()?.signInWithEmail(username, password: password, completion: callback)
     }
-    
-//    static func fetchStdGoalsFromServer(callback: (Goal) -> ()) {
-//        DAO.STD_GOALS_REF.observeEventType(.ChildAdded, withBlock: { (snapshot) in
-//            let goal = Goal(key: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>)
-//            callback(goal)
-//        })
-//    }
-    
 }

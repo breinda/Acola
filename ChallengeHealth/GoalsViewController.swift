@@ -1,6 +1,6 @@
 import UIKit
 import Firebase
-//import FirebaseAuth
+import FirebaseAuth
 
 class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
@@ -41,10 +41,6 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-<<<<<<< 9eb4bac8b40768a2b4e9ca7f1a2c4fd1cb1aaaff
-        
-=======
->>>>>>> Change Goals Collection View cells spacing
         return goals.count
     }
     
@@ -55,23 +51,9 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         cell.configureCell(goal)
         cell.backgroundColor = UIColor.clearColor()
-        
-<<<<<<< 9eb4bac8b40768a2b4e9ca7f1a2c4fd1cb1aaaff
-        print(goal.name)
 
         return cell
     }
-    
-    // faz as células expandirem até os cantos da tela!
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        
-        return CGSizeMake(UIScreen.mainScreen().bounds.size.width, 150)
-    }
-=======
-        return cell
-    }
-
->>>>>>> Change Goals Collection View cells spacing
     
     
     // MARK: Navigation

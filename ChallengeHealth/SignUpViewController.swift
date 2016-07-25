@@ -1,16 +1,14 @@
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class SignUpViewController: UIViewController {
     
-<<<<<<< 1923bc81d1d21250a2ce3bbfc444edc9f57f0fcd
-    @IBOutlet weak var nameTextField: UITextField!
-=======
+
     @IBOutlet weak var returnButton: UIButton!
     @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailPasswordView: UIView!
->>>>>>> Add SignUpVC with proper constraints
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var confirmEmailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
