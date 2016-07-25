@@ -19,6 +19,7 @@ class CurrentStepViewController: UIViewController {
 
     //@IBOutlet weak var goalLabel: UILabel!
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
