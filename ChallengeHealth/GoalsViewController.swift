@@ -74,13 +74,6 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
             currentStepVC.goal = goal.name
             currentStepVC.step = goal.firstStep.name
             currentStepVC.goalKey = goal.key
-//            currentStepVC.goalLabel.text! = ""
-//            currentStepVC.stepLabel.text! = ""
-//            currentStepVC.stepIndexLabel.text! = ""
-//            
-//            currentStepVC.viewDidLoad()
-            
-            //currentStepVC.viewDidAppear(false)
             
             // seta o step atual do usuário como 1 -- saber se view inicial é a de goals ou a de currentStep
             var handle : FIRAuthStateDidChangeListenerHandle

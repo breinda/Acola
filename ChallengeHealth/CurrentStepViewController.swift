@@ -5,20 +5,16 @@ class CurrentStepViewController: UIViewController {
     
     var goal: String = ""
     var step: String = ""
+    
     var stepIndex: String = "1"
-    
-    // vars pra que eu possa achar o step atual no DB
     var goalKey: String = "goalKey"
-    //var stepKey: String = "1"
-    //var stepKeyInt: Int = 1
-    
+
     var steps = [Step]()
     
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var stepLabel: UILabel!
     @IBOutlet weak var stepIndexLabel: UILabel!
     
-    var currentStep: Step!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,7 +128,9 @@ class CurrentStepViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print("IOIOIOI")
         if segue.identifier == "goToGoals" {
+            print("ENTREY")
             
             // seta o step atual do usuário como 0 -- saber se view inicial é a de goals ou a de currentStep
             var handle : FIRAuthStateDidChangeListenerHandle
@@ -164,6 +162,7 @@ class CurrentStepViewController: UIViewController {
     }
     
     @IBAction func doneWasTapped(sender: AnyObject) {
+
         let alertView = UIAlertController(title: "UAU!",
                                           message: "você se sente totalmente confortável com o passo atual?" as String, preferredStyle:.ActionSheet)
         let okAction = UIAlertAction(title: "sim, bora próximo passo", style: .Default) { UIAlertAction in
@@ -177,22 +176,30 @@ class CurrentStepViewController: UIViewController {
                     DAO.USERS_REF.child(uid).observeEventType(.ChildAdded, withBlock: { (snapshot) in
                         
                         if snapshot.key == "currentStepNumber" {
+                            
                             let updateStepString = snapshot.value as! String
                             var updateStepInt = Int(updateStepString)
-                            updateStepInt = updateStepInt! + 1
                             
-                            let childUpdates = [snapshot.key: String(updateStepInt!)]
-                            DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
-                            
-                            self.stepIndex = String(updateStepInt!)
-                            self.step = self.steps[Int(self.stepIndex)!].name
-                            
-                            self.viewDidAppear(false)
+                            // se estivermos no ultimo passo, segue de volta pra tela de goals
+                            if (self.steps[updateStepInt! - 1].isLastStep == true) {
+                                self.performSegueWithIdentifier("goToGoals", sender: self)
+                            }
+                            else {
+                                updateStepInt = updateStepInt! + 1
+                                
+                                self.stepIndex = String(updateStepInt!)
+                                self.step = self.steps[Int(self.stepIndex)! - 1].name
+                                
+                                let childUpdates = [snapshot.key: String(updateStepInt!)]
+                                DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
+                                
+                                self.viewDidAppear(false)
+                            }
                         }
                         
                     })
                 }
-                })!
+            })!
             
             FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
         }
