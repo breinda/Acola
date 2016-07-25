@@ -28,6 +28,51 @@ class CurrentStepViewController: UIViewController {
         goalLabel.text! = goal
         stepLabel.text! = step
         stepIndexLabel.text! = stepIndex
+        
+        // bota todos os steps referentes ao goal atual num array de steps, pra gente nao ficar perdendo tempo procurando esse treco no banco toda hora
+        var handle : FIRAuthStateDidChangeListenerHandle
+        
+        handle = (FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
+            if let user = user {
+                // User is signed in.
+                let uid = user.uid;
+                
+                DAO.USERS_REF.observeEventType(.ChildAdded, withBlock: { (snapshotUser) in
+                    if snapshotUser.key == uid {
+                        //let userDict = snapshotUser.value as! NSDictionary
+                        
+                        self.stepIndexLabel.text! = snapshotUser.value!["currentStepNumber"] as! String
+                        self.stepIndex = snapshotUser.value!["currentStepNumber"] as! String
+                        self.goalKey = snapshotUser.value!["currentGoalKey"] as! String
+                        
+                        if let safeGoalKey = snapshotUser.value!["currentGoalKey"] {
+                            // pega o nome do goal atual e bota na label
+                            DAO.STD_GOALS_REF.child(String(safeGoalKey)).observeEventType(.ChildAdded, withBlock: { (snapshotGoal) in
+                                
+                                if snapshotGoal.key == "name" {
+                                    self.goal = String(snapshotGoal.value!)
+                                    self.goalLabel.text! = String(snapshotGoal.value!)
+                                    
+                                    DAO.STD_STEPS_REF.child(String(safeGoalKey)).observeEventType(.ChildAdded, withBlock: { (snapshotSteps) in
+                                        
+                                        self.steps.append(Step(index: snapshotSteps.key, snapshot: snapshotSteps.value as! Dictionary<String, AnyObject>))
+                                        
+                                        //print(self.steps.last!.name)
+                                        
+                                        if snapshotSteps.key == self.stepIndex {
+                                            self.stepLabel.text! = snapshotSteps.value!["name"] as! String
+                                            self.step = snapshotSteps.value!["name"] as! String
+                                        }
+                                    })
+                                }
+                            })
+                        }
+                    }
+                })
+            }
+            })!
+        
+        FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -59,7 +104,6 @@ class CurrentStepViewController: UIViewController {
                         
                         self.stepIndexLabel.text! = snapshotUser.value!["currentStepNumber"] as! String
                         self.stepIndex = snapshotUser.value!["currentStepNumber"] as! String
-                        
                         self.goalKey = snapshotUser.value!["currentGoalKey"] as! String
                         
                         // pega o nome do goal atual e bota na label
@@ -72,8 +116,7 @@ class CurrentStepViewController: UIViewController {
                                 DAO.STD_STEPS_REF.child(self.goalKey).observeEventType(.ChildAdded, withBlock: { (snapshotSteps) in
                                     
                                     self.steps.append(Step(index: snapshotSteps.key, snapshot: snapshotSteps.value as! Dictionary<String, AnyObject>))
-                                    
-                                    
+
                                     if snapshotSteps.key == self.stepIndex {
                                         self.stepLabel.text! = snapshotSteps.value!["name"] as! String
                                     }
@@ -83,7 +126,7 @@ class CurrentStepViewController: UIViewController {
                     }
                 })
             }
-        })!
+            })!
         
         FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
     }
@@ -112,14 +155,13 @@ class CurrentStepViewController: UIViewController {
                         }
                     })
                 }
-            })!
+                })!
             
             FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
             
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
-    
     
     @IBAction func doneWasTapped(sender: AnyObject) {
         let alertView = UIAlertController(title: "UAU!",
@@ -141,6 +183,10 @@ class CurrentStepViewController: UIViewController {
                             
                             let childUpdates = [snapshot.key: String(updateStepInt!)]
                             DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
+                            
+                            self.stepIndex = String(updateStepInt!)
+                            self.step = self.steps[Int(self.stepIndex)!].name
+                            
                             self.viewDidAppear(false)
                         }
                         

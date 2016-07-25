@@ -14,18 +14,7 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
         DAO.STD_GOALS_REF.observeEventType(.ChildAdded, withBlock: { (snapshot) in
             
             self.goals.append(Goal(key: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
-            
-//            print("goals.last.name")
-//            print(self.goals.last?.name)
-//            print("goals.last.description")
-//            print(self.goals.last?.description)
-//            print("goals.last.key")
-//            print(self.goals.last?.key)
-//            print("goals.last.firstStep.name")
-//            print(self.goals.last?.firstStep.name)
-//            print("goals.last.firstStep.index")
-//            print(self.goals.last?.firstStep.index)
-            
+
             self.goalsCollectionView.reloadData()
         })
         
@@ -85,7 +74,13 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
             currentStepVC.goal = goal.name
             currentStepVC.step = goal.firstStep.name
             currentStepVC.goalKey = goal.key
+//            currentStepVC.goalLabel.text! = ""
+//            currentStepVC.stepLabel.text! = ""
+//            currentStepVC.stepIndexLabel.text! = ""
+//            
+//            currentStepVC.viewDidLoad()
             
+            //currentStepVC.viewDidAppear(false)
             
             // seta o step atual do usuário como 1 -- saber se view inicial é a de goals ou a de currentStep
             var handle : FIRAuthStateDidChangeListenerHandle
@@ -109,7 +104,7 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
                         
                     })
                 }
-                })!
+            })!
             
             FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
             
