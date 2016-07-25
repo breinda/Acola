@@ -14,18 +14,7 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
         DAO.STD_GOALS_REF.observeEventType(.ChildAdded, withBlock: { (snapshot) in
             
             self.goals.append(Goal(key: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
-            
-//            print("goals.last.name")
-//            print(self.goals.last?.name)
-//            print("goals.last.description")
-//            print(self.goals.last?.description)
-//            print("goals.last.key")
-//            print(self.goals.last?.key)
-//            print("goals.last.firstStep.name")
-//            print(self.goals.last?.firstStep.name)
-//            print("goals.last.firstStep.index")
-//            print(self.goals.last?.firstStep.index)
-            
+
             self.goalsCollectionView.reloadData()
         })
         
@@ -85,6 +74,34 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
             currentStepVC.goal = goal.name
             currentStepVC.step = goal.firstStep.name
             currentStepVC.goalKey = goal.key
+            
+            // seta o step atual do usuário como 1 -- saber se view inicial é a de goals ou a de currentStep
+            var handle : FIRAuthStateDidChangeListenerHandle
+            
+            handle = (FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
+                if let user = user {
+                    // User is signed in.
+                    let uid = user.uid;
+                    
+                    DAO.USERS_REF.child(uid).observeEventType(.ChildAdded, withBlock: { (snapshot) in
+                        
+                        if snapshot.key == "currentStepNumber" {
+                            let childUpdates = [snapshot.key: "1"]
+                            DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
+                        }
+                        
+                        if snapshot.key == "currentGoalKey" {
+                            let childUpdates = [snapshot.key: goal.key]
+                            DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
+                        }
+                        
+                    })
+                }
+            })!
+            
+            FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
+            
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
     

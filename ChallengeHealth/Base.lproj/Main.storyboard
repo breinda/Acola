@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="M09-aU-hvx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -57,7 +57,7 @@
         <!--Goals View Controller-->
         <scene sceneID="NKB-Qk-4jO">
             <objects>
-                <viewController id="M09-aU-hvx" customClass="GoalsViewController" customModule="ChallengeHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GoalsVC" id="M09-aU-hvx" customClass="GoalsViewController" customModule="ChallengeHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YHy-lE-MdK"/>
                         <viewControllerLayoutGuide type="bottom" id="ppW-hH-TGv"/>
@@ -170,7 +170,7 @@
         <!--Current Step View Controller-->
         <scene sceneID="x8q-rl-f4q">
             <objects>
-                <viewController id="ccJ-zZ-euW" customClass="CurrentStepViewController" customModule="ChallengeHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="currentStepVC" id="ccJ-zZ-euW" customClass="CurrentStepViewController" customModule="ChallengeHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tdd-Q5-bFs"/>
                         <viewControllerLayoutGuide type="bottom" id="Imv-S6-AK6"/>
@@ -208,7 +208,7 @@
                                     <navigationItem title="Title" id="IM2-GZ-MtJ">
                                         <barButtonItem key="leftBarButtonItem" title="voltar" id="fP4-6j-aUg">
                                             <connections>
-                                                <action selector="backButtonWasTapped:" destination="ccJ-zZ-euW" id="vAl-HF-zY9"/>
+                                                <segue destination="M09-aU-hvx" kind="presentation" identifier="goToGoals" id="3i2-ma-zgA"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="config" id="0SL-c2-r7U">
@@ -277,7 +277,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="141"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WTQ-dH-Zgt" id="3tK-e6-QHU">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="141"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="140.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hD-Nu-wIu" userLabel="Menu View">

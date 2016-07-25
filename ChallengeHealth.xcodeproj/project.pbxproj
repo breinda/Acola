@@ -113,6 +113,7 @@
 		E1BD0CC01D3D614100EC26BA /* Structs */ = {
 			isa = PBXGroup;
 			children = (
+				E1F849391D416D3700AF3E4D /* User.swift */,
 				E1BD0CBC1D3D522300EC26BA /* Goal.swift */,
 				E1DCF4901D3F3EAF005479D6 /* Step.swift */,
 			);
@@ -122,7 +123,6 @@
 		E1BD0CC11D3D616A00EC26BA /* User */ = {
 			isa = PBXGroup;
 			children = (
-				E1F849391D416D3700AF3E4D /* User.swift */,
 				E14948D41D356AFA00BB8FB2 /* LoginViewController.swift */,
 				E14948D61D356B1E00BB8FB2 /* SignUpViewController.swift */,
 				E1BD0CBA1D3D48C300EC26BA /* ConfigViewController.swift */,
