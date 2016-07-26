@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
                                 
                                 if userStepNumber == "0" {
                                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                    let vc = storyboard.instantiateViewControllerWithIdentifier("GoalsVC")
+                                    let vc = storyboard.instantiateViewControllerWithIdentifier("goalsVC")
                                     self.presentViewController(vc, animated: false, completion: nil)
                                 }
                                 else {
