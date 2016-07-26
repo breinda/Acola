@@ -1,11 +1,12 @@
 import UIKit
 import Firebase
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         FIRApp.configure()
         
@@ -15,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let user = user {
                 // User is signed in.
                 let uid = user.uid;
-                print("qqqqqqqq")
                 
                 DAO.USERS_REF.child(uid).observeEventType(.ChildAdded, withBlock: { (snapshot) in
                     
@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         if userStepNumber == "0" {
                             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
                             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                            let vc = mainStoryboard.instantiateViewControllerWithIdentifier("GoalsVC")
+                            let vc = mainStoryboard.instantiateViewControllerWithIdentifier("goalsVC")
                             self.window?.rootViewController = vc
                         }
                         else {
@@ -47,23 +47,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("OIR")
                 self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
                 let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = mainStoryboard.instantiateViewControllerWithIdentifier("LoginVC")
+                let vc = mainStoryboard.instantiateViewControllerWithIdentifier("loginVC")
                 self.window?.rootViewController = vc
                 
                 self.window?.makeKeyAndVisible()
             }
-        })!
+            })!
         
         FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
-        
-//         if FIRAuth.auth()?.currentUser == nil {
-//            print("OIR")
-//            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-//            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = mainStoryboard.instantiateViewControllerWithIdentifier("LoginVC")
-//            self.window?.rootViewController = vc
-//        }
-        
         
         return true
     }

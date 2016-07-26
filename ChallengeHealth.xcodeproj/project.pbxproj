@@ -10,9 +10,14 @@
 		060E2BF61D3F597D00097E81 /* extensionUserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060E2BF51D3F597D00097E81 /* extensionUserSettingsViewController.swift */; };
 		0661FE7B1D4132250075DCCA /* UserSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0661FE7A1D4132250075DCCA /* UserSettingsTableViewCell.swift */; };
 		069B0FBA1D3F2F0F000818F0 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B0FB91D3F2F0F000818F0 /* UserSettingsViewController.swift */; };
+		06A9D4D01D4558AC00296130 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A9D4CF1D4558AC00296130 /* AboutUsViewController.swift */; };
+		06A9D4D21D45619400296130 /* EmergencyPhonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A9D4D11D45619400296130 /* EmergencyPhonesViewController.swift */; };
+		06C51C651D470F7700409C26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06C51C641D470F7700409C26 /* Main.storyboard */; };
+		06C51C671D47157100409C26 /* extensionGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C51C661D47157100409C26 /* extensionGoalsViewController.swift */; };
+		06FF1B5C1D481CC700953BAE /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B5B1D481CC700953BAE /* SegueFromRight.swift */; };
+		06FF1B5E1D482CCB00953BAE /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B5D1D482CCB00953BAE /* TextField.swift */; };
 		A7D27DD2CE4F11ABD87D5D64 /* Pods_ChallengeHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007A7E7652F5C10253E2FBED /* Pods_ChallengeHealth.framework */; };
 		E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */; };
-		E14948C41D35680E00BB8FB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14948C21D35680E00BB8FB2 /* Main.storyboard */; };
 		E14948C61D35680E00BB8FB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E14948C51D35680E00BB8FB2 /* Assets.xcassets */; };
 		E14948C91D35680E00BB8FB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14948C71D35680E00BB8FB2 /* LaunchScreen.storyboard */; };
 		E14948D31D35684500BB8FB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E14948D21D35684500BB8FB2 /* GoogleService-Info.plist */; };
@@ -33,11 +38,16 @@
 		060E2BF51D3F597D00097E81 /* extensionUserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionUserSettingsViewController.swift; sourceTree = "<group>"; };
 		0661FE7A1D4132250075DCCA /* UserSettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsTableViewCell.swift; sourceTree = "<group>"; };
 		069B0FB91D3F2F0F000818F0 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
+		06A9D4CF1D4558AC00296130 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		06A9D4D11D45619400296130 /* EmergencyPhonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyPhonesViewController.swift; sourceTree = "<group>"; };
+		06C51C641D470F7700409C26 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		06C51C661D47157100409C26 /* extensionGoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionGoalsViewController.swift; sourceTree = "<group>"; };
+		06FF1B5B1D481CC700953BAE /* SegueFromRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueFromRight.swift; sourceTree = "<group>"; };
+		06FF1B5D1D482CCB00953BAE /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		28BB55857FF9BEA5F2C9F59E /* Pods-ChallengeHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth.debug.xcconfig"; sourceTree = "<group>"; };
 		B9EFA970596509DFC9D39CF7 /* Pods-ChallengeHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth.release.xcconfig"; sourceTree = "<group>"; };
 		E14948BB1D35680D00BB8FB2 /* ChallengeHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E14948C31D35680E00BB8FB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E14948C51D35680E00BB8FB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E14948C81D35680E00BB8FB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E14948CA1D35680E00BB8FB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06A9D4CE1D45583D00296130 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				06A9D4CF1D4558AC00296130 /* AboutUsViewController.swift */,
+				06A9D4D11D45619400296130 /* EmergencyPhonesViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		8891A6AFDC4F8CE0A11D9C78 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,11 +120,13 @@
 				E1BD0CC41D3D679400EC26BA /* Goals and Steps */,
 				E1BD0CC01D3D614100EC26BA /* Structs */,
 				E1DCF4921D3F3EC5005479D6 /* Cells */,
-				E14948C21D35680E00BB8FB2 /* Main.storyboard */,
+				06A9D4CE1D45583D00296130 /* Settings */,
 				E14948C51D35680E00BB8FB2 /* Assets.xcassets */,
+				06C51C641D470F7700409C26 /* Main.storyboard */,
 				E14948C71D35680E00BB8FB2 /* LaunchScreen.storyboard */,
 				E14948CA1D35680E00BB8FB2 /* Info.plist */,
 				E14948D21D35684500BB8FB2 /* GoogleService-Info.plist */,
+				06FF1B5B1D481CC700953BAE /* SegueFromRight.swift */,
 			);
 			path = ChallengeHealth;
 			sourceTree = "<group>";
@@ -128,6 +149,7 @@
 				E1BD0CBA1D3D48C300EC26BA /* ConfigViewController.swift */,
 				069B0FB91D3F2F0F000818F0 /* UserSettingsViewController.swift */,
 				060E2BF51D3F597D00097E81 /* extensionUserSettingsViewController.swift */,
+				06FF1B5D1D482CCB00953BAE /* TextField.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -136,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				E1BD0CB81D3D463400EC26BA /* GoalsViewController.swift */,
+				06C51C661D47157100409C26 /* extensionGoalsViewController.swift */,
 				E1BD0CC21D3D61C500EC26BA /* CurrentStepViewController.swift */,
 			);
 			name = "Goals and Steps";
@@ -166,6 +189,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E14948CD1D35680E00BB8FB2 /* Build configuration list for PBXNativeTarget "ChallengeHealth" */;
 			buildPhases = (
+				BE3BC549F17ADD069412ACC4 /* 📦 Check Pods Manifest.lock */,
 				1635D181219142EF994FB2E3 /* [CP] Check Pods Manifest.lock */,
 				0F97B991B74E6C85317ADB10 /* [CP] Check Pods Manifest.lock */,
 				0FC09C221BE75A791AB8BF5D /* [CP] Check Pods Manifest.lock */,
@@ -226,8 +250,8 @@
 			files = (
 				E14948C91D35680E00BB8FB2 /* LaunchScreen.storyboard in Resources */,
 				E14948C61D35680E00BB8FB2 /* Assets.xcassets in Resources */,
-				E14948C41D35680E00BB8FB2 /* Main.storyboard in Resources */,
 				E14948D31D35684500BB8FB2 /* GoogleService-Info.plist in Resources */,
+				06C51C651D470F7700409C26 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +348,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BE3BC549F17ADD069412ACC4 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		F94C38FEA94957B24BCDDDDF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -346,17 +385,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06FF1B5C1D481CC700953BAE /* SegueFromRight.swift in Sources */,
 				E1BD0CB91D3D463400EC26BA /* GoalsViewController.swift in Sources */,
 				E14948D51D356AFA00BB8FB2 /* LoginViewController.swift in Sources */,
 				E1BD0CBD1D3D522300EC26BA /* Goal.swift in Sources */,
 				E1BD0CBF1D3D532700EC26BA /* GoalCollectionViewCell.swift in Sources */,
+				06A9D4D01D4558AC00296130 /* AboutUsViewController.swift in Sources */,
 				E1BD0CBB1D3D48C300EC26BA /* ConfigViewController.swift in Sources */,
 				E14948D71D356B1E00BB8FB2 /* SignUpViewController.swift in Sources */,
+				06A9D4D21D45619400296130 /* EmergencyPhonesViewController.swift in Sources */,
 				069B0FBA1D3F2F0F000818F0 /* UserSettingsViewController.swift in Sources */,
 				E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */,
+				06FF1B5E1D482CCB00953BAE /* TextField.swift in Sources */,
 				060E2BF61D3F597D00097E81 /* extensionUserSettingsViewController.swift in Sources */,
 				E1DCF4911D3F3EAF005479D6 /* Step.swift in Sources */,
 				0661FE7B1D4132250075DCCA /* UserSettingsTableViewCell.swift in Sources */,
+				06C51C671D47157100409C26 /* extensionGoalsViewController.swift in Sources */,
 				E1BD0CC31D3D61C500EC26BA /* CurrentStepViewController.swift in Sources */,
 				E14948D91D356B3C00BB8FB2 /* DAO.swift in Sources */,
 				E1F8493A1D416D3700AF3E4D /* User.swift in Sources */,
@@ -366,14 +410,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E14948C21D35680E00BB8FB2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E14948C31D35680E00BB8FB2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E14948C71D35680E00BB8FB2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

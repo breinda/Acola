@@ -1,10 +1,11 @@
 import UIKit
 import Firebase
-//import FirebaseAuth
+import FirebaseAuth
 
-class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class GoalsViewController: UIViewController {
 
     @IBOutlet weak var goalsCollectionView: UICollectionView!
+
     var goals = [Goal]()
     
     override func viewDidLoad() {
@@ -14,52 +15,22 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
         DAO.STD_GOALS_REF.observeEventType(.ChildAdded, withBlock: { (snapshot) in
             
             self.goals.append(Goal(key: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
-
+            
             self.goalsCollectionView.reloadData()
         })
-        
-        goalsCollectionView.delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
         // MOSTRA A TELA DE LOGIN, CASO O USUARIO NAO ESTEJA LOGADO
         if FIRAuth.auth()?.currentUser == nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewControllerWithIdentifier("LoginVC")
+            let vc = storyboard.instantiateViewControllerWithIdentifier("loginVC")
             self.presentViewController(vc, animated: false, completion: nil)
         }
         
         goalsCollectionView.backgroundColor = UIColor.clearColor()
         goalsCollectionView.reloadData()
     }
-    
-    
-    // MARK: UICollectionView
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return goals.count
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-
-        let cell = goalsCollectionView.dequeueReusableCellWithReuseIdentifier("goalCell", forIndexPath: indexPath) as! GoalCollectionViewCell
-        let goal = goals[indexPath.row]
-        
-        cell.configureCell(goal)
-        cell.backgroundColor = UIColor.clearColor()
-        
-        print(goal.name)
-
-        return cell
-    }
-    
-    // faz as células expandirem até os cantos da tela!
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        
-        return CGSizeMake(UIScreen.mainScreen().bounds.size.width, 150)
-    }
-    
     
     // MARK: Navigation
     
@@ -101,8 +72,9 @@ class GoalsViewController: UIViewController, UICollectionViewDelegate, UICollect
             
             FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
             
-            self.dismissViewControllerAnimated(true, completion: nil)
+//            self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
-    
+
 }
+

@@ -4,17 +4,17 @@ import FirebaseAuth
 
 class ConfigViewController: UIViewController {
 
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
-    
+    @IBOutlet weak var boddiLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let user = FIRAuth.auth()?.currentUser {
             for profile in user.providerData {
-                let email = profile.email
-                //nameLabel.text! = name!
-                emailLabel.text! = email!
+                //let email = profile.email
+                //let name = profile.displayName
+                //boddiLabel.text! = "Como posso lhe ajudar, \(name!)?"
+                //emailLabel.text! = email!
             }
         }
     }
