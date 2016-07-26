@@ -72,7 +72,7 @@ class GoalsViewController: UIViewController {
             
             FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
             
-            self.dismissViewControllerAnimated(true, completion: nil)
+//            self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
 

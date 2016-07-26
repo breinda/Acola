@@ -75,8 +75,9 @@ class CurrentStepViewController: UIViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
-        print("APPEAR")
-
+        
+        steps.removeAll()
+        
         // MOSTRA A TELA DE LOGIN, CASO O USUARIO NAO ESTEJA LOGADO
         if FIRAuth.auth()?.currentUser == nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -160,7 +161,7 @@ class CurrentStepViewController: UIViewController {
             
             FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
             
-            self.dismissViewControllerAnimated(true, completion: nil)
+            //self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
 
