@@ -136,12 +136,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1TY-XY-PVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-312" y="691.5"/>
+            <point key="canvasLocation" x="-305" y="455"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Rly-CZ-yrS">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="4vg-Ih-W6W" customClass="LoginViewController" customModule="ChallengeHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" id="4vg-Ih-W6W" customClass="LoginViewController" customModule="ChallengeHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AWs-uL-yWG"/>
                         <viewControllerLayoutGuide type="bottom" id="hZp-Cy-psX"/>
@@ -376,7 +376,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="voK-dD-yjE" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1135.5" y="687"/>
+            <point key="canvasLocation" x="1135" y="455"/>
         </scene>
         <!--Current Step View Controller-->
         <scene sceneID="cXU-sI-SgQ">
@@ -417,11 +417,11 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="doneWasTapped:" destination="A3f-Ci-CpH" eventType="touchUpInside" id="shT-XZ-pOf"/>
+                                    <action selector="doneWasTapped:" destination="A3f-Ci-CpH" eventType="touchUpInside" id="lRa-w6-4F0"/>
                                     <action selector="loginButtonWasTapped:" destination="4vg-Ih-W6W" eventType="touchUpInside" id="4lJ-LH-trt"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passo 1:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxe-Rt-zPJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primeiro passo:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxe-Rt-zPJ">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.68704202589999996" colorSpace="calibratedRGB"/>
@@ -567,14 +567,15 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LA0-jL-Y5H">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K1i-Vl-eYI">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="voltar"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="181" y="385" width="39" height="30"/>
+                                    <rect key="frame" x="150" y="410" width="39" height="30"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="q6V-7c-WXC" kind="presentation" identifier="goToGoals" id="jdu-Pe-kaz"/>
+                                    <action selector="returnButtonWasTapped:" destination="A3f-Ci-CpH" eventType="touchUpInside" id="sMH-ai-acf"/>
+                                    <segue destination="q6V-7c-WXC" kind="show" identifier="goToGoals" id="biR-hg-SRo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -621,7 +622,7 @@
                                 <exclude reference="q2A-gh-nSS"/>
                                 <exclude reference="GM7-TS-y7z"/>
                                 <exclude reference="XVJ-RA-ial"/>
-                                <exclude reference="LA0-jL-Y5H"/>
+                                <exclude reference="K1i-Vl-eYI"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="2bd-uS-V2n"/>
@@ -673,7 +674,7 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="1rT-ch-2sX"/>
-                                <include reference="LA0-jL-Y5H"/>
+                                <include reference="K1i-Vl-eYI"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="2bd-uS-V2n"/>
@@ -707,14 +708,14 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="goalLabel" destination="4eh-Cq-0ec" id="J3Z-Bc-Zu5"/>
-                        <outlet property="stepIndexLabel" destination="fxe-Rt-zPJ" id="YHu-iF-Tgk"/>
-                        <outlet property="stepLabel" destination="ri9-xf-eNr" id="Ohf-4t-KUb"/>
+                        <outlet property="goalLabel" destination="4eh-Cq-0ec" id="hYe-af-P2g"/>
+                        <outlet property="stepIndexLabel" destination="fxe-Rt-zPJ" id="FWl-cA-wt5"/>
+                        <outlet property="stepLabel" destination="ri9-xf-eNr" id="kgD-HY-6iF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPR-Lz-qBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1101" y="2127"/>
+            <point key="canvasLocation" x="-1101" y="2411"/>
         </scene>
         <!--Config View Controller-->
         <scene sceneID="ge7-6A-zL0">
@@ -1496,7 +1497,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krN-O4-eQt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1135.5" y="1402.5"/>
+            <point key="canvasLocation" x="1135" y="1402"/>
         </scene>
         <!--About Us View Controller-->
         <scene sceneID="UKa-yb-bBX">
@@ -1523,9 +1524,6 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="56" y="43" width="289" height="33"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="156" y="43" width="90" height="26"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9G-ZV-Ueq">
@@ -1724,9 +1722,6 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="56" y="43" width="289" height="33"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="135" y="43" width="132" height="26"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDu-0i-ww8">
@@ -1980,12 +1975,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VqQ-qp-xaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-304.5" y="2127"/>
+            <point key="canvasLocation" x="-305" y="2399"/>
         </scene>
         <!--Goals View Controller-->
         <scene sceneID="eHu-56-efJ">
             <objects>
-                <viewController storyboardIdentifier="GoalsVC" id="q6V-7c-WXC" customClass="GoalsViewController" customModule="ChallengeHealth" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="goalsVC" id="q6V-7c-WXC" customClass="GoalsViewController" customModule="ChallengeHealth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="umw-9o-zt9"/>
                         <viewControllerLayoutGuide type="bottom" id="b3H-Xh-sDH"/>
@@ -2003,7 +1998,7 @@
                                     <rect key="frame" x="68" y="434" width="185" height="118"/>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="104" height="23"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="103.5" height="23"/>
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_Health_Login" translatesAutoresizingMaskIntoConstraints="NO" id="8l6-XV-fY9">
@@ -2038,7 +2033,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="XTM-0s-d2L" kind="presentation" id="v5C-KI-uSm"/>
+                                    <segue destination="XTM-0s-d2L" kind="presentation" id="Qws-eQ-NKe"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boddi_feliz" translatesAutoresizingMaskIntoConstraints="NO" id="KyP-0J-vEI">
@@ -2175,7 +2170,7 @@
                                         </variation>
                                         <connections>
                                             <outlet property="goalNameLabel" destination="O5y-rb-Soy" id="aqk-jN-SQx"/>
-                                            <segue destination="A3f-Ci-CpH" kind="presentation" identifier="goToCurrentStep" id="qCq-ej-Tcp"/>
+                                            <segue destination="A3f-Ci-CpH" kind="presentation" identifier="goToCurrentStep" modalTransitionStyle="crossDissolve" id="qCq-ej-Tcp"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -2313,6 +2308,6 @@
         <image name="logo_acola" width="250" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="35D-Ob-JlM"/>
+        <segue reference="Qws-eQ-NKe"/>
     </inferredMetricsTieBreakers>
 </document>

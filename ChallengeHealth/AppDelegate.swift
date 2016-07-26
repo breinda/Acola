@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         if userStepNumber == "0" {
                             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
                             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                            let vc = mainStoryboard.instantiateViewControllerWithIdentifier("GoalsVC")
+                            let vc = mainStoryboard.instantiateViewControllerWithIdentifier("goalsVC")
                             self.window?.rootViewController = vc
                         }
                         else {
@@ -47,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("OIR")
                 self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
                 let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = mainStoryboard.instantiateViewControllerWithIdentifier("LoginVC")
+                let vc = mainStoryboard.instantiateViewControllerWithIdentifier("loginVC")
                 self.window?.rootViewController = vc
                 
                 self.window?.makeKeyAndVisible()
@@ -55,15 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })!
         
         FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
-        
-        //         if FIRAuth.auth()?.currentUser == nil {
-        //            print("OIR")
-        //            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        //            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        //            let vc = mainStoryboard.instantiateViewControllerWithIdentifier("LoginVC")
-        //            self.window?.rootViewController = vc
-        //        }
-        
         
         return true
     }

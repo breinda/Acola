@@ -1,5 +1,6 @@
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class CurrentStepViewController: UIViewController {
 
@@ -68,7 +69,7 @@ class CurrentStepViewController: UIViewController {
                     }
                 })
             }
-            })!
+        })!
 
         FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
     }
@@ -133,22 +134,22 @@ class CurrentStepViewController: UIViewController {
         print("IOIOIOI")
         if segue.identifier == "goToGoals" {
             print("ENTREY")
-
+            
             // seta o step atual do usuário como 0 -- saber se view inicial é a de goals ou a de currentStep
             var handle : FIRAuthStateDidChangeListenerHandle
-
+            
             handle = (FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
                 if let user = user {
                     // User is signed in.
                     let uid = user.uid;
-
+                    
                     DAO.USERS_REF.child(uid).observeEventType(.ChildAdded, withBlock: { (snapshot) in
-
+                        
                         if snapshot.key == "currentStepNumber" {
                             let childUpdates = [snapshot.key: "0"]
                             DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
                         }
-
+                        
                         if snapshot.key == "currentGoalKey" {
                             let childUpdates = [snapshot.key: ""]
                             DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
@@ -156,85 +157,86 @@ class CurrentStepViewController: UIViewController {
                     })
                 }
                 })!
-
+            
             FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
-
+            
             self.dismissViewControllerAnimated(true, completion: nil)
         }
+    }
 
-    @IBAction func backButtonWasTapped(sender: AnyObject) {
-
+    @IBAction func returnButtonWasTapped(sender: AnyObject) {
+        
         // seta o step atual do usuário como 0 -- saber se view inicial é a de goals ou a de currentStep
         var handle : FIRAuthStateDidChangeListenerHandle
-
+        
         handle = (FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
             if let user = user {
                 // User is signed in.
                 let uid = user.uid;
-
+                
                 DAO.USERS_REF.child(uid).observeEventType(.ChildAdded, withBlock: { (snapshot) in
-
+                    
                     if snapshot.key == "currentStepNumber" {
                         let childUpdates = [snapshot.key: "0"]
                         DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
                     }
-
+                    
                 })
             }
             })!
-
+        
         FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
-
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     @IBAction func doneWasTapped(sender: AnyObject) {
-
+    
         let alertView = UIAlertController(title: "UAU!",
                                           message: "você se sente totalmente confortável com o passo atual?" as String, preferredStyle:.ActionSheet)
         let okAction = UIAlertAction(title: "sim, bora próximo passo", style: .Default) { UIAlertAction in
             var handle : FIRAuthStateDidChangeListenerHandle
-
+            
             handle = (FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
                 if let user = user {
                     // User is signed in.
                     let uid = user.uid;
-
+                    
                     DAO.USERS_REF.child(uid).observeEventType(.ChildAdded, withBlock: { (snapshot) in
-
+                        
                         if snapshot.key == "currentStepNumber" {
-
+                            
                             let updateStepString = snapshot.value as! String
                             var updateStepInt = Int(updateStepString)
-
+                            
                             // se estivermos no ultimo passo, segue de volta pra tela de goals
                             if (self.steps[updateStepInt! - 1].isLastStep == true) {
                                 self.performSegueWithIdentifier("goToGoals", sender: self)
                             }
                             else {
                                 updateStepInt = updateStepInt! + 1
-
+                                
                                 self.stepIndex = String(updateStepInt!)
                                 self.step = self.steps[Int(self.stepIndex)! - 1].name
-
+                                
                                 let childUpdates = [snapshot.key: String(updateStepInt!)]
                                 DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
-
+                                
                                 self.viewDidAppear(false)
                             }
                         }
-
+                        
                     })
                 }
-            })!
-
+                })!
+            
             FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
         }
+        
         let cancelAction = UIAlertAction(title: "pensando bem, não", style: .Cancel, handler: nil)
         alertView.addAction(okAction)
         alertView.addAction(cancelAction)
         self.presentViewController(alertView, animated: true, completion: nil)
     }
-
-}
+    
 }
