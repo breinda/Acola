@@ -72,6 +72,10 @@ class CurrentStepViewController: UIViewController {
         })!
 
         FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
+        
+        var swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        self.view.addGestureRecognizer(swipeRight)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -81,7 +85,7 @@ class CurrentStepViewController: UIViewController {
         // MOSTRA A TELA DE LOGIN, CASO O USUARIO NAO ESTEJA LOGADO
         if FIRAuth.auth()?.currentUser == nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewControllerWithIdentifier("LoginVC")
+            let vc = storyboard.instantiateViewControllerWithIdentifier("loginVC")
             self.presentViewController(vc, animated: false, completion: nil)
         }
 
@@ -161,7 +165,8 @@ class CurrentStepViewController: UIViewController {
             
             FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
             
-            //self.dismissViewControllerAnimated(true, completion: nil)
+            self.dismissViewControllerAnimated(true, completion: nil)
+            //performSegueWithIdentifier("goToGoals", sender: self)
         }
     }
 
@@ -238,6 +243,26 @@ class CurrentStepViewController: UIViewController {
         alertView.addAction(okAction)
         alertView.addAction(cancelAction)
         self.presentViewController(alertView, animated: true, completion: nil)
+    }
+    
+    func respondToSwipeGesture(gesture: UIGestureRecognizer) {
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.Right:
+                print("Swiped right")
+                performSegueWithIdentifier("goToGoals", sender: self)
+            case UISwipeGestureRecognizerDirection.Down:
+                print("Swiped down")
+            case UISwipeGestureRecognizerDirection.Left:
+                print("Swiped left")
+            case UISwipeGestureRecognizerDirection.Up:
+                print("Swiped up")
+            default:
+                break
+            }
+        }
     }
     
 }
