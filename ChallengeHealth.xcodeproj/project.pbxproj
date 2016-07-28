@@ -117,6 +117,7 @@
 				E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */,
 				E14948D81D356B3C00BB8FB2 /* DAO.swift */,
 				06FF1B5B1D481CC700953BAE /* SegueFromRight.swift */,
+				06FF1B5D1D482CCB00953BAE /* TextField.swift */,
 				E1BD0CC11D3D616A00EC26BA /* User */,
 				E1BD0CC41D3D679400EC26BA /* Goals and Steps */,
 				E1BD0CC01D3D614100EC26BA /* Structs */,
@@ -149,7 +150,6 @@
 				E1BD0CBA1D3D48C300EC26BA /* ConfigViewController.swift */,
 				069B0FB91D3F2F0F000818F0 /* UserSettingsViewController.swift */,
 				060E2BF51D3F597D00097E81 /* extensionUserSettingsViewController.swift */,
-				06FF1B5D1D482CCB00953BAE /* TextField.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";

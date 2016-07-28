@@ -13,6 +13,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var confirmEmailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var boddiTextBubbleLabel: UILabel!
     
     override func viewDidLoad() {
         
@@ -24,7 +25,7 @@ class SignUpViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    
+    // return = back button
     @IBAction func returnButtonWasTapped(sender: AnyObject) {
         
         if emailPasswordView.hidden == true {
@@ -37,10 +38,18 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func confirmNameButtonWasTapped(sender: AnyObject) {
+        let name = nameTextField.text
+        
+        if name!.isEmpty {
+            boddiTextBubbleLabel.text! = "Por favor, me diga o seu nome!"
+            return;
+        }
         
         nameView.hidden = true
         returnButton.hidden = false
         emailPasswordView.hidden = false
+        
+        boddiTextBubbleLabel.text! = "Oi, \(name!)! Por favor, insira seus dados para podermos continuar."
     }
     
     // função auxiliar para analisar regex
