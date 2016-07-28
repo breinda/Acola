@@ -20,4 +20,10 @@ extension GoalsViewController: UICollectionViewDelegate {
         
         return cell
     }
+    
+    // cuida de o quanto a gente expande as células da collectionview
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        // Code below
+        return CGSizeMake(UIScreen.mainScreen().bounds.size.width - 17, 75)
+    }
 }

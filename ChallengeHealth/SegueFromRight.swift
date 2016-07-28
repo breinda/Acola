@@ -5,7 +5,7 @@ class SegueFromRight: UIStoryboardSegue {
     
     override func perform() {
         let src: UIViewController = self.sourceViewController
-        let dest: UIViewController = self.destinationViewController
+        //let dest: UIViewController = self.destinationViewController
         let transition: CATransition = CATransition()
         let timeFunc : CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         transition.duration = 0.25

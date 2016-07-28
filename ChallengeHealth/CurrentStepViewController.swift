@@ -79,7 +79,7 @@ class CurrentStepViewController: UIViewController {
 
         FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
         
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(CurrentStepViewController.respondToSwipeGesture(_:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
         self.view.addGestureRecognizer(swipeRight)
     }
