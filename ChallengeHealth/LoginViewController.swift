@@ -6,6 +6,8 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,8 @@ class LoginViewController: UIViewController {
         let email = emailTextField.text
         let password = passwordTextField.text
         
+        activityIndicatorView.startAnimating()
+        
         
         if (email == "" || password == "") {
             let alertView = UIAlertController(title: "Problema no login",
@@ -26,6 +30,8 @@ class LoginViewController: UIViewController {
             let okAction = UIAlertAction(title: "Tentar novamente", style: .Default, handler: nil)
             alertView.addAction(okAction)
             self.presentViewController(alertView, animated: true, completion: nil)
+            
+            self.activityIndicatorView.stopAnimating()
             return;
         }
         
@@ -60,6 +66,7 @@ class LoginViewController: UIViewController {
                                     else {
                                         self.dismissViewControllerAnimated(false, completion: nil)
                                     }
+                                    self.activityIndicatorView.stopAnimating()
                                 }
                                 else {
                                     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -74,6 +81,7 @@ class LoginViewController: UIViewController {
                                     else {
                                         self.dismissViewControllerAnimated(false, completion: nil)
                                     }
+                                    self.activityIndicatorView.stopAnimating()
                                 }
                             }
                         })
@@ -89,6 +97,7 @@ class LoginViewController: UIViewController {
                 
                 alert.addAction(cancel)
                 self.presentViewController(alert, animated: true, completion: nil)
+                self.activityIndicatorView.stopAnimating()
             }
         }
         
