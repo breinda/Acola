@@ -8,6 +8,8 @@ class GoalsViewController: UIViewController {
 
     var goals = [Goal]()
     
+    var isSecondVC = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,7 +74,20 @@ class GoalsViewController: UIViewController {
             
             FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
             
-//            self.dismissViewControllerAnimated(true, completion: nil)
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let rootVC = appDelegate.window!.rootViewController
+            
+            if (rootVC!.dynamicType == self.dynamicType || (String(rootVC!.dynamicType) == "LoginViewController" && self.isSecondVC == true)) {
+                print("MA OE GOALSVC")
+                //self.isSecondVC = false
+
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateViewControllerWithIdentifier("currentStepVC")
+                self.presentViewController(vc, animated: true, completion: nil)
+            }
+            else {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
         }
     }
 

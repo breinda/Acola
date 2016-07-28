@@ -44,14 +44,32 @@ class LoginViewController: UIViewController {
                                 let userStepNumber = snapshot.value as! String
                                 
                                 if userStepNumber == "0" {
-                                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                    let vc = storyboard.instantiateViewControllerWithIdentifier("goalsVC")
-                                    self.presentViewController(vc, animated: false, completion: nil)
+                                    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                                    let rootVC = appDelegate.window!.rootViewController
+                                    
+                                    if (rootVC!.dynamicType == self.dynamicType) {
+                                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                        let vc = storyboard.instantiateViewControllerWithIdentifier("goalsVC") as! GoalsViewController
+                                        vc.isSecondVC = true
+                                        self.presentViewController(vc, animated: true, completion: nil)
+                                    }
+                                    else {
+                                        self.dismissViewControllerAnimated(false, completion: nil)
+                                    }
                                 }
                                 else {
-                                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                                    let vc = storyboard.instantiateViewControllerWithIdentifier("currentStepVC")
-                                    self.presentViewController(vc, animated: false, completion: nil)
+                                    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                                    let rootVC = appDelegate.window!.rootViewController
+
+                                    if (rootVC!.dynamicType == self.dynamicType) {
+                                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                                        let vc = storyboard.instantiateViewControllerWithIdentifier("currentStepVC") as! CurrentStepViewController
+                                        vc.isSecondVC = true
+                                        self.presentViewController(vc, animated: true, completion: nil)
+                                    }
+                                    else {
+                                        self.dismissViewControllerAnimated(false, completion: nil)
+                                    }
                                 }
                             }
                         })
@@ -60,7 +78,7 @@ class LoginViewController: UIViewController {
                 
                 FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
 
-                self.dismissViewControllerAnimated(true, completion: nil)
+                //self.dismissViewControllerAnimated(true, completion: nil)
             }
             // DEU RUIM
             else {
