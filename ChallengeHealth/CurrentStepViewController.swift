@@ -71,7 +71,7 @@ class CurrentStepViewController: UIViewController {
 
         FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
         
-        var swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: "respondToSwipeGesture:")
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
         self.view.addGestureRecognizer(swipeRight)
     }
@@ -89,7 +89,7 @@ class CurrentStepViewController: UIViewController {
 
         goalLabel.text! = goal
         stepLabel.text! = step
-        stepIndexLabel.text! = stepIndex
+        stepIndexLabel.text! = "PASSO \(stepIndex)"
 
         var handle : FIRAuthStateDidChangeListenerHandle
 
@@ -104,7 +104,8 @@ class CurrentStepViewController: UIViewController {
                         print(userDict)
                         print(snapshotUser.key)
 
-                        self.stepIndexLabel.text! = snapshotUser.value!["currentStepNumber"] as! String
+                        let currentStepNumberAux = snapshotUser.value!["currentStepNumber"] as! String
+                        self.stepIndexLabel.text! = "PASSO \(currentStepNumberAux)"
                         self.stepIndex = snapshotUser.value!["currentStepNumber"] as! String
                         self.goalKey = snapshotUser.value!["currentGoalKey"] as! String
 
