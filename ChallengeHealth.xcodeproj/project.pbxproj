@@ -14,7 +14,9 @@
 		06A9D4D21D45619400296130 /* EmergencyPhonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A9D4D11D45619400296130 /* EmergencyPhonesViewController.swift */; };
 		06C51C651D470F7700409C26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06C51C641D470F7700409C26 /* Main.storyboard */; };
 		06C51C671D47157100409C26 /* extensionGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C51C661D47157100409C26 /* extensionGoalsViewController.swift */; };
-		06E7A7201D49C680000EBD6E /* BoddiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7A71F1D49C680000EBD6E /* BoddiView.swift */; };
+		06E7A7261D49CE0D000EBD6E /* boddi_feliz.png in Resources */ = {isa = PBXBuildFile; fileRef = 06E7A7241D49CE0D000EBD6E /* boddi_feliz.png */; };
+		06E7A7271D49CE0D000EBD6E /* boddi_principal.png in Resources */ = {isa = PBXBuildFile; fileRef = 06E7A7251D49CE0D000EBD6E /* boddi_principal.png */; };
+		06E7A72B1D49D3E7000EBD6E /* BoddiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7A72A1D49D3E7000EBD6E /* BoddiView.swift */; };
 		06FF1B5C1D481CC700953BAE /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B5B1D481CC700953BAE /* SegueFromRight.swift */; };
 		06FF1B5E1D482CCB00953BAE /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B5D1D482CCB00953BAE /* TextField.swift */; };
 		A7D27DD2CE4F11ABD87D5D64 /* Pods_ChallengeHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007A7E7652F5C10253E2FBED /* Pods_ChallengeHealth.framework */; };
@@ -43,7 +45,9 @@
 		06A9D4D11D45619400296130 /* EmergencyPhonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyPhonesViewController.swift; sourceTree = "<group>"; };
 		06C51C641D470F7700409C26 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		06C51C661D47157100409C26 /* extensionGoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionGoalsViewController.swift; sourceTree = "<group>"; };
-		06E7A71F1D49C680000EBD6E /* BoddiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoddiView.swift; path = ../../Animations/BoddiView.swift; sourceTree = "<group>"; };
+		06E7A7241D49CE0D000EBD6E /* boddi_feliz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boddi_feliz.png; sourceTree = "<group>"; };
+		06E7A7251D49CE0D000EBD6E /* boddi_principal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boddi_principal.png; sourceTree = "<group>"; };
+		06E7A72A1D49D3E7000EBD6E /* BoddiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoddiView.swift; sourceTree = "<group>"; };
 		06FF1B5B1D481CC700953BAE /* SegueFromRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueFromRight.swift; sourceTree = "<group>"; };
 		06FF1B5D1D482CCB00953BAE /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		28BB55857FF9BEA5F2C9F59E /* Pods-ChallengeHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,9 +94,28 @@
 		06E7A7211D49C684000EBD6E /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				06E7A71F1D49C680000EBD6E /* BoddiView.swift */,
+				06E7A7221D49CE02000EBD6E /* Boddi */,
+				06E7A72A1D49D3E7000EBD6E /* BoddiView.swift */,
 			);
 			name = Animations;
+			sourceTree = "<group>";
+		};
+		06E7A7221D49CE02000EBD6E /* Boddi */ = {
+			isa = PBXGroup;
+			children = (
+				06E7A7231D49CE0D000EBD6E /* images */,
+			);
+			name = Boddi;
+			sourceTree = "<group>";
+		};
+		06E7A7231D49CE0D000EBD6E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				06E7A7241D49CE0D000EBD6E /* boddi_feliz.png */,
+				06E7A7251D49CE0D000EBD6E /* boddi_principal.png */,
+			);
+			name = images;
+			path = ../../Animations/images;
 			sourceTree = "<group>";
 		};
 		8891A6AFDC4F8CE0A11D9C78 /* Frameworks */ = {
@@ -200,6 +223,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E14948CD1D35680E00BB8FB2 /* Build configuration list for PBXNativeTarget "ChallengeHealth" */;
 			buildPhases = (
+				70B1BF96CB77A967193BC293 /* 📦 Check Pods Manifest.lock */,
 				BE3BC549F17ADD069412ACC4 /* [CP] Check Pods Manifest.lock */,
 				1635D181219142EF994FB2E3 /* [CP] Check Pods Manifest.lock */,
 				0F97B991B74E6C85317ADB10 /* [CP] Check Pods Manifest.lock */,
@@ -263,7 +287,9 @@
 				E14948C91D35680E00BB8FB2 /* LaunchScreen.storyboard in Resources */,
 				E14948C61D35680E00BB8FB2 /* Assets.xcassets in Resources */,
 				E14948D31D35684500BB8FB2 /* GoogleService-Info.plist in Resources */,
+				06E7A7271D49CE0D000EBD6E /* boddi_principal.png in Resources */,
 				06C51C651D470F7700409C26 /* Main.storyboard in Resources */,
+				06E7A7261D49CE0D000EBD6E /* boddi_feliz.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +354,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70B1BF96CB77A967193BC293 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		AB6AFDC61EAA61CE87CCA43D /* 📦 Copy Pods Resources */ = {
@@ -408,7 +449,7 @@
 				06A9D4D21D45619400296130 /* EmergencyPhonesViewController.swift in Sources */,
 				069B0FBA1D3F2F0F000818F0 /* UserSettingsViewController.swift in Sources */,
 				E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */,
-				06E7A7201D49C680000EBD6E /* BoddiView.swift in Sources */,
+				06E7A72B1D49D3E7000EBD6E /* BoddiView.swift in Sources */,
 				06FF1B5E1D482CCB00953BAE /* TextField.swift in Sources */,
 				060E2BF61D3F597D00097E81 /* extensionUserSettingsViewController.swift in Sources */,
 				E1DCF4911D3F3EAF005479D6 /* Step.swift in Sources */,

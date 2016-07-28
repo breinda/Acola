@@ -5,10 +5,13 @@ import FirebaseAuth
 class ConfigViewController: UIViewController {
 
     @IBOutlet weak var boddiLabel: UILabel!
+    @IBOutlet weak var boddiView: BoddiView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        boddiView.addAppearNormalAnimation(removedOnCompletion: true)
+        boddiView.addNormalCycleAnimation()
         if let user = FIRAuth.auth()?.currentUser {
             for profile in user.providerData {
                 //let email = profile.email

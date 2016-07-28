@@ -4,6 +4,7 @@ import FirebaseAuth
 
 class GoalsViewController: UIViewController {
 
+    @IBOutlet weak var boddiView: BoddiView!
     @IBOutlet weak var goalsCollectionView: UICollectionView!
 
     var goals = [Goal]()
@@ -12,6 +13,8 @@ class GoalsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        boddiView.addAppearHappyJumpAnimation()
         
         // pega os goals do banco e os armazena no array goals
         DAO.STD_GOALS_REF.observeEventType(.ChildAdded, withBlock: { (snapshot) in
