@@ -10,6 +10,9 @@ class GoalsViewController: UIViewController {
     
     var isSecondVC = false
     
+    var cellWidth: CGFloat = 0
+    let columnNum: CGFloat = 1
+    
     let mountainArray: [UIImage] = [UIImage(named: "iconeMontanha1")!, UIImage(named: "iconeMontanha2")!, UIImage(named: "iconeMontanha4")!, UIImage(named: "iconeMontanha3")!]
     var mountainArrayIndex = 0
     
