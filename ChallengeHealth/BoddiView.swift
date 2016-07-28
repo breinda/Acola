@@ -365,8 +365,6 @@ class BoddiView : UIImageView {
 		boddiPrincipalRotationAnimation.values = [0.000 as Float, 0.000 as Float, 0.000 as Float, 0.140 as Float, -0.140 as Float, 0.140 as Float, -0.035 as Float, -0.035 as Float, 0.105 as Float, -0.035 as Float]
 		boddiPrincipalRotationAnimation.keyTimes = [0.000 as Float, 0.413 as Float, 0.413 as Float, 0.476 as Float, 0.527 as Float, 0.563 as Float, 0.618 as Float, 0.654 as Float, 0.817 as Float, 1.000 as Float]
 		boddiPrincipalRotationAnimation.timingFunctions = [instantTiming, instantTiming, easeOutTiming, easeInTiming, easeOutTiming, overshootTiming, easeOutTiming, easeOutTiming, easeInTiming]
-		boddiPrincipalRotationAnimation.autoreverses = true
-		boddiPrincipalRotationAnimation.repeatCount = HUGE
 		boddiPrincipalRotationAnimation.beginTime = beginTime
 		boddiPrincipalRotationAnimation.fillMode = fillMode
 		boddiPrincipalRotationAnimation.removedOnCompletion = removedOnCompletion

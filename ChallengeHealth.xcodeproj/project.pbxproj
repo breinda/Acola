@@ -12,11 +12,11 @@
 		069B0FBA1D3F2F0F000818F0 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069B0FB91D3F2F0F000818F0 /* UserSettingsViewController.swift */; };
 		06A9D4D01D4558AC00296130 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A9D4CF1D4558AC00296130 /* AboutUsViewController.swift */; };
 		06A9D4D21D45619400296130 /* EmergencyPhonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A9D4D11D45619400296130 /* EmergencyPhonesViewController.swift */; };
+		06BCFF8C1D49DCB70096D960 /* BoddiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BCFF8B1D49DCB70096D960 /* BoddiView.swift */; };
 		06C51C651D470F7700409C26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06C51C641D470F7700409C26 /* Main.storyboard */; };
 		06C51C671D47157100409C26 /* extensionGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C51C661D47157100409C26 /* extensionGoalsViewController.swift */; };
 		06E7A7261D49CE0D000EBD6E /* boddi_feliz.png in Resources */ = {isa = PBXBuildFile; fileRef = 06E7A7241D49CE0D000EBD6E /* boddi_feliz.png */; };
 		06E7A7271D49CE0D000EBD6E /* boddi_principal.png in Resources */ = {isa = PBXBuildFile; fileRef = 06E7A7251D49CE0D000EBD6E /* boddi_principal.png */; };
-		06E7A72B1D49D3E7000EBD6E /* BoddiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7A72A1D49D3E7000EBD6E /* BoddiView.swift */; };
 		06FF1B5C1D481CC700953BAE /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B5B1D481CC700953BAE /* SegueFromRight.swift */; };
 		06FF1B5E1D482CCB00953BAE /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B5D1D482CCB00953BAE /* TextField.swift */; };
 		A7D27DD2CE4F11ABD87D5D64 /* Pods_ChallengeHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007A7E7652F5C10253E2FBED /* Pods_ChallengeHealth.framework */; };
@@ -43,11 +43,11 @@
 		069B0FB91D3F2F0F000818F0 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
 		06A9D4CF1D4558AC00296130 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		06A9D4D11D45619400296130 /* EmergencyPhonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyPhonesViewController.swift; sourceTree = "<group>"; };
+		06BCFF8B1D49DCB70096D960 /* BoddiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoddiView.swift; sourceTree = "<group>"; };
 		06C51C641D470F7700409C26 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		06C51C661D47157100409C26 /* extensionGoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionGoalsViewController.swift; sourceTree = "<group>"; };
 		06E7A7241D49CE0D000EBD6E /* boddi_feliz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boddi_feliz.png; sourceTree = "<group>"; };
 		06E7A7251D49CE0D000EBD6E /* boddi_principal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boddi_principal.png; sourceTree = "<group>"; };
-		06E7A72A1D49D3E7000EBD6E /* BoddiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoddiView.swift; sourceTree = "<group>"; };
 		06FF1B5B1D481CC700953BAE /* SegueFromRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueFromRight.swift; sourceTree = "<group>"; };
 		06FF1B5D1D482CCB00953BAE /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		28BB55857FF9BEA5F2C9F59E /* Pods-ChallengeHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth.debug.xcconfig"; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				06E7A7221D49CE02000EBD6E /* Boddi */,
-				06E7A72A1D49D3E7000EBD6E /* BoddiView.swift */,
+				06BCFF8B1D49DCB70096D960 /* BoddiView.swift */,
 			);
 			name = Animations;
 			sourceTree = "<group>";
@@ -441,6 +441,7 @@
 				06FF1B5C1D481CC700953BAE /* SegueFromRight.swift in Sources */,
 				E1BD0CB91D3D463400EC26BA /* GoalsViewController.swift in Sources */,
 				E14948D51D356AFA00BB8FB2 /* LoginViewController.swift in Sources */,
+				06BCFF8C1D49DCB70096D960 /* BoddiView.swift in Sources */,
 				E1BD0CBD1D3D522300EC26BA /* Goal.swift in Sources */,
 				E1BD0CBF1D3D532700EC26BA /* GoalCollectionViewCell.swift in Sources */,
 				06A9D4D01D4558AC00296130 /* AboutUsViewController.swift in Sources */,
@@ -449,7 +450,6 @@
 				06A9D4D21D45619400296130 /* EmergencyPhonesViewController.swift in Sources */,
 				069B0FBA1D3F2F0F000818F0 /* UserSettingsViewController.swift in Sources */,
 				E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */,
-				06E7A72B1D49D3E7000EBD6E /* BoddiView.swift in Sources */,
 				06FF1B5E1D482CCB00953BAE /* TextField.swift in Sources */,
 				060E2BF61D3F597D00097E81 /* extensionUserSettingsViewController.swift in Sources */,
 				E1DCF4911D3F3EAF005479D6 /* Step.swift in Sources */,

@@ -10,8 +10,7 @@ class ConfigViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        boddiView.addAppearNormalAnimation(removedOnCompletion: true)
-        boddiView.addNormalCycleAnimation()
+        boddiView.addAppearNormalAnimation(boddiView.addNormalCycleAnimation())
         if let user = FIRAuth.auth()?.currentUser {
             for profile in user.providerData {
                 //let email = profile.email
