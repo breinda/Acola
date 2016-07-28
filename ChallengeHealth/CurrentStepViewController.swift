@@ -22,14 +22,6 @@ class CurrentStepViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        boddiView.addAppearHappyAnimation(removedOnCompletion: true, completion: {(finished) -> Void in
-            
-            if finished {
-                self.boddiView.addNormalCycleAnimation()
-            }
-        
-        })
 
         goalLabel.text! = goal
         stepLabel.text! = step
@@ -86,6 +78,14 @@ class CurrentStepViewController: UIViewController {
     }
 
     override func viewDidAppear(animated: Bool) {
+        
+        boddiView.addAppearHappyAnimation(removedOnCompletion: true, completion: {(finished) -> Void in
+            
+            if finished {
+                self.boddiView.addNormalCycleAnimation()
+            }
+            
+        })
         
         steps.removeAll()
         
