@@ -6,11 +6,19 @@ class ConfigViewController: UIViewController {
 
     @IBOutlet weak var boddiLabel: UILabel!
     @IBOutlet weak var boddiView: BoddiView!
-
+    
+    override func viewDidAppear(animated: Bool) {
+        boddiView.addAppearNormalAnimation(removedOnCompletion: true, completion: {(finished) -> Void in
+            
+            if finished {
+                self.boddiView.addNormalCycleAnimation()
+            }
+            
+        })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        boddiView.addAppearNormalAnimation(boddiView.addNormalCycleAnimation())
         
         if let user = FIRAuth.auth()?.currentUser {
             for profile in user.providerData {
@@ -21,6 +29,7 @@ class ConfigViewController: UIViewController {
             }
         }
     }
+    
     
     @IBAction func backButtonWasTapped(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
