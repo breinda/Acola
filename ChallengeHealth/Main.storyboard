@@ -1994,6 +1994,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="boddiView" destination="hgm-wU-SCc" id="bls-I4-NCz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VqQ-qp-xaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
