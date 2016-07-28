@@ -18,6 +18,15 @@ extension GoalsViewController: UICollectionViewDelegate {
         cell.configureCell(goal)
         cell.backgroundColor = UIColor.clearColor()
         
+        cell.mountainImage.image = mountainArray[mountainArrayIndex]
+        
+        if mountainArrayIndex == 3 {
+            mountainArrayIndex = 0
+        }
+        else {
+            mountainArrayIndex += 1
+        }
+        
         return cell
     }
     

@@ -10,6 +10,9 @@ class GoalsViewController: UIViewController {
     
     var isSecondVC = false
     
+    let mountainArray: [UIImage] = [UIImage(named: "iconeMontanha1")!, UIImage(named: "iconeMontanha2")!, UIImage(named: "iconeMontanha4")!, UIImage(named: "iconeMontanha3")!]
+    var mountainArrayIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

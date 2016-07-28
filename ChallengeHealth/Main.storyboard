@@ -292,30 +292,30 @@
                                 <exclude reference="VSb-H8-O4D"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Uqc-50-LLZ"/>
-                                <exclude reference="hQJ-sL-xhb"/>
-                                <exclude reference="olC-Fm-pEO"/>
-                                <exclude reference="otX-3p-D5Z"/>
-                                <exclude reference="NCn-vy-dNa"/>
-                                <exclude reference="XVi-8g-vkp"/>
-                                <exclude reference="YvE-EZ-Iai"/>
-                                <exclude reference="mKp-YI-oVZ"/>
-                                <exclude reference="Ejy-k2-HbS"/>
-                                <exclude reference="QI1-04-Xda"/>
-                                <exclude reference="WHx-Uk-iwq"/>
-                                <exclude reference="q9b-NR-D6c"/>
+                                <exclude reference="cSU-Tv-f4j"/>
+                                <exclude reference="tPv-OC-j7i"/>
                                 <exclude reference="Dtf-oW-2LA"/>
                                 <exclude reference="Ge7-sF-Juq"/>
                                 <exclude reference="cbV-bl-2aP"/>
                                 <exclude reference="qZ7-CW-BEZ"/>
+                                <exclude reference="Ejy-k2-HbS"/>
+                                <exclude reference="QI1-04-Xda"/>
+                                <exclude reference="WHx-Uk-iwq"/>
+                                <exclude reference="q9b-NR-D6c"/>
                                 <exclude reference="5k6-k1-zFX"/>
                                 <exclude reference="CRm-5d-q2v"/>
                                 <exclude reference="OA5-LF-s8g"/>
                                 <exclude reference="cO2-Pv-TtX"/>
                                 <exclude reference="Vfa-e5-jB0"/>
                                 <exclude reference="gat-SU-xKK"/>
-                                <exclude reference="cSU-Tv-f4j"/>
-                                <exclude reference="tPv-OC-j7i"/>
+                                <exclude reference="NCn-vy-dNa"/>
+                                <exclude reference="XVi-8g-vkp"/>
+                                <exclude reference="YvE-EZ-Iai"/>
+                                <exclude reference="mKp-YI-oVZ"/>
+                                <exclude reference="Uqc-50-LLZ"/>
+                                <exclude reference="hQJ-sL-xhb"/>
+                                <exclude reference="olC-Fm-pEO"/>
+                                <exclude reference="otX-3p-D5Z"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -328,14 +328,14 @@
                                 <include reference="PcA-qM-tAz"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="cbV-bl-2aP"/>
+                                <include reference="QI1-04-Xda"/>
+                                <include reference="5k6-k1-zFX"/>
+                                <include reference="gat-SU-xKK"/>
                                 <include reference="Uqc-50-LLZ"/>
                                 <include reference="hQJ-sL-xhb"/>
                                 <include reference="olC-Fm-pEO"/>
                                 <include reference="otX-3p-D5Z"/>
-                                <include reference="QI1-04-Xda"/>
-                                <include reference="cbV-bl-2aP"/>
-                                <include reference="5k6-k1-zFX"/>
-                                <include reference="gat-SU-xKK"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -343,22 +343,22 @@
                                 <include reference="VSb-H8-O4D"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="NCn-vy-dNa"/>
-                                <include reference="XVi-8g-vkp"/>
-                                <include reference="YvE-EZ-Iai"/>
-                                <include reference="mKp-YI-oVZ"/>
-                                <include reference="Ejy-k2-HbS"/>
-                                <include reference="WHx-Uk-iwq"/>
-                                <include reference="q9b-NR-D6c"/>
+                                <include reference="cSU-Tv-f4j"/>
+                                <include reference="tPv-OC-j7i"/>
                                 <include reference="Dtf-oW-2LA"/>
                                 <include reference="Ge7-sF-Juq"/>
                                 <include reference="qZ7-CW-BEZ"/>
+                                <include reference="Ejy-k2-HbS"/>
+                                <include reference="WHx-Uk-iwq"/>
+                                <include reference="q9b-NR-D6c"/>
                                 <include reference="CRm-5d-q2v"/>
                                 <include reference="OA5-LF-s8g"/>
                                 <include reference="cO2-Pv-TtX"/>
                                 <include reference="Vfa-e5-jB0"/>
-                                <include reference="cSU-Tv-f4j"/>
-                                <include reference="tPv-OC-j7i"/>
+                                <include reference="NCn-vy-dNa"/>
+                                <include reference="XVi-8g-vkp"/>
+                                <include reference="YvE-EZ-Iai"/>
+                                <include reference="mKp-YI-oVZ"/>
                             </mask>
                         </variation>
                     </view>
@@ -1565,6 +1565,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="56" y="43" width="289" height="33"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="156" y="43" width="90" height="26"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9G-ZV-Ueq">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -1597,21 +1600,18 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="23" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Az8-ta-urb">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <mutableString key="text">Olá! Nós somos Brenda, Mila e Mariana, e fazemos parte do BEPiD (Brazilian Education Program for iOS Development).
+                                <string key="text">Olá! Nós somos Brenda, Mila e Mariana, e fazemos parte do BEPiD (Brazilian Education Program for iOS Development).
 
 Este app cresceu a partir de uma vontade comum entre nós três, que é a de conseguir ajudar pessoas com depressão a superar seus desafios diários.
 
 Nosso objetivo é incentivar todos a realizarem atividades saudáveis que contribuam para uma melhoria na sua qualidade de vida e, para isso, fazemos uso de uma metodologia inspirada na Terapia Cognitivo-Comportamental: quebrar uma meta grande em tarefas menores e mais fáceis de serem realizadas.
 
-Se você tiver alguma dúvida, sugestão ou quiser bater um papo, fale com a gente em EMAIL@EMAIL.COM ou em nóssa página no Facebook!</mutableString>
+Se você tiver alguma dúvida, sugestão ou quiser bater um papo, fale com a gente em EMAIL@EMAIL.COM ou em nóssa página no Facebook!</string>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.79717133620000002" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="42" y="84" width="317" height="472"/>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="41.5" y="91.5" width="317" height="370"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -2223,6 +2223,7 @@ Eu vou te ajudar a alcançá-lo!</string>
                                         </variation>
                                         <connections>
                                             <outlet property="goalNameLabel" destination="O5y-rb-Soy" id="aqk-jN-SQx"/>
+                                            <outlet property="mountainImage" destination="vJr-IG-F0c" id="IaD-v3-qe7"/>
                                             <segue destination="A3f-Ci-CpH" kind="presentation" identifier="goToCurrentStep" id="qCq-ej-Tcp"/>
                                         </connections>
                                     </collectionViewCell>
