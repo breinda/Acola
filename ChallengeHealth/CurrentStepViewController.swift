@@ -15,12 +15,21 @@ class CurrentStepViewController: UIViewController {
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var stepLabel: UILabel!
     @IBOutlet weak var stepIndexLabel: UILabel!
+    @IBOutlet weak var boddiView: BoddiView!
     
     var isSecondVC = false
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        boddiView.addAppearHappyAnimation(removedOnCompletion: true, completion: {(finished) -> Void in
+            
+            if finished {
+                self.boddiView.addNormalCycleAnimation()
+            }
+        
+        })
 
         goalLabel.text! = goal
         stepLabel.text! = step

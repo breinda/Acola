@@ -477,7 +477,7 @@
                                     <segue destination="XTM-0s-d2L" kind="presentation" id="35D-Ob-JlM"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boddi_feliz" translatesAutoresizingMaskIntoConstraints="NO" id="q2A-gh-nSS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q2A-gh-nSS" customClass="BoddiView" customModule="ChallengeHealth" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="q2A-gh-nSS" secondAttribute="height" multiplier="3:2" id="ayo-kS-5AU"/>
@@ -672,6 +672,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="boddiView" destination="q2A-gh-nSS" id="KDs-89-zyu"/>
                         <outlet property="goalLabel" destination="4eh-Cq-0ec" id="hYe-af-P2g"/>
                         <outlet property="stepIndexLabel" destination="fxe-Rt-zPJ" id="FWl-cA-wt5"/>
                         <outlet property="stepLabel" destination="ri9-xf-eNr" id="kgD-HY-6iF"/>
@@ -2360,11 +2361,10 @@
         <image name="balao2" width="75" height="69"/>
         <image name="bg_Health_Login" width="750" height="1334"/>
         <image name="bg_Health_Telas" width="750" height="1334"/>
-        <image name="boddi_feliz" width="200" height="200"/>
         <image name="iconeMontanha1" width="336" height="226"/>
         <image name="logo Acola Certinha" width="3229" height="2070"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qws-eQ-NKe"/>
+        <segue reference="35D-Ob-JlM"/>
     </inferredMetricsTieBreakers>
 </document>
