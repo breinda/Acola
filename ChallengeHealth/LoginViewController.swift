@@ -10,6 +10,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     @IBAction func loginButtonWasTapped(sender: AnyObject) {
         let email = emailTextField.text
@@ -77,8 +81,6 @@ class LoginViewController: UIViewController {
                 })!
                 
                 FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
-
-                //self.dismissViewControllerAnimated(true, completion: nil)
             }
             // DEU RUIM
             else {

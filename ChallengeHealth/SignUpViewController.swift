@@ -20,6 +20,11 @@ class SignUpViewController: UIViewController {
         emailPasswordView.hidden = true
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    
     @IBAction func returnButtonWasTapped(sender: AnyObject) {
         
         if emailPasswordView.hidden == true {
