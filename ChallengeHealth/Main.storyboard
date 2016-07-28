@@ -1597,12 +1597,21 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="23" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Az8-ta-urb">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <string key="text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere</string>
+                                <mutableString key="text">Olá! Nós somos Brenda, Mila e Mariana, e fazemos parte do BEPiD (Brazilian Education Program for iOS Development).
+
+Este app cresceu a partir de uma vontade comum entre nós três, que é a de conseguir ajudar pessoas com depressão a superar seus desafios diários.
+
+Nosso objetivo é incentivar todos a realizarem atividades saudáveis que contribuam para uma melhoria na sua qualidade de vida e, para isso, fazemos uso de uma metodologia inspirada na Terapia Cognitivo-Comportamental: quebrar uma meta grande em tarefas menores e mais fáceis de serem realizadas.
+
+Se você tiver alguma dúvida, sugestão ou quiser bater um papo, fale com a gente em EMAIL@EMAIL.COM ou em nóssa página no Facebook!</mutableString>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="0.79717133620000002" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="42" y="84" width="317" height="472"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="41.5" y="91.5" width="317" height="370"/>
                                 </variation>
                             </label>
                         </subviews>
