@@ -1508,6 +1508,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="boddiView" destination="YHZ-Zp-4b3" id="ztJ-pB-lHU"/>
                         <outlet property="confirmEmailTextField" destination="ez5-bE-DSQ" id="Aw5-NQ-rIM"/>
                         <outlet property="confirmPasswordTextField" destination="a0J-OL-Acn" id="bmP-Cg-5nr"/>
                         <outlet property="emailPasswordView" destination="W9V-kU-wbm" id="E2y-ki-wFr"/>

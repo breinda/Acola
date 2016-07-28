@@ -11,6 +11,7 @@ class ConfigViewController: UIViewController {
         super.viewDidLoad()
 
         boddiView.addAppearNormalAnimation(boddiView.addNormalCycleAnimation())
+        
         if let user = FIRAuth.auth()?.currentUser {
             for profile in user.providerData {
                 //let email = profile.email
@@ -29,5 +30,4 @@ class ConfigViewController: UIViewController {
         try! FIRAuth.auth()!.signOut()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    
 }

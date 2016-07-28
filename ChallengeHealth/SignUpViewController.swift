@@ -6,6 +6,7 @@ class SignUpViewController: UIViewController {
     
 
     @IBOutlet weak var returnButton: UIButton!
+    @IBOutlet weak var boddiView: BoddiView!
     @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailPasswordView: UIView!
@@ -18,6 +19,7 @@ class SignUpViewController: UIViewController {
         
         super.viewDidLoad()
         emailPasswordView.hidden = true
+        boddiView.addAppearHappyJumpAnimation()
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
