@@ -45,8 +45,10 @@ class CurrentStepViewController: UIViewController {
                         self.goalKey = snapshotUser.value!["currentGoalKey"] as! String
                         let name = snapshotUser.value!["name"] as! String
                         
+//                        let motivationString: NSAttributedString = "Você vai se sentir cada vez melhor!!"
+//                        motivationString.font = UIFont(name: "", size: "")
+                        
                         self.boddiTextBubbleLabel.text! = "\(name)! Tenho certeza de que você é capaz de dar mais este passo em direção ao seu objetivo. Você vai se sentir cada vez melhor!!"
-                        self.boddiTextBubbleLabel.text!.font
 
                         if let safeGoalKey = snapshotUser.value!["currentGoalKey"] {
                             // pega o nome do goal atual e bota na label
