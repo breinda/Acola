@@ -707,6 +707,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="boddiTextBubbleLabel" destination="XVJ-RA-ial" id="zOA-15-1qt"/>
                         <outlet property="goalLabel" destination="4eh-Cq-0ec" id="hYe-af-P2g"/>
                         <outlet property="stepIndexLabel" destination="fxe-Rt-zPJ" id="FWl-cA-wt5"/>
                         <outlet property="stepLabel" destination="ri9-xf-eNr" id="kgD-HY-6iF"/>
@@ -2173,11 +2174,13 @@ você quer que eu te chame?</string>
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá, Fulano! Escolha seu objetivo! Blablabla eu vou falar bem mais, viu?? Trate de se preparar!!!" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rT3-vJ-8Vi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rT3-vJ-8Vi">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rT3-vJ-8Vi" secondAttribute="height" multiplier="2:1" id="N1r-fl-imo"/>
                                 </constraints>
+                                <string key="text">É hora de escolher um objetivo!
+Eu vou te ajudar a alcançá-lo!</string>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <color key="textColor" red="0.59607843140000005" green="0.31764705879999999" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>

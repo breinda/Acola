@@ -16,12 +16,15 @@ class CurrentStepViewController: UIViewController {
     @IBOutlet weak var stepLabel: UILabel!
     @IBOutlet weak var stepIndexLabel: UILabel!
     
+    @IBOutlet weak var boddiTextBubbleLabel: UILabel!
+    
     var isSecondVC = false
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        boddiTextBubbleLabel.text! = ""
         goalLabel.text! = goal
         stepLabel.text! = step
         stepIndexLabel.text! = stepIndex
@@ -36,11 +39,14 @@ class CurrentStepViewController: UIViewController {
 
                 DAO.USERS_REF.observeEventType(.ChildAdded, withBlock: { (snapshotUser) in
                     if snapshotUser.key == uid {
-                        //let userDict = snapshotUser.value as! NSDictionary
 
                         self.stepIndexLabel.text! = snapshotUser.value!["currentStepNumber"] as! String
                         self.stepIndex = snapshotUser.value!["currentStepNumber"] as! String
                         self.goalKey = snapshotUser.value!["currentGoalKey"] as! String
+                        let name = snapshotUser.value!["name"] as! String
+                        
+                        self.boddiTextBubbleLabel.text! = "\(name)! Tenho certeza de que você é capaz de dar mais este passo em direção ao seu objetivo. Você vai se sentir cada vez melhor!!"
+                        self.boddiTextBubbleLabel.text!.font
 
                         if let safeGoalKey = snapshotUser.value!["currentGoalKey"] {
                             // pega o nome do goal atual e bota na label
