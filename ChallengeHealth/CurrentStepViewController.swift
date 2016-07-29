@@ -15,7 +15,7 @@ class CurrentStepViewController: UIViewController {
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var stepLabel: UILabel!
     @IBOutlet weak var stepIndexLabel: UILabel!
-    @IBOutlet weak var stepDescriptionLabel: UILabel!
+    //@IBOutlet weak var stepDescriptionLabel: UILabel!
     
     @IBOutlet weak var boddiTextBubbleLabel: UILabel!
     
@@ -68,7 +68,7 @@ class CurrentStepViewController: UIViewController {
                                         if snapshotSteps.key == self.stepIndex {
                                             self.stepLabel.text! = snapshotSteps.value!["name"] as! String
                                             self.step = snapshotSteps.value!["name"] as! String
-                                            self.stepDescriptionLabel.text! = snapshotSteps.value!["description"] as! String
+                                            //self.stepDescriptionLabel.text! = snapshotSteps.value!["description"] as! String
                                         }
                                     })
                                 }
@@ -132,7 +132,7 @@ class CurrentStepViewController: UIViewController {
 
                                     if snapshotSteps.key == self.stepIndex {
                                         self.stepLabel.text! = snapshotSteps.value!["name"] as! String
-                                        self.stepDescriptionLabel.text! = snapshotSteps.value!["description"] as! String
+                                        //self.stepDescriptionLabel.text! = snapshotSteps.value!["description"] as! String
                                     }
                                 })
                             }
