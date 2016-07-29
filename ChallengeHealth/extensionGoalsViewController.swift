@@ -50,6 +50,6 @@ extension GoalsViewController: UICollectionViewDelegate {
 //            return cell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize) //apply auto layout and retrieve the size of the cell
 //        }
         
-        return CGSizeMake(UIScreen.mainScreen().bounds.size.width - 17, 75)
+        return CGSizeMake(UIScreen.mainScreen().bounds.size.width, 75)
     }
 }
