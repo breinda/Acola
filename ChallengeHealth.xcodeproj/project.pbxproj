@@ -14,6 +14,14 @@
 		06A9D4D21D45619400296130 /* EmergencyPhonesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A9D4D11D45619400296130 /* EmergencyPhonesViewController.swift */; };
 		06C51C651D470F7700409C26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06C51C641D470F7700409C26 /* Main.storyboard */; };
 		06C51C671D47157100409C26 /* extensionGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C51C661D47157100409C26 /* extensionGoalsViewController.swift */; };
+		06D00F9D1D8BC68B00CCCCA8 /* BoddiMountainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F931D8BC68B00CCCCA8 /* BoddiMountainView.swift */; };
+		06D00F9E1D8BC68B00CCCCA8 /* BoddiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D00F941D8BC68B00CCCCA8 /* BoddiView.swift */; };
+		06D00F9F1D8BC68B00CCCCA8 /* boddi_feliz.png in Resources */ = {isa = PBXBuildFile; fileRef = 06D00F961D8BC68B00CCCCA8 /* boddi_feliz.png */; };
+		06D00FA01D8BC68B00CCCCA8 /* boddi_happyMountain.png in Resources */ = {isa = PBXBuildFile; fileRef = 06D00F971D8BC68B00CCCCA8 /* boddi_happyMountain.png */; };
+		06D00FA11D8BC68B00CCCCA8 /* boddi_principal.png in Resources */ = {isa = PBXBuildFile; fileRef = 06D00F981D8BC68B00CCCCA8 /* boddi_principal.png */; };
+		06D00FA21D8BC68B00CCCCA8 /* boddi_subindoMontanha.png in Resources */ = {isa = PBXBuildFile; fileRef = 06D00F991D8BC68B00CCCCA8 /* boddi_subindoMontanha.png */; };
+		06D00FA41D8BC68B00CCCCA8 /* cantoMontanha2.png in Resources */ = {isa = PBXBuildFile; fileRef = 06D00F9B1D8BC68B00CCCCA8 /* cantoMontanha2.png */; };
+		06D00FA51D8BC68B00CCCCA8 /* montanha2.png in Resources */ = {isa = PBXBuildFile; fileRef = 06D00F9C1D8BC68B00CCCCA8 /* montanha2.png */; };
 		06FF1B5C1D481CC700953BAE /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B5B1D481CC700953BAE /* SegueFromRight.swift */; };
 		06FF1B5E1D482CCB00953BAE /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B5D1D482CCB00953BAE /* TextField.swift */; };
 		A7D27DD2CE4F11ABD87D5D64 /* Pods_ChallengeHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007A7E7652F5C10253E2FBED /* Pods_ChallengeHealth.framework */; };
@@ -29,6 +37,7 @@
 		E1BD0CBD1D3D522300EC26BA /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD0CBC1D3D522300EC26BA /* Goal.swift */; };
 		E1BD0CBF1D3D532700EC26BA /* GoalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD0CBE1D3D532700EC26BA /* GoalCollectionViewCell.swift */; };
 		E1BD0CC31D3D61C500EC26BA /* CurrentStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD0CC21D3D61C500EC26BA /* CurrentStepViewController.swift */; };
+		E1D8AEE31D8BAAEB00BE0338 /* SummitReachedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D8AEE21D8BAAEB00BE0338 /* SummitReachedViewController.swift */; };
 		E1DCF4911D3F3EAF005479D6 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DCF4901D3F3EAF005479D6 /* Step.swift */; };
 		E1F8493A1D416D3700AF3E4D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F849391D416D3700AF3E4D /* User.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +51,14 @@
 		06A9D4D11D45619400296130 /* EmergencyPhonesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmergencyPhonesViewController.swift; sourceTree = "<group>"; };
 		06C51C641D470F7700409C26 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		06C51C661D47157100409C26 /* extensionGoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionGoalsViewController.swift; sourceTree = "<group>"; };
+		06D00F931D8BC68B00CCCCA8 /* BoddiMountainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoddiMountainView.swift; sourceTree = "<group>"; };
+		06D00F941D8BC68B00CCCCA8 /* BoddiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoddiView.swift; sourceTree = "<group>"; };
+		06D00F961D8BC68B00CCCCA8 /* boddi_feliz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boddi_feliz.png; sourceTree = "<group>"; };
+		06D00F971D8BC68B00CCCCA8 /* boddi_happyMountain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boddi_happyMountain.png; sourceTree = "<group>"; };
+		06D00F981D8BC68B00CCCCA8 /* boddi_principal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boddi_principal.png; sourceTree = "<group>"; };
+		06D00F991D8BC68B00CCCCA8 /* boddi_subindoMontanha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boddi_subindoMontanha.png; sourceTree = "<group>"; };
+		06D00F9B1D8BC68B00CCCCA8 /* cantoMontanha2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cantoMontanha2.png; sourceTree = "<group>"; };
+		06D00F9C1D8BC68B00CCCCA8 /* montanha2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = montanha2.png; sourceTree = "<group>"; };
 		06FF1B5B1D481CC700953BAE /* SegueFromRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueFromRight.swift; sourceTree = "<group>"; };
 		06FF1B5D1D482CCB00953BAE /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		28BB55857FF9BEA5F2C9F59E /* Pods-ChallengeHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth.debug.xcconfig"; sourceTree = "<group>"; };
@@ -55,11 +72,13 @@
 		E14948D41D356AFA00BB8FB2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E14948D61D356B1E00BB8FB2 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E14948D81D356B3C00BB8FB2 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		E16398451D9EBC2C004D329D /* ChallengeHealth.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ChallengeHealth.entitlements; sourceTree = "<group>"; };
 		E1BD0CB81D3D463400EC26BA /* GoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
 		E1BD0CBA1D3D48C300EC26BA /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		E1BD0CBC1D3D522300EC26BA /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		E1BD0CBE1D3D532700EC26BA /* GoalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1BD0CC21D3D61C500EC26BA /* CurrentStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentStepViewController.swift; sourceTree = "<group>"; };
+		E1D8AEE21D8BAAEB00BE0338 /* SummitReachedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummitReachedViewController.swift; sourceTree = "<group>"; };
 		E1DCF4901D3F3EAF005479D6 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		E1F849391D416D3700AF3E4D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +102,30 @@
 				06A9D4D11D45619400296130 /* EmergencyPhonesViewController.swift */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		06D00F921D8BC68B00CCCCA8 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				06D00F931D8BC68B00CCCCA8 /* BoddiMountainView.swift */,
+				06D00F941D8BC68B00CCCCA8 /* BoddiView.swift */,
+				06D00F951D8BC68B00CCCCA8 /* images */,
+			);
+			name = Animations;
+			path = ../Animations;
+			sourceTree = "<group>";
+		};
+		06D00F951D8BC68B00CCCCA8 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				06D00F961D8BC68B00CCCCA8 /* boddi_feliz.png */,
+				06D00F971D8BC68B00CCCCA8 /* boddi_happyMountain.png */,
+				06D00F981D8BC68B00CCCCA8 /* boddi_principal.png */,
+				06D00F991D8BC68B00CCCCA8 /* boddi_subindoMontanha.png */,
+				06D00F9B1D8BC68B00CCCCA8 /* cantoMontanha2.png */,
+				06D00F9C1D8BC68B00CCCCA8 /* montanha2.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		8891A6AFDC4F8CE0A11D9C78 /* Frameworks */ = {
@@ -114,9 +157,12 @@
 		E14948BD1D35680E00BB8FB2 /* ChallengeHealth */ = {
 			isa = PBXGroup;
 			children = (
+				E16398451D9EBC2C004D329D /* ChallengeHealth.entitlements */,
+				06D00F921D8BC68B00CCCCA8 /* Animations */,
 				E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */,
 				E14948D81D356B3C00BB8FB2 /* DAO.swift */,
 				06FF1B5B1D481CC700953BAE /* SegueFromRight.swift */,
+				06FF1B5D1D482CCB00953BAE /* TextField.swift */,
 				E1BD0CC11D3D616A00EC26BA /* User */,
 				E1BD0CC41D3D679400EC26BA /* Goals and Steps */,
 				E1BD0CC01D3D614100EC26BA /* Structs */,
@@ -149,7 +195,6 @@
 				E1BD0CBA1D3D48C300EC26BA /* ConfigViewController.swift */,
 				069B0FB91D3F2F0F000818F0 /* UserSettingsViewController.swift */,
 				060E2BF51D3F597D00097E81 /* extensionUserSettingsViewController.swift */,
-				06FF1B5D1D482CCB00953BAE /* TextField.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -160,6 +205,7 @@
 				E1BD0CB81D3D463400EC26BA /* GoalsViewController.swift */,
 				06C51C661D47157100409C26 /* extensionGoalsViewController.swift */,
 				E1BD0CC21D3D61C500EC26BA /* CurrentStepViewController.swift */,
+				E1D8AEE21D8BAAEB00BE0338 /* SummitReachedViewController.swift */,
 			);
 			name = "Goals and Steps";
 			sourceTree = "<group>";
@@ -189,6 +235,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E14948CD1D35680E00BB8FB2 /* Build configuration list for PBXNativeTarget "ChallengeHealth" */;
 			buildPhases = (
+				60AE2D69BB187CE0B6AAC681 /* [CP] Check Pods Manifest.lock */,
 				BE3BC549F17ADD069412ACC4 /* [CP] Check Pods Manifest.lock */,
 				1635D181219142EF994FB2E3 /* [CP] Check Pods Manifest.lock */,
 				0F97B991B74E6C85317ADB10 /* [CP] Check Pods Manifest.lock */,
@@ -216,13 +263,22 @@
 		E14948B31D35680D00BB8FB2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Brenda Carrocino";
 				TargetAttributes = {
 					E14948BA1D35680D00BB8FB2 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = ZRWVQTGDLK;
+						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -251,8 +307,14 @@
 			files = (
 				E14948C91D35680E00BB8FB2 /* LaunchScreen.storyboard in Resources */,
 				E14948C61D35680E00BB8FB2 /* Assets.xcassets in Resources */,
+				06D00FA01D8BC68B00CCCCA8 /* boddi_happyMountain.png in Resources */,
 				E14948D31D35684500BB8FB2 /* GoogleService-Info.plist in Resources */,
+				06D00FA41D8BC68B00CCCCA8 /* cantoMontanha2.png in Resources */,
+				06D00FA11D8BC68B00CCCCA8 /* boddi_principal.png in Resources */,
 				06C51C651D470F7700409C26 /* Main.storyboard in Resources */,
+				06D00F9F1D8BC68B00CCCCA8 /* boddi_feliz.png in Resources */,
+				06D00FA51D8BC68B00CCCCA8 /* montanha2.png in Resources */,
+				06D00FA21D8BC68B00CCCCA8 /* boddi_subindoMontanha.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +379,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60AE2D69BB187CE0B6AAC681 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		AB6AFDC61EAA61CE87CCA43D /* 📦 Copy Pods Resources */ = {
@@ -389,10 +466,12 @@
 				06FF1B5C1D481CC700953BAE /* SegueFromRight.swift in Sources */,
 				E1BD0CB91D3D463400EC26BA /* GoalsViewController.swift in Sources */,
 				E14948D51D356AFA00BB8FB2 /* LoginViewController.swift in Sources */,
+				06D00F9E1D8BC68B00CCCCA8 /* BoddiView.swift in Sources */,
 				E1BD0CBD1D3D522300EC26BA /* Goal.swift in Sources */,
 				E1BD0CBF1D3D532700EC26BA /* GoalCollectionViewCell.swift in Sources */,
 				06A9D4D01D4558AC00296130 /* AboutUsViewController.swift in Sources */,
 				E1BD0CBB1D3D48C300EC26BA /* ConfigViewController.swift in Sources */,
+				06D00F9D1D8BC68B00CCCCA8 /* BoddiMountainView.swift in Sources */,
 				E14948D71D356B1E00BB8FB2 /* SignUpViewController.swift in Sources */,
 				06A9D4D21D45619400296130 /* EmergencyPhonesViewController.swift in Sources */,
 				069B0FBA1D3F2F0F000818F0 /* UserSettingsViewController.swift in Sources */,
@@ -405,6 +484,7 @@
 				E1BD0CC31D3D61C500EC26BA /* CurrentStepViewController.swift in Sources */,
 				E14948D91D356B3C00BB8FB2 /* DAO.swift in Sources */,
 				E1F8493A1D416D3700AF3E4D /* User.swift in Sources */,
+				E1D8AEE31D8BAAEB00BE0338 /* SummitReachedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,8 +516,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -481,8 +563,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -501,6 +585,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -510,6 +595,7 @@
 			baseConfigurationReference = 28BB55857FF9BEA5F2C9F59E /* Pods-ChallengeHealth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ChallengeHealth/ChallengeHealth.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ChallengeHealth/Info.plist;
@@ -517,6 +603,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = BEPiD.ChallengeHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -525,6 +612,7 @@
 			baseConfigurationReference = B9EFA970596509DFC9D39CF7 /* Pods-ChallengeHealth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ChallengeHealth/ChallengeHealth.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ChallengeHealth/Info.plist;
@@ -532,6 +620,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = BEPiD.ChallengeHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

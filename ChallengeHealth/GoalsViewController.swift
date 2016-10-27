@@ -4,17 +4,26 @@ import FirebaseAuth
 
 class GoalsViewController: UIViewController {
 
+   // @IBOutlet weak var boddi: BoddiView!
     @IBOutlet weak var goalsCollectionView: UICollectionView!
 
     var goals = [Goal]()
     
     var isSecondVC = false
     
+    var cellWidth: CGFloat = 0
+    let columnNum: CGFloat = 1
+    
+    let mountainArray: [UIImage] = [UIImage(named: "iconeMontanha1")!, UIImage(named: "iconeMontanha2")!, UIImage(named: "iconeMontanha4")!, UIImage(named: "iconeMontanha3")!]
+    var mountainArrayIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //boddi.addAppearHappyJumpAnimation()
+        
         // pega os goals do banco e os armazena no array goals
-        DAO.STD_GOALS_REF.observeEventType(.ChildAdded, withBlock: { (snapshot) in
+        DAO.STD_GOALS_REF.observe(.childAdded, with: { (snapshot) in
             
             self.goals.append(Goal(key: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
             
@@ -22,27 +31,27 @@ class GoalsViewController: UIViewController {
         })
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         // MOSTRA A TELA DE LOGIN, CASO O USUARIO NAO ESTEJA LOGADO
         if FIRAuth.auth()?.currentUser == nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewControllerWithIdentifier("loginVC")
-            self.presentViewController(vc, animated: false, completion: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "loginVC")
+            self.present(vc, animated: false, completion: nil)
         }
         
-        goalsCollectionView.backgroundColor = UIColor.clearColor()
+        goalsCollectionView.backgroundColor = UIColor.clear
         goalsCollectionView.reloadData()
     }
     
     // MARK: Navigation
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToCurrentStep" {
             
             let cell = sender as! GoalCollectionViewCell
-            let indexPath = goalsCollectionView?.indexPathForCell(cell)
-            let goal = goals[indexPath!.item]
-            let currentStepVC = segue.destinationViewController as! CurrentStepViewController
+            let indexPath = goalsCollectionView?.indexPath(for: cell)
+            let goal = goals[(indexPath! as NSIndexPath).item]
+            let currentStepVC = segue.destination as! CurrentStepViewController
             
             currentStepVC.goal = goal.name
             currentStepVC.step = goal.firstStep.name
@@ -51,12 +60,12 @@ class GoalsViewController: UIViewController {
             // seta o step atual do usuário como 1 -- saber se view inicial é a de goals ou a de currentStep
             var handle : FIRAuthStateDidChangeListenerHandle
             
-            handle = (FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
+            handle = (FIRAuth.auth()?.addStateDidChangeListener { auth, user in
                 if let user = user {
                     // User is signed in.
                     let uid = user.uid;
                     
-                    DAO.USERS_REF.child(uid).observeEventType(.ChildAdded, withBlock: { (snapshot) in
+                    DAO.USERS_REF.child(uid).observe(.childAdded, with: { (snapshot) in
                         
                         if snapshot.key == "currentStepNumber" {
                             let childUpdates = [snapshot.key: "1"]
@@ -72,21 +81,21 @@ class GoalsViewController: UIViewController {
                 }
             })!
             
-            FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
+            FIRAuth.auth()?.removeStateDidChangeListener(handle)
             
-            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let rootVC = appDelegate.window!.rootViewController
             
-            if (rootVC!.dynamicType == self.dynamicType || (String(rootVC!.dynamicType) == "LoginViewController" && self.isSecondVC == true)) {
+            if (type(of: rootVC!) == type(of: self) || (String(describing: type(of: rootVC!)) == "LoginViewController" && self.isSecondVC == true)) {
                 print("MA OE GOALSVC")
                 //self.isSecondVC = false
 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyboard.instantiateViewControllerWithIdentifier("currentStepVC")
-                self.presentViewController(vc, animated: true, completion: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "currentStepVC")
+                self.present(vc, animated: true, completion: nil)
             }
             else {
-                self.dismissViewControllerAnimated(true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
