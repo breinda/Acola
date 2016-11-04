@@ -106,7 +106,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LJl-pJ-HZN" kind="presentation" id="kbd-aT-9I9"/>
+                                    <segue destination="LJl-pJ-HZN" kind="presentation" identifier="registerVC" id="lIq-1r-v9z"/>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="VSb-H8-O4D">
@@ -517,7 +517,6 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="boddi" destination="Oce-2X-M2N" id="ttk-jh-GiP"/>
                         <outlet property="boddiTextBubbleLabel" destination="fAc-FB-YWg" id="4yW-9E-7uy"/>
                         <outlet property="goalLabel" destination="EXZ-He-cDA" id="Ip3-Tf-aom"/>
                         <outlet property="stepIndexLabel" destination="nRe-In-UB2" id="PMq-3J-lJB"/>
@@ -820,7 +819,6 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="boddi" destination="FcZ-ep-qdm" id="ooK-0A-cSh"/>
                         <outlet property="boddiLabel" destination="2xf-zk-i7s" id="zLu-RV-Pwt"/>
                     </connections>
                 </viewController>
@@ -1305,7 +1303,6 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="boddi" destination="YHZ-Zp-4b3" id="62a-bK-8pG"/>
                         <outlet property="boddiTextBubbleLabel" destination="Jrg-8G-7dZ" id="4xL-F9-giE"/>
                         <outlet property="confirmPasswordTextField" destination="a0J-OL-Acn" id="bmP-Cg-5nr"/>
                         <outlet property="emailPasswordView" destination="W9V-kU-wbm" id="E2y-ki-wFr"/>
@@ -1774,9 +1771,6 @@ Telefone: (021)ajhsgfd-jashfg</string>
                             </mask>
                         </variation>
                     </view>
-                    <connections>
-                        <outlet property="boddi" destination="hgm-wU-SCc" id="Hl9-CT-cna"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VqQ-qp-xaZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2209,6 +2203,8 @@ Eu vou te ajudar a alcançá-lo!</string>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="auJ-Lj-xLd"/>
+                                <exclude reference="PEf-fs-oOf"/>
+                                <exclude reference="pts-9H-sFm"/>
                                 <exclude reference="4K0-GU-6qw"/>
                                 <exclude reference="DTz-DS-Lht"/>
                                 <exclude reference="kLg-u0-yXp"/>
@@ -2224,8 +2220,6 @@ Eu vou te ajudar a alcançá-lo!</string>
                                 <exclude reference="YBg-j1-1Ix"/>
                                 <exclude reference="YPw-dm-eJ7"/>
                                 <exclude reference="xva-gK-zW6"/>
-                                <exclude reference="PEf-fs-oOf"/>
-                                <exclude reference="pts-9H-sFm"/>
                                 <exclude reference="Aod-19-8md"/>
                                 <exclude reference="IyD-rI-DVT"/>
                                 <exclude reference="yiB-RR-znQ"/>
@@ -2251,6 +2245,8 @@ Eu vou te ajudar a alcançá-lo!</string>
                             </mask>
                             <mask key="constraints">
                                 <include reference="auJ-Lj-xLd"/>
+                                <include reference="PEf-fs-oOf"/>
+                                <include reference="pts-9H-sFm"/>
                                 <include reference="4K0-GU-6qw"/>
                                 <include reference="DTz-DS-Lht"/>
                                 <include reference="kLg-u0-yXp"/>
@@ -2266,8 +2262,6 @@ Eu vou te ajudar a alcançá-lo!</string>
                                 <include reference="YBg-j1-1Ix"/>
                                 <include reference="YPw-dm-eJ7"/>
                                 <include reference="xva-gK-zW6"/>
-                                <include reference="PEf-fs-oOf"/>
-                                <include reference="pts-9H-sFm"/>
                                 <include reference="Aod-19-8md"/>
                                 <include reference="IyD-rI-DVT"/>
                                 <include reference="yiB-RR-znQ"/>
@@ -2277,7 +2271,6 @@ Eu vou te ajudar a alcançá-lo!</string>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="boddi" destination="gjG-Ez-Q5I" id="Kyk-rJ-yb4"/>
                         <outlet property="goalsCollectionView" destination="K7k-4o-ecP" id="mUD-Ch-PPt"/>
                     </connections>
                 </viewController>
@@ -2295,7 +2288,7 @@ Eu vou te ajudar a alcançá-lo!</string>
         <image name="logo Acola Certinha" width="3229" height="2070"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="grL-aW-a2k"/>
         <segue reference="TA0-3Y-3T6"/>
-        <segue reference="ith-tA-OpB"/>
     </inferredMetricsTieBreakers>
 </document>

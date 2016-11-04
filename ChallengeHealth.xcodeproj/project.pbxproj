@@ -25,7 +25,7 @@
 		06FF1B5C1D481CC700953BAE /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B5B1D481CC700953BAE /* SegueFromRight.swift */; };
 		06FF1B5E1D482CCB00953BAE /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B5D1D482CCB00953BAE /* TextField.swift */; };
 		A7D27DD2CE4F11ABD87D5D64 /* Pods_ChallengeHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007A7E7652F5C10253E2FBED /* Pods_ChallengeHealth.framework */; };
-		E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */; };
+		E14948BF1D35680E00BB8FB2 /*  .swift in Sources */ = {isa = PBXBuildFile; fileRef = E14948BE1D35680E00BB8FB2 /*  .swift */; };
 		E14948C61D35680E00BB8FB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E14948C51D35680E00BB8FB2 /* Assets.xcassets */; };
 		E14948C91D35680E00BB8FB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14948C71D35680E00BB8FB2 /* LaunchScreen.storyboard */; };
 		E14948D31D35684500BB8FB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E14948D21D35684500BB8FB2 /* GoogleService-Info.plist */; };
@@ -64,7 +64,7 @@
 		28BB55857FF9BEA5F2C9F59E /* Pods-ChallengeHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth.debug.xcconfig"; sourceTree = "<group>"; };
 		B9EFA970596509DFC9D39CF7 /* Pods-ChallengeHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth.release.xcconfig"; sourceTree = "<group>"; };
 		E14948BB1D35680D00BB8FB2 /* ChallengeHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E14948BE1D35680E00BB8FB2 /*  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " .swift"; sourceTree = "<group>"; };
 		E14948C51D35680E00BB8FB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E14948C81D35680E00BB8FB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E14948CA1D35680E00BB8FB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 			children = (
 				E16398451D9EBC2C004D329D /* ChallengeHealth.entitlements */,
 				06D00F921D8BC68B00CCCCA8 /* Animations */,
-				E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */,
+				E14948BE1D35680E00BB8FB2 /*  .swift */,
 				E14948D81D356B3C00BB8FB2 /* DAO.swift */,
 				06FF1B5B1D481CC700953BAE /* SegueFromRight.swift */,
 				06FF1B5D1D482CCB00953BAE /* TextField.swift */,
@@ -235,6 +235,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E14948CD1D35680E00BB8FB2 /* Build configuration list for PBXNativeTarget "ChallengeHealth" */;
 			buildPhases = (
+				A97D1B9567DFE497F3EBCAF6 /* 📦 Check Pods Manifest.lock */,
 				60AE2D69BB187CE0B6AAC681 /* [CP] Check Pods Manifest.lock */,
 				BE3BC549F17ADD069412ACC4 /* [CP] Check Pods Manifest.lock */,
 				1635D181219142EF994FB2E3 /* [CP] Check Pods Manifest.lock */,
@@ -396,6 +397,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		A97D1B9567DFE497F3EBCAF6 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		AB6AFDC61EAA61CE87CCA43D /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -475,7 +491,7 @@
 				E14948D71D356B1E00BB8FB2 /* SignUpViewController.swift in Sources */,
 				06A9D4D21D45619400296130 /* EmergencyPhonesViewController.swift in Sources */,
 				069B0FBA1D3F2F0F000818F0 /* UserSettingsViewController.swift in Sources */,
-				E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */,
+				E14948BF1D35680E00BB8FB2 /*  .swift in Sources */,
 				06FF1B5E1D482CCB00953BAE /* TextField.swift in Sources */,
 				060E2BF61D3F597D00097E81 /* extensionUserSettingsViewController.swift in Sources */,
 				E1DCF4911D3F3EAF005479D6 /* Step.swift in Sources */,

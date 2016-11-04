@@ -4,6 +4,7 @@ import FirebaseAuth
 
 class CurrentStepViewController: UIViewController {
 
+    
     var goal: String = ""
     var step: String = ""
 

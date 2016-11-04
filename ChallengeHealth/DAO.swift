@@ -18,4 +18,5 @@ class DAO {
     static func login(_ username: String, password: String, callback: @escaping FIRAuthResultCallback) {
         FIRAuth.auth()?.signIn(withEmail: username, password: password, completion: callback)
     }
+    
 }

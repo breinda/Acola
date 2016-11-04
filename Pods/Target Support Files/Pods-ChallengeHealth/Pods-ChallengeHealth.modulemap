@@ -1,0 +1,6 @@
+framework module Pods_ChallengeHealth {
+  umbrella header "Pods-ChallengeHealth-umbrella.h"
+
+  export *
+  module * { export * }
+}
