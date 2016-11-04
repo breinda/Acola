@@ -5,10 +5,7 @@ class GoalCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var goalNameLabel: UILabel!
     
-    
-    
-    
-    func configureCell(goal: Goal) {
+    func configureCell(_ goal: Goal) {
         self.goalNameLabel.text = goal.name
     }
     

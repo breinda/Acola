@@ -2,8 +2,14 @@ import UIKit
 
 class EmergencyPhonesViewController: UIViewController {
 
-    @IBAction func returnButtonWasTapped(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+   // @IBOutlet weak var boddi: BoddiView!
+    
+    override func viewDidLoad() {
+      //  boddi.addNormalCycleAnimation()
+    }
+    
+    @IBAction func returnButtonWasTapped(_ sender: AnyObject) {
+        self.dismiss(animated: false, completion: nil)
     }
 
 }

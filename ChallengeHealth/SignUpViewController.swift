@@ -1,10 +1,22 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
 
 class SignUpViewController: UIViewController {
     
 
+   // @IBOutlet weak var boddi: BoddiView!
     @IBOutlet weak var returnButton: UIButton!
     @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -17,27 +29,30 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         
+      //  boddi.addAppearHappyAnimation()
+        //ADICIONAR ciclo depois. agora não está funcionando nao faco ideia do porquê, nao aparece nem a animaçao inicial.
+        
+        emailPasswordView.isHidden = true
         super.viewDidLoad()
-        emailPasswordView.hidden = true
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
     // return = back button
-    @IBAction func returnButtonWasTapped(sender: AnyObject) {
+    @IBAction func returnButtonWasTapped(_ sender: AnyObject) {
         
-        if emailPasswordView.hidden == true {
-            self.dismissViewControllerAnimated(true, completion: nil)
+        if emailPasswordView.isHidden == true {
+            self.dismiss(animated: true, completion: nil)
         }
         else {
-            emailPasswordView.hidden = true
-            nameView.hidden = false
+            emailPasswordView.isHidden = true
+            nameView.isHidden = false
         }
     }
     
-    @IBAction func confirmNameButtonWasTapped(sender: AnyObject) {
+    @IBAction func confirmNameButtonWasTapped(_ sender: AnyObject) {
         let name = nameTextField.text
         
         if name!.isEmpty {
@@ -45,24 +60,24 @@ class SignUpViewController: UIViewController {
             return;
         }
         
-        nameView.hidden = true
-        returnButton.hidden = false
-        emailPasswordView.hidden = false
+        nameView.isHidden = true
+        returnButton.isHidden = false
+        emailPasswordView.isHidden = false
         
         boddiTextBubbleLabel.text! = "Oi, \(name!)! Por favor, insira seus dados para podermos continuar."
     }
     
     // função auxiliar para analisar regex
-    func containsMatch(pattern: String, inString string: String) -> Bool {
+    func containsMatch(_ pattern: String, inString string: String) -> Bool {
         
         let regex : NSRegularExpression
         
         do {
-            regex = try NSRegularExpression(pattern: pattern, options: NSRegularExpressionOptions.CaseInsensitive)
+            regex = try NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options.caseInsensitive)
             
             let range = NSMakeRange(0, string.characters.count)
             
-            return regex.numberOfMatchesInString(string, options: NSMatchingOptions.ReportProgress, range: range) != 0
+            return regex.numberOfMatches(in: string, options: NSRegularExpression.MatchingOptions.reportProgress, range: range) != 0
             
         } catch {
             print("erro ao criar regex")
@@ -70,7 +85,7 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    @IBAction func signUpButtonWasTapped(sender: AnyObject) {
+    @IBAction func signUpButtonWasTapped(_ sender: AnyObject) {
         
         let name = nameTextField.text
         let email = emailTextField.text
@@ -83,10 +98,10 @@ class SignUpViewController: UIViewController {
         if (name!.isEmpty || email!.isEmpty || password!.isEmpty || confirmPassword!.isEmpty) {
             
             let alertView = UIAlertController(title: "Problema no cadastro",
-                                              message: "Preencha todos os campos." as String, preferredStyle:.Alert)
-            let okAction = UIAlertAction(title: "Tentar novamente", style: .Default, handler: nil)
+                                              message: "Preencha todos os campos." as String, preferredStyle:.alert)
+            let okAction = UIAlertAction(title: "Tentar novamente", style: .default, handler: nil)
             alertView.addAction(okAction)
-            self.presentViewController(alertView, animated: true, completion: nil)
+            self.present(alertView, animated: true, completion: nil)
             
             return;
         }
@@ -94,10 +109,10 @@ class SignUpViewController: UIViewController {
         if (!containsMatch("([^\\t\\n\\s])*@([^\\t\\n\\s])*\\.([^\\t\\n\\s])*", inString: email!)) {
             
             let alertView = UIAlertController(title: "Problema no cadastro",
-                                              message: "Formato de email não reconhecido." as String, preferredStyle:.Alert)
-            let okAction = UIAlertAction(title: "Tentar novamente", style: .Default, handler: nil)
+                                              message: "Formato de email não reconhecido." as String, preferredStyle:.alert)
+            let okAction = UIAlertAction(title: "Tentar novamente", style: .default, handler: nil)
             alertView.addAction(okAction)
-            self.presentViewController(alertView, animated: true, completion: nil)
+            self.present(alertView, animated: true, completion: nil)
             
             return;
         }
@@ -116,38 +131,38 @@ class SignUpViewController: UIViewController {
         if (password != confirmPassword) {
             
             let alertView = UIAlertController(title: "Problema no cadastro",
-                                              message: "As senhas inseridas não coincidem." as String, preferredStyle:.Alert)
-            let okAction = UIAlertAction(title: "Tentar novamente", style: .Default, handler: nil)
+                                              message: "As senhas inseridas não coincidem." as String, preferredStyle:.alert)
+            let okAction = UIAlertAction(title: "Tentar novamente", style: .default, handler: nil)
             alertView.addAction(okAction)
-            self.presentViewController(alertView, animated: true, completion: nil)
+            self.present(alertView, animated: true, completion: nil)
             
             return;
         }
         
         if (password?.characters.count < 6) {
             let alertView = UIAlertController(title: "Problema no cadastro",
-                                              message: "Senha com menos de 6 caracteres." as String, preferredStyle:.Alert)
-            let okAction = UIAlertAction(title: "Tentar novamente", style: .Default, handler: nil)
+                                              message: "Senha com menos de 6 caracteres." as String, preferredStyle:.alert)
+            let okAction = UIAlertAction(title: "Tentar novamente", style: .default, handler: nil)
             alertView.addAction(okAction)
-            self.presentViewController(alertView, animated: true, completion: nil)
+            self.present(alertView, animated: true, completion: nil)
             return;
         }
         
         
         // FUNCAO DE CALLBACK
-        func registerCallback (user: FIRUser?, error: NSError?) {
+        func registerCallback (_ user: FIRUser?, error: NSError?) {
             if error == nil {
-                let alert = UIAlertController(title: "SUCESSO", message: "Cadastro efetuado com sucesso!", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "SUCESSO", message: "Cadastro efetuado com sucesso!", preferredStyle: UIAlertControllerStyle.alert)
                 
-                let cancel = UIAlertAction(title: "OKAY!", style: UIAlertActionStyle.Cancel, handler: nil)
+                let cancel = UIAlertAction(title: "OKAY!", style: UIAlertActionStyle.cancel, handler: nil)
                 
                 alert.addAction(cancel)
-                self.presentViewController(alert, animated: true, completion: nil)
+                self.present(alert, animated: true, completion: nil)
                 
                 // popula o database com os dados iniciais do usuário no ato do cadastro
                 var handle : FIRAuthStateDidChangeListenerHandle
         
-                handle = (FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
+                handle = (FIRAuth.auth()?.addStateDidChangeListener { auth, user in
                     if let user = user {
                         // User is signed in.
                         //let name = user.displayName
@@ -160,28 +175,30 @@ class SignUpViewController: UIViewController {
                         print(uid)
                         
                         let key = uid
-                        let userData = ["name": name!, "petName": "Serumaninho", "currentGoalKey": "", "currentStepNumber": "0", "customGoals": false]
+                        let userData = ["name": name!, "petName": "Serumaninho", "currentGoalKey": "", "currentStepNumber": "0", "customGoals": false] as [String : Any]
                         let childUpdates = ["\(key)": userData]
                         
                         DAO.USERS_REF.updateChildValues(childUpdates)
                     }
                 })!
                 
-                FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
+                FIRAuth.auth()?.removeStateDidChangeListener(handle)
             }
             else {
-                let alert = UIAlertController(title: "Erro", message: "vc conseguiu a façanha de achar um erro que eu não tratei???", preferredStyle: UIAlertControllerStyle.Alert)
+                let alert = UIAlertController(title: "Erro", message: "vc conseguiu a façanha de achar um erro que eu não tratei???", preferredStyle: UIAlertControllerStyle.alert)
                 
-                let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil)
+                let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
                 
                 alert.addAction(cancel)
-                self.presentViewController(alert, animated: true, completion: nil)
+                self.present(alert, animated: true, completion: nil)
             }
         }
         
-        DAO.signUp(email!, password: password!, callback: registerCallback)
+        FIRAuth.auth()?.createUser(withEmail: email!, password: password!, completion: registerCallback as! FIRAuthResultCallback)
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        //DAO.signUp(email!, password: password!, callback: (registerCallback as? FIRAuthResultCallback)!)
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

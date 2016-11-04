@@ -2,21 +2,21 @@ import UIKit
 
 extension GoalsViewController: UICollectionViewDelegate {
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSectionsInCollectionView(_ collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return goals.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = goalsCollectionView.dequeueReusableCellWithReuseIdentifier("goalCell", forIndexPath: indexPath) as! GoalCollectionViewCell
-        let goal = goals[indexPath.row]
+        let cell = goalsCollectionView.dequeueReusableCell(withReuseIdentifier: "goalCell", for: indexPath) as! GoalCollectionViewCell
+        let goal = goals[(indexPath as NSIndexPath).row]
         
         cell.configureCell(goal)
-        cell.backgroundColor = UIColor.clearColor()
+        cell.backgroundColor = UIColor.clear
         
         cell.mountainImage.image = mountainArray[mountainArrayIndex]
         
@@ -40,7 +40,7 @@ extension GoalsViewController: UICollectionViewDelegate {
 //    }
     
     // cuida de o quanto a gente expande as células da collectionview
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
         
 //        if let cell = GoalCollectionViewCell.fromNib() {
 //            let cellMargins = cell.layoutMargins.left + cell.layoutMargins.right
@@ -50,6 +50,6 @@ extension GoalsViewController: UICollectionViewDelegate {
 //            return cell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize) //apply auto layout and retrieve the size of the cell
 //        }
         
-        return CGSizeMake(UIScreen.mainScreen().bounds.size.width, 75)
+        return CGSize(width: UIScreen.main.bounds.size.width, height: 75)
     }
 }

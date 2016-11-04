@@ -2,8 +2,8 @@ import UIKit
 
 class AboutUsViewController: UIViewController {
 
-    @IBAction func returnButtonWasTapped(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func returnButtonWasTapped(_ sender: AnyObject) {
+        self.dismiss(animated: false, completion: nil)
     }
     
 }
