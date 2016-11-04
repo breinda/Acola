@@ -20,7 +20,6 @@ class LoginViewController: UIViewController {
     
     
     func loginCallback (user: FIRUser?, error: NSError?) {
-        // SUCESSO !!!
         if error == nil {
             var handle : FIRAuthStateDidChangeListenerHandle
             
@@ -84,7 +83,7 @@ class LoginViewController: UIViewController {
             self.activityIndicatorView.stopAnimating()
         }
     }
-    
+
     @IBAction func loginButtonWasTapped(_ sender: AnyObject) {
         let email = emailTextField.text
         let password = passwordTextField.text

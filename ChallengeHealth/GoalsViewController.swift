@@ -3,10 +3,10 @@ import Firebase
 import FirebaseAuth
 
 class GoalsViewController: UIViewController {
-
-   // @IBOutlet weak var boddi: BoddiView!
+    
+    // @IBOutlet weak var boddi: BoddiView!
     @IBOutlet weak var goalsCollectionView: UICollectionView!
-
+    
     var goals = [Goal]()
     
     var isSecondVC = false
@@ -68,18 +68,18 @@ class GoalsViewController: UIViewController {
                     DAO.USERS_REF.child(uid).observe(.childAdded, with: { (snapshot) in
                         
                         if snapshot.key == "currentStepNumber" {
-                            let childUpdates = [snapshot.key: "1"]
+                            let childUpdates = [snapshot.key: "1" as NSString]
                             DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
                         }
                         
                         if snapshot.key == "currentGoalKey" {
-                            let childUpdates = [snapshot.key: goal.key]
+                            let childUpdates = [snapshot.key: goal.key as NSString]
                             DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
                         }
                         
                     })
                 }
-            })!
+                })!
             
             FIRAuth.auth()?.removeStateDidChangeListener(handle)
             
@@ -89,7 +89,6 @@ class GoalsViewController: UIViewController {
             if (type(of: rootVC!) == type(of: self) || (String(describing: type(of: rootVC!)) == "LoginViewController" && self.isSecondVC == true)) {
                 print("MA OE GOALSVC")
                 //self.isSecondVC = false
-
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "currentStepVC")
                 self.present(vc, animated: true, completion: nil)
@@ -99,6 +98,5 @@ class GoalsViewController: UIViewController {
             }
         }
     }
-
+    
 }
-
