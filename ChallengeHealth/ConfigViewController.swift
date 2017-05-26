@@ -3,31 +3,30 @@ import Firebase
 import FirebaseAuth
 
 class ConfigViewController: UIViewController {
-
-  //  @IBOutlet weak var boddi: BoddiView!
+    
     @IBOutlet weak var boddiLabel: UILabel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        if let user = FIRAuth.auth()?.currentUser {
-//            for profile in user.providerData {
-//                //let email = profile.email
-//                //let name = profile.displayName
-//                //boddiLabel.text! = "Como posso lhe ajudar, \(name!)?"
-//                //emailLabel.text! = email!
-//            }
-//        }
+        //        if let user = FIRAuth.auth()?.currentUser {
+        //            for profile in user.providerData {
+        //                //let email = profile.email
+        //                //let name = profile.displayName
+        //                //boddiLabel.text! = "Como posso lhe ajudar, \(name!)?"
+        //                //emailLabel.text! = email!
+        //            }
+        //        }
         
-      //  boddi.addNormalCycleAnimation()
+        //  boddi.addNormalCycleAnimation()
         
-        var handle : FIRAuthStateDidChangeListenerHandle
+        var handle : AuthStateDidChangeListenerHandle
         
-        handle = (FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+        handle = (Auth.auth().addStateDidChangeListener { auth, user in
             if let user = user {
                 // User is signed in.
                 let uid = user.uid;
-
+                
                 DAO.USERS_REF.observe(.childAdded, with: { (snapshotUser) in
                     if snapshotUser.key == uid {
                         
@@ -38,9 +37,9 @@ class ConfigViewController: UIViewController {
                     }
                 })
             }
-        })!
+        })
         
-        FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
+        Auth.auth().removeStateDidChangeListener(handle)
     }
     
     @IBAction func backButtonWasTapped(_ sender: AnyObject) {
@@ -48,7 +47,7 @@ class ConfigViewController: UIViewController {
     }
     
     @IBAction func logoutButtonWasTapped(_ sender: AnyObject) {
-        try! FIRAuth.auth()!.signOut()
+        try! Auth.auth().signOut()
         self.dismiss(animated: true, completion: nil)
     }
     

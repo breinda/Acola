@@ -1,22 +1,24 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-  switch (lhs, rhs) {
-  case let (l?, r?):
-    return l < r
-  case (nil, _?):
-    return true
-  default:
-    return false
-  }
+    switch (lhs, rhs) {
+    case let (l?, r?):
+        return l < r
+    case (nil, _?):
+        return true
+    default:
+        return false
+    }
 }
 
 
 class SignUpViewController: UIViewController {
     
-
-   // @IBOutlet weak var boddi: BoddiView!
+    
+    // @IBOutlet weak var boddi: BoddiView!
+    
     @IBOutlet weak var returnButton: UIButton!
     @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -27,19 +29,23 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var boddiTextBubbleLabel: UILabel!
     
+    
     override func viewDidLoad() {
         
-      //  boddi.addAppearHappyAnimation()
+        
+        //  boddi.addAppearHappyAnimation()
         //ADICIONAR ciclo depois. agora não está funcionando nao faco ideia do porquê, nao aparece nem a animaçao inicial.
         
         emailPasswordView.isHidden = true
-        super.viewDidLoad()
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
+    
+    // MARK: - navigation
     // return = back button
     @IBAction func returnButtonWasTapped(_ sender: AnyObject) {
         
@@ -67,6 +73,7 @@ class SignUpViewController: UIViewController {
         boddiTextBubbleLabel.text! = "Oi, \(name!)! Por favor, insira seus dados para podermos continuar."
     }
     
+    // MARK: cadastro
     // função auxiliar para analisar regex
     func containsMatch(_ pattern: String, inString string: String) -> Bool {
         
@@ -84,6 +91,7 @@ class SignUpViewController: UIViewController {
             return false
         }
     }
+    
     
     @IBAction func signUpButtonWasTapped(_ sender: AnyObject) {
         
@@ -120,10 +128,10 @@ class SignUpViewController: UIViewController {
         if (email != confirmEmail) {
             
             let alertView = UIAlertController(title: "Problema no cadastro",
-                                              message: "Os emails inseridos não coincidem." as String, preferredStyle:.Alert)
-            let okAction = UIAlertAction(title: "Tentar novamente", style: .Default, handler: nil)
+                                              message: "Os emails inseridos não coincidem." as String, preferredStyle:.alert)
+            let okAction = UIAlertAction(title: "Tentar novamente", style: .default, handler: nil)
             alertView.addAction(okAction)
-            self.presentViewController(alertView, animated: true, completion: nil)
+            self.present(alertView, animated: true, completion: nil)
             
             return;
         }
@@ -149,30 +157,36 @@ class SignUpViewController: UIViewController {
         }
         
         
-        // FUNCAO DE CALLBACK
-        func registerCallback (_ user: FIRUser?, error: NSError?) {
+        // CADASTRO
+        Auth.auth().createUser(withEmail: email!, password: password!) { (user, error) in
+            
+            print("ERRO: \(error)")
+            
             if error == nil {
+                
                 let alert = UIAlertController(title: "SUCESSO", message: "Cadastro efetuado com sucesso!", preferredStyle: UIAlertControllerStyle.alert)
                 
-                let cancel = UIAlertAction(title: "OKAY!", style: UIAlertActionStyle.cancel, handler: nil)
+                let cancel = UIAlertAction(title: "OK!", style: UIAlertActionStyle.cancel, handler: { action in
+                    
+                    self.dismiss(animated: true, completion: nil)
+                })
                 
                 alert.addAction(cancel)
                 self.present(alert, animated: true, completion: nil)
                 
                 // popula o database com os dados iniciais do usuário no ato do cadastro
-                var handle : FIRAuthStateDidChangeListenerHandle
-        
-                handle = (FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+                var handle : AuthStateDidChangeListenerHandle
+                
+                handle = (Auth.auth().addStateDidChangeListener { auth, user in
+                    
                     if let user = user {
                         // User is signed in.
                         //let name = user.displayName
                         let email = user.email
                         let uid = user.uid;
-
-                        print("email")
-                        print(email)
-                        print("uid")
-                        print(uid)
+                        
+                        print("email: \(email!)")
+                        print("uid: \(uid)")
                         
                         let key = uid
                         let userData = ["name": name!, "petName": "Serumaninho", "currentGoalKey": "", "currentStepNumber": "0", "customGoals": false] as [String : Any]
@@ -180,11 +194,13 @@ class SignUpViewController: UIViewController {
                         
                         DAO.USERS_REF.updateChildValues(childUpdates)
                     }
-                })!
+                })
                 
-                FIRAuth.auth()?.removeStateDidChangeListener(handle)
+                Auth.auth().removeStateDidChangeListener(handle)
             }
-            else {
+                
+            else { // encontrou um erro
+                
                 let alert = UIAlertController(title: "Erro", message: "vc conseguiu a façanha de achar um erro que eu não tratei???", preferredStyle: UIAlertControllerStyle.alert)
                 
                 let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
@@ -193,12 +209,6 @@ class SignUpViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
-        
-        FIRAuth.auth()?.createUser(withEmail: email!, password: password!, completion: registerCallback as! FIRAuthResultCallback)
-        
-        //DAO.signUp(email!, password: password!, callback: (registerCallback as? FIRAuthResultCallback)!)
-        
-        self.dismiss(animated: true, completion: nil)
     }
     
 }

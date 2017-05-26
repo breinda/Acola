@@ -8,11 +8,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        FIRApp.configure()
         
-        var handle : FIRAuthStateDidChangeListenerHandle
+        // Use Firebase library to configure APIs
+        FirebaseApp.configure()
         
-        handle = (FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+        var handle : AuthStateDidChangeListenerHandle
+        
+        handle = (Auth.auth().addStateDidChangeListener { auth, user in
             if let user = user {
                 // User is signed in.
                 let uid = user.uid;
@@ -52,9 +54,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 self.window?.makeKeyAndVisible()
             }
-            })!
+        })
         
-        FIRAuth.auth()?.removeStateDidChangeListener(handle)
+        Auth.auth().removeStateDidChangeListener(handle)
         
         return true
     }
