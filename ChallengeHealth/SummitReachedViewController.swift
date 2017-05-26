@@ -1,5 +1,5 @@
 //
-//  TopReachedViewController.swift
+//  SummitReachedViewController.swift
 //  ChallengeHealth
 //
 //  Created by Brenda Carrocino on 16/09/16.

@@ -1,5 +1,7 @@
 import UIKit
 
+// insere padding nos text fields
+
 class TextField: UITextField {
     
     let padding = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 5);

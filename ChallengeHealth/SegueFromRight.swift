@@ -4,10 +4,11 @@ import QuartzCore
 class SegueFromRight: UIStoryboardSegue {
     
     override func perform() {
-        let src: UIViewController = self.source
+        let src : UIViewController = self.source
         //let dest: UIViewController = self.destinationViewController
-        let transition: CATransition = CATransition()
+        let transition : CATransition = CATransition()
         let timeFunc : CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        
         transition.duration = 0.25
         transition.timingFunction = timeFunc
         transition.type = kCATransitionPush
