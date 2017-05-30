@@ -1,8 +1,8 @@
 import UIKit
 
-extension GoalsViewController: UICollectionViewDelegate {
+extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
-    func numberOfSectionsInCollectionView(_ collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
@@ -10,7 +10,7 @@ extension GoalsViewController: UICollectionViewDelegate {
         return goals.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = goalsCollectionView.dequeueReusableCell(withReuseIdentifier: "goalCell", for: indexPath) as! GoalCollectionViewCell
         let goal = goals[(indexPath as NSIndexPath).row]
