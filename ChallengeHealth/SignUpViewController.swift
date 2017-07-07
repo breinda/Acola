@@ -69,6 +69,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             nameView.isHidden = false
         }
         
+        // esconde o teclado
         nameTextField.resignFirstResponder()
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
@@ -89,6 +90,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         boddiTextBubbleLabel.text! = "Oi, \(name!)! Por favor, insira seus dados para podermos continuar."
         
+        // esconde o teclado
         nameTextField.resignFirstResponder()
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
@@ -96,7 +98,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: cadastro
-    // função auxiliar para analisar regex
+    // função auxiliar para analisar formataçao do email com regex
     func containsMatch(_ pattern: String, inString string: String) -> Bool {
         
         let regex : NSRegularExpression
