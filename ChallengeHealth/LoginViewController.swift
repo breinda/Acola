@@ -13,6 +13,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         loginButton.addTextSpacing(spacing: 1.5)
+        emailTextField.keyboardAppearance = .dark
+        passwordTextField.keyboardAppearance = .dark
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

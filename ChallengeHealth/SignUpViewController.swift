@@ -14,7 +14,7 @@ fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 }
 
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     
     // @IBOutlet weak var boddi: BoddiView!
@@ -24,7 +24,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailPasswordView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var confirmEmailTextField: UITextField!
+    //@IBOutlet weak var confirmEmailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var confirmPasswordTextField: UITextField!
     @IBOutlet weak var boddiTextBubbleLabel: UILabel!
@@ -38,14 +38,26 @@ class SignUpViewController: UIViewController {
         
         emailPasswordView.isHidden = true
         
+        nameTextField.keyboardAppearance = .dark
+        emailTextField.keyboardAppearance = .dark
+        //confirmEmailTextField.keyboardAppearance = .dark
+        passwordTextField.keyboardAppearance = .dark
+        confirmPasswordTextField.keyboardAppearance = .dark
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
     
     // MARK: - navigation
+    
     // return = back button
     @IBAction func returnButtonWasTapped(_ sender: AnyObject) {
         
@@ -56,6 +68,11 @@ class SignUpViewController: UIViewController {
             emailPasswordView.isHidden = true
             nameView.isHidden = false
         }
+        
+        nameTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        confirmPasswordTextField.resignFirstResponder()
     }
     
     @IBAction func confirmNameButtonWasTapped(_ sender: AnyObject) {
@@ -71,6 +88,11 @@ class SignUpViewController: UIViewController {
         emailPasswordView.isHidden = false
         
         boddiTextBubbleLabel.text! = "Oi, \(name!)! Por favor, insira seus dados para podermos continuar."
+        
+        nameTextField.resignFirstResponder()
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        confirmPasswordTextField.resignFirstResponder()
     }
     
     // MARK: cadastro
@@ -97,7 +119,7 @@ class SignUpViewController: UIViewController {
         
         let name = nameTextField.text
         let email = emailTextField.text
-        let confirmEmail = confirmEmailTextField.text
+        //let confirmEmail = confirmEmailTextField.text
         let password = passwordTextField.text
         let confirmPassword = confirmPasswordTextField.text
         
@@ -125,16 +147,16 @@ class SignUpViewController: UIViewController {
             return;
         }
         
-        if (email != confirmEmail) {
-            
-            let alertView = UIAlertController(title: "Problema no cadastro",
-                                              message: "Os emails inseridos não coincidem." as String, preferredStyle:.alert)
-            let okAction = UIAlertAction(title: "Tentar novamente", style: .default, handler: nil)
-            alertView.addAction(okAction)
-            self.present(alertView, animated: true, completion: nil)
-            
-            return;
-        }
+//        if (email != confirmEmail) {
+//            
+//            let alertView = UIAlertController(title: "Problema no cadastro",
+//                                              message: "Os emails inseridos não coincidem." as String, preferredStyle:.alert)
+//            let okAction = UIAlertAction(title: "Tentar novamente", style: .default, handler: nil)
+//            alertView.addAction(okAction)
+//            self.present(alertView, animated: true, completion: nil)
+//            
+//            return;
+//        }
         
         if (password != confirmPassword) {
             
