@@ -27,6 +27,10 @@ class LoginViewController: UIViewController {
         
         activityIndicatorView.startAnimating()
         
+        // esconde o teclado
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        
         
         if (email == "" || password == "") {
             let alertView = UIAlertController(title: "Problema no login",
