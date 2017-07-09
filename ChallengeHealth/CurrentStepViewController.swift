@@ -208,7 +208,7 @@ class CurrentStepViewController: UIViewController {
                             let updateStepString = snapshot.value as! String
                             var updateStepInt = Int(updateStepString)
                             
-                            // se estivermos no ultimo passo, segue para o topo da montanha
+                            // se estivermos no último passo, segue para o topo da montanha
                             if (self.steps[updateStepInt! - 1].isLastStep == true) {
                                 
                                 self.performSegue(withIdentifier: "goToSummit", sender: self)
