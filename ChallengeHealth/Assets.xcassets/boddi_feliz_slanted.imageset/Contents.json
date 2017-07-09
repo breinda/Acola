@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "boddi_principal.png",
+      "filename" : "boddi_feliz_slanted_2x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "boddi_principal_2x.png",
       "scale" : "2x"
     },
     {

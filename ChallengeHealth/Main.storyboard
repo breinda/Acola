@@ -254,7 +254,7 @@
                                 <color key="textColor" red="0.87628119429999995" green="0.22002217800000001" blue="0.26779779240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversar com um amigo após a aula" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQN-Qa-XU6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversar com um amigo após a aula" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQN-Qa-XU6">
                                 <rect key="frame" x="7" y="106" width="361" height="64.5"/>
                                 <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="27"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -923,7 +923,7 @@ Mariana?</string>
                                     <action selector="returnButtonWasTapped:" destination="2Xv-Bt-9UZ" eventType="touchUpInside" id="Dgb-3L-qBz"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8Ss-BO-dch">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8Ss-BO-dch">
                                 <rect key="frame" x="29" y="110" width="317" height="450"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <mutableString key="text">Olá! Nós somos Brenda, Mariana e Mila, e criamos o ACOLÁ.
@@ -992,6 +992,9 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="aboutTextView" destination="8Ss-BO-dch" id="lMy-Hg-eLO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dFI-QC-vrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1199,9 +1202,18 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_Health_Login" translatesAutoresizingMaskIntoConstraints="NO" id="kDw-de-ovq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="montanha2" translatesAutoresizingMaskIntoConstraints="NO" id="sM3-Mn-evr">
-                                <rect key="frame" x="130" y="310" width="245" height="357"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boddiTopoMontanha" translatesAutoresizingMaskIntoConstraints="NO" id="04Q-Dq-dIl">
+                                <rect key="frame" x="118" y="344" width="257" height="323"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="257" id="EwD-v5-ro3"/>
+                                    <constraint firstAttribute="height" constant="323" id="PkS-Jg-spL"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="montanha2" translatesAutoresizingMaskIntoConstraints="NO" id="sM3-Mn-evr">
+                                <rect key="frame" x="118" y="207" width="257" height="460"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sM3-Mn-evr" secondAttribute="height" multiplier="249:445" id="sFO-eB-e6a"/>
+                                </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elK-Cy-7J5">
                                 <rect key="frame" x="0.0" y="603" width="375" height="64"/>
@@ -1227,55 +1239,74 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                     <action selector="OKButtonWasPressed:" destination="5ej-fI-ncZ" eventType="touchUpInside" id="Uy6-Iv-flb"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="balao1" translatesAutoresizingMaskIntoConstraints="NO" id="L8r-bD-oR1">
-                                <rect key="frame" x="35" y="46" width="310" height="293"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balao1" translatesAutoresizingMaskIntoConstraints="NO" id="L8r-bD-oR1">
+                                <rect key="frame" x="32" y="40" width="311" height="269"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PARABÉNS, FULANO!!!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxh-d4-eNf">
-                                <rect key="frame" x="96" y="68" width="187" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxh-d4-eNf">
+                                <rect key="frame" x="0.0" y="60" width="375" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="khs-TC-dUt"/>
+                                </constraints>
+                                <string key="text">PARABÉNS,
+FULANO!!!</string>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="24"/>
-                                <color key="textColor" red="0.59999999999999998" green="0.30980392156862746" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.5302388072013855" green="0.25048360228538513" blue="0.36488839983940125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bmi-47-bNl">
-                                <rect key="frame" x="59" y="132" width="263" height="187"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="boddi_feliz_slanted" translatesAutoresizingMaskIntoConstraints="NO" id="Wsf-74-ZLW">
+                                <rect key="frame" x="236" y="344" width="68" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="h4a-nd-16h"/>
+                                    <constraint firstAttribute="height" constant="90" id="zdQ-Zs-L0O"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dYg-m4-Iwh">
+                                <rect key="frame" x="54" y="124" width="267" height="165"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="165" id="HCL-OU-2q7"/>
+                                </constraints>
                                 <string key="text">Você chegou ao topo da montanha e completou seu objetivo! Você merece se dar um presente! &lt;3
 
 Daqui de cima dá pra ver tanta coisa… tudo pelo que nós passamos juntos pra chegarmos até aqui.  Vem ver comigo!</string>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
-                                <color key="textColor" red="0.59999999999999998" green="0.30980392159999998" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="boddi_feliz" translatesAutoresizingMaskIntoConstraints="NO" id="Wsf-74-ZLW">
-                                <rect key="frame" x="213" y="362" width="109" height="103"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <color key="textColor" red="0.60114419460296631" green="0.30899190902709961" blue="0.43993878364562988" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="dYg-m4-Iwh" firstAttribute="bottom" secondItem="L8r-bD-oR1" secondAttribute="bottom" constant="-20" id="1em-rO-Uqh"/>
                             <constraint firstItem="kDw-de-ovq" firstAttribute="leading" secondItem="KAn-XM-8Ul" secondAttribute="leading" id="6CH-NR-x4U"/>
                             <constraint firstItem="elK-Cy-7J5" firstAttribute="leading" secondItem="KAn-XM-8Ul" secondAttribute="leading" id="7Pt-k0-pVj"/>
+                            <constraint firstItem="L8r-bD-oR1" firstAttribute="leading" secondItem="KAn-XM-8Ul" secondAttribute="leading" constant="32" id="83W-0F-rWM"/>
+                            <constraint firstItem="rxh-d4-eNf" firstAttribute="top" secondItem="Ajc-2H-kOj" secondAttribute="bottom" constant="40" id="843-Wa-cwR"/>
+                            <constraint firstAttribute="trailing" secondItem="L8r-bD-oR1" secondAttribute="trailing" constant="32" id="AzF-lH-E6o"/>
+                            <constraint firstItem="dYg-m4-Iwh" firstAttribute="leading" secondItem="L8r-bD-oR1" secondAttribute="leading" constant="22" id="B2h-B6-zGP"/>
                             <constraint firstItem="kDw-de-ovq" firstAttribute="top" secondItem="KAn-XM-8Ul" secondAttribute="top" id="EoM-AK-PpW"/>
+                            <constraint firstItem="dYg-m4-Iwh" firstAttribute="trailing" secondItem="L8r-bD-oR1" secondAttribute="trailing" constant="-22" id="LgH-54-3bB"/>
+                            <constraint firstAttribute="trailing" secondItem="04Q-Dq-dIl" secondAttribute="trailing" id="Nt7-mW-Wo0"/>
                             <constraint firstItem="hSZ-69-UWI" firstAttribute="top" secondItem="kDw-de-ovq" secondAttribute="bottom" id="UHl-3Z-voQ"/>
+                            <constraint firstAttribute="trailing" secondItem="rxh-d4-eNf" secondAttribute="trailing" id="Unq-Jd-FGC"/>
                             <constraint firstAttribute="trailing" secondItem="elK-Cy-7J5" secondAttribute="trailing" id="XnH-R4-mzR"/>
+                            <constraint firstAttribute="trailing" secondItem="sM3-Mn-evr" secondAttribute="trailing" id="b9l-Hb-VPG"/>
                             <constraint firstAttribute="trailing" secondItem="kDw-de-ovq" secondAttribute="trailing" id="dAJ-xc-qdL"/>
+                            <constraint firstItem="dYg-m4-Iwh" firstAttribute="bottom" secondItem="rxh-d4-eNf" secondAttribute="bottom" constant="170" id="e48-5O-XXT"/>
+                            <constraint firstAttribute="trailing" secondItem="04Q-Dq-dIl" secondAttribute="trailing" id="giY-7p-5XI"/>
+                            <constraint firstItem="rxh-d4-eNf" firstAttribute="leading" secondItem="KAn-XM-8Ul" secondAttribute="leading" id="k6t-JA-PPX"/>
+                            <constraint firstItem="L8r-bD-oR1" firstAttribute="top" secondItem="Ajc-2H-kOj" secondAttribute="bottom" constant="20" id="npa-fQ-ZRw"/>
+                            <constraint firstItem="04Q-Dq-dIl" firstAttribute="top" secondItem="L8r-bD-oR1" secondAttribute="bottom" constant="35" id="sgW-Wd-D8K"/>
                             <constraint firstItem="hSZ-69-UWI" firstAttribute="top" secondItem="elK-Cy-7J5" secondAttribute="bottom" id="w5b-Ww-Ifc"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="kDw-de-ovq"/>
-                                <exclude reference="elK-Cy-7J5"/>
-                            </mask>
                             <mask key="constraints">
-                                <exclude reference="UHl-3Z-voQ"/>
-                                <exclude reference="w5b-Ww-Ifc"/>
-                                <exclude reference="7Pt-k0-pVj"/>
-                                <exclude reference="XnH-R4-mzR"/>
                                 <exclude reference="6CH-NR-x4U"/>
                                 <exclude reference="EoM-AK-PpW"/>
                                 <exclude reference="dAJ-xc-qdL"/>
+                                <exclude reference="7Pt-k0-pVj"/>
+                                <exclude reference="XnH-R4-mzR"/>
+                                <exclude reference="UHl-3Z-voQ"/>
+                                <exclude reference="w5b-Ww-Ifc"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1284,16 +1315,19 @@ Daqui de cima dá pra ver tanta coisa… tudo pelo que nós passamos juntos pra 
                                 <include reference="elK-Cy-7J5"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="UHl-3Z-voQ"/>
-                                <include reference="w5b-Ww-Ifc"/>
-                                <include reference="7Pt-k0-pVj"/>
-                                <include reference="XnH-R4-mzR"/>
                                 <include reference="6CH-NR-x4U"/>
                                 <include reference="EoM-AK-PpW"/>
                                 <include reference="dAJ-xc-qdL"/>
+                                <include reference="7Pt-k0-pVj"/>
+                                <include reference="XnH-R4-mzR"/>
+                                <include reference="UHl-3Z-voQ"/>
+                                <include reference="w5b-Ww-Ifc"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="descTextView" destination="dYg-m4-Iwh" id="xid-e0-Bp5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhp-hH-Yov" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1533,8 +1567,10 @@ Eu vou te ajudar a alcançá-lo!</string>
         <image name="RectangleCima" width="375" height="70"/>
         <image name="balao1" width="829" height="353"/>
         <image name="bg_Health_Login" width="750" height="1334"/>
-        <image name="boddi_feliz" width="200" height="200"/>
-        <image name="boddi_principal" width="200" height="200"/>
+        <image name="boddiTopoMontanha" width="500" height="638"/>
+        <image name="boddi_feliz" width="73" height="91"/>
+        <image name="boddi_feliz_slanted" width="142" height="194"/>
+        <image name="boddi_principal" width="73" height="91"/>
         <image name="boddi_subindoMontanha6" width="132" height="180"/>
         <image name="cantoMontanha22" width="169" height="298"/>
         <image name="iconeMontanha1" width="336" height="226"/>
@@ -1542,6 +1578,6 @@ Eu vou te ajudar a alcançá-lo!</string>
         <image name="montanha2" width="500" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ith-tA-OpB"/>
+        <segue reference="grL-aW-a2k"/>
     </inferredMetricsTieBreakers>
 </document>

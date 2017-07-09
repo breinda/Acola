@@ -2,12 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "boddi_principal.png",
+      "filename" : "boddiTopoMontanha.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "boddi_principal_2x.png",
       "scale" : "2x"
     },
     {
