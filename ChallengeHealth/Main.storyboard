@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5ej-fI-ncZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5ej-fI-ncZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -924,7 +924,7 @@ Mariana?</string>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Az8-ta-urb" userLabel="AboutLabel">
                                 <rect key="frame" x="29" y="110" width="317" height="431"/>
-                                <mutableString key="text">Olá! Nós somos Brenda, Mariana e Mila, e criamos o ACOLÁ.
+                                <string key="text">Olá! Nós somos Brenda, Mariana e Mila, e criamos o ACOLÁ.
 
 O ACOLÁ cresceu a partir de uma vontade comum entre nós três, que é a de ajudar pessoas com depressão a superar seus desafios diários.
 
@@ -932,7 +932,7 @@ Aqui, fazemos uso de uma metodologia embasada na Terapia Cognitivo-Comportamenta
 
 Nosso objetivo é incentivar todos a realizarem atividades saudáveis que contribuam para uma melhoria na sua qualidade de vida. Para isso, conversamos com profissionais das áreas de Psicologia e Psiquiatria (nossas mentoras!) e, após muita tentativa e erro, chegamos no que temos agora.
 
-Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempre dispostas a ouvir sua opinião e seu feedback! Se quiser bater um papo, clique no botão abaixo para nos enviar um e-mail! :)</mutableString>
+Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempre dispostas a ouvir sua opinião e seu feedback! Se quiser bater um papo, clique no botão abaixo para nos enviar um e-mail! :)</string>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                 <color key="textColor" red="0.52941176470588236" green="0.23529411764705882" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1003,9 +1003,8 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_Health_Login" translatesAutoresizingMaskIntoConstraints="NO" id="uV1-9E-znX">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_Health_Login" translatesAutoresizingMaskIntoConstraints="NO" id="uV1-9E-znX">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balao1" translatesAutoresizingMaskIntoConstraints="NO" id="bXF-Iy-R2r">
                                 <rect key="frame" x="50" y="103" width="275" height="129"/>
@@ -1046,7 +1045,7 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.68704202589999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estes telefones podem te ajudar em momentos difíceis. Por favor, não hesite em pedir ajuda." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9g-uz-8dR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estes telefones podem te ajudar em momentos difíceis. Por favor, não hesite em pedir ajuda." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9g-uz-8dR" userLabel="BoddiLabel">
                                 <rect key="frame" x="82" y="103" width="211" height="129"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="129" id="Cz6-W3-JSL"/>
@@ -1059,25 +1058,24 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 <rect key="frame" x="0.0" y="348" width="375" height="319"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oAe-4m-6z3">
-                                    <size key="itemSize" width="375" height="123"/>
+                                    <size key="itemSize" width="375" height="112"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="phoneCell" id="JG6-Uz-dfi" customClass="PhoneCollectionViewCell" customModule="ChallengeHealth" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="123"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" alpha="0.20999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RectangleCima" translatesAutoresizingMaskIntoConstraints="NO" id="AOB-5A-hKa">
-                                                    <rect key="frame" x="0.0" y="-3" width="375" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" alpha="0.20999999999999999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RectangleCima" translatesAutoresizingMaskIntoConstraints="NO" id="AOB-5A-hKa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5C6-jY-D59">
-                                                    <rect key="frame" x="47" y="0.0" width="281" height="122"/>
+                                                    <rect key="frame" x="47" y="0.0" width="281" height="112"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <string key="text">CENTRO DE VALORIZAÇÃO DA VIDA
 
@@ -1087,14 +1085,14 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="disque 141" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5DS-8F-1rY">
-                                                    <rect key="frame" x="47" y="75" width="281" height="46"/>
+                                                    <rect key="frame" x="47" y="67" width="281" height="46"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="GillSans-Italic" family="Gill Sans" pointSize="19"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Apoio emocional 24 horas" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkm-2i-iTI">
-                                                    <rect key="frame" x="47" y="48" width="281" height="52"/>
+                                                    <rect key="frame" x="47" y="41" width="281" height="52"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1102,6 +1100,12 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="AOB-5A-hKa" secondAttribute="trailing" id="5hu-SI-8gF"/>
+                                            <constraint firstItem="AOB-5A-hKa" firstAttribute="leading" secondItem="JG6-Uz-dfi" secondAttribute="leading" id="FcY-BG-Npq"/>
+                                            <constraint firstAttribute="bottom" secondItem="AOB-5A-hKa" secondAttribute="bottom" id="bC8-do-uW0"/>
+                                            <constraint firstItem="AOB-5A-hKa" firstAttribute="top" secondItem="JG6-Uz-dfi" secondAttribute="top" id="bT0-5F-o4a"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="descLabel" destination="Tkm-2i-iTI" id="vwP-Uf-eds"/>
                                             <outlet property="nameLabel" destination="5C6-jY-D59" id="Nmm-pM-Gdi"/>
@@ -1117,10 +1121,12 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="uV1-9E-znX" firstAttribute="top" secondItem="vHC-eg-XZd" secondAttribute="top" id="3Ag-bW-79F"/>
                             <constraint firstItem="QSs-Hz-Igm" firstAttribute="centerX" secondItem="vHC-eg-XZd" secondAttribute="centerX" id="3YL-mc-Qq0"/>
                             <constraint firstItem="bXF-Iy-R2r" firstAttribute="top" secondItem="CNP-xp-SuZ" secondAttribute="bottom" constant="33" id="AED-zT-AHS"/>
+                            <constraint firstItem="F0Y-kb-HEM" firstAttribute="leading" secondItem="vHC-eg-XZd" secondAttribute="leading" id="Aes-HC-kID"/>
                             <constraint firstAttribute="trailing" secondItem="CNP-xp-SuZ" secondAttribute="trailing" id="FbQ-f8-WJv"/>
-                            <constraint firstItem="F0Y-kb-HEM" firstAttribute="leading" secondItem="vHC-eg-XZd" secondAttribute="leading" id="IKt-2w-Oj0"/>
+                            <constraint firstAttribute="trailing" secondItem="uV1-9E-znX" secondAttribute="trailing" id="Fsj-0b-8kp"/>
                             <constraint firstItem="bXF-Iy-R2r" firstAttribute="leading" secondItem="vHC-eg-XZd" secondAttribute="leading" constant="50" id="Ifn-Iz-FRd"/>
                             <constraint firstItem="Q9g-uz-8dR" firstAttribute="leading" secondItem="vHC-eg-XZd" secondAttribute="leading" constant="82" id="J5V-Jz-Wvk"/>
                             <constraint firstItem="dsx-8J-0EN" firstAttribute="leading" secondItem="vHC-eg-XZd" secondAttribute="leading" constant="9" id="JoG-d4-YtO"/>
@@ -1130,11 +1136,13 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                             <constraint firstItem="QSs-Hz-Igm" firstAttribute="top" secondItem="wjE-8q-FK7" secondAttribute="bottom" constant="12" id="Nyt-nB-ulN"/>
                             <constraint firstItem="Q9g-uz-8dR" firstAttribute="top" secondItem="CNP-xp-SuZ" secondAttribute="bottom" constant="33" id="Os1-9o-lwh"/>
                             <constraint firstItem="UDz-kW-jDe" firstAttribute="top" secondItem="F0Y-kb-HEM" secondAttribute="bottom" id="QES-he-Z3f"/>
+                            <constraint firstAttribute="trailing" secondItem="F0Y-kb-HEM" secondAttribute="trailing" id="Xf5-Os-4e1"/>
                             <constraint firstItem="dsx-8J-0EN" firstAttribute="top" secondItem="wjE-8q-FK7" secondAttribute="bottom" constant="5" id="aOo-nE-RzZ"/>
+                            <constraint firstItem="UDz-kW-jDe" firstAttribute="top" secondItem="uV1-9E-znX" secondAttribute="bottom" id="eud-C3-QMq"/>
                             <constraint firstItem="CNP-xp-SuZ" firstAttribute="leading" secondItem="vHC-eg-XZd" secondAttribute="leading" id="hrb-Y4-xI0"/>
+                            <constraint firstItem="uV1-9E-znX" firstAttribute="leading" secondItem="vHC-eg-XZd" secondAttribute="leading" id="iFD-8Y-9Kj"/>
                             <constraint firstAttribute="trailing" secondItem="Q9g-uz-8dR" secondAttribute="trailing" constant="82" id="jJG-QA-Ch0"/>
                             <constraint firstItem="F0Y-kb-HEM" firstAttribute="top" secondItem="hgm-wU-SCc" secondAttribute="bottom" constant="31" id="kMZ-J4-2yK"/>
-                            <constraint firstAttribute="trailing" secondItem="F0Y-kb-HEM" secondAttribute="trailing" id="tYm-bz-q3E"/>
                             <constraint firstAttribute="trailing" secondItem="hgm-wU-SCc" secondAttribute="trailing" constant="56" id="wt8-Mo-VUd"/>
                         </constraints>
                         <variation key="widthClass=compact">

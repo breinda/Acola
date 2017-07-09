@@ -86,6 +86,11 @@ class EmergencyPhonesViewController: UIViewController, UICollectionViewDelegate,
                 UIApplication.shared.openURL(url)
             }
         }
+    }
+    
+    // cuida de o quanto a gente expande as células da collectionview
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
         
+        return CGSize(width: UIScreen.main.bounds.size.width, height: 112)
     }
 }
