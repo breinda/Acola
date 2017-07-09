@@ -69,12 +69,18 @@ class EmergencyPhonesViewController: UIViewController, UICollectionViewDelegate,
         return cell
     }
     
+    // TO DO: generalizar pro numero que estiver em numLabel
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        //let cell = phonesCollectionView.dequeueReusableCell(withReuseIdentifier: "phoneCell", for: indexPath) as! PhoneCollectionViewCell
+        let cell = phonesCollectionView.dequeueReusableCell(withReuseIdentifier: "phoneCell", for: indexPath) as! PhoneCollectionViewCell
         
         print("LIGANDO...........")
-        guard let number = URL(string: "tel://" + "141") else { return }
+        
+        // trimming numLabel string
+        let auxStr = cell.numLabel.text!
+        let strIndex = auxStr.index(auxStr.startIndex, offsetBy: 7)
+        
+        guard let number = URL(string: "tel://" + auxStr.substring(from: strIndex)) else { return }
         
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(number)
