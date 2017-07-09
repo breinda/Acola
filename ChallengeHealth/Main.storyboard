@@ -586,19 +586,6 @@ Mariana?</string>
                             <constraint firstItem="iaH-yT-gBl" firstAttribute="top" secondItem="jsn-r0-a5b" secondAttribute="bottom" constant="12" id="wbV-8d-rac"/>
                             <constraint firstItem="eeE-Rm-l51" firstAttribute="top" secondItem="0oW-P2-5dD" secondAttribute="bottom" constant="33" id="yPB-6W-mny"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="JyW-49-PFO"/>
-                                <exclude reference="0oW-P2-5dD"/>
-                                <exclude reference="0k4-sv-amC"/>
-                                <exclude reference="wZv-u5-j2k"/>
-                                <exclude reference="eeE-Rm-l51"/>
-                                <exclude reference="iaH-yT-gBl"/>
-                                <exclude reference="dIL-FJ-FRy"/>
-                                <exclude reference="2xf-zk-i7s"/>
-                                <exclude reference="FcZ-ep-qdm"/>
-                            </mask>
-                        </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="JyW-49-PFO"/>
@@ -904,29 +891,18 @@ Mariana?</string>
                                 <rect key="frame" x="0.0" y="80" width="400" height="720"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_Health_Login" translatesAutoresizingMaskIntoConstraints="NO" id="mNi-rn-t0Y">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_Health_Login" translatesAutoresizingMaskIntoConstraints="NO" id="mNi-rn-t0Y">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.38999998569488498" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RectangleCima" translatesAutoresizingMaskIntoConstraints="NO" id="NIM-NG-jH0" userLabel="RectangleAbout">
-                                <rect key="frame" x="0.0" y="80" width="375" height="492"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RectangleCima" translatesAutoresizingMaskIntoConstraints="NO" id="NIM-NG-jH0" userLabel="RectangleAbout">
+                                <rect key="frame" x="0.0" y="82" width="375" height="489"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.38999998569488525" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RectangleCima" translatesAutoresizingMaskIntoConstraints="NO" id="mpY-oy-3ja">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="81" id="TjS-U2-Wc6">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="70"/>
-                                    </constraint>
+                                    <constraint firstAttribute="height" constant="70" id="idQ-O4-dFp"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="TjS-U2-Wc6"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="TjS-U2-Wc6"/>
-                                    </mask>
-                                </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SOBRE NÓS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBj-Ne-axU">
                                 <rect key="frame" x="124" y="32" width="127" height="28"/>
@@ -935,7 +911,10 @@ Mariana?</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXe-op-dhq">
-                                <rect key="frame" x="11" y="18" width="30" height="50"/>
+                                <rect key="frame" x="9" y="25" width="30" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="9jc-at-YbC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-UltraBold" family="Gill Sans" pointSize="30"/>
                                 <state key="normal" title="&lt;">
                                     <color key="titleColor" red="0.52941176469999995" green="0.23529411759999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -945,11 +924,8 @@ Mariana?</string>
                                     <action selector="returnButtonWasTapped:" destination="2Xv-Bt-9UZ" eventType="touchUpInside" id="Dgb-3L-qBz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Az8-ta-urb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="25" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Az8-ta-urb" userLabel="AboutLabel">
                                 <rect key="frame" x="29" y="110" width="317" height="431"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="317" id="IgT-z1-NWJ"/>
-                                </constraints>
                                 <mutableString key="text">Olá! Nós somos Brenda, Mariana e Mila, e criamos o ACOLÁ.
 
 O ACOLÁ cresceu a partir de uma vontade comum entre nós três, que é a de ajudar pessoas com depressão a superar seus desafios diários.
@@ -962,100 +938,39 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                 <color key="textColor" red="0.52941176470588236" green="0.23529411764705882" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="IgT-z1-NWJ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="IgT-z1-NWJ"/>
-                                    </mask>
-                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hls-M6-cyr">
-                                <rect key="frame" x="0.0" y="572" width="375" height="64"/>
+                                <rect key="frame" x="0.0" y="571" width="375" height="64"/>
                                 <color key="backgroundColor" red="0.60784313729999995" green="0.31372549020000001" blue="0.4431372549" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="s8J-pr-R0D"/>
+                                    <constraint firstAttribute="height" constant="64" id="QW6-TR-Vx6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="37"/>
                                 <state key="normal" title="FALE CONOSCO!">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="s8J-pr-R0D"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="s8J-pr-R0D"/>
-                                    </mask>
-                                </variation>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="NIM-NG-jH0" secondAttribute="trailing" id="1fY-SW-c6A"/>
-                            <constraint firstItem="Az8-ta-urb" firstAttribute="bottom" secondItem="NIM-NG-jH0" secondAttribute="bottom" constant="-31" id="222-Vv-pTO"/>
-                            <constraint firstItem="hls-M6-cyr" firstAttribute="bottom" secondItem="NIM-NG-jH0" secondAttribute="bottom" constant="64" id="4bn-Ys-3F7"/>
-                            <constraint firstItem="NIM-NG-jH0" firstAttribute="centerX" secondItem="Dcg-88-Geo" secondAttribute="centerX" id="AyD-4z-nyT"/>
-                            <constraint firstItem="RBj-Ne-axU" firstAttribute="centerX" secondItem="Dcg-88-Geo" secondAttribute="centerX" id="DtF-BU-XSM"/>
-                            <constraint firstItem="mpY-oy-3ja" firstAttribute="leading" secondItem="Dcg-88-Geo" secondAttribute="leading" id="Hff-7b-Nw8"/>
-                            <constraint firstAttribute="trailing" secondItem="hls-M6-cyr" secondAttribute="trailing" id="Jhl-DF-NQQ"/>
-                            <constraint firstItem="ZXe-op-dhq" firstAttribute="top" secondItem="ftv-Ft-ejT" secondAttribute="bottom" constant="-2" id="QLI-hy-QOL"/>
-                            <constraint firstItem="ZXe-op-dhq" firstAttribute="leading" secondItem="Dcg-88-Geo" secondAttribute="leading" constant="11" id="Rl3-nq-uuT"/>
-                            <constraint firstItem="mpY-oy-3ja" firstAttribute="top" secondItem="Dcg-88-Geo" secondAttribute="top" id="Td9-ZM-Hel"/>
-                            <constraint firstItem="NIM-NG-jH0" firstAttribute="top" secondItem="mpY-oy-3ja" secondAttribute="bottom" constant="36" id="WrZ-Pa-vBm">
-                                <variation key="heightClass=regular-widthClass=compact" constant="10"/>
-                            </constraint>
-                            <constraint firstItem="mNi-rn-t0Y" firstAttribute="leading" secondItem="Dcg-88-Geo" secondAttribute="leading" id="Y7A-rJ-Yfk"/>
-                            <constraint firstItem="SRG-oT-Rfv" firstAttribute="top" secondItem="mNi-rn-t0Y" secondAttribute="bottom" id="ZHe-fh-dQf"/>
-                            <constraint firstAttribute="trailing" secondItem="mNi-rn-t0Y" secondAttribute="trailing" id="atb-FJ-EIM"/>
-                            <constraint firstItem="mNi-rn-t0Y" firstAttribute="top" secondItem="Dcg-88-Geo" secondAttribute="top" id="c4J-mk-kIh"/>
-                            <constraint firstItem="RBj-Ne-axU" firstAttribute="top" secondItem="ftv-Ft-ejT" secondAttribute="bottom" constant="12" id="dJQ-B0-TTv"/>
-                            <constraint firstAttribute="trailing" secondItem="mpY-oy-3ja" secondAttribute="trailing" id="eZF-BC-dxe"/>
-                            <constraint firstItem="Az8-ta-urb" firstAttribute="top" secondItem="mpY-oy-3ja" secondAttribute="bottom" constant="40" id="heM-4r-Vmw"/>
-                            <constraint firstItem="hls-M6-cyr" firstAttribute="leading" secondItem="Dcg-88-Geo" secondAttribute="leading" id="s8x-IT-VLy"/>
-                            <constraint firstItem="NIM-NG-jH0" firstAttribute="leading" secondItem="Dcg-88-Geo" secondAttribute="leading" id="t42-DV-Nc3"/>
-                            <constraint firstItem="Az8-ta-urb" firstAttribute="centerX" secondItem="Dcg-88-Geo" secondAttribute="centerX" id="wro-At-dEg"/>
+                            <constraint firstItem="NIM-NG-jH0" firstAttribute="top" secondItem="mpY-oy-3ja" secondAttribute="bottom" constant="12" id="5uJ-lL-2Yi"/>
+                            <constraint firstItem="Az8-ta-urb" firstAttribute="bottom" secondItem="NIM-NG-jH0" secondAttribute="bottom" constant="-30" id="BbB-6b-mXg"/>
+                            <constraint firstAttribute="trailing" secondItem="Az8-ta-urb" secondAttribute="trailing" constant="29" id="CM1-bf-GWg"/>
+                            <constraint firstItem="mpY-oy-3ja" firstAttribute="top" secondItem="Dcg-88-Geo" secondAttribute="top" id="F2X-y4-5j4"/>
+                            <constraint firstAttribute="trailing" secondItem="mpY-oy-3ja" secondAttribute="trailing" id="GqK-uV-2tt"/>
+                            <constraint firstAttribute="trailing" secondItem="NIM-NG-jH0" secondAttribute="trailing" id="HHK-kq-XcI"/>
+                            <constraint firstItem="RBj-Ne-axU" firstAttribute="centerX" secondItem="Dcg-88-Geo" secondAttribute="centerX" id="PFx-O5-Hk9"/>
+                            <constraint firstAttribute="trailing" secondItem="hls-M6-cyr" secondAttribute="trailing" id="ZI2-Jq-BGf"/>
+                            <constraint firstItem="hls-M6-cyr" firstAttribute="top" secondItem="NIM-NG-jH0" secondAttribute="bottom" id="gGR-Cw-EhG"/>
+                            <constraint firstItem="ZXe-op-dhq" firstAttribute="top" secondItem="ftv-Ft-ejT" secondAttribute="bottom" constant="5" id="h2g-bx-MWF"/>
+                            <constraint firstItem="Az8-ta-urb" firstAttribute="top" secondItem="mpY-oy-3ja" secondAttribute="bottom" constant="40" id="hGl-Sw-aPe"/>
+                            <constraint firstItem="mpY-oy-3ja" firstAttribute="leading" secondItem="Dcg-88-Geo" secondAttribute="leading" id="hw3-DY-nTf"/>
+                            <constraint firstItem="NIM-NG-jH0" firstAttribute="leading" secondItem="Dcg-88-Geo" secondAttribute="leading" id="oLe-20-qkm"/>
+                            <constraint firstItem="RBj-Ne-axU" firstAttribute="top" secondItem="ftv-Ft-ejT" secondAttribute="bottom" constant="12" id="ow7-pF-bMq"/>
+                            <constraint firstItem="Az8-ta-urb" firstAttribute="leading" secondItem="Dcg-88-Geo" secondAttribute="leading" constant="29" id="qSR-k6-0Ss"/>
+                            <constraint firstItem="hls-M6-cyr" firstAttribute="leading" secondItem="Dcg-88-Geo" secondAttribute="leading" id="rbG-Wq-Nyq"/>
+                            <constraint firstItem="ZXe-op-dhq" firstAttribute="leading" secondItem="Dcg-88-Geo" secondAttribute="leading" constant="9" id="vmR-ID-vXa"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="USd-RF-qQ3"/>
-                                <exclude reference="mNi-rn-t0Y"/>
-                                <exclude reference="NIM-NG-jH0"/>
-                                <exclude reference="mpY-oy-3ja"/>
-                                <exclude reference="RBj-Ne-axU"/>
-                                <exclude reference="ZXe-op-dhq"/>
-                                <exclude reference="Az8-ta-urb"/>
-                                <exclude reference="hls-M6-cyr"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="ZHe-fh-dQf"/>
-                                <exclude reference="QLI-hy-QOL"/>
-                                <exclude reference="Rl3-nq-uuT"/>
-                                <exclude reference="Hff-7b-Nw8"/>
-                                <exclude reference="Td9-ZM-Hel"/>
-                                <exclude reference="eZF-BC-dxe"/>
-                                <exclude reference="DtF-BU-XSM"/>
-                                <exclude reference="dJQ-B0-TTv"/>
-                                <exclude reference="222-Vv-pTO"/>
-                                <exclude reference="heM-4r-Vmw"/>
-                                <exclude reference="wro-At-dEg"/>
-                                <exclude reference="1fY-SW-c6A"/>
-                                <exclude reference="AyD-4z-nyT"/>
-                                <exclude reference="WrZ-Pa-vBm"/>
-                                <exclude reference="t42-DV-Nc3"/>
-                                <exclude reference="4bn-Ys-3F7"/>
-                                <exclude reference="Jhl-DF-NQQ"/>
-                                <exclude reference="s8x-IT-VLy"/>
-                                <exclude reference="Y7A-rJ-Yfk"/>
-                                <exclude reference="atb-FJ-EIM"/>
-                                <exclude reference="c4J-mk-kIh"/>
-                            </mask>
-                        </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="mNi-rn-t0Y"/>
@@ -1070,29 +985,6 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 <include reference="RBj-Ne-axU"/>
                                 <include reference="ZXe-op-dhq"/>
                                 <include reference="hls-M6-cyr"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="ZHe-fh-dQf"/>
-                                <include reference="QLI-hy-QOL"/>
-                                <include reference="Rl3-nq-uuT"/>
-                                <include reference="Hff-7b-Nw8"/>
-                                <include reference="Td9-ZM-Hel"/>
-                                <include reference="eZF-BC-dxe"/>
-                                <include reference="DtF-BU-XSM"/>
-                                <include reference="dJQ-B0-TTv"/>
-                                <include reference="222-Vv-pTO"/>
-                                <include reference="heM-4r-Vmw"/>
-                                <include reference="wro-At-dEg"/>
-                                <include reference="1fY-SW-c6A"/>
-                                <include reference="AyD-4z-nyT"/>
-                                <include reference="WrZ-Pa-vBm"/>
-                                <include reference="t42-DV-Nc3"/>
-                                <include reference="4bn-Ys-3F7"/>
-                                <include reference="Jhl-DF-NQQ"/>
-                                <include reference="s8x-IT-VLy"/>
-                                <include reference="Y7A-rJ-Yfk"/>
-                                <include reference="atb-FJ-EIM"/>
-                                <include reference="c4J-mk-kIh"/>
                             </mask>
                         </variation>
                     </view>
@@ -1512,7 +1404,7 @@ Telefone: (021)ajhsgfd-jashfg</string>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="goalCell" id="7go-qe-dNG" customClass="GoalCollectionViewCell" customModule="ChallengeHealth" customModuleProvider="target">
-                                        <rect key="frame" x="-12" y="0.0" width="399.5" height="66"/>
+                                        <rect key="frame" x="-12.5" y="0.0" width="399.5" height="66"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="399.5" height="66"/>
