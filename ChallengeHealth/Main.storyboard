@@ -294,7 +294,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99634712934494019" green="0.83432644605636597" blue="0.57595902681350708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="PKP-L9-YYr" secondAttribute="trailing" constant="30" id="0Cl-RI-v3U"/>
                             <constraint firstItem="aTD-J4-cp6" firstAttribute="top" secondItem="5UK-FI-k7b" secondAttribute="bottom" constant="42" id="2EC-2n-4wY"/>
@@ -542,7 +542,7 @@ Mariana?</string>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.9962802529335022" green="0.83836466073989868" blue="0.57153981924057007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="0pf-wa-Wq1" firstAttribute="top" secondItem="FcZ-ep-qdm" secondAttribute="bottom" constant="31" id="4te-B4-Az3"/>
                             <constraint firstItem="dIL-FJ-FRy" firstAttribute="leading" secondItem="xTh-hd-joH" secondAttribute="leading" constant="9" id="AIg-JL-37d"/>
@@ -950,7 +950,7 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99641960859298706" green="0.83033406734466553" blue="0.57614392042160034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NIM-NG-jH0" firstAttribute="top" secondItem="mpY-oy-3ja" secondAttribute="bottom" constant="12" id="5uJ-lL-2Yi"/>
                             <constraint firstItem="mpY-oy-3ja" firstAttribute="top" secondItem="Dcg-88-Geo" secondAttribute="top" id="F2X-y4-5j4"/>
@@ -1135,7 +1135,7 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.99634712934494019" green="0.83432644605636597" blue="0.57595902681350708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="uV1-9E-znX" firstAttribute="top" secondItem="vHC-eg-XZd" secondAttribute="top" id="3Ag-bW-79F"/>
                             <constraint firstItem="QSs-Hz-Igm" firstAttribute="centerX" secondItem="vHC-eg-XZd" secondAttribute="centerX" id="3YL-mc-Qq0"/>
@@ -1505,7 +1505,7 @@ Eu vou te ajudar a alcançá-lo!</string>
                                 </variation>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.9962802529335022" green="0.83836466073989868" blue="0.57153981924057007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="XHi-AF-T8p" secondAttribute="trailing" id="5Bv-Rd-pcR"/>
                             <constraint firstItem="K7k-4o-ecP" firstAttribute="top" secondItem="gjG-Ez-Q5I" secondAttribute="bottom" constant="31" id="9YV-4p-HJX"/>
