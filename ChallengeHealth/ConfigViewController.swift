@@ -1,8 +1,9 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import ElasticTransition
 
-class ConfigViewController: UIViewController {
+class ConfigViewController: /*UIViewController,*/ ElasticModalViewController {
     
     @IBOutlet weak var boddiLabel: UILabel!
     
@@ -42,13 +43,41 @@ class ConfigViewController: UIViewController {
         Auth.auth().removeStateDidChangeListener(handle)
     }
     
+    
+    // MARK: Navigation
+    
     @IBAction func backButtonWasTapped(_ sender: AnyObject) {
+        
+//        var transition = ElasticTransition()
+//        transition.edge = .left
+//        transition.radiusFactor = 0.3
+
+        self.modalTransition.edge = .right
+        
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func logoutButtonWasTapped(_ sender: AnyObject) {
         try! Auth.auth().signOut()
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToAboutUs" {
+            
+            let svc = segue.destination as! AboutUsViewController
+            // customization:
+            svc.modalTransition.edge = .right
+            svc.modalTransition.radiusFactor = 0.3
+        }
+        
+        if segue.identifier == "goToEmergencyPhones" {
+            
+            let svc = segue.destination as! EmergencyPhonesViewController
+            // customization:
+            svc.modalTransition.edge = .right
+            svc.modalTransition.radiusFactor = 0.3
+        }
     }
     
 }

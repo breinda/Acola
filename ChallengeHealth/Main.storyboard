@@ -223,7 +223,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="XTM-0s-d2L" kind="presentation" id="grL-aW-a2k"/>
+                                    <segue destination="XTM-0s-d2L" kind="presentation" identifier="goToConfigFromStep" id="grL-aW-a2k"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balao1" translatesAutoresizingMaskIntoConstraints="NO" id="PKP-L9-YYr">
@@ -428,12 +428,12 @@
                         <outlet property="stepIndexLabel" destination="nRe-In-UB2" id="PMq-3J-lJB"/>
                         <outlet property="stepLabel" destination="rQN-Qa-XU6" id="UBM-6R-KP9"/>
                         <segue destination="q6V-7c-WXC" kind="presentation" identifier="goToGoals" customClass="SegueFromRight" customModule="ChallengeHealth" customModuleProvider="target" animates="NO" id="TA0-3Y-3T6"/>
-                        <segue destination="5ej-fI-ncZ" kind="presentation" identifier="goToSummit" id="VWm-GA-sxK"/>
+                        <segue destination="5ej-fI-ncZ" kind="presentation" identifier="goToSummit" modalTransitionStyle="crossDissolve" id="VWm-GA-sxK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPR-Lz-qBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1077.5999999999999" y="2396.8515742128939"/>
+            <point key="canvasLocation" x="-1100" y="2397"/>
         </scene>
         <!--Config View Controller-->
         <scene sceneID="ge7-6A-zL0">
@@ -467,7 +467,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="QUA-Ab-U8i" kind="presentation" animates="NO" id="iWB-0S-YQF"/>
+                                    <segue destination="QUA-Ab-U8i" kind="presentation" identifier="goToEmergencyPhones" id="iWB-0S-YQF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0k4-sv-amC">
@@ -495,7 +495,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="2Xv-Bt-9UZ" kind="presentation" animates="NO" id="jQ7-aP-ObB"/>
+                                    <segue destination="2Xv-Bt-9UZ" kind="presentation" identifier="goToAboutUs" id="jQ7-aP-ObB"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balao1" translatesAutoresizingMaskIntoConstraints="NO" id="eeE-Rm-l51">
@@ -919,14 +919,13 @@ Mariana?</string>
                                     <color key="titleColor" red="0.52941176469999995" green="0.23529411759999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonWasTapped:" destination="XTM-0s-d2L" eventType="touchUpInside" id="EXg-pq-c3y"/>
                                     <action selector="returnButtonWasTapped:" destination="2Xv-Bt-9UZ" eventType="touchUpInside" id="Dgb-3L-qBz"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8Ss-BO-dch">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8Ss-BO-dch">
                                 <rect key="frame" x="29" y="110" width="317" height="450"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Olá! Nós somos Brenda, Mariana e Mila, e criamos o ACOLÁ.
+                                <string key="text">Olá! Nós somos Brenda, Mariana e Mila, e criamos o ACOLÁ.
 
 O ACOLÁ cresceu a partir de uma vontade comum entre nós três, que é a de ajudar pessoas com depressão a superar seus desafios diários.
 
@@ -934,7 +933,7 @@ Aqui, fazemos uso de uma metodologia embasada na Terapia Cognitivo-Comportamenta
 
 Nosso objetivo é incentivar todos a realizarem atividades saudáveis que contribuam para uma melhoria na sua qualidade de vida. Para isso, conversamos com profissionais das áreas de Psicologia e Psiquiatria (nossas mentoras!) e, após muita tentativa e erro, chegamos no que temos agora.
 
-Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempre dispostas a ouvir sua opinião e seu feedback! Se quiser bater um papo, clique no botão abaixo para nos enviar um e-mail! :)</mutableString>
+Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempre dispostas a ouvir sua opinião e seu feedback! Se quiser bater um papo, clique no botão abaixo para nos enviar um e-mail! :)</string>
                                 <color key="textColor" red="0.53025900833497797" green="0.25102983391647687" blue="0.3635550360289187" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1037,7 +1036,6 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                     <color key="titleColor" red="0.52941176469999995" green="0.23529411759999999" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="backButtonWasTapped:" destination="XTM-0s-d2L" eventType="touchUpInside" id="Yjp-GC-vDb"/>
                                     <action selector="returnButtonWasTapped:" destination="QUA-Ab-U8i" eventType="touchUpInside" id="Xgj-ZF-ltR"/>
                                 </connections>
                             </button>
@@ -1260,7 +1258,7 @@ FULANO!!!</string>
                                     <constraint firstAttribute="height" constant="90" id="zdQ-Zs-L0O"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="black" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dYg-m4-Iwh">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="dYg-m4-Iwh">
                                 <rect key="frame" x="54" y="124" width="267" height="165"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1375,7 +1373,7 @@ Daqui de cima dá pra ver tanta coisa… tudo pelo que nós passamos juntos pra 
                                     <color key="titleColor" red="0.60392156860000001" green="0.31764705879999999" blue="0.4431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XTM-0s-d2L" kind="presentation" id="ith-tA-OpB"/>
+                                    <segue destination="XTM-0s-d2L" kind="presentation" identifier="goToConfigFromGoals" id="ith-tA-OpB"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balao1" translatesAutoresizingMaskIntoConstraints="NO" id="YBL-lK-x4p">
@@ -1467,7 +1465,7 @@ Daqui de cima dá pra ver tanta coisa… tudo pelo que nós passamos juntos pra 
                                         <connections>
                                             <outlet property="goalNameLabel" destination="Eol-Dv-Wpz" id="y5v-Yx-ZBl"/>
                                             <outlet property="mountainImage" destination="Fsr-Jz-hhK" id="UW5-0f-ZS8"/>
-                                            <segue destination="A3f-Ci-CpH" kind="presentation" identifier="goToCurrentStep" id="NNC-IS-Geq"/>
+                                            <segue destination="A3f-Ci-CpH" kind="presentation" identifier="goToCurrentStep" modalTransitionStyle="crossDissolve" id="NNC-IS-Geq"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

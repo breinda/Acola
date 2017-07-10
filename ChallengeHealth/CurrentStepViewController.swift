@@ -28,6 +28,8 @@ class CurrentStepViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.modalTransitionStyle = .crossDissolve
+        
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(CurrentStepViewController.respondToSwipeGesture(_:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(swipeRight)
@@ -134,7 +136,15 @@ class CurrentStepViewController: UIViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("IOIOIOI")
+        
+        if segue.identifier == "goToConfigFromStep" {
+            
+            let svc = segue.destination as! ConfigViewController
+            // customization:
+            svc.modalTransition.edge = .right
+            svc.modalTransition.radiusFactor = 0.3
+        }
+        
         if segue.identifier == "goToGoals" {
             print("ENTREY")
             if segue.destination is GoalsViewController {

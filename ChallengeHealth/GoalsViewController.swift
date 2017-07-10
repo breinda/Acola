@@ -20,6 +20,8 @@ class GoalsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.modalTransitionStyle = .crossDissolve
+        
         //boddi.addAppearHappyJumpAnimation()
         
         // pega os goals do banco e os armazena no array goals
@@ -46,6 +48,15 @@ class GoalsViewController: UIViewController {
     // MARK: Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "goToConfigFromGoals" {
+            
+            let svc = segue.destination as! ConfigViewController
+            // customization:
+            svc.modalTransition.edge = .right
+            svc.modalTransition.radiusFactor = 0.3
+        }
+        
         if segue.identifier == "goToCurrentStep" {
             
             let cell = sender as! GoalCollectionViewCell
