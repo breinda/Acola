@@ -25,7 +25,7 @@ extension String {
 }
 
 
-class EmergencyPhonesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class EmergencyPhonesViewController: ElasticModalViewController/*UIViewController*/, UICollectionViewDelegate, UICollectionViewDataSource {
 
    // @IBOutlet weak var boddi: BoddiView!
     
@@ -44,7 +44,8 @@ class EmergencyPhonesViewController: UIViewController, UICollectionViewDelegate,
     // MARK: Navigation
     
     @IBAction func returnButtonWasTapped(_ sender: AnyObject) {
-        self.dismiss(animated: false, completion: nil)
+        self.modalTransition.edge = .right
+        self.dismiss(animated: true, completion: nil)
     }
     
     

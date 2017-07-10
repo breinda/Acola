@@ -1,6 +1,6 @@
 import UIKit
 
-class AboutUsViewController: UIViewController, UIScrollViewDelegate {
+class AboutUsViewController: ElasticModalViewController/*UIViewController*/, UIScrollViewDelegate {
 
     @IBOutlet weak var aboutTextView: UITextView!
     
@@ -15,7 +15,8 @@ class AboutUsViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func returnButtonWasTapped(_ sender: AnyObject) {
-        self.dismiss(animated: false, completion: nil)
+        self.modalTransition.edge = .right
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

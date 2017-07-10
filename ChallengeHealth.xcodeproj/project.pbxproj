@@ -18,6 +18,12 @@
 		06FF1B5E1D482CCB00953BAE /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B5D1D482CCB00953BAE /* TextField.swift */; };
 		A7D27DD2CE4F11ABD87D5D64 /* Pods_ChallengeHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007A7E7652F5C10253E2FBED /* Pods_ChallengeHealth.framework */; };
 		E106AA1C1ED7C310003CDDEB /* SummitReachedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106AA1B1ED7C310003CDDEB /* SummitReachedViewController.swift */; };
+		E107E6F01F133EDE0056A1F9 /* EdgePanTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107E6EA1F133EDE0056A1F9 /* EdgePanTransition.swift */; };
+		E107E6F11F133EDE0056A1F9 /* ElasticModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107E6EB1F133EDE0056A1F9 /* ElasticModalViewController.swift */; };
+		E107E6F21F133EDE0056A1F9 /* ElasticShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107E6EC1F133EDE0056A1F9 /* ElasticShapeLayer.swift */; };
+		E107E6F31F133EDE0056A1F9 /* ElasticTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107E6ED1F133EDE0056A1F9 /* ElasticTransition.swift */; };
+		E107E6F41F133EDE0056A1F9 /* ElasticTransitionPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107E6EE1F133EDE0056A1F9 /* ElasticTransitionPresentationController.swift */; };
+		E107E6F51F133EDE0056A1F9 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107E6EF1F133EDE0056A1F9 /* Util.swift */; };
 		E126BA001F11B10B00A45713 /* PhoneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E126B9FF1F11B10B00A45713 /* PhoneCollectionViewCell.swift */; };
 		E126BA021F11B55200A45713 /* Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E126BA011F11B55200A45713 /* Phone.swift */; };
 		E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */; };
@@ -51,6 +57,12 @@
 		28BB55857FF9BEA5F2C9F59E /* Pods-ChallengeHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth.debug.xcconfig"; sourceTree = "<group>"; };
 		B9EFA970596509DFC9D39CF7 /* Pods-ChallengeHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth.release.xcconfig"; sourceTree = "<group>"; };
 		E106AA1B1ED7C310003CDDEB /* SummitReachedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummitReachedViewController.swift; sourceTree = "<group>"; };
+		E107E6EA1F133EDE0056A1F9 /* EdgePanTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgePanTransition.swift; sourceTree = "<group>"; };
+		E107E6EB1F133EDE0056A1F9 /* ElasticModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticModalViewController.swift; sourceTree = "<group>"; };
+		E107E6EC1F133EDE0056A1F9 /* ElasticShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticShapeLayer.swift; sourceTree = "<group>"; };
+		E107E6ED1F133EDE0056A1F9 /* ElasticTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticTransition.swift; sourceTree = "<group>"; };
+		E107E6EE1F133EDE0056A1F9 /* ElasticTransitionPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticTransitionPresentationController.swift; sourceTree = "<group>"; };
+		E107E6EF1F133EDE0056A1F9 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		E126B9FF1F11B10B00A45713 /* PhoneCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneCollectionViewCell.swift; sourceTree = "<group>"; };
 		E126BA011F11B55200A45713 /* Phone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Phone.swift; sourceTree = "<group>"; };
 		E14948BB1D35680D00BB8FB2 /* ChallengeHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +139,12 @@
 				06FF1B5B1D481CC700953BAE /* SegueFromRight.swift */,
 				06FF1B5D1D482CCB00953BAE /* TextField.swift */,
 				E1A847ED1EDDF27500A13FC3 /* Button.swift */,
+				E107E6EA1F133EDE0056A1F9 /* EdgePanTransition.swift */,
+				E107E6EB1F133EDE0056A1F9 /* ElasticModalViewController.swift */,
+				E107E6EC1F133EDE0056A1F9 /* ElasticShapeLayer.swift */,
+				E107E6ED1F133EDE0056A1F9 /* ElasticTransition.swift */,
+				E107E6EE1F133EDE0056A1F9 /* ElasticTransitionPresentationController.swift */,
+				E107E6EF1F133EDE0056A1F9 /* Util.swift */,
 				E1BD0CC11D3D616A00EC26BA /* User */,
 				E1BD0CC41D3D679400EC26BA /* Goals and Steps */,
 				E1BD0CC01D3D614100EC26BA /* Structs */,
@@ -410,13 +428,17 @@
 				06FF1B5C1D481CC700953BAE /* SegueFromRight.swift in Sources */,
 				E1BD0CB91D3D463400EC26BA /* GoalsViewController.swift in Sources */,
 				E106AA1C1ED7C310003CDDEB /* SummitReachedViewController.swift in Sources */,
+				E107E6F31F133EDE0056A1F9 /* ElasticTransition.swift in Sources */,
+				E107E6F21F133EDE0056A1F9 /* ElasticShapeLayer.swift in Sources */,
 				E14948D51D356AFA00BB8FB2 /* LoginViewController.swift in Sources */,
+				E107E6F51F133EDE0056A1F9 /* Util.swift in Sources */,
 				E1BD0CBD1D3D522300EC26BA /* Goal.swift in Sources */,
 				E1BD0CBF1D3D532700EC26BA /* GoalCollectionViewCell.swift in Sources */,
 				E126BA021F11B55200A45713 /* Phone.swift in Sources */,
 				06A9D4D01D4558AC00296130 /* AboutUsViewController.swift in Sources */,
 				E1BD0CBB1D3D48C300EC26BA /* ConfigViewController.swift in Sources */,
 				E14948D71D356B1E00BB8FB2 /* SignUpViewController.swift in Sources */,
+				E107E6F41F133EDE0056A1F9 /* ElasticTransitionPresentationController.swift in Sources */,
 				06A9D4D21D45619400296130 /* EmergencyPhonesViewController.swift in Sources */,
 				069B0FBA1D3F2F0F000818F0 /* UserSettingsViewController.swift in Sources */,
 				E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */,
@@ -424,6 +446,8 @@
 				06FF1B5E1D482CCB00953BAE /* TextField.swift in Sources */,
 				060E2BF61D3F597D00097E81 /* extensionUserSettingsViewController.swift in Sources */,
 				E126BA001F11B10B00A45713 /* PhoneCollectionViewCell.swift in Sources */,
+				E107E6F01F133EDE0056A1F9 /* EdgePanTransition.swift in Sources */,
+				E107E6F11F133EDE0056A1F9 /* ElasticModalViewController.swift in Sources */,
 				E1DCF4911D3F3EAF005479D6 /* Step.swift in Sources */,
 				0661FE7B1D4132250075DCCA /* UserSettingsTableViewCell.swift in Sources */,
 				06C51C671D47157100409C26 /* extensionGoalsViewController.swift in Sources */,
