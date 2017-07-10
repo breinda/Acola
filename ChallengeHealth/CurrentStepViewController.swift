@@ -59,6 +59,7 @@ class CurrentStepViewController: UIViewController {
                 self.step = self.steps[Int(self.stepIndex)! - 1].name
                 
                 self.stepLabel.text! = self.step
+                self.stepLabel.alpha = 1
                 self.stepIndexLabel.text! = "PASSO \(self.stepIndex)"
                 
                 self.boddiTextBubbleLabel.text! = "\(self.name)! Tenho certeza de que você é capaz de dar mais este passo em direção ao seu objetivo. Você vai se sentir cada vez melhor!!"
@@ -150,6 +151,7 @@ class CurrentStepViewController: UIViewController {
             if segue.destination is GoalsViewController {
                 
                 summitWasReached = false
+                stepLabel.alpha = 0
                 
                 // seta o step atual do usuário como 0 -- saber se view inicial é a de goals ou a de currentStep
                 
@@ -220,6 +222,8 @@ class CurrentStepViewController: UIViewController {
                             
                             // se estivermos no último passo, segue para o topo da montanha
                             if (self.steps[updateStepInt! - 1].isLastStep == true) {
+                                
+                                self.stepLabel.alpha = 0
                                 
                                 self.performSegue(withIdentifier: "goToSummit", sender: self)
                                 

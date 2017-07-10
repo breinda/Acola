@@ -201,10 +201,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5jf-0T-NUD">
-                                <rect key="frame" x="334" y="23" width="30" height="40"/>
+                                <rect key="frame" x="332" y="23" width="32" height="46"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="0wJ-My-fYw"/>
-                                    <constraint firstAttribute="width" constant="30" id="wOR-ke-mSe"/>
+                                    <constraint firstAttribute="height" constant="46" id="0wJ-My-fYw"/>
+                                    <constraint firstAttribute="width" constant="32" id="wOR-ke-mSe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-UltraBold" family="Gill Sans" pointSize="37"/>
                                 <state key="normal" title="*">
@@ -242,8 +242,8 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Primeiro passo:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRe-In-UB2">
-                                <rect key="frame" x="112.5" y="32" width="150.5" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PASSO" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nRe-In-UB2">
+                                <rect key="frame" x="153.5" y="32" width="68.5" height="28"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.68704202589999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -254,7 +254,7 @@
                                 <color key="textColor" red="0.87628119429999995" green="0.22002217800000001" blue="0.26779779240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversar com um amigo após a aula" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQN-Qa-XU6">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conversar com um amigo após a aula" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQN-Qa-XU6">
                                 <rect key="frame" x="7" y="106" width="361" height="64.5"/>
                                 <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="27"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -332,19 +332,6 @@
                             <constraint firstAttribute="trailing" secondItem="uPn-jh-YZp" secondAttribute="trailing" id="uy7-Nz-y6B"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="DJN-lX-qFc"/>
-                                <exclude reference="zQ9-qJ-AK0"/>
-                                <exclude reference="oQ0-3E-iGp"/>
-                                <exclude reference="uPn-jh-YZp"/>
-                                <exclude reference="5jf-0T-NUD"/>
-                                <exclude reference="PKP-L9-YYr"/>
-                                <exclude reference="nRe-In-UB2"/>
-                                <exclude reference="EXZ-He-cDA"/>
-                                <exclude reference="rQN-Qa-XU6"/>
-                                <exclude reference="fAc-FB-YWg"/>
-                                <exclude reference="Oce-2X-M2N"/>
-                            </mask>
                             <mask key="constraints">
                                 <exclude reference="3N5-sy-O2B"/>
                                 <exclude reference="7Eo-H1-xFr"/>
@@ -433,7 +420,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPR-Lz-qBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1100" y="2397"/>
+            <point key="canvasLocation" x="-1100" y="2396.8515742128939"/>
         </scene>
         <!--Config View Controller-->
         <scene sceneID="ge7-6A-zL0">
@@ -1561,7 +1548,7 @@ Eu vou te ajudar a alcançá-lo!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43t-vM-dmv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1100" y="1405.5472263868066"/>
+            <point key="canvasLocation" x="-1101" y="1406"/>
         </scene>
     </scenes>
     <resources>
