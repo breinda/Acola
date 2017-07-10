@@ -948,6 +948,9 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 <state key="normal" title="FALE CONOSCO!">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendEmail:" destination="2Xv-Bt-9UZ" eventType="touchUpInside" id="qqX-MK-TRu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99641960859298706" green="0.83033406734466553" blue="0.57614392042160034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
