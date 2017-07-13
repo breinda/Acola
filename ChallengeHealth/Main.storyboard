@@ -1543,6 +1543,8 @@ Eu vou te ajudar a alcançá-lo!</string>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="boddi" destination="gjG-Ez-Q5I" id="1Qo-Fz-XpB"/>
+                        <outlet property="boddiBubble" destination="YBL-lK-x4p" id="tHm-lt-ZW7"/>
                         <outlet property="goalsCollectionView" destination="K7k-4o-ecP" id="mUD-Ch-PPt"/>
                     </connections>
                 </viewController>
@@ -1566,6 +1568,6 @@ Eu vou te ajudar a alcançá-lo!</string>
         <image name="montanha2" width="500" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="grL-aW-a2k"/>
+        <segue reference="ith-tA-OpB"/>
     </inferredMetricsTieBreakers>
 </document>

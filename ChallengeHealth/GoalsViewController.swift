@@ -14,6 +14,9 @@ class GoalsViewController: UIViewController {
     var cellWidth: CGFloat = 0
     let columnNum: CGFloat = 1
     
+    @IBOutlet weak var boddiBubble: UIImageView!
+    @IBOutlet weak var boddi: UIImageView!
+    
     let mountainArray: [UIImage] = [UIImage(named: "iconeMontanha1")!, UIImage(named: "iconeMontanha2")!, UIImage(named: "iconeMontanha4")!, UIImage(named: "iconeMontanha3")!]
     var mountainArrayIndex = 0
     
@@ -21,6 +24,18 @@ class GoalsViewController: UIViewController {
         super.viewDidLoad()
         
         self.modalTransitionStyle = .crossDissolve
+        
+//        boddi.layer.shadowColor = UIColor.init(white: 0.0, alpha: 0.1).cgColor
+//        boddi.layer.shadowOpacity = 1
+//        boddi.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+//        boddi.layer.shadowRadius = 3
+//        boddi.layer.shouldRasterize = true
+//        
+//        boddiBubble.layer.shadowColor = UIColor.init(white: 0.0, alpha: 0.1).cgColor
+//        boddiBubble.layer.shadowOpacity = 1
+//        boddiBubble.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+//        boddiBubble.layer.shadowRadius = 3
+//        boddiBubble.layer.shouldRasterize = true
         
         //boddi.addAppearHappyJumpAnimation()
         
