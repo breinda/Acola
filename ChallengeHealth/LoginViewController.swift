@@ -33,7 +33,7 @@ class LoginViewController: UIViewController {
         
         
         if (email == "" || password == "") {
-            let alertView = UIAlertController(title: "Problema no login",
+            let alertView = UIAlertController(title: "erro 1 - Problema no login",
                                               message: "Preencha todos os campos." as String, preferredStyle:.alert)
             let okAction = UIAlertAction(title: "Tentar novamente", style: .default, handler: nil)
             alertView.addAction(okAction)
@@ -108,7 +108,7 @@ class LoginViewController: UIViewController {
                 
                 // DEU RUIM
             else {
-                let alert = UIAlertController(title: "Problema no login", message: "Combinação email-senha não reconhecida.", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "erro 0 - Problema no login", message: "Combinação email-senha não reconhecida.", preferredStyle: UIAlertControllerStyle.alert)
                 let cancel = UIAlertAction(title: "Tentar novamente", style: UIAlertActionStyle.cancel, handler: nil)
                 
                 alert.addAction(cancel)

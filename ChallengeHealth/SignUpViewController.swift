@@ -129,7 +129,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         // ALERTS PRA PROBLEMAS NO CADASTRO
         if (name!.isEmpty || email!.isEmpty || password!.isEmpty || confirmPassword!.isEmpty) {
             
-            let alertView = UIAlertController(title: "Problema no cadastro",
+            let alertView = UIAlertController(title: "erro 1 - Problema no cadastro",
                                               message: "Preencha todos os campos." as String, preferredStyle:.alert)
             let okAction = UIAlertAction(title: "Tentar novamente", style: .default, handler: nil)
             alertView.addAction(okAction)
@@ -140,7 +140,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         if (!containsMatch("([^\\t\\n\\s])*@([^\\t\\n\\s])*\\.([^\\t\\n\\s])*", inString: email!)) {
             
-            let alertView = UIAlertController(title: "Problema no cadastro",
+            let alertView = UIAlertController(title: "erro 4 - Problema no cadastro",
                                               message: "Formato de email não reconhecido." as String, preferredStyle:.alert)
             let okAction = UIAlertAction(title: "Tentar novamente", style: .default, handler: nil)
             alertView.addAction(okAction)
@@ -162,7 +162,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         if (password != confirmPassword) {
             
-            let alertView = UIAlertController(title: "Problema no cadastro",
+            let alertView = UIAlertController(title: "erro 2 - Problema no cadastro",
                                               message: "As senhas inseridas não coincidem." as String, preferredStyle:.alert)
             let okAction = UIAlertAction(title: "Tentar novamente", style: .default, handler: nil)
             alertView.addAction(okAction)
@@ -172,7 +172,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
         
         if (password?.characters.count < 6) {
-            let alertView = UIAlertController(title: "Problema no cadastro",
+            let alertView = UIAlertController(title: "erro 3 - Problema no cadastro",
                                               message: "Senha com menos de 6 caracteres." as String, preferredStyle:.alert)
             let okAction = UIAlertAction(title: "Tentar novamente", style: .default, handler: nil)
             alertView.addAction(okAction)

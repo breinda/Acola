@@ -13,4 +13,11 @@ target 'ChallengeHealth' do
 
   # Pods for ChallengeHealth
 
+  target 'ChallengeHealthUITests' do
+    # inherit! :search_paths
+    pod 'Firebase'
+    pod 'FirebaseAuth'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
+  end
 end
