@@ -28,6 +28,9 @@ class CurrentStepViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        goalLabel.text = goal
+//        stepLabel.text = step
+        
         self.modalTransitionStyle = .crossDissolve
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(CurrentStepViewController.respondToSwipeGesture(_:)))
