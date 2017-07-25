@@ -1290,6 +1290,9 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 <state key="normal" title="OK!">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="OKButtonWasTapped:" destination="4FA-jI-OoB" eventType="touchUpInside" id="Gsi-bF-4Dt"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="e1w-A5-UgM">
                                 <rect key="frame" x="118" y="328" width="242" height="64"/>

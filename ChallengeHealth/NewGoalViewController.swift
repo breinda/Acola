@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
@@ -19,6 +20,7 @@ extension UIViewController {
         view.endEditing(true)
     }
 }
+
 
 class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
 
@@ -122,4 +124,136 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
         
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
+    // cria novo objetivo para o ID do usuário e vai para a tela de edição de Objetivo.
+    // Por enquanto, utiliza-se o NOME do objetivo como ID.
+    // TODO: Caso um Objetivo com esse nome já exista, sugerir edição do Objetivo já existente?
+    @IBAction func OKButtonWasTapped(_ sender: Any) {
+        
+        if (goalTextView.text == "") {
+            boddiTextView.text = "Qual é mesmo o nome de seu novo Objetivo?"
+        }
+
+        else {
+            
+            //var confirmCstGoalHasNOTBeenCreated = 0
+            
+            handleAsynchronousRequest(completionHandlerCstGoalHasNotBeenCreated: { keyCounter, cstGoalHasBeenCreated in
+                if (cstGoalHasBeenCreated == 0) {
+                    
+                    print("EITA não foi criado nenhum Goal ainda")
+                    print("cstGoalHasBeenCreated = \(cstGoalHasBeenCreated)")
+                    
+                    // vamos criar uma nova entrada no banco de acordo com a key do usuário
+                    
+                    var handle : AuthStateDidChangeListenerHandle
+                    
+                    handle = (Auth.auth().addStateDidChangeListener { auth, user in
+                        
+                        if let user = user {
+                            // User is signed in.
+                            let uid = user.uid;
+                            print("uid: \(uid)")
+                            
+                            //let key = uid
+                            let goalKey = String(self.goalTextView.text)!
+                            
+                            let childUpdates = ["\(uid)": goalKey]
+                            DAO.CST_GOALS_REF.updateChildValues(childUpdates)
+                        }
+                    })
+                    Auth.auth().removeStateDidChangeListener(handle)
+                    
+//                    // precisamos também atualizar o valor da entrada numberOfKeys no banco
+                    DAO.CST_GOALS_REF.observe(.childAdded, with: { (snapshot) in
+                        
+                        print(snapshot.key)
+                        
+                        let key = String(snapshot.key)
+                        
+                        if key == "numberOfKeys" {
+                            print("achei o keyNumber!!AEEAEE")
+                            
+                            print(snapshot.value)
+                            
+                            var keyNumber = Int(String(describing: snapshot.value!))!
+                            print("keyNumber ANTES = \(keyNumber)")
+                            keyNumber += 1
+                            print("keyNumber DEPOIS = \(keyNumber)")
+                            
+                            let childUpdates = ["\(String(describing: key!))" : String(keyNumber)]
+                            DAO.CST_GOALS_REF.updateChildValues(childUpdates)
+                        }
+                    })
+                    
+                }
+                    
+                else {
+                    print("OUI o usuário já possui um Goal criado")
+                    print("cstGoalHasBeenCreated = \(cstGoalHasBeenCreated)")
+                }
+            })
+        }
+    }
+
+    
+    func handleAsynchronousRequest (completionHandlerCstGoalHasNotBeenCreated: @escaping (_ keyCounter: Int, _ cstGoalHasBeenCreated: Int) -> Void) {
+        var handle : AuthStateDidChangeListenerHandle
+        
+        handle = (Auth.auth().addStateDidChangeListener { auth, user in
+            
+            if let user = user {
+                // User is signed in.
+                //let name = user.displayName
+                //let email = user.email
+                let uid = user.uid;
+                print("uid: \(uid)")
+                
+                var cstGoalHasBeenCreated : Int = 0
+                var keyCounter : Int = 0
+                var keyNumber : Int = -10
+                
+                //let key = uid
+                let goalKey = String(self.goalTextView.text)!
+                
+                DAO.CST_GOALS_REF.observe(.childAdded, with: { (snapshot) in
+                    
+                    //print(snapshot.key)
+                    keyCounter += 1
+                    //print("keyCounter = \(keyCounter)")
+                    
+                    let key = String(snapshot.key)
+                    
+                    if snapshot.key == "numberOfKeys" {
+                        //print("achei o keyNumber!!")
+                        keyNumber = Int(String(describing: snapshot.value!))!
+                        //print("keyNumber = \(keyNumber)")
+                    }
+                    
+                    if (keyCounter - 1) == keyNumber {
+                        completionHandlerCstGoalHasNotBeenCreated(keyCounter, cstGoalHasBeenCreated)
+                    }
+                    
+                    if (key == uid) { // usuário já criou algum objetivo
+                        cstGoalHasBeenCreated += 1
+                        //completionHandlerCstGoalHasBeenCreated(cstGoalHasBeenCreated)
+                        
+                        let childUpdates = ["\(goalKey)" : ""]
+                        DAO.CST_GOALS_REF.child(key!).updateChildValues(childUpdates)
+                        
+                        completionHandlerCstGoalHasNotBeenCreated(keyCounter, cstGoalHasBeenCreated)
+                    }
+                })
+                
+                //                    let goalData = ["description": "", "firstStep": ["description": "", "name": ""], "name": goalKey] as [String : Any]
+                //                    let childChildUpdates = ["\(goalKey)": goalData]
+                //
+                //                    DAO.CST_GOALS_REF.child(goalKey).updateChildValues(childChildUpdates)
+            }
+        })
+        
+        Auth.auth().removeStateDidChangeListener(handle)
+    }
+    
 }
