@@ -137,9 +137,10 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
 
         else {
             
-            //var confirmCstGoalHasNOTBeenCreated = 0
-            
             handleAsynchronousRequest(completionHandlerCstGoalHasNotBeenCreated: { keyCounter, cstGoalHasBeenCreated in
+                
+                // usuário não possui nenhum Goal criado
+                // VER AQUI: pode ser que esteja (e acho que está) atualizando duas vezes o banco -- uma quando cria o novo goal pra um novo id, para então -outra- pra criar -de novo- o novo goal pro id que acabou de ser criado
                 if (cstGoalHasBeenCreated == 0) {
                     
                     print("EITA não foi criado nenhum Goal ainda")
@@ -156,16 +157,25 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
                             let uid = user.uid;
                             print("uid: \(uid)")
                             
-                            //let key = uid
                             let goalKey = String(self.goalTextView.text)!
+
+                            let name = goalKey
+                            let description = ""
+                            let firstStepDic : [String : String] = ["name": "", "description": ""]
                             
-                            let childUpdates = ["\(uid)": goalKey]
+                            let goalKeyDict = [goalKey: ["name": name, "description": description, "firstStep": firstStepDic]]
+                            
+//                            let childUpdates = ["\(uid)": goalKey]
+//                            DAO.CST_GOALS_REF.updateChildValues(childUpdates)
+                            
+                            let childUpdates = ["\(uid)": goalKeyDict]
                             DAO.CST_GOALS_REF.updateChildValues(childUpdates)
+
                         }
                     })
                     Auth.auth().removeStateDidChangeListener(handle)
                     
-//                    // precisamos também atualizar o valor da entrada numberOfKeys no banco
+                    // precisamos também atualizar o valor da entrada numberOfKeys no banco
                     DAO.CST_GOALS_REF.observe(.childAdded, with: { (snapshot) in
                         
                         print(snapshot.key)
@@ -239,7 +249,18 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
                         cstGoalHasBeenCreated += 1
                         //completionHandlerCstGoalHasBeenCreated(cstGoalHasBeenCreated)
                         
-                        let childUpdates = ["\(goalKey)" : ""]
+                        //let childUpdates = ["\(goalKey)" : ""]
+                        //DAO.CST_GOALS_REF.child(key!).updateChildValues(childUpdates)
+                        
+                        let goalKey = String(self.goalTextView.text)!
+                        
+                        let name = goalKey
+                        let description = ""
+                        let firstStepDic : [String : String] = ["name": "", "description": ""]
+                        
+                        let goalKeyDict = [goalKey: ["name": name, "description": description, "firstStep": firstStepDic]]
+                        
+                        let childUpdates = goalKeyDict
                         DAO.CST_GOALS_REF.child(key!).updateChildValues(childUpdates)
                         
                         completionHandlerCstGoalHasNotBeenCreated(keyCounter, cstGoalHasBeenCreated)
