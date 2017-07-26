@@ -78,9 +78,5 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate {
         topCorrect = topCorrect < 0.0 ? 0.0 : topCorrect;
         textView.contentInset.top = topCorrect
     }
-//    // faz com que a textView apareça scrollada a partir do início
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        goalTextView.setContentOffset(CGPoint.zero, animated: false)
-//    }
+
 }

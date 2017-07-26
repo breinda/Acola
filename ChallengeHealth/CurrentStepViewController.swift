@@ -76,6 +76,8 @@ class CurrentStepViewController: UIViewController {
     }
     
     
+    // MARK: Handlers for Asynchronous Stuff
+    
     func handleAsynchronousRequest (completionHandlerStepNumber: @escaping (Int) -> Void) {
         var handle : AuthStateDidChangeListenerHandle
         

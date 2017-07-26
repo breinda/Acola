@@ -424,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPR-Lz-qBO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1100" y="2396.8515742128939"/>
+            <point key="canvasLocation" x="-1060" y="2397"/>
         </scene>
         <!--Config View Controller-->
         <scene sceneID="ge7-6A-zL0">
@@ -1900,6 +1900,7 @@ Eu vou te ajudar a alcançá-lo!</string>
                         <outlet property="boddi" destination="gjG-Ez-Q5I" id="1Qo-Fz-XpB"/>
                         <outlet property="boddiBubble" destination="YBL-lK-x4p" id="tHm-lt-ZW7"/>
                         <outlet property="goalsCollectionView" destination="K7k-4o-ecP" id="mUD-Ch-PPt"/>
+                        <segue destination="65O-Jc-wAB" kind="presentation" identifier="goToGoalEditingFromGoals" id="9Ll-dW-eTd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43t-vM-dmv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1926,6 +1927,7 @@ Eu vou te ajudar a alcançá-lo!</string>
         <image name="montanha2" width="500" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="grL-aW-a2k"/>
+        <segue reference="ith-tA-OpB"/>
+        <segue reference="9Ll-dW-eTd"/>
     </inferredMetricsTieBreakers>
 </document>
