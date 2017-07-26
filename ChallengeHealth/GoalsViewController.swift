@@ -20,13 +20,13 @@ class GoalsViewController: UIViewController {
     let mountainArray: [UIImage] = [UIImage(named: "iconeMontanha1")!, UIImage(named: "iconeMontanha2")!, UIImage(named: "iconeMontanha4")!, UIImage(named: "iconeMontanha3")!]
     var mountainArrayIndex = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.modalTransitionStyle = .crossDissolve
         
         //boddi.addAppearHappyJumpAnimation()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -91,6 +91,8 @@ class GoalsViewController: UIViewController {
             }
         }
     }
+    
+    // MARK: Handlers for Asynchronous Stuff
     
     // checa se o usuário corrente possui algum custom goal criado
     func handleAsynchronousRequestForCstGoalsFromThisUser (completionHandlerUsers: @escaping (_ numberCompleted: Int, _ totalUsersWithCstGoals: Int, _ userWasFound: Bool) -> Void) {

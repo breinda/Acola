@@ -208,6 +208,9 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
             }
         }
     }
+    
+    
+    // MARK: Handlers for Asynchronous Stuff
 
     // checa se o usuário corrente possui algum custom goal criado
     func handleAsynchronousRequestForCstGoalsFromThisUser (completionHandlerUsers: @escaping (_ numberCompleted: Int, _ totalUsersWithCstGoals: Int, _ userWasFound: Bool) -> Void) {
