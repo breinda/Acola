@@ -42,31 +42,153 @@ class GoalsViewController: UIViewController {
         goalsCollectionView.backgroundColor = UIColor.clear
         //goalsCollectionView.reloadData()
         
-        handleAsynchronousRequest { numberCompleted, totalCstGoals, totalStdGoals in
-            if numberCompleted == totalCstGoals + totalStdGoals {
-                print("AEAEAEEA")
-                print("number completed = \(numberCompleted)")
-                print("totalCstGoals = \(totalCstGoals)")
-                print("totalStdGoals = \(totalStdGoals)")
+        handleAsynchronousRequestForCstGoalsFromThisUser { numberCompleted, totalUsersWithCstGoals, userWasFound in
+            
+            if numberCompleted == totalUsersWithCstGoals { // se tivermos chegado ao fim da busca
                 
-                self.goalsCollectionView.reloadData()
+                if userWasFound == true { // usuário possui algum custom goal criado!
+                    print("achei o usuário AFINAL")
+                    
+                    // pegmos, então, todos os std goals + os custom goals do usuário
+                    self.handleAsynchronousRequestForEveryStdGoalAndCstGoal { numberCompleted, totalCstGoalsThisUser, totalStdGoals in
+                        if numberCompleted == totalCstGoalsThisUser + totalStdGoals {
+                            print("userWasFound = TRUE, AEAEAEEA")
+                            print("userWasFound = TRUE, number completed = \(numberCompleted)")
+                            print("userWasFound = TRUE, totalCstGoals = \(totalCstGoalsThisUser)")
+                            print("userWasFound = TRUE, totalStdGoals = \(totalStdGoals)")
+                            
+                            self.goalsCollectionView.reloadData()
+                        }
+                            
+                        else {
+                            print("userWasFound = TRUE, OOPSIE ainda nao")
+                            print("userWasFound = TRUE, number completed = \(numberCompleted)")
+                            print("userWasFound = TRUE, totalCstGoals = \(totalCstGoalsThisUser)")
+                            print("userWasFound = TRUE, totalStdGoals = \(totalStdGoals)")
+                        }
+                    }
+                }
+                else { // não achamos o usuário ao final da busca == usuário não possui nenhum custom goal criado
+                    
+                    // pegamos, então, apenas os std goals
+                    self.handleAsynchronousRequestForEveryStdGoal { numberCompleted, totalStdGoals in
+                        
+                        if numberCompleted == totalStdGoals {
+                            print("userWasFound == FALSE, AEAEAEEA")
+                            print("userWasFound == FALSE, number completed = \(numberCompleted)")
+                            print("userWasFound == FALSE, totalStdGoals = \(totalStdGoals)")
+                            
+                            self.goalsCollectionView.reloadData()
+                        }
+                            
+                        else {
+                            print("userWasFound == FALSE, OOPSIE ainda nao")
+                            print("userWasFound == FALSE, number completed = \(numberCompleted)")
+                            print("userWasFound == FALSE, totalStdGoals = \(totalStdGoals)")
+                        }
+                    }
+                }
             }
-                
-            else {
-                print("OOPSIE ainda nao")
-                print("number completed = \(numberCompleted)")
-                print("totalCstGoals = \(totalCstGoals)")
-                print("totalStdGoals = \(totalStdGoals)")
-            }
+//            // usuário possui algum custom goal criado
+//            if userWasFound == true {
+//                print("achei o usuário AFINAL")
+//                
+//                // pegmos, então, todos os std goals + os custom goals do usuário
+//                self.handleAsynchronousRequestForEveryStdGoalAndCstGoal { numberCompleted, totalCstGoalsThisUser, totalStdGoals in
+//                    if numberCompleted == totalCstGoalsThisUser + totalStdGoals {
+//                        print("userWasFound = TRUE, AEAEAEEA")
+//                        print("userWasFound = TRUE, number completed = \(numberCompleted)")
+//                        print("userWasFound = TRUE, totalCstGoals = \(totalCstGoalsThisUser)")
+//                        print("userWasFound = TRUE, totalStdGoals = \(totalStdGoals)")
+//                        
+//                        self.goalsCollectionView.reloadData()
+//                    }
+//                        
+//                    else {
+//                        print("userWasFound = TRUE, OOPSIE ainda nao")
+//                        print("userWasFound = TRUE, number completed = \(numberCompleted)")
+//                        print("userWasFound = TRUE, totalCstGoals = \(totalCstGoalsThisUser)")
+//                        print("userWasFound = TRUE, totalStdGoals = \(totalStdGoals)")
+//                    }
+//                }
+//            }
+//            else { // userWasFound == FALSE
+//                print("PROCURANDO POR CUSTOM GOALS CRIADOS POR ESTE USUÁRIO....")
+//                
+//                if numberCompleted == totalUsersWithCstGoals {
+//                    print("usuário não possui nenhum custom goal criado!")
+//                    
+//                    // pegamos, então, apenas os std goals
+//                    self.handleAsynchronousRequestForEveryStdGoal { numberCompleted, totalStdGoals in
+//                        
+//                        if numberCompleted == totalStdGoals {
+//                            print("userWasFound == FALSE, AEAEAEEA")
+//                            print("userWasFound == FALSE, number completed = \(numberCompleted)")
+//                            print("userWasFound == FALSE, totalStdGoals = \(totalStdGoals)")
+//                            
+//                            self.goalsCollectionView.reloadData()
+//                        }
+//                            
+//                        else {
+//                            print("userWasFound == FALSE, OOPSIE ainda nao")
+//                            print("userWasFound == FALSE, number completed = \(numberCompleted)")
+//                            print("userWasFound == FALSE, totalStdGoals = \(totalStdGoals)")
+//                        }
+//                    }
+//                }
+//            }
         }
     }
     
-    func handleAsynchronousRequest (completionHandlerGoals: @escaping (_ numberCompleted: Int, _ totalCstGoals: Int, _ totalStdGoals: Int) -> Void) {
+    // procura se o usuário corrente possui algum custom goal criado
+    func handleAsynchronousRequestForCstGoalsFromThisUser (completionHandlerUsers: @escaping (_ numberCompleted: Int, _ totalUsersWithCstGoals: Int, _ userWasFound: Bool) -> Void) {
+        var numberCompleted = 0
+        var totalUsersWithCstGoals = -10
+        var userWasFound = false
+        
+        // procura saber se usuário possui custom goals criados
+        var handle : AuthStateDidChangeListenerHandle
+        
+        handle = (Auth.auth().addStateDidChangeListener { auth, user in
+            
+            if let user = user { // User is signed in.
+                let uid = user.uid;
+                print("uid: \(uid)")
+                
+                DAO.CST_GOALS_REF.observe(.childAdded, with: { (snapshot) in
+                    
+                    if snapshot.key == "numberOfKeys" {
+                        print("to no numberOfKeys-USERS WITH CST GOALS")
+                        
+                        totalUsersWithCstGoals = snapshot.value as! Int
+                        print("totalUsersWithCstGoals = \(totalUsersWithCstGoals)")
+                        
+                        completionHandlerUsers(numberCompleted, totalUsersWithCstGoals, userWasFound)
+                    }
+                    else {
+                        if snapshot.key == uid { // usuário encontrado na lista = usuário possui algum custom goal criado
+                            userWasFound = true
+                            completionHandlerUsers(numberCompleted, totalUsersWithCstGoals, userWasFound)
+                        }
+                        
+                        numberCompleted += 1
+                        completionHandlerUsers(numberCompleted, totalUsersWithCstGoals, userWasFound)
+                    }
+                })
+                
+            }
+        })
+        Auth.auth().removeStateDidChangeListener(handle)
+    }
+    
+    // função que pega todos os std goals + os custom goals do usuário
+    func handleAsynchronousRequestForEveryStdGoalAndCstGoal (completionHandlerGoals: @escaping (_ numberCompleted: Int, _ totalCstGoalsThisUser: Int, _ totalStdGoals: Int) -> Void) {
         
         var numberCompleted = 0
-        var totalCstGoals = -10
+        var totalCstGoalsThisUser = -10
         var totalStdGoals = -10
 
+        
         // pega os custom goals do banco e os armazena no array goals
         var handle : AuthStateDidChangeListenerHandle
 
@@ -81,16 +203,16 @@ class GoalsViewController: UIViewController {
                     if snapshot.key == "numberOfKeys" {
                         print("to no numberOfKeys-CST")
                         
-                        totalCstGoals = snapshot.value as! Int
-                        print("totalStdGoals = \(totalCstGoals)")
+                        totalCstGoalsThisUser = snapshot.value as! Int
+                        print("totalCstGoalsThisUser = \(totalCstGoalsThisUser)")
                         
-                        completionHandlerGoals(numberCompleted, totalCstGoals, totalStdGoals)
+                        completionHandlerGoals(numberCompleted, totalCstGoalsThisUser, totalStdGoals)
                     }
                     else {
                         self.goals.append(Goal(key: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
                         
                         numberCompleted += 1
-                        completionHandlerGoals(numberCompleted, totalCstGoals, totalStdGoals)
+                        completionHandlerGoals(numberCompleted, totalCstGoalsThisUser, totalStdGoals)
                     }
                 })
             }
@@ -108,13 +230,40 @@ class GoalsViewController: UIViewController {
                 
                 print("totalStdGoals = \(totalStdGoals)")
                 
-                completionHandlerGoals(numberCompleted, totalCstGoals, totalStdGoals)
+                completionHandlerGoals(numberCompleted, totalCstGoalsThisUser, totalStdGoals)
             }
             else {
                 self.goals.append(Goal(key: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
                 
                 numberCompleted += 1
-                completionHandlerGoals(numberCompleted, totalCstGoals, totalStdGoals)
+                completionHandlerGoals(numberCompleted, totalCstGoalsThisUser, totalStdGoals)
+            }
+        })
+    }
+    
+    // função que pega apenas os std goals
+    func handleAsynchronousRequestForEveryStdGoal (completionHandlerGoals: @escaping (_ numberCompleted: Int, _ totalStdGoals: Int) -> Void) {
+        
+        var numberCompleted = 0
+        var totalStdGoals = -10
+        
+        // pega os goals do banco e os armazena no array goals
+        DAO.STD_GOALS_REF.observe(.childAdded, with: { (snapshot) in
+            
+            if snapshot.key == "numberOfKeys" {
+                print("to no numberOfKeys-STD")
+                
+                totalStdGoals = snapshot.value as! Int
+                
+                print("totalStdGoals = \(totalStdGoals)")
+                
+                completionHandlerGoals(numberCompleted, totalStdGoals)
+            }
+            else {
+                self.goals.append(Goal(key: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
+                
+                numberCompleted += 1
+                completionHandlerGoals(numberCompleted, totalStdGoals)
             }
         })
     }
