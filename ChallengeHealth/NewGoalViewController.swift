@@ -137,76 +137,262 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
 
         else {
             
-            handleAsynchronousRequest(completionHandlerCstGoalHasNotBeenCreated: { keyCounter, cstGoalHasBeenCreated in
+            handleAsynchronousRequestForCstGoalsFromThisUser { numberCompleted, totalUsersWithCstGoals, userWasFound in
                 
-                // usuário não possui nenhum Goal criado
-                // VER AQUI: pode ser que esteja (e acho que está) atualizando duas vezes o banco -- uma quando cria o novo goal pra um novo id, para então -outra- pra criar -de novo- o novo goal pro id que acabou de ser criado
-                if (cstGoalHasBeenCreated == 0) {
+                if numberCompleted == totalUsersWithCstGoals { // se tivermos chegado ao fim da busca
                     
-                    print("EITA não foi criado nenhum Goal ainda")
-                    print("cstGoalHasBeenCreated = \(cstGoalHasBeenCreated)")
-                    
-                    // vamos criar uma nova entrada no banco de acordo com a key do usuário
-                    
-                    var handle : AuthStateDidChangeListenerHandle
-                    
-                    handle = (Auth.auth().addStateDidChangeListener { auth, user in
+                    if userWasFound == true { // usuário possui algum custom goal criado!
+                        print("achei o usuário AFINAL")
                         
-                        if let user = user {
-                            // User is signed in.
-                            let uid = user.uid;
-                            print("uid: \(uid)")
+                        // precisamos apenas escrever um goal novo na árvore do usuário
+                        self.handleAsynchronousRequestForNewCstGoalWithExistingTree { numberCompleted in
                             
-                            let goalKey = String(self.goalTextView.text)!
-
-                            let name = goalKey
-                            let description = ""
-                            let firstStepDic : [String : String] = ["name": "", "description": ""]
+                            if numberCompleted == 2 {
+                                print("userWasFound == true, criei tudo que eu tinha q criar!!!!")
+                                print("numberCompleted = \(numberCompleted)")
+                            }
+                            else {
+                                print("userWasFound == true, ainda estou botando coisas no banco TENHA PACIENCIA")
+                            }
+                        }
+                        
+                    }
+                    else { // não achamos o usuário ao final da busca == usuário não possui nenhum custom goal criado
+                        
+                        // precisamos criar a árvore do usuário
+                        self.handleAsynchronousRequestForNewUserCstGoalsTree { numberCompleted in
                             
-                            let goalKeyDict = [goalKey: ["name": name, "description": description, "firstStep": firstStepDic]]
-                            
-//                            let childUpdates = ["\(uid)": goalKey]
+                            if numberCompleted == 2 {
+                                print("userWasFound == false, criei tudo que eu tinha q criar!!!!")
+                                print("numberCompleted = \(numberCompleted)")
+                            }
+                            else {
+                                print("userWasFound == false, ainda estou botando coisas no banco TENHA PACIENCIA")
+                            }
+                        }
+                    }
+                }
+            }
+            
+//            handleAsynchronousRequest(completionHandlerCstGoalHasNotBeenCreated: { keyCounter, cstGoalHasBeenCreated in
+//                
+//                // usuário não possui nenhum Goal criado
+//                // VER AQUI: pode ser que esteja (e acho que está) atualizando duas vezes o banco -- uma quando cria o novo goal pra um novo id, para então -outra- pra criar -de novo- o novo goal pro id que acabou de ser criado
+//                if (cstGoalHasBeenCreated == 0) {
+//                    
+//                    print("EITA não foi criado nenhum Goal ainda")
+//                    print("cstGoalHasBeenCreated = \(cstGoalHasBeenCreated)")
+//                    
+//                    // vamos criar uma nova entrada no banco de acordo com a key do usuário
+//                    
+//                    var handle : AuthStateDidChangeListenerHandle
+//                    
+//                    handle = (Auth.auth().addStateDidChangeListener { auth, user in
+//                        
+//                        if let user = user {
+//                            // User is signed in.
+//                            let uid = user.uid;
+//                            print("uid: \(uid)")
+//                            
+//                            let goalKey = String(self.goalTextView.text)!
+//
+//                            let name = goalKey
+//                            let description = ""
+//                            let firstStepDic : [String : String] = ["name": "", "description": ""]
+//                            
+//                            let goalKeyDict = [goalKey: ["name": name, "description": description, "firstStep": firstStepDic]]
+//                            
+////                            let childUpdates = ["\(uid)": goalKey]
+////                            DAO.CST_GOALS_REF.updateChildValues(childUpdates)
+//                            
+//                            let childUpdates = ["\(uid)": goalKeyDict]
 //                            DAO.CST_GOALS_REF.updateChildValues(childUpdates)
-                            
-                            let childUpdates = ["\(uid)": goalKeyDict]
-                            DAO.CST_GOALS_REF.updateChildValues(childUpdates)
-
-                        }
-                    })
-                    Auth.auth().removeStateDidChangeListener(handle)
-                    
-                    // precisamos também atualizar o valor da entrada numberOfKeys no banco
-                    DAO.CST_GOALS_REF.observe(.childAdded, with: { (snapshot) in
-                        
-                        print(snapshot.key)
-                        
-                        let key = String(snapshot.key)
-                        
-                        if key == "numberOfKeys" {
-                            print("achei o keyNumber!!AEEAEE")
-                            
-                            print(snapshot.value!)
-                            
-                            var keyNumber = Int(String(describing: snapshot.value!))!
-                            print("keyNumber ANTES = \(keyNumber)")
-                            keyNumber += 1
-                            print("keyNumber DEPOIS = \(keyNumber)")
-                            
-                            let childUpdates = ["\(String(describing: key!))" : String(keyNumber)]
-                            DAO.CST_GOALS_REF.updateChildValues(childUpdates)
-                        }
-                    })
-                    
-                }
-                    
-                else {
-                    print("OUI o usuário já possui um Goal criado")
-                    print("cstGoalHasBeenCreated = \(cstGoalHasBeenCreated)")
-                }
-            })
+//
+//                        }
+//                    })
+//                    Auth.auth().removeStateDidChangeListener(handle)
+//                    
+//                    // precisamos também atualizar o valor da entrada numberOfKeys no banco
+//                    DAO.CST_GOALS_REF.observe(.childAdded, with: { (snapshot) in
+//                        
+//                        print(snapshot.key)
+//                        
+//                        let key = String(snapshot.key)
+//                        
+//                        if key == "numberOfKeys" {
+//                            print("achei o keyNumber!!AEEAEE")
+//                            
+//                            print(snapshot.value!)
+//                            
+//                            var keyNumber = Int(String(describing: snapshot.value!))!
+//                            print("keyNumber ANTES = \(keyNumber)")
+//                            keyNumber += 1
+//                            print("keyNumber DEPOIS = \(keyNumber)")
+//                            
+//                            let childUpdates = ["\(String(describing: key!))" : String(keyNumber)]
+//                            DAO.CST_GOALS_REF.updateChildValues(childUpdates)
+//                        }
+//                    })
+//                    
+//                }
+//                    
+//                else {
+//                    print("OUI o usuário já possui um Goal criado")
+//                    print("cstGoalHasBeenCreated = \(cstGoalHasBeenCreated)")
+//                }
+//            })
         }
     }
 
+    // checa se o usuário corrente possui algum custom goal criado
+    func handleAsynchronousRequestForCstGoalsFromThisUser (completionHandlerUsers: @escaping (_ numberCompleted: Int, _ totalUsersWithCstGoals: Int, _ userWasFound: Bool) -> Void) {
+        var numberCompleted = 0
+        var totalUsersWithCstGoals = -10
+        var userWasFound = false
+        
+        // procura saber se usuário possui custom goals criados
+        var handle : AuthStateDidChangeListenerHandle
+        
+        handle = (Auth.auth().addStateDidChangeListener { auth, user in
+            
+            if let user = user { // User is signed in.
+                let uid = user.uid;
+                print("uid: \(uid)")
+                
+                DAO.CST_GOALS_REF.observe(.childAdded, with: { (snapshot) in
+                    
+                    if snapshot.key == "numberOfKeys" {
+                        print("to no numberOfKeys-USERS WITH CST GOALS")
+                        
+                        totalUsersWithCstGoals = snapshot.value as! Int
+                        print("totalUsersWithCstGoals = \(totalUsersWithCstGoals)")
+                        
+                        completionHandlerUsers(numberCompleted, totalUsersWithCstGoals, userWasFound)
+                    }
+                    else {
+                        if snapshot.key == uid { // usuário encontrado na lista = usuário possui algum custom goal criado
+                            userWasFound = true
+                            completionHandlerUsers(numberCompleted, totalUsersWithCstGoals, userWasFound)
+                        }
+                        
+                        numberCompleted += 1
+                        completionHandlerUsers(numberCompleted, totalUsersWithCstGoals, userWasFound)
+                    }
+                })
+                
+            }
+        })
+        Auth.auth().removeStateDidChangeListener(handle)
+    }
+    
+    // usuário NÃO possui goal nenhum criado -- cria nova árvore para o usuário e insere goal novo. atualiza numberOfKeys do CST_GOALS. cria numberOfKeys da árvore do usuário e seta o valor inicial como 1.
+    func handleAsynchronousRequestForNewUserCstGoalsTree (completionHandlerUsers: @escaping (_ numberCompleted: Int) -> Void) {
+        var numberCompleted = 0
+
+        var handle : AuthStateDidChangeListenerHandle
+        
+        handle = (Auth.auth().addStateDidChangeListener { auth, user in
+            
+            if let user = user { // User is signed in.
+                let uid = user.uid;
+                print("uid: \(uid)")
+                
+                // cria nova entrada na CST_GOALS com uid do usuário. insere goal novo nessa nova entrada, e insere também o contador numberOfKeys e o inicializa com o valor 1.
+                let goalKey = String(self.goalTextView.text)!
+                let name = goalKey
+                let description = ""
+                let firstStepDic : [String : String] = ["name": "", "description": ""]
+                
+                let goalKeyDict = [goalKey: ["name": name, "description": description, "firstStep": firstStepDic]]
+                let childUpdates = ["\(uid)": goalKeyDict]
+                DAO.CST_GOALS_REF.updateChildValues(childUpdates)
+                
+                let numberOfKeysDict = ["numberOfKeys": 1]
+                DAO.CST_GOALS_REF.child(uid).updateChildValues(numberOfKeysDict)
+                
+                numberCompleted += 1
+                completionHandlerUsers(numberCompleted)
+                
+                
+                // pega o valor de numberOfKeys em CST_GOALS e o atualiza com +1
+                DAO.CST_GOALS_REF.observe(.childAdded, with: { (snapshot) in
+                    
+                    if snapshot.key == "numberOfKeys" {
+                        print("to no numberOfKeys-USERS WITH CST GOALS")
+                        
+                        let key = String(snapshot.key)
+                        var keyNumber : Int = snapshot.value as! Int
+                        print("keyNumber ANTES = \(keyNumber)")
+                        keyNumber += 1
+                        print("keyNumber DEPOIS = \(keyNumber)")
+
+                        let childUpdates = ["\(String(describing: key!))" : keyNumber]
+                        DAO.CST_GOALS_REF.updateChildValues(childUpdates)
+                        
+                        numberCompleted += 1
+                        completionHandlerUsers(numberCompleted)
+                    }
+                })
+                
+            }
+        })
+        Auth.auth().removeStateDidChangeListener(handle)
+    }
+    
+    
+    // usuário possui SIM goal já criado -- não precisa criar nova árvore para o usuário! -- atualiza árvore já existente com novo goal, atualiza numberOfKeys da árvore do usuário com +1
+    func handleAsynchronousRequestForNewCstGoalWithExistingTree (completionHandlerUsers: @escaping (_ numberCompleted: Int) -> Void) {
+        var numberCompleted = 0
+        
+        var handle : AuthStateDidChangeListenerHandle
+        
+        handle = (Auth.auth().addStateDidChangeListener { auth, user in
+            
+            if let user = user { // User is signed in.
+                let uid = user.uid;
+                print("uid: \(uid)")
+                
+                // cria nova entrada na árvore do usuário com novo goal
+                let goalKey = String(self.goalTextView.text)!
+                
+                let name = goalKey
+                let description = ""
+                let firstStepDic : [String : String] = ["name": "", "description": ""]
+                
+                let goalKeyDict = [goalKey: ["name": name, "description": description, "firstStep": firstStepDic]]
+                
+                let childUpdates = goalKeyDict
+                DAO.CST_GOALS_REF.child(uid).updateChildValues(childUpdates)
+                
+                numberCompleted += 1
+                completionHandlerUsers(numberCompleted)
+                
+                // pega o valor de numberOfKeys na árvore do usuário e o atualiza com +1
+                DAO.CST_GOALS_REF.child(uid).observe(.childAdded, with: { (snapshot) in
+                    
+                    if snapshot.key == "numberOfKeys" {
+                        print("to no numberOfKeys-CST GOALS DO CURRENT USER")
+                        
+                        let key = String(snapshot.key)
+                        var keyNumber : Int = snapshot.value as! Int
+                        print("keyNumber ANTES = \(keyNumber)")
+                        keyNumber += 1
+                        print("keyNumber DEPOIS = \(keyNumber)")
+                        
+                        let childUpdates = ["\(String(describing: key!))" : keyNumber]
+                        DAO.CST_GOALS_REF.child(uid).updateChildValues(childUpdates)
+                        
+                        numberCompleted += 1
+                        completionHandlerUsers(numberCompleted)
+                    }
+                })
+                
+            }
+        })
+        Auth.auth().removeStateDidChangeListener(handle)
+    }
+    
+    
     
     func handleAsynchronousRequest (completionHandlerCstGoalHasNotBeenCreated: @escaping (_ keyCounter: Int, _ cstGoalHasBeenCreated: Int) -> Void) {
         var handle : AuthStateDidChangeListenerHandle

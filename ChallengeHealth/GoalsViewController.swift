@@ -49,7 +49,7 @@ class GoalsViewController: UIViewController {
                 if userWasFound == true { // usuário possui algum custom goal criado!
                     print("achei o usuário AFINAL")
                     
-                    // pegmos, então, todos os std goals + os custom goals do usuário
+                    // pegamos, então, todos os std goals + os custom goals do usuário
                     self.handleAsynchronousRequestForEveryStdGoalAndCstGoal { numberCompleted, totalCstGoalsThisUser, totalStdGoals in
                         if numberCompleted == totalCstGoalsThisUser + totalStdGoals {
                             print("userWasFound = TRUE, AEAEAEEA")
@@ -89,58 +89,10 @@ class GoalsViewController: UIViewController {
                     }
                 }
             }
-//            // usuário possui algum custom goal criado
-//            if userWasFound == true {
-//                print("achei o usuário AFINAL")
-//                
-//                // pegmos, então, todos os std goals + os custom goals do usuário
-//                self.handleAsynchronousRequestForEveryStdGoalAndCstGoal { numberCompleted, totalCstGoalsThisUser, totalStdGoals in
-//                    if numberCompleted == totalCstGoalsThisUser + totalStdGoals {
-//                        print("userWasFound = TRUE, AEAEAEEA")
-//                        print("userWasFound = TRUE, number completed = \(numberCompleted)")
-//                        print("userWasFound = TRUE, totalCstGoals = \(totalCstGoalsThisUser)")
-//                        print("userWasFound = TRUE, totalStdGoals = \(totalStdGoals)")
-//                        
-//                        self.goalsCollectionView.reloadData()
-//                    }
-//                        
-//                    else {
-//                        print("userWasFound = TRUE, OOPSIE ainda nao")
-//                        print("userWasFound = TRUE, number completed = \(numberCompleted)")
-//                        print("userWasFound = TRUE, totalCstGoals = \(totalCstGoalsThisUser)")
-//                        print("userWasFound = TRUE, totalStdGoals = \(totalStdGoals)")
-//                    }
-//                }
-//            }
-//            else { // userWasFound == FALSE
-//                print("PROCURANDO POR CUSTOM GOALS CRIADOS POR ESTE USUÁRIO....")
-//                
-//                if numberCompleted == totalUsersWithCstGoals {
-//                    print("usuário não possui nenhum custom goal criado!")
-//                    
-//                    // pegamos, então, apenas os std goals
-//                    self.handleAsynchronousRequestForEveryStdGoal { numberCompleted, totalStdGoals in
-//                        
-//                        if numberCompleted == totalStdGoals {
-//                            print("userWasFound == FALSE, AEAEAEEA")
-//                            print("userWasFound == FALSE, number completed = \(numberCompleted)")
-//                            print("userWasFound == FALSE, totalStdGoals = \(totalStdGoals)")
-//                            
-//                            self.goalsCollectionView.reloadData()
-//                        }
-//                            
-//                        else {
-//                            print("userWasFound == FALSE, OOPSIE ainda nao")
-//                            print("userWasFound == FALSE, number completed = \(numberCompleted)")
-//                            print("userWasFound == FALSE, totalStdGoals = \(totalStdGoals)")
-//                        }
-//                    }
-//                }
-//            }
         }
     }
     
-    // procura se o usuário corrente possui algum custom goal criado
+    // checa se o usuário corrente possui algum custom goal criado
     func handleAsynchronousRequestForCstGoalsFromThisUser (completionHandlerUsers: @escaping (_ numberCompleted: Int, _ totalUsersWithCstGoals: Int, _ userWasFound: Bool) -> Void) {
         var numberCompleted = 0
         var totalUsersWithCstGoals = -10
