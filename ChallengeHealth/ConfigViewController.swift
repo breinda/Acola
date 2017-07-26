@@ -10,15 +10,6 @@ class ConfigViewController: /*UIViewController,*/ ElasticModalViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        if let user = FIRAuth.auth()?.currentUser {
-        //            for profile in user.providerData {
-        //                //let email = profile.email
-        //                //let name = profile.displayName
-        //                //boddiLabel.text! = "Como posso lhe ajudar, \(name!)?"
-        //                //emailLabel.text! = email!
-        //            }
-        //        }
-        
         //  boddi.addNormalCycleAnimation()
         
         var handle : AuthStateDidChangeListenerHandle

@@ -52,19 +52,19 @@ class GoalsViewController: UIViewController {
                     // pegamos, então, todos os std goals + os custom goals do usuário
                     self.handleAsynchronousRequestForEveryStdGoalAndCstGoal { numberCompleted, totalCstGoalsThisUser, totalStdGoals in
                         if numberCompleted == totalCstGoalsThisUser + totalStdGoals {
-                            print("userWasFound = TRUE, AEAEAEEA")
-                            print("userWasFound = TRUE, number completed = \(numberCompleted)")
-                            print("userWasFound = TRUE, totalCstGoals = \(totalCstGoalsThisUser)")
-                            print("userWasFound = TRUE, totalStdGoals = \(totalStdGoals)")
+                            print("userWasFound = TRUE -- PRONTO")
+                            //print("userWasFound = TRUE, number completed = \(numberCompleted)")
+                            //print("userWasFound = TRUE, totalCstGoals = \(totalCstGoalsThisUser)")
+                            //print("userWasFound = TRUE, totalStdGoals = \(totalStdGoals)")
                             
                             self.goalsCollectionView.reloadData()
                         }
                             
                         else {
-                            print("userWasFound = TRUE, OOPSIE ainda nao")
-                            print("userWasFound = TRUE, number completed = \(numberCompleted)")
-                            print("userWasFound = TRUE, totalCstGoals = \(totalCstGoalsThisUser)")
-                            print("userWasFound = TRUE, totalStdGoals = \(totalStdGoals)")
+                            print("userWasFound = TRUE -- LOADING")
+                            //print("userWasFound = TRUE, number completed = \(numberCompleted)")
+                            //print("userWasFound = TRUE, totalCstGoals = \(totalCstGoalsThisUser)")
+                            //print("userWasFound = TRUE, totalStdGoals = \(totalStdGoals)")
                         }
                     }
                 }
@@ -74,17 +74,17 @@ class GoalsViewController: UIViewController {
                     self.handleAsynchronousRequestForEveryStdGoal { numberCompleted, totalStdGoals in
                         
                         if numberCompleted == totalStdGoals {
-                            print("userWasFound == FALSE, AEAEAEEA")
-                            print("userWasFound == FALSE, number completed = \(numberCompleted)")
-                            print("userWasFound == FALSE, totalStdGoals = \(totalStdGoals)")
+                            print("userWasFound == FALSE -- PRONTO")
+                            //print("userWasFound == FALSE, number completed = \(numberCompleted)")
+                            //print("userWasFound == FALSE, totalStdGoals = \(totalStdGoals)")
                             
                             self.goalsCollectionView.reloadData()
                         }
                             
                         else {
-                            print("userWasFound == FALSE, OOPSIE ainda nao")
-                            print("userWasFound == FALSE, number completed = \(numberCompleted)")
-                            print("userWasFound == FALSE, totalStdGoals = \(totalStdGoals)")
+                            print("userWasFound == FALSE -- LOADING")
+                            //print("userWasFound == FALSE, number completed = \(numberCompleted)")
+                            //print("userWasFound == FALSE, totalStdGoals = \(totalStdGoals)")
                         }
                     }
                 }
@@ -163,7 +163,7 @@ class GoalsViewController: UIViewController {
                         completionHandlerGoals(numberCompleted, totalCstGoalsThisUser, totalStdGoals)
                     }
                     else {
-                        self.goals.append(Goal(key: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
+                        self.goals.append(Goal(key: snapshot.key, isCustom: true, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
                         
                         numberCompleted += 1
                         completionHandlerGoals(numberCompleted, totalCstGoalsThisUser, totalStdGoals)
@@ -174,7 +174,7 @@ class GoalsViewController: UIViewController {
         Auth.auth().removeStateDidChangeListener(handle)
 
         
-        // pega os goals do banco e os armazena no array goals
+        // pega os std goals do banco e os armazena no array goals
         DAO.STD_GOALS_REF.observe(.childAdded, with: { (snapshot) in
             
             if snapshot.key == "numberOfKeys" {
@@ -187,7 +187,7 @@ class GoalsViewController: UIViewController {
                 completionHandlerGoals(numberCompleted, totalCstGoalsThisUser, totalStdGoals)
             }
             else {
-                self.goals.append(Goal(key: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
+                self.goals.append(Goal(key: snapshot.key, isCustom: false, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
                 
                 numberCompleted += 1
                 completionHandlerGoals(numberCompleted, totalCstGoalsThisUser, totalStdGoals)
@@ -201,7 +201,7 @@ class GoalsViewController: UIViewController {
         var numberCompleted = 0
         var totalStdGoals = -10
         
-        // pega os goals do banco e os armazena no array goals
+        // pega os std goals do banco e os armazena no array goals
         DAO.STD_GOALS_REF.observe(.childAdded, with: { (snapshot) in
             
             if snapshot.key == "numberOfKeys" {
@@ -214,7 +214,7 @@ class GoalsViewController: UIViewController {
                 completionHandlerGoals(numberCompleted, totalStdGoals)
             }
             else {
-                self.goals.append(Goal(key: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
+                self.goals.append(Goal(key: snapshot.key, isCustom: false, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
                 
                 numberCompleted += 1
                 completionHandlerGoals(numberCompleted, totalStdGoals)

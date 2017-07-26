@@ -80,7 +80,10 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let usableIndexPath = (indexPath! as NSIndexPath).item
         print("long pressed at cell number \(usableIndexPath)")
         
-        performSegue(withIdentifier: "goToGoalEditingFromGoals", sender: cell)
+        // só podemos editar o goal se o mesmo for custom!
+        if cell.isCustom {
+            performSegue(withIdentifier: "goToGoalEditingFromGoals", sender: cell)
+        }
     }
     
     func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
