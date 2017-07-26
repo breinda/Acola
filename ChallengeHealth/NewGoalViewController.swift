@@ -185,7 +185,7 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
                         if key == "numberOfKeys" {
                             print("achei o keyNumber!!AEEAEE")
                             
-                            print(snapshot.value)
+                            print(snapshot.value!)
                             
                             var keyNumber = Int(String(describing: snapshot.value!))!
                             print("keyNumber ANTES = \(keyNumber)")
@@ -213,10 +213,8 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
         
         handle = (Auth.auth().addStateDidChangeListener { auth, user in
             
-            if let user = user {
-                // User is signed in.
-                //let name = user.displayName
-                //let email = user.email
+            if let user = user { // User is signed in.
+                
                 let uid = user.uid;
                 print("uid: \(uid)")
                 
@@ -225,7 +223,7 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
                 var keyNumber : Int = -10
                 
                 //let key = uid
-                let goalKey = String(self.goalTextView.text)!
+                //let goalKey = String(self.goalTextView.text)!
                 
                 DAO.CST_GOALS_REF.observe(.childAdded, with: { (snapshot) in
                     
@@ -247,10 +245,6 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
                     
                     if (key == uid) { // usuário já criou algum objetivo
                         cstGoalHasBeenCreated += 1
-                        //completionHandlerCstGoalHasBeenCreated(cstGoalHasBeenCreated)
-                        
-                        //let childUpdates = ["\(goalKey)" : ""]
-                        //DAO.CST_GOALS_REF.child(key!).updateChildValues(childUpdates)
                         
                         let goalKey = String(self.goalTextView.text)!
                         
@@ -266,11 +260,6 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
                         completionHandlerCstGoalHasNotBeenCreated(keyCounter, cstGoalHasBeenCreated)
                     }
                 })
-                
-                //                    let goalData = ["description": "", "firstStep": ["description": "", "name": ""], "name": goalKey] as [String : Any]
-                //                    let childChildUpdates = ["\(goalKey)": goalData]
-                //
-                //                    DAO.CST_GOALS_REF.child(goalKey).updateChildValues(childChildUpdates)
             }
         })
         

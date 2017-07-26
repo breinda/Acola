@@ -184,7 +184,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         // CADASTRO
         Auth.auth().createUser(withEmail: email!, password: password!) { (user, error) in
             
-            print("ERRO: \(error)")
+            print("ERRO: \(String(describing: error))")
             
             if error == nil {
                 

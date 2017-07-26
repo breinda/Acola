@@ -25,30 +25,13 @@ class GoalsViewController: UIViewController {
         
         self.modalTransitionStyle = .crossDissolve
         
-//        boddi.layer.shadowColor = UIColor.init(white: 0.0, alpha: 0.1).cgColor
-//        boddi.layer.shadowOpacity = 1
-//        boddi.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-//        boddi.layer.shadowRadius = 3
-//        boddi.layer.shouldRasterize = true
-//        
-//        boddiBubble.layer.shadowColor = UIColor.init(white: 0.0, alpha: 0.1).cgColor
-//        boddiBubble.layer.shadowOpacity = 1
-//        boddiBubble.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-//        boddiBubble.layer.shadowRadius = 3
-//        boddiBubble.layer.shouldRasterize = true
-        
         //boddi.addAppearHappyJumpAnimation()
         
-        // pega os goals do banco e os armazena no array goals
-        DAO.STD_GOALS_REF.observe(.childAdded, with: { (snapshot) in
-            
-            self.goals.append(Goal(key: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
-            
-            self.goalsCollectionView.reloadData()
-        })
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        goals.removeAll()
+        
         // MOSTRA A TELA DE LOGIN, CASO O USUARIO NAO ESTEJA LOGADO
         if Auth.auth().currentUser == nil {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -57,7 +40,83 @@ class GoalsViewController: UIViewController {
         }
         
         goalsCollectionView.backgroundColor = UIColor.clear
-        goalsCollectionView.reloadData()
+        //goalsCollectionView.reloadData()
+        
+        handleAsynchronousRequest { numberCompleted, totalCstGoals, totalStdGoals in
+            if numberCompleted == totalCstGoals + totalStdGoals {
+                print("AEAEAEEA")
+                print("number completed = \(numberCompleted)")
+                print("totalCstGoals = \(totalCstGoals)")
+                print("totalStdGoals = \(totalStdGoals)")
+                
+                self.goalsCollectionView.reloadData()
+            }
+                
+            else {
+                print("OOPSIE ainda nao")
+                print("number completed = \(numberCompleted)")
+                print("totalCstGoals = \(totalCstGoals)")
+                print("totalStdGoals = \(totalStdGoals)")
+            }
+        }
+    }
+    
+    func handleAsynchronousRequest (completionHandlerGoals: @escaping (_ numberCompleted: Int, _ totalCstGoals: Int, _ totalStdGoals: Int) -> Void) {
+        
+        var numberCompleted = 0
+        var totalCstGoals = -10
+        var totalStdGoals = -10
+
+        // pega os custom goals do banco e os armazena no array goals
+        var handle : AuthStateDidChangeListenerHandle
+
+        handle = (Auth.auth().addStateDidChangeListener { auth, user in
+            
+            if let user = user { // User is signed in.
+                let uid = user.uid;
+                print("uid: \(uid)")
+                
+                DAO.CST_GOALS_REF.child(uid).observe(.childAdded, with: { (snapshot) in
+                    
+                    if snapshot.key == "numberOfKeys" {
+                        print("to no numberOfKeys-CST")
+                        
+                        totalCstGoals = snapshot.value as! Int
+                        print("totalStdGoals = \(totalCstGoals)")
+                        
+                        completionHandlerGoals(numberCompleted, totalCstGoals, totalStdGoals)
+                    }
+                    else {
+                        self.goals.append(Goal(key: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
+                        
+                        numberCompleted += 1
+                        completionHandlerGoals(numberCompleted, totalCstGoals, totalStdGoals)
+                    }
+                })
+            }
+        })
+        Auth.auth().removeStateDidChangeListener(handle)
+
+        
+        // pega os goals do banco e os armazena no array goals
+        DAO.STD_GOALS_REF.observe(.childAdded, with: { (snapshot) in
+            
+            if snapshot.key == "numberOfKeys" {
+                print("to no numberOfKeys-STD")
+                
+                totalStdGoals = snapshot.value as! Int
+                
+                print("totalStdGoals = \(totalStdGoals)")
+                
+                completionHandlerGoals(numberCompleted, totalCstGoals, totalStdGoals)
+            }
+            else {
+                self.goals.append(Goal(key: snapshot.key, snapshot: snapshot.value as! Dictionary<String, AnyObject>))
+                
+                numberCompleted += 1
+                completionHandlerGoals(numberCompleted, totalCstGoals, totalStdGoals)
+            }
+        })
     }
     
     // MARK: Navigation
