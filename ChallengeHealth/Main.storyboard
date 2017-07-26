@@ -1299,7 +1299,7 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 <rect key="frame" x="118" y="328" width="242" height="64"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.99634712934494019" green="0.83432644605636597" blue="0.57595902681350708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1354,6 +1354,7 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                         <outlet property="goalRectangleImageView" destination="I07-05-eI9" id="Kvm-fb-o5u"/>
                         <outlet property="goalTextView" destination="e1w-A5-UgM" id="9wF-h9-21h"/>
                         <outlet property="navBarRectangleImageView" destination="voI-VK-E1J" id="fpy-8o-vRA"/>
+                        <segue destination="65O-Jc-wAB" kind="presentation" identifier="goToGoalEditingFromNewGoal" id="VbC-mT-mIP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5HA-DD-WRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1419,8 +1420,9 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                     <constraint firstAttribute="height" constant="92" id="nhL-Wc-w3b"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0mX-7l-ZsE">
+                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0mX-7l-ZsE">
                                 <rect key="frame" x="48" y="54" width="279" height="53"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="fW9-l6-Q3Z"/>
                                 </constraints>
@@ -1469,6 +1471,13 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                             <constraint firstItem="0mX-7l-ZsE" firstAttribute="top" secondItem="KOI-f6-AHn" secondAttribute="bottom" constant="34" id="v2v-k2-1CZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backRectangleImageView" destination="Wpb-Vy-cN9" id="dbP-vm-qJ8"/>
+                        <outlet property="bgRectangleImageView" destination="mFd-ge-SM2" id="73e-2U-ysz"/>
+                        <outlet property="boddiImageView" destination="bOF-Kz-vJb" id="hX3-Vk-uSw"/>
+                        <outlet property="bubbleImageView" destination="0mX-7l-ZsE" id="iaP-ti-omL"/>
+                        <outlet property="navBarRectangleImageView" destination="imz-Z9-N8f" id="l9K-Tn-uqr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zeV-7Z-LQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1884,6 +1893,6 @@ Eu vou te ajudar a alcançá-lo!</string>
         <image name="montanha2" width="500" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ith-tA-OpB"/>
+        <segue reference="grL-aW-a2k"/>
     </inferredMetricsTieBreakers>
 </document>

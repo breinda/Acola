@@ -41,7 +41,7 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
         // setando propriedades das imagens
         backRectangleImageView.layer.cornerRadius = 39
         backRectangleImageView.layer.borderWidth = 1
-        backRectangleImageView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        backRectangleImageView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
         
         navBarRectangleImageView.layer.borderWidth = 1
         navBarRectangleImageView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.12).cgColor
@@ -144,12 +144,16 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
                     if userWasFound == true { // usuário possui algum custom goal criado!
                         print("achei o usuário AFINAL")
                         
-                        // precisamos apenas escrever um goal novo na árvore do usuário
+                        // TO DO: antes, vamos ver se já existe um goal com esse nome
+                        
+                        // agora, precisamos apenas escrever um goal novo na árvore do usuário
                         self.handleAsynchronousRequestForNewCstGoalWithExistingTree { numberCompleted in
                             
                             if numberCompleted == 2 {
                                 print("userWasFound == true, criei tudo que eu tinha q criar!!!!")
                                 print("numberCompleted = \(numberCompleted)")
+                                
+                                self.performSegue(withIdentifier: "goToGoalEditingFromNewGoal", sender: self)
                             }
                             else {
                                 print("userWasFound == true, ainda estou botando coisas no banco TENHA PACIENCIA")
@@ -165,6 +169,8 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
                             if numberCompleted == 2 {
                                 print("userWasFound == false, criei tudo que eu tinha q criar!!!!")
                                 print("numberCompleted = \(numberCompleted)")
+                                
+                                self.performSegue(withIdentifier: "goToGoalEditingFromNewGoal", sender: self)
                             }
                             else {
                                 print("userWasFound == false, ainda estou botando coisas no banco TENHA PACIENCIA")
