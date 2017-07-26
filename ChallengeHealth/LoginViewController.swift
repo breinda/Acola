@@ -47,7 +47,7 @@ class LoginViewController: UIViewController {
         // LOGIN
         Auth.auth().signIn(withEmail: email!, password: password!) { (user, error) in
             
-            print("ERRO: \(error)")
+            print("ERRO: \(String(describing: error))")
             
             // SUCESSO!!
             if error == nil {
