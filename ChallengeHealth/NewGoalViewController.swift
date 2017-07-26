@@ -114,6 +114,18 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
     
     // MARK: Navigation
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // passar o nome do goal pra tela de edição
+        if segue.identifier == "goToGoalEditingFromNewGoal" {
+            
+            let goalText: String = goalTextView.text
+            let goalEditingVC = segue.destination as! GoalEditingViewController
+            
+            goalEditingVC.placeholder = goalText
+        }
+    }
+    
     @IBAction func backButtonWasTapped(_ sender: AnyObject) {
         
         //        var transition = ElasticTransition()
@@ -125,16 +137,31 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
     // cria novo objetivo para o ID do usuário e vai para a tela de edição de Objetivo.
     // Por enquanto, utiliza-se o NOME do objetivo como ID.
     // TODO: Caso um Objetivo com esse nome já exista, sugerir edição do Objetivo já existente?
     @IBAction func OKButtonWasTapped(_ sender: Any) {
         
-        if (goalTextView.text == "") {
+        let nomeObj = goalTextView.text
+        let invalidChars = [".", "#", "$", "[", "]"]
+        
+        // Objetivo sem nome!
+        if nomeObj == "" {
             boddiTextView.text = "Qual é mesmo o nome de seu novo Objetivo?"
         }
-
+            
+        // nome do Objetivo contendo '.', '#', '$', '[' ou ']'
+        else if (nomeObj!.range(of: ".") != nil) || (nomeObj!.range(of: "#") != nil) || (nomeObj!.range(of: "$") != nil) || (nomeObj!.range(of: "[") != nil) || (nomeObj!.range(of: "]") != nil) {
+            boddiTextView.text = "Hmm, o nome de seu Objetivo possui algum símbolo inválido. Por favor, tente novamente!"
+            
+            for invalidChar in invalidChars {
+                if nomeObj!.range(of: invalidChar) != nil {
+                    boddiTextView.text = "Ah, o nome de seu Objetivo não pode conter o símbolo '\(invalidChar)' . Por favor, tente novamente!"
+                }
+            }
+        }
+        
+        // tudo ok!
         else {
             
             handleAsynchronousRequestForCstGoalsFromThisUser { numberCompleted, totalUsersWithCstGoals, userWasFound in
