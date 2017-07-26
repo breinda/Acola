@@ -1438,6 +1438,29 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 <rect key="frame" x="68" y="63" width="24" height="30"/>
                                 <state key="normal" image="SaveSign_1x"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconeMontanha2" translatesAutoresizingMaskIntoConstraints="NO" id="FMk-bw-BXy">
+                                <rect key="frame" x="0.0" y="156" width="103" height="69"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="103" id="L1a-fj-C3x"/>
+                                    <constraint firstAttribute="height" constant="69" id="fa2-Rj-wey"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K95-ad-t1Y">
+                                <rect key="frame" x="0.0" y="149" width="375" height="75"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.40935359589041098" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="mm6-D6-Qjb"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DVi-4W-49G">
+                                <rect key="frame" x="118" y="155" width="242" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="9tR-u9-Rko"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1447,25 +1470,33 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                             <constraint firstItem="Wpb-Vy-cN9" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" constant="31" id="64Y-zP-QEd"/>
                             <constraint firstItem="bOF-Kz-vJb" firstAttribute="top" secondItem="KOI-f6-AHn" secondAttribute="bottom" constant="19" id="8i9-bv-GQP"/>
                             <constraint firstAttribute="trailing" secondItem="Wpb-Vy-cN9" secondAttribute="trailing" constant="31" id="9oE-jn-jwJ"/>
+                            <constraint firstItem="DVi-4W-49G" firstAttribute="top" secondItem="Wpb-Vy-cN9" secondAttribute="bottom" constant="29" id="APL-07-X2U"/>
                             <constraint firstItem="W3e-DM-elR" firstAttribute="top" secondItem="sZI-pG-9ir" secondAttribute="bottom" constant="12" id="CAM-Jl-qup"/>
                             <constraint firstItem="W3e-DM-elR" firstAttribute="top" secondItem="Wnj-KU-RFS" secondAttribute="bottom" constant="9" id="CpC-84-1Wj"/>
                             <constraint firstAttribute="trailing" secondItem="imz-Z9-N8f" secondAttribute="trailing" id="FDi-fT-AyC"/>
                             <constraint firstItem="0mX-7l-ZsE" firstAttribute="trailing" secondItem="Wpb-Vy-cN9" secondAttribute="trailing" constant="-17" id="H1k-Pv-ZaA"/>
                             <constraint firstItem="W3e-DM-elR" firstAttribute="top" secondItem="imz-Z9-N8f" secondAttribute="bottom" id="HKm-w2-92M"/>
                             <constraint firstItem="sZI-pG-9ir" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" constant="15" id="I97-LD-0de"/>
+                            <constraint firstItem="FMk-bw-BXy" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" id="Kh5-ko-Bpm"/>
                             <constraint firstAttribute="trailing" secondItem="mFd-ge-SM2" secondAttribute="trailing" id="L64-UX-Ag6"/>
                             <constraint firstItem="Wpb-Vy-cN9" firstAttribute="top" secondItem="KOI-f6-AHn" secondAttribute="bottom" constant="14" id="Nbp-Sg-Hwi"/>
                             <constraint firstAttribute="trailing" secondItem="Wnj-KU-RFS" secondAttribute="trailing" id="Pay-bs-6cl"/>
                             <constraint firstItem="bz2-v1-XTT" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" constant="68" id="Phj-fV-QID"/>
                             <constraint firstItem="W3e-DM-elR" firstAttribute="top" secondItem="e2u-WL-pT5" secondAttribute="bottom" id="UYW-Af-Jal"/>
                             <constraint firstItem="imz-Z9-N8f" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" id="VGc-kG-jqt"/>
+                            <constraint firstItem="K95-ad-t1Y" firstAttribute="top" secondItem="Wpb-Vy-cN9" secondAttribute="bottom" constant="23" id="YIO-Ge-Abu"/>
                             <constraint firstItem="imz-Z9-N8f" firstAttribute="top" secondItem="mFd-ge-SM2" secondAttribute="bottom" id="YUp-U9-Z9D"/>
+                            <constraint firstAttribute="trailing" secondItem="K95-ad-t1Y" secondAttribute="trailing" id="Zlg-EF-jFG"/>
+                            <constraint firstItem="FMk-bw-BXy" firstAttribute="top" secondItem="Wpb-Vy-cN9" secondAttribute="bottom" constant="30" id="a2f-1H-kdZ"/>
                             <constraint firstAttribute="trailing" secondItem="s35-hV-Rg0" secondAttribute="trailing" constant="15" id="bUe-On-eea"/>
                             <constraint firstItem="e2u-WL-pT5" firstAttribute="top" secondItem="D90-Mw-7ul" secondAttribute="top" id="dbx-gL-e2S"/>
                             <constraint firstAttribute="trailing" secondItem="e2u-WL-pT5" secondAttribute="trailing" id="eaK-LZ-kXX"/>
                             <constraint firstItem="W3e-DM-elR" firstAttribute="top" secondItem="s35-hV-Rg0" secondAttribute="bottom" id="hQp-EN-aok"/>
+                            <constraint firstItem="K95-ad-t1Y" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" id="iPz-oW-1cC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bOF-Kz-vJb" secondAttribute="trailing" constant="55" id="iRG-VC-llE"/>
+                            <constraint firstAttribute="trailing" secondItem="DVi-4W-49G" secondAttribute="trailing" constant="15" id="mIa-4l-s2R"/>
                             <constraint firstItem="e2u-WL-pT5" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" id="qQE-RC-2bZ"/>
+                            <constraint firstItem="DVi-4W-49G" firstAttribute="leading" secondItem="FMk-bw-BXy" secondAttribute="trailing" constant="15" id="tTD-vm-mrw"/>
                             <constraint firstItem="bz2-v1-XTT" firstAttribute="top" secondItem="KOI-f6-AHn" secondAttribute="bottom" constant="43" id="uan-hV-wYK"/>
                             <constraint firstItem="mFd-ge-SM2" firstAttribute="top" secondItem="Wpb-Vy-cN9" secondAttribute="bottom" constant="23" id="ug5-0t-eaT"/>
                             <constraint firstItem="0mX-7l-ZsE" firstAttribute="top" secondItem="KOI-f6-AHn" secondAttribute="bottom" constant="34" id="v2v-k2-1CZ"/>
@@ -1476,6 +1507,8 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                         <outlet property="bgRectangleImageView" destination="mFd-ge-SM2" id="73e-2U-ysz"/>
                         <outlet property="boddiImageView" destination="bOF-Kz-vJb" id="hX3-Vk-uSw"/>
                         <outlet property="bubbleImageView" destination="0mX-7l-ZsE" id="iaP-ti-omL"/>
+                        <outlet property="goalRectangleImageView" destination="K95-ad-t1Y" id="Eyp-9m-wZW"/>
+                        <outlet property="goalTextView" destination="DVi-4W-49G" id="f76-oI-j2b"/>
                         <outlet property="navBarRectangleImageView" destination="imz-Z9-N8f" id="l9K-Tn-uqr"/>
                     </connections>
                 </viewController>
