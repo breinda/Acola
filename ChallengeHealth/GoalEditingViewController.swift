@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GoalEditingViewController: UIViewController, UITextViewDelegate {
+class GoalEditingViewController: ElasticModalViewController, UITextViewDelegate {
     
     @IBOutlet weak var bgRectangleImageView: UIImageView!
     @IBOutlet weak var backRectangleImageView: UIImageView!
@@ -66,6 +66,20 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         goalTextView.removeObserver(self, forKeyPath: "contentSize")
+    }
+    
+    
+    // MARK: Navigation
+    
+    @IBAction func backButtonWasTapped(_ sender: AnyObject) {
+        
+        //        var transition = ElasticTransition()
+        //        transition.edge = .left
+        //        transition.radiusFactor = 0.3
+        
+        self.modalTransition.edge = .right
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     

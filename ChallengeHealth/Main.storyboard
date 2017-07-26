@@ -1400,16 +1400,17 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 </constraints>
                                 <state key="normal" image="BackSign_1x"/>
                                 <connections>
+                                    <action selector="backButtonWasTapped:" destination="65O-Jc-wAB" eventType="touchUpInside" id="WAn-aK-bUA"/>
                                     <action selector="backButtonWasTapped:" destination="4FA-jI-OoB" eventType="touchUpInside" id="cLr-UW-9Gy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s35-hV-Rg0">
-                                <rect key="frame" x="330" y="624" width="30" height="43"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s35-hV-Rg0" userLabel="Delete Button">
+                                <rect key="frame" x="336" y="632" width="23" height="23"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="SXY-mk-9ew"/>
+                                    <constraint firstAttribute="width" constant="23" id="MXF-t6-XhV"/>
+                                    <constraint firstAttribute="width" secondItem="s35-hV-Rg0" secondAttribute="height" multiplier="1:1" id="efu-81-Zou"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-UltraBold" family="Gill Sans" pointSize="37"/>
-                                <state key="normal" title="*">
+                                <state key="normal" image="DeleteSign_1x">
                                     <color key="titleColor" red="0.60503464939999996" green="0.31700968740000002" blue="0.44379103180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
@@ -1434,7 +1435,7 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                     <constraint firstAttribute="height" constant="78" id="rv9-3n-Tgc"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bz2-v1-XTT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bz2-v1-XTT" userLabel="Save Button">
                                 <rect key="frame" x="68" y="63" width="24" height="30"/>
                                 <state key="normal" image="SaveSign_1x"/>
                             </button>
@@ -1462,7 +1463,7 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.99641340970993042" green="0.83028680086135864" blue="0.58036965131759644" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Wnj-KU-RFS" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" id="136-ao-7pE"/>
                             <constraint firstItem="mFd-ge-SM2" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" id="23Z-Qp-a4c"/>
@@ -1477,6 +1478,7 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                             <constraint firstItem="0mX-7l-ZsE" firstAttribute="trailing" secondItem="Wpb-Vy-cN9" secondAttribute="trailing" constant="-17" id="H1k-Pv-ZaA"/>
                             <constraint firstItem="W3e-DM-elR" firstAttribute="top" secondItem="imz-Z9-N8f" secondAttribute="bottom" id="HKm-w2-92M"/>
                             <constraint firstItem="sZI-pG-9ir" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" constant="15" id="I97-LD-0de"/>
+                            <constraint firstItem="W3e-DM-elR" firstAttribute="top" secondItem="s35-hV-Rg0" secondAttribute="bottom" constant="12" id="In6-64-bkx"/>
                             <constraint firstItem="FMk-bw-BXy" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" id="Kh5-ko-Bpm"/>
                             <constraint firstAttribute="trailing" secondItem="mFd-ge-SM2" secondAttribute="trailing" id="L64-UX-Ag6"/>
                             <constraint firstItem="Wpb-Vy-cN9" firstAttribute="top" secondItem="KOI-f6-AHn" secondAttribute="bottom" constant="14" id="Nbp-Sg-Hwi"/>
@@ -1488,10 +1490,9 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                             <constraint firstItem="imz-Z9-N8f" firstAttribute="top" secondItem="mFd-ge-SM2" secondAttribute="bottom" id="YUp-U9-Z9D"/>
                             <constraint firstAttribute="trailing" secondItem="K95-ad-t1Y" secondAttribute="trailing" id="Zlg-EF-jFG"/>
                             <constraint firstItem="FMk-bw-BXy" firstAttribute="top" secondItem="Wpb-Vy-cN9" secondAttribute="bottom" constant="30" id="a2f-1H-kdZ"/>
-                            <constraint firstAttribute="trailing" secondItem="s35-hV-Rg0" secondAttribute="trailing" constant="15" id="bUe-On-eea"/>
+                            <constraint firstAttribute="trailing" secondItem="s35-hV-Rg0" secondAttribute="trailing" constant="16" id="bUe-On-eea"/>
                             <constraint firstItem="e2u-WL-pT5" firstAttribute="top" secondItem="D90-Mw-7ul" secondAttribute="top" id="dbx-gL-e2S"/>
                             <constraint firstAttribute="trailing" secondItem="e2u-WL-pT5" secondAttribute="trailing" id="eaK-LZ-kXX"/>
-                            <constraint firstItem="W3e-DM-elR" firstAttribute="top" secondItem="s35-hV-Rg0" secondAttribute="bottom" id="hQp-EN-aok"/>
                             <constraint firstItem="K95-ad-t1Y" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" id="iPz-oW-1cC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bOF-Kz-vJb" secondAttribute="trailing" constant="55" id="iRG-VC-llE"/>
                             <constraint firstAttribute="trailing" secondItem="DVi-4W-49G" secondAttribute="trailing" constant="15" id="mIa-4l-s2R"/>
@@ -1910,6 +1911,7 @@ Eu vou te ajudar a alcançá-lo!</string>
     </scenes>
     <resources>
         <image name="BackSign_1x" width="17" height="23"/>
+        <image name="DeleteSign_1x" width="22" height="22"/>
         <image name="PlusSign_1x" width="27" height="27"/>
         <image name="RectangleCima" width="375" height="70"/>
         <image name="SaveSign_1x" width="24" height="30"/>
@@ -1927,7 +1929,7 @@ Eu vou te ajudar a alcançá-lo!</string>
         <image name="montanha2" width="500" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ith-tA-OpB"/>
+        <segue reference="grL-aW-a2k"/>
         <segue reference="9Ll-dW-eTd"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -2,11 +2,13 @@ import UIKit
 
 class GoalCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var mountainImage: UIImageView!
-    
     @IBOutlet weak var goalNameLabel: UILabel!
+    
+    var isCustom: Bool = false
     
     func configureCell(_ goal: Goal) {
         self.goalNameLabel.text = goal.name
+        self.isCustom = goal.isCustom
     }
     
 //    /**
