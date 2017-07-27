@@ -8,9 +8,10 @@
 
 import UIKit
 
-class GoalEditingViewController: ElasticModalViewController, UITextViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var stepsCollectionView: UICollectionView!
+    var stepsCollectionViewCenterY: CGFloat!
     
     @IBOutlet weak var bgRectangleImageView: UIImageView!
     @IBOutlet weak var backRectangleImageView: UIImageView!
@@ -66,6 +67,20 @@ class GoalEditingViewController: ElasticModalViewController, UITextViewDelegate,
         goalTextView.keyboardAppearance = .dark
         goalTextView.delegate = self
         hideKeyboardWhenTappedAround()
+        
+        // swipe down para acrescentar outra célula na collection view!
+//        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:)))
+//        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+//        stepsCollectionView.addGestureRecognizer(swipeDown)
+        
+        let panDown = UIPanGestureRecognizer(target: self, action: #selector(wasDragged(_:)))
+        //paneDown.direction = UIPanGestureRecognizerDirection.down
+        stepsCollectionView.addGestureRecognizer(panDown)
+        stepsCollectionView.isUserInteractionEnabled = true
+        
+        //stepsCollectionViewCenterY = stepsCollectionView.center.y
+        stepsCollectionViewCenterY = stepsCollectionView.frame.minY + 98 + 75 - 2
+        print("stepsCollectionViewCenterY = \(stepsCollectionViewCenterY)")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -131,6 +146,55 @@ class GoalEditingViewController: ElasticModalViewController, UITextViewDelegate,
         return CGSize(width: UIScreen.main.bounds.size.width, height: 98)
     }
     
+    
+    func wasDragged(_ gestureRecognizer: UIPanGestureRecognizer) {
+        
+        if gestureRecognizer.state == UIGestureRecognizerState.began || gestureRecognizer.state == UIGestureRecognizerState.changed {
+            
+            let translation = gestureRecognizer.translation(in: self.view)
+            print(gestureRecognizer.view!.center.y)
+            
+            // se swipamos pra baixo
+            if (gestureRecognizer.view!.center.y > stepsCollectionViewCenterY) {
+            gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x, y: gestureRecognizer.view!.center.y + translation.y)
+            }
+            else { // se swipamos pra cima, NAO DEIXAR!
+                gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x, y: stepsCollectionViewCenterY + 1)
+            }
+            
+            gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
+        }
+        // faz voltar pra posição inicial!
+        if gestureRecognizer.state == UIGestureRecognizerState.ended {
+            gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x, y: stepsCollectionViewCenterY)
+            
+            gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
+        }
+        
+    }
+    
+    func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer {
+            
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizerDirection.right:
+                print("Swiped right")
+            case UISwipeGestureRecognizerDirection.down:
+                print("Swiped down")
+                let stepsCV = gesture.view! as! UICollectionView
+                print(type(of: stepsCV))
+                
+            case UISwipeGestureRecognizerDirection.left:
+                print("Swiped left")
+            case UISwipeGestureRecognizerDirection.up:
+                print("Swiped up")
+            default:
+                break
+            }
+        }
+    }
+    
 
     // MARK: Navigation
     
@@ -140,7 +204,7 @@ class GoalEditingViewController: ElasticModalViewController, UITextViewDelegate,
         //        transition.edge = .left
         //        transition.radiusFactor = 0.3
         
-        self.modalTransition.edge = .right
+        //self.modalTransition.edge = .right
         
         self.dismiss(animated: true, completion: nil)
     }

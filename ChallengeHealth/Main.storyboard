@@ -1354,7 +1354,7 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                         <outlet property="goalRectangleImageView" destination="I07-05-eI9" id="Kvm-fb-o5u"/>
                         <outlet property="goalTextView" destination="e1w-A5-UgM" id="9wF-h9-21h"/>
                         <outlet property="navBarRectangleImageView" destination="voI-VK-E1J" id="fpy-8o-vRA"/>
-                        <segue destination="65O-Jc-wAB" kind="presentation" identifier="goToGoalEditingFromNewGoal" id="VbC-mT-mIP"/>
+                        <segue destination="65O-Jc-wAB" kind="presentation" identifier="goToGoalEditingFromNewGoal" modalTransitionStyle="crossDissolve" id="VbC-mT-mIP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5HA-DD-WRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1982,7 +1982,7 @@ Eu vou te ajudar a alcançá-lo!</string>
                         <outlet property="boddi" destination="gjG-Ez-Q5I" id="1Qo-Fz-XpB"/>
                         <outlet property="boddiBubble" destination="YBL-lK-x4p" id="tHm-lt-ZW7"/>
                         <outlet property="goalsCollectionView" destination="K7k-4o-ecP" id="mUD-Ch-PPt"/>
-                        <segue destination="65O-Jc-wAB" kind="presentation" identifier="goToGoalEditingFromGoals" id="9Ll-dW-eTd"/>
+                        <segue destination="65O-Jc-wAB" kind="presentation" identifier="goToGoalEditingFromGoals" modalTransitionStyle="crossDissolve" id="9Ll-dW-eTd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43t-vM-dmv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2011,7 +2011,7 @@ Eu vou te ajudar a alcançá-lo!</string>
         <image name="montanha2" width="500" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ith-tA-OpB"/>
+        <segue reference="grL-aW-a2k"/>
         <segue reference="9Ll-dW-eTd"/>
     </inferredMetricsTieBreakers>
 </document>
