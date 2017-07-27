@@ -66,6 +66,10 @@ class CurrentStepViewController: UIViewController {
                 self.stepIndexLabel.text! = "PASSO \(self.stepIndex)"
                 
                 self.boddiTextBubbleLabel.text! = "\(self.name)! Tenho certeza de que você é capaz de dar mais este passo em direção ao seu objetivo. Você vai se sentir cada vez melhor!!"
+                
+                DAO.STD_STEPS_REF.child(self.goalKey).removeAllObservers()
+                DAO.STD_GOALS_REF.child(self.goalKey).removeAllObservers()
+                DAO.USERS_REF.removeAllObservers()
             }
                 
             else {
@@ -79,63 +83,53 @@ class CurrentStepViewController: UIViewController {
     // MARK: Handlers for Asynchronous Stuff
     
     func handleAsynchronousRequest (completionHandlerStepNumber: @escaping (Int) -> Void) {
-        var handle : AuthStateDidChangeListenerHandle
-        
+
         var numCompleted = 0
         
         // vamos botar todos os steps referentes ao goal atual num array de steps, pra gente nao ficar perdendo tempo procurando esse treco no banco toda hora
-        handle = (Auth.auth().addStateDidChangeListener { auth, user in
-            if let user = user {
-                // User is signed in.
-                let uid = user.uid;
+        let uid = userID
+        
+        DAO.USERS_REF.observe(.childAdded, with: { (snapshotUser) in
+            if snapshotUser.key == uid {
                 
-                DAO.USERS_REF.observe(.childAdded, with: { (snapshotUser) in
-                    if snapshotUser.key == uid {
+                // atualiza o passo atual no qual se encontra o usuário
+                let snapshotUserDict = snapshotUser.value as? NSDictionary
+                print(snapshotUserDict!)
+                print(snapshotUser.key)
+                
+                self.stepIndex = snapshotUserDict!["currentStepNumber"] as! String
+                self.goalKey = snapshotUserDict!["currentGoalKey"] as! String
+                
+                self.name = snapshotUserDict!["name"] as! String
+                numCompleted += 1
+                completionHandlerStepNumber(numCompleted)
+                
+                // pega o nome do goal atual e bota na label
+                DAO.STD_GOALS_REF.child(self.goalKey).observe(.childAdded, with: { (snapshotGoal) in
+                    
+                    if snapshotGoal.key == "name" {
+                        self.goal = String(describing: snapshotGoal.value!)
+                        //self.goalLabel.text! = String(describing: snapshotGoal.value!)
                         
-                        let snapshotUserDict = snapshotUser.value as? NSDictionary
-                        print(snapshotUserDict!)
-                        print(snapshotUser.key)
-                        
-                        //let currentStepNumberAux = snapshotUserDict!["currentStepNumber"] as! String
-                        //self.stepIndexLabel.text! = "PASSO \(currentStepNumberAux)"
-                        self.stepIndex = snapshotUserDict!["currentStepNumber"] as! String
-                        self.goalKey = snapshotUserDict!["currentGoalKey"] as! String
-                        
-                        self.name = snapshotUserDict!["name"] as! String
                         numCompleted += 1
                         completionHandlerStepNumber(numCompleted)
                         
-                        // pega o nome do goal atual e bota na label
-                        DAO.STD_GOALS_REF.child(self.goalKey).observe(.childAdded, with: { (snapshotGoal) in
+                        DAO.STD_STEPS_REF.child(self.goalKey).observe(.childAdded, with: { (snapshotSteps) in
                             
-                            if snapshotGoal.key == "name" {
-                                self.goal = String(describing: snapshotGoal.value!)
-                                //self.goalLabel.text! = String(describing: snapshotGoal.value!)
+                            self.steps.append(Step(index: snapshotSteps.key, snapshot: snapshotSteps.value as! Dictionary<String, AnyObject>))
+                            
+                            if snapshotSteps.key == self.stepIndex {
+                                //self.stepLabel.text! = snapshotUserDict!["name"] as! String
                                 
                                 numCompleted += 1
                                 completionHandlerStepNumber(numCompleted)
-                                
-                                DAO.STD_STEPS_REF.child(self.goalKey).observe(.childAdded, with: { (snapshotSteps) in
-                                    
-                                    self.steps.append(Step(index: snapshotSteps.key, snapshot: snapshotSteps.value as! Dictionary<String, AnyObject>))
-                                    
-                                    if snapshotSteps.key == self.stepIndex {
-                                        //self.stepLabel.text! = snapshotUserDict!["name"] as! String
-                                        
-                                        numCompleted += 1
-                                        completionHandlerStepNumber(numCompleted)
-                                        //self.stepDescriptionLabel.text! = snapshotSteps.value!["description"] as! String
-                                    }
-                                    
-                                    
-                                })
+                                //self.stepDescriptionLabel.text! = snapshotSteps.value!["description"] as! String
                             }
                         })
                     }
                 })
             }
         })
-        Auth.auth().removeStateDidChangeListener(handle)
     }
     
     
