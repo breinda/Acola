@@ -49,6 +49,7 @@ class ConfigViewController: /*UIViewController,*/ ElasticModalViewController {
     }
     
     @IBAction func logoutButtonWasTapped(_ sender: AnyObject) {
+        //GoalsVCShouldReload = true
         try! Auth.auth().signOut()
         self.dismiss(animated: true, completion: nil)
     }

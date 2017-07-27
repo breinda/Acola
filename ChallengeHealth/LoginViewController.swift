@@ -51,12 +51,15 @@ class LoginViewController: UIViewController {
             
             // SUCESSO!!
             if error == nil {
+                
+                GoalsVCShouldReload = true
                 var handle : AuthStateDidChangeListenerHandle
                 
                 handle = (Auth.auth().addStateDidChangeListener { auth, user in
                     if let user = user {
                         // User is signed in.
                         let uid = user.uid;
+                        userID = uid
                         
                         print("uid: \(uid)")
                         
