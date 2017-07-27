@@ -8,7 +8,9 @@
 
 import UIKit
 
-class GoalEditingViewController: ElasticModalViewController, UITextViewDelegate {
+class GoalEditingViewController: ElasticModalViewController, UITextViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    @IBOutlet weak var stepsCollectionView: UICollectionView!
     
     @IBOutlet weak var bgRectangleImageView: UIImageView!
     @IBOutlet weak var backRectangleImageView: UIImageView!
@@ -23,6 +25,12 @@ class GoalEditingViewController: ElasticModalViewController, UITextViewDelegate 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // setando espaçamento entre células como = 0
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        stepsCollectionView.collectionViewLayout = layout
         
         // setando propriedades das imagens
         bgRectangleImageView.layer.borderWidth = 1
@@ -67,6 +75,39 @@ class GoalEditingViewController: ElasticModalViewController, UITextViewDelegate 
         super.viewWillDisappear(animated)
         goalTextView.removeObserver(self, forKeyPath: "contentSize")
     }
+    
+    
+    // MARK: Collection View
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 2/*steps.count*/
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = stepsCollectionView.dequeueReusableCell(withReuseIdentifier: "stepCell", for: indexPath) as! StepCollectionViewCell
+        //let step = steps[(indexPath as NSIndexPath).row]
+        
+        cell.stepNumberLabel.text = "1"
+        cell.stepNameLabel.text = "só no passinho"
+        
+        cell.backgroundColor = UIColor.clear
+        cell.cellBackRectangleImageView.layer.borderWidth = 1
+        cell.cellBackRectangleImageView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+        
+        return cell
+    }
+    
+    // cuida de o quanto a gente expande as células da collectionview
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+        
+        return CGSize(width: UIScreen.main.bounds.size.width, height: 98)
+    }
+    
     
     
     // MARK: Navigation
