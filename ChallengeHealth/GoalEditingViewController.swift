@@ -26,6 +26,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
     
     
     var steps = [Step]()
+    var everyStepDict = [[], ["description": "", "isLastStep": true, "name": ""]] as [Any]
     
     var placeholder = "nada aqui :)"
 
@@ -93,7 +94,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
     override func viewDidAppear(_ animated: Bool) {
         steps.removeAll()
         
-        handleAsynchronousRequest { numberCompleted in
+        handleAsynchronousRequestForSteps { numberCompleted in
             if numberCompleted == 1 {
                 print("AEAEAEEA")
                 print("number completed = \(numberCompleted)")
@@ -260,6 +261,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
 
     // MARK: Navigation
     
+    // 0. salva o novo nome do goal no banco -- PROBLEMA: mudar o nome = mudar a key?
     // 1. armazena as infos das cells existentes (caso não vazias) no array de steps
     // 2. pega os steps do array de steps e os salva no banco
     @IBAction func saveButtonWasTapped(_ sender: Any) {
@@ -295,15 +297,38 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             counter += 1
         }
         
+        // vamos criar um dicionário com os novos steps
+        
+        print(everyStepDict.popLast()!)
+        
         print("")
         print("NOVOS STEPS:")
         for step in steps {
-            print("step \(step.index!)")
-            print("step name = \(step.name!)")
-            print("isLastStep = \(step.isLastStep!)")
-            print("")
+//            print("step \(step.index!)")
+//            print("step name = \(step.name!)")
+//            print("isLastStep = \(step.isLastStep!)")
+//            print("")
+            
+            everyStepDict.append(["description": step.description!, "isLastStep": step.isLastStep!, "name": step.name!])
+            
+            // TODO: impedir de salvar goals com "buracos" nos steps (e.g. steps sem nome que nao sejam os ultimos)
+            // TODO: ao salvar, apagar os steps do final q nao tiverem nome
+            
+            print(everyStepDict.last!)
         }
-
+        
+        let goalKey = placeholder
+        // primeiro deletamos o que tava no goal
+        DAO.CST_STEPS_REF.child(userID).child(goalKey).removeValue { erro, ref in
+            if (erro != nil) {
+                print("DELETE -- oops deu ruim!!!!")
+            }
+            else { // agora podemos atualizar o goal com os steps novos!
+                let everyStepKeyDict = [goalKey: self.everyStepDict]
+                //let childUpdatesStep = ["\(userID)": everyStepKeyDict]
+                DAO.CST_STEPS_REF.child(userID).updateChildValues(everyStepKeyDict)
+            }
+        }
     }
     
     @IBAction func backButtonWasTapped(_ sender: AnyObject) {
@@ -320,11 +345,11 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
     
     // MARK: Handlers for Asynchronous Stuff
     
-    func handleAsynchronousRequest (completionHandlerStepSaved: @escaping (Int) -> Void) {
+    func handleAsynchronousRequestForSteps (completionHandlerStepSaved: @escaping (Int) -> Void) {
         
         var numCompleted = 0
         
-        // vamos botar todos os steps referentes ao goal atual no array de steps, pra gente nao ficar perdendo tempo procurando esse treco no banco toda hora
+        // botando todos os steps referentes ao goal atual no array de steps
         let uid = userID
         let goalKey = placeholder
         
@@ -335,6 +360,25 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             numCompleted += 1
             completionHandlerStepSaved(numCompleted)
         })
+    }
+    
+    // aplicar as alterações dos steps no banco !!
+    func handleAsynchronousRequestForChangingSteps (completionHandlerStepSaved: @escaping (Int) -> Void) {
+        
+        var numCompleted = 0
+        
+        // vms botar todos os steps referentes ao goal atual no array de steps
+        let uid = userID
+        let goalKey = placeholder
+        
+        // primeiro temos que apagar a key deste goal :O
+        DAO.CST_STEPS_REF.child(uid).child(goalKey).removeValue()
+        
+        // e aí adicioná-la de novo, com os steps novos
+        // cria nova entrada na CST_STEPS com uid do usuário. insere step novo (vazio) nessa nova entrada, e insere também o contador numberOfKeys na nova árvore de steps do usuário e o inicializa com o valor 1.
+        let everyStepKeyDict = [goalKey: everyStepDict]
+        let childUpdatesStep = ["\(uid)": everyStepKeyDict]
+        DAO.CST_STEPS_REF.updateChildValues(childUpdatesStep)
     }
 
     
