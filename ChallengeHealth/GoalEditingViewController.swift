@@ -297,8 +297,14 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             counter += 1
         }
         
-        // vamos criar um dicionário com os novos steps
+        // se o último step tiver nome = "", apagá-lo
+        while steps.last?.name == "" {
+            steps.popLast()
+            steps[steps.count - 1].isLastStep = true
+        }
+        stepsCollectionView.reloadData()
         
+        // vamos criar um dicionário com os novos steps
         print(everyStepDict.popLast()!)
         
         print("")
@@ -312,7 +318,6 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             everyStepDict.append(["description": step.description!, "isLastStep": step.isLastStep!, "name": step.name!])
             
             // TODO: impedir de salvar goals com "buracos" nos steps (e.g. steps sem nome que nao sejam os ultimos)
-            // TODO: ao salvar, apagar os steps do final q nao tiverem nome
             
             print(everyStepDict.last!)
         }
@@ -329,6 +334,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
                 DAO.CST_STEPS_REF.child(userID).updateChildValues(everyStepKeyDict)
             }
         }
+        DAO.CST_STEPS_REF.child(userID).removeAllObservers()
     }
     
     @IBAction func backButtonWasTapped(_ sender: AnyObject) {
