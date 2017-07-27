@@ -247,6 +247,15 @@ class GoalsViewController: UIViewController {
             svc.modalTransition.radiusFactor = 0.3
         }
         
+        if segue.identifier == "goToGoalEditingFromGoals" {
+            let cell = sender as! GoalCollectionViewCell
+            let indexPath = goalsCollectionView?.indexPath(for: cell)
+            let goal = goals[(indexPath! as NSIndexPath).item]
+            let goalEditingVC = segue.destination as! GoalEditingViewController
+            
+            goalEditingVC.placeholder = goal.name
+        }
+        
         if segue.identifier == "goToCurrentStep" {
             
             let cell = sender as! GoalCollectionViewCell
