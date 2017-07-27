@@ -21,6 +21,8 @@ class GoalEditingViewController: ElasticModalViewController, UITextViewDelegate,
     
     @IBOutlet weak var goalTextView: UITextView!
     
+    var steps = [Step]()
+    
     var placeholder = "nada aqui :)"
 
     override func viewDidLoad() {
@@ -66,6 +68,26 @@ class GoalEditingViewController: ElasticModalViewController, UITextViewDelegate,
         hideKeyboardWhenTappedAround()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        steps.removeAll()
+        
+        handleAsynchronousRequest { numberCompleted in
+            if numberCompleted == 1 {
+                print("AEAEAEEA")
+                print("number completed = \(numberCompleted)")
+                
+                self.stepsCollectionView.reloadData()
+                
+                DAO.CST_STEPS_REF.child(userID).child(self.placeholder).removeAllObservers()
+            }
+                
+            else {
+                print("OOPSIE ainda nao")
+                print("number completed = \(numberCompleted)")
+            }
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         goalTextView.addObserver(self, forKeyPath: "contentSize", options: NSKeyValueObservingOptions.new, context: nil)
@@ -84,17 +106,18 @@ class GoalEditingViewController: ElasticModalViewController, UITextViewDelegate,
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2/*steps.count*/
+        return steps.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = stepsCollectionView.dequeueReusableCell(withReuseIdentifier: "stepCell", for: indexPath) as! StepCollectionViewCell
-        //let step = steps[(indexPath as NSIndexPath).row]
+        let step = steps[(indexPath as NSIndexPath).row]
         
-        cell.stepNumberLabel.text = "1"
-        cell.stepNameLabel.text = "só no passinho"
+        //cell.stepNumberLabel.text = "1"
+        //cell.stepNameLabel.text = "só no passinho"
         
+        cell.configureCell(step)
         cell.backgroundColor = UIColor.clear
         cell.cellBackRectangleImageView.layer.borderWidth = 1
         cell.cellBackRectangleImageView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
@@ -108,8 +131,7 @@ class GoalEditingViewController: ElasticModalViewController, UITextViewDelegate,
         return CGSize(width: UIScreen.main.bounds.size.width, height: 98)
     }
     
-    
-    
+
     // MARK: Navigation
     
     @IBAction func backButtonWasTapped(_ sender: AnyObject) {
@@ -123,6 +145,26 @@ class GoalEditingViewController: ElasticModalViewController, UITextViewDelegate,
         self.dismiss(animated: true, completion: nil)
     }
     
+    
+    // MARK: Handlers for Asynchronous Stuff
+    
+    func handleAsynchronousRequest (completionHandlerStepSaved: @escaping (Int) -> Void) {
+        
+        var numCompleted = 0
+        
+        // vamos botar todos os steps referentes ao goal atual no array de steps, pra gente nao ficar perdendo tempo procurando esse treco no banco toda hora
+        let uid = userID
+        let goalKey = placeholder
+        
+        DAO.CST_STEPS_REF.child(uid).child(goalKey).observe(.childAdded, with: { (snapshotSteps) in
+            
+            self.steps.append(Step(index: snapshotSteps.key, snapshot: snapshotSteps.value as! Dictionary<String, AnyObject>))
+            
+            numCompleted += 1
+            completionHandlerStepSaved(numCompleted)
+        })
+    }
+
     
     // MARK: Text View Properties
     
