@@ -2,9 +2,12 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+var CurrentStepVCShouldReload: Bool = true
+
 class CurrentStepViewController: UIViewController {
     
     var goal: String = ""
+    var goalIsCustom: Bool = false
     var step: String = ""
     
     var stepIndex: String = "1"
@@ -36,6 +39,8 @@ class CurrentStepViewController: UIViewController {
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(CurrentStepViewController.respondToSwipeGesture(_:)))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
         self.view.addGestureRecognizer(swipeRight)
+        
+        print("STEP -- LOAD -- goalIsCustom = \(goalIsCustom)")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,37 +57,94 @@ class CurrentStepViewController: UIViewController {
             self.present(vc, animated: false, completion: nil)
         }
         
-        handleAsynchronousRequest { numberCompleted in
-            if numberCompleted == 3 {
-                print("AEAEAEEA")
-                print("number completed = \(numberCompleted)")
-                
-                self.goalLabel.text! = self.goal
-                
-                self.step = self.steps[Int(self.stepIndex)! - 1].name
-                
-                self.stepLabel.text! = self.step
-                self.stepLabel.alpha = 1
-                self.stepIndexLabel.text! = "PASSO \(self.stepIndex)"
-                
-                self.boddiTextBubbleLabel.text! = "\(self.name)! Tenho certeza de que você é capaz de dar mais este passo em direção ao seu objetivo. Você vai se sentir cada vez melhor!!"
-                
-                DAO.STD_STEPS_REF.child(self.goalKey).removeAllObservers()
-                DAO.STD_GOALS_REF.child(self.goalKey).removeAllObservers()
-                DAO.USERS_REF.removeAllObservers()
-            }
-                
-            else {
-                print("OOPSIE ainda nao")
-                print("number completed = \(numberCompleted)")
+        if CurrentStepVCShouldReload {
+            handleAsynchronousRequestForIsGoalCustom { numberCompleted in
+                if numberCompleted == 1 {
+                    DAO.USERS_REF.child(userID).removeAllObservers()
+                    
+                    print("STEP -- APPEAR -- goalIsCustom = \(self.goalIsCustom)")
+                    
+                    if self.goalIsCustom {
+                        self.handleAsynchronousRequestForCstSteps { numberCompleted in
+                            if numberCompleted == 2 {
+                                print("AEAEAEEA")
+                                print("number completed = \(numberCompleted)")
+                                
+                                self.goalLabel.text! = self.goal
+                                
+                                self.step = self.steps[Int(self.stepIndex)! - 1].name
+                                
+                                self.stepLabel.text! = self.step
+                                self.stepLabel.alpha = 1
+                                self.stepIndexLabel.text! = "PASSO \(self.stepIndex)"
+                                
+                                self.boddiTextBubbleLabel.text! = "\(self.name)! Tenho certeza de que você é capaz de dar mais este passo em direção ao seu objetivo. Você vai se sentir cada vez melhor!!"
+                                
+                                DAO.CST_STEPS_REF.child(userID).child(self.goalKey).removeAllObservers()
+                                DAO.USERS_REF.removeAllObservers()
+                            }
+                                
+                            else {
+                                print("OOPSIE ainda nao")
+                                print("number completed = \(numberCompleted)")
+                            }
+                        }
+                    }
+                    else {
+                        self.handleAsynchronousRequestForStdSteps { numberCompleted in
+                            if numberCompleted == 3 {
+                                print("AEAEAEEA")
+                                print("number completed = \(numberCompleted)")
+                                
+                                self.goalLabel.text! = self.goal
+                                
+                                self.step = self.steps[Int(self.stepIndex)! - 1].name
+                                
+                                self.stepLabel.text! = self.step
+                                self.stepLabel.alpha = 1
+                                self.stepIndexLabel.text! = "PASSO \(self.stepIndex)"
+                                
+                                self.boddiTextBubbleLabel.text! = "\(self.name)! Tenho certeza de que você é capaz de dar mais este passo em direção ao seu objetivo. Você vai se sentir cada vez melhor!!"
+                                
+                                DAO.STD_STEPS_REF.child(self.goalKey).removeAllObservers()
+                                DAO.STD_GOALS_REF.child(self.goalKey).removeAllObservers()
+                                DAO.USERS_REF.removeAllObservers()
+                            }
+                                
+                            else {
+                                print("OOPSIE ainda nao")
+                                print("number completed = \(numberCompleted)")
+                            }
+                        }
+                    }
+                }
+                else {
+                    print("OOPSIE ainda nao")
+                    print("number completed = \(numberCompleted)")
+                }
             }
         }
+        CurrentStepVCShouldReload = true
     }
     
     
     // MARK: Handlers for Asynchronous Stuff
     
-    func handleAsynchronousRequest (completionHandlerStepNumber: @escaping (Int) -> Void) {
+    func handleAsynchronousRequestForIsGoalCustom (completionHandlerIsGoalCustom: @escaping (Int) -> Void) {
+        
+        var numCompleted = 0
+        
+        DAO.USERS_REF.child(userID).observe(.childAdded, with: { (snapshot) in
+            
+            if snapshot.key == "goalIsCustom" {
+                self.goalIsCustom = snapshot.value! as! Bool
+                numCompleted += 1
+                completionHandlerIsGoalCustom(numCompleted)
+            }
+        })
+    }
+    
+    func handleAsynchronousRequestForStdSteps (completionHandlerStepNumber: @escaping (Int) -> Void) {
 
         var numCompleted = 0
         
@@ -132,6 +194,43 @@ class CurrentStepViewController: UIViewController {
         })
     }
     
+    func handleAsynchronousRequestForCstSteps (completionHandlerStepNumber: @escaping (Int) -> Void) {
+        
+        var numCompleted = 0
+        
+        // vamos botar todos os steps referentes ao goal atual num array de steps, pra gente nao ficar perdendo tempo procurando esse treco no banco toda hora
+        let uid = userID
+        
+        DAO.USERS_REF.observe(.childAdded, with: { (snapshotUser) in
+            if snapshotUser.key == uid {
+                
+                // atualiza o passo atual no qual se encontra o usuário
+                let snapshotUserDict = snapshotUser.value as? NSDictionary
+
+                self.stepIndex = snapshotUserDict!["currentStepNumber"] as! String
+                self.goalKey = snapshotUserDict!["currentGoalKey"] as! String
+                self.name = snapshotUserDict!["name"] as! String
+                
+                // pega o nome do goal atual e bota na label
+                self.goal = snapshotUserDict!["currentGoalKey"] as! String
+                
+                numCompleted += 1
+                completionHandlerStepNumber(numCompleted)
+                    
+                DAO.CST_STEPS_REF.child(uid).child(self.goalKey).observe(.childAdded, with: { (snapshotSteps) in
+                    
+                    self.steps.append(Step(index: snapshotSteps.key, snapshot: snapshotSteps.value as! Dictionary<String, AnyObject>))
+                    
+                    if snapshotSteps.key == self.stepIndex {
+
+                        numCompleted += 1
+                        completionHandlerStepNumber(numCompleted)
+                    }
+                })
+            }
+        })
+    }
+
     
     // MARK: - Navigation
     
@@ -162,6 +261,11 @@ class CurrentStepViewController: UIViewController {
                         let uid = user.uid;
                         
                         DAO.USERS_REF.child(uid).observe(.childAdded, with: { (snapshot) in
+                            
+                            if snapshot.key == "goalIsCustom" {
+                                let childUpdates = [snapshot.key: false]
+                                DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
+                            }
                             
                             if snapshot.key == "currentStepNumber" {
                                 let childUpdates = [snapshot.key: "0"]
@@ -224,6 +328,8 @@ class CurrentStepViewController: UIViewController {
                                 
                                 self.stepLabel.alpha = 0
                                 
+                                CurrentStepVCShouldReload = false
+
                                 self.performSegue(withIdentifier: "goToSummit", sender: self)
                                 
                                 self.summitWasReached = true
