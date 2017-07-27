@@ -269,6 +269,7 @@ class CurrentStepViewController: UIViewController {
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.right:
                 print("Swiped right")
+                GoalsVCShouldReload = true
                 performSegue(withIdentifier: "goToGoals", sender: self)
             case UISwipeGestureRecognizerDirection.down:
                 print("Swiped down")

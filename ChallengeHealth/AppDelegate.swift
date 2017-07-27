@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let user = user {
                 // User is signed in.
                 let uid = user.uid;
+                userID = uid
                 
                 DAO.USERS_REF.child(uid).observe(.childAdded, with: { (snapshot) in
                     
