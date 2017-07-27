@@ -139,6 +139,8 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         //cell.stepNumberLabel.text = "1"
         //cell.stepNameLabel.text = "só no passinho"
         
+        print("ESTOU NA CELULA \(indexPath)")
+        
         cell.configureCell(step)
         cell.backgroundColor = UIColor.clear
         cell.cellBackRectangleImageView.layer.borderWidth = 1
@@ -223,6 +225,28 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         
         print("steps[steps.count - 1] = \(String(describing: steps[steps.count - 1].index))")
         
+        // apagando o que existe no array de steps e botar ali o conteúdo das células da collectionView
+        let numOfCells = stepsCollectionView.numberOfItems(inSection: 0)
+        steps.removeAll()
+        var counter = 0
+        
+        while counter < numOfCells {
+            
+            let indexPath = NSIndexPath(row: counter, section: 0)
+            let cell = stepsCollectionView!.cellForItem(at: indexPath as IndexPath) as! StepCollectionViewCell
+            
+            // se for o último step!
+            if counter == numOfCells - 1 {
+                steps.append(Step(name: cell.stepNameLabel!.text!, description: "", index: cell.stepNumberLabel!.text!, isLastStep: true))
+            }
+            else { // todos os outros casos
+                steps.append(Step(name: cell.stepNameLabel!.text!, description: "", index: cell.stepNumberLabel!.text!, isLastStep: false))
+            }
+
+            counter += 1
+        }
+        
+        // criando um step a mais
         steps[steps.count - 1].isLastStep = false
         steps.append(Step(name: "", description: "", index: String(Int(steps[steps.count - 1].index)! + 1), isLastStep: true))
         
@@ -235,6 +259,52 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
     
 
     // MARK: Navigation
+    
+    // 1. armazena as infos das cells existentes (caso não vazias) no array de steps
+    // 2. pega os steps do array de steps e os salva no banco
+    @IBAction func saveButtonWasTapped(_ sender: Any) {
+        print("")
+        print("SAVE?")
+        
+        for step in steps {
+            print("step \(step.index!)")
+            print("step name = \(step.name!)")
+            print("isLastStep = \(step.isLastStep!)")
+            print("")
+        }
+        
+        // vamos apagar o que existe no array de steps e botar ali o conteúdo das células da collectionView
+        print("NUMERO DE CELLS = \(stepsCollectionView.numberOfItems(inSection: 0))")
+        let numOfCells = stepsCollectionView.numberOfItems(inSection: 0)
+        steps.removeAll()
+        var counter = 0
+        
+        while counter < numOfCells {
+            
+            let indexPath = NSIndexPath(row: counter, section: 0)
+            let cell = stepsCollectionView!.cellForItem(at: indexPath as IndexPath) as! StepCollectionViewCell
+
+            // se for o último step!
+            if counter == numOfCells - 1 {
+                steps.append(Step(name: cell.stepNameLabel!.text!, description: "", index: cell.stepNumberLabel!.text!, isLastStep: true))
+            }
+            else { // todos os outros casos
+                steps.append(Step(name: cell.stepNameLabel!.text!, description: "", index: cell.stepNumberLabel!.text!, isLastStep: false))
+            }
+            
+            counter += 1
+        }
+        
+        print("")
+        print("NOVOS STEPS:")
+        for step in steps {
+            print("step \(step.index!)")
+            print("step name = \(step.name!)")
+            print("isLastStep = \(step.isLastStep!)")
+            print("")
+        }
+
+    }
     
     @IBAction func backButtonWasTapped(_ sender: AnyObject) {
         
