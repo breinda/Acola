@@ -4,6 +4,7 @@ import FirebaseAuth
 
 let rootReference = Database.database().reference()
 var userID: String = ""
+var username: String = ""
 
 class DAO {
     

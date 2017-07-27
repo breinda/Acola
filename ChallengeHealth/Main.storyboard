@@ -1672,7 +1672,7 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 <rect key="frame" x="32" y="40" width="311" height="269"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rxh-d4-eNf">
-                                <rect key="frame" x="0.0" y="60" width="375" height="59"/>
+                                <rect key="frame" x="45" y="60" width="285" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="khs-TC-dUt"/>
                                 </constraints>
@@ -1713,16 +1713,16 @@ Daqui de cima dá pra ver tanta coisa… tudo pelo que nós passamos juntos pra 
                             <constraint firstAttribute="trailing" secondItem="L8r-bD-oR1" secondAttribute="trailing" constant="32" id="AzF-lH-E6o"/>
                             <constraint firstItem="dYg-m4-Iwh" firstAttribute="leading" secondItem="L8r-bD-oR1" secondAttribute="leading" constant="22" id="B2h-B6-zGP"/>
                             <constraint firstItem="kDw-de-ovq" firstAttribute="top" secondItem="KAn-XM-8Ul" secondAttribute="top" id="EoM-AK-PpW"/>
+                            <constraint firstItem="rxh-d4-eNf" firstAttribute="leading" secondItem="KAn-XM-8Ul" secondAttribute="leading" constant="45" id="HO0-EU-3TK"/>
+                            <constraint firstAttribute="trailing" secondItem="rxh-d4-eNf" secondAttribute="trailing" constant="45" id="KY7-d9-GKC"/>
                             <constraint firstItem="dYg-m4-Iwh" firstAttribute="trailing" secondItem="L8r-bD-oR1" secondAttribute="trailing" constant="-22" id="LgH-54-3bB"/>
                             <constraint firstAttribute="trailing" secondItem="04Q-Dq-dIl" secondAttribute="trailing" id="Nt7-mW-Wo0"/>
                             <constraint firstItem="hSZ-69-UWI" firstAttribute="top" secondItem="kDw-de-ovq" secondAttribute="bottom" id="UHl-3Z-voQ"/>
-                            <constraint firstAttribute="trailing" secondItem="rxh-d4-eNf" secondAttribute="trailing" id="Unq-Jd-FGC"/>
                             <constraint firstAttribute="trailing" secondItem="elK-Cy-7J5" secondAttribute="trailing" id="XnH-R4-mzR"/>
                             <constraint firstAttribute="trailing" secondItem="sM3-Mn-evr" secondAttribute="trailing" id="b9l-Hb-VPG"/>
                             <constraint firstAttribute="trailing" secondItem="kDw-de-ovq" secondAttribute="trailing" id="dAJ-xc-qdL"/>
                             <constraint firstItem="dYg-m4-Iwh" firstAttribute="bottom" secondItem="rxh-d4-eNf" secondAttribute="bottom" constant="170" id="e48-5O-XXT"/>
                             <constraint firstAttribute="trailing" secondItem="04Q-Dq-dIl" secondAttribute="trailing" id="giY-7p-5XI"/>
-                            <constraint firstItem="rxh-d4-eNf" firstAttribute="leading" secondItem="KAn-XM-8Ul" secondAttribute="leading" id="k6t-JA-PPX"/>
                             <constraint firstItem="L8r-bD-oR1" firstAttribute="top" secondItem="Ajc-2H-kOj" secondAttribute="bottom" constant="20" id="npa-fQ-ZRw"/>
                             <constraint firstItem="04Q-Dq-dIl" firstAttribute="top" secondItem="L8r-bD-oR1" secondAttribute="bottom" constant="35" id="sgW-Wd-D8K"/>
                             <constraint firstItem="hSZ-69-UWI" firstAttribute="top" secondItem="elK-Cy-7J5" secondAttribute="bottom" id="w5b-Ww-Ifc"/>
@@ -1755,6 +1755,7 @@ Daqui de cima dá pra ver tanta coisa… tudo pelo que nós passamos juntos pra 
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="congratsNameLabel" destination="rxh-d4-eNf" id="VeI-qc-olB"/>
                         <outlet property="descTextView" destination="dYg-m4-Iwh" id="xid-e0-Bp5"/>
                     </connections>
                 </viewController>

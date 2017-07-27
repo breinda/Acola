@@ -24,6 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                     // faz com a view inicial seja a de Goals, se o usuário não tiver escolhido nenhum goal, e que seja a de Steps, caso contrário
                     
+                    if snapshot.key == "name" {
+                        username = snapshot.value as! String
+                    }
+                    
                     if snapshot.key == "currentStepNumber" {
                         
                         let userStepNumber = snapshot.value as! String

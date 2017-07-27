@@ -11,6 +11,9 @@ import UIKit
 class SummitReachedViewController: UIViewController {
 
     @IBOutlet weak var descTextView: UITextView!
+    @IBOutlet weak var congratsNameLabel: UILabel!
+    
+    let extraName = username.uppercased()
     
    // @IBOutlet weak var mountainView: BoddiMountainView!
     
@@ -18,6 +21,8 @@ class SummitReachedViewController: UIViewController {
         super.viewDidLoad()
 
        // mountainView.addClimbingBigMountainAnimation()
+        
+        congratsNameLabel.text = "PARABÉNS, \(extraName)!!!"
     }
     
     // faz com que a textView apareça scrollada a partir do início
