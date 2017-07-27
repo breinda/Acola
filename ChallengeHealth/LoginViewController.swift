@@ -65,6 +65,10 @@ class LoginViewController: UIViewController {
                         
                         DAO.USERS_REF.child(uid).observe(.childAdded, with: { (snapshot) in
                             
+                            if snapshot.key == "name" {
+                                username = snapshot.value as! String
+                            }
+                            
                             // faz com a view inicial seja a de Goals, se o usuário não tiver escolhido nenhum goal, e que seja a de Steps, caso contrário
                             
                             if snapshot.key == "currentStepNumber" {
