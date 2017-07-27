@@ -1404,6 +1404,9 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bz2-v1-XTT" userLabel="Save Button">
                                 <rect key="frame" x="68" y="63" width="24" height="30"/>
                                 <state key="normal" image="SaveSign_1x"/>
+                                <connections>
+                                    <action selector="saveButtonWasTapped:" destination="65O-Jc-wAB" eventType="touchUpInside" id="u7X-hT-LjD"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconeMontanha2" translatesAutoresizingMaskIntoConstraints="NO" id="FMk-bw-BXy">
                                 <rect key="frame" x="0.0" y="157" width="103" height="69"/>
