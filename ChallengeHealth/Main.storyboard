@@ -1380,40 +1380,6 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 <rect key="frame" x="0.0" y="149" width="375" height="471"/>
                                 <color key="backgroundColor" red="0.60784313725490191" green="0.31372549019607843" blue="0.44313725490196076" alpha="0.3983572345890411" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="imz-Z9-N8f">
-                                <rect key="frame" x="0.0" y="620" width="375" height="47"/>
-                                <color key="backgroundColor" red="0.95294117649999999" green="0.81176470590000005" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="JaE-g1-BAU"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EDIÇÃO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wnj-KU-RFS">
-                                <rect key="frame" x="0.0" y="630" width="375" height="28"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
-                                <color key="textColor" red="0.29529649019999998" green="0.25201103089999999" blue="0.1675577462" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZI-pG-9ir" userLabel="backButton">
-                                <rect key="frame" x="15" y="632" width="17" height="23"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="23" id="rxC-6V-Peb"/>
-                                </constraints>
-                                <state key="normal" image="BackSign_1x"/>
-                                <connections>
-                                    <action selector="backButtonWasTapped:" destination="65O-Jc-wAB" eventType="touchUpInside" id="WAn-aK-bUA"/>
-                                    <action selector="backButtonWasTapped:" destination="4FA-jI-OoB" eventType="touchUpInside" id="cLr-UW-9Gy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s35-hV-Rg0" userLabel="Delete Button">
-                                <rect key="frame" x="336" y="632" width="23" height="23"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="23" id="MXF-t6-XhV"/>
-                                    <constraint firstAttribute="width" secondItem="s35-hV-Rg0" secondAttribute="height" multiplier="1:1" id="efu-81-Zou"/>
-                                </constraints>
-                                <state key="normal" image="DeleteSign_1x">
-                                    <color key="titleColor" red="0.60503464939999996" green="0.31700968740000002" blue="0.44379103180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wpb-Vy-cN9">
                                 <rect key="frame" x="31" y="34" width="313" height="92"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1462,6 +1428,116 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hna-z0-0zT">
+                                <rect key="frame" x="0.0" y="225" width="375" height="442"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Z6s-uN-Or8">
+                                    <size key="itemSize" width="375" height="98"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="stepCell" id="AqL-08-x8c" customClass="StepCollectionViewCell" customModule="ChallengeHealth" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cantoMontanhaSteps_1x" translatesAutoresizingMaskIntoConstraints="NO" id="Nc3-fY-Eed">
+                                                    <rect key="frame" x="17" y="8" width="53" height="90"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qaP-Gn-0dT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="98"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.21433540239726026" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U7k-33-Z4j">
+                                                    <rect key="frame" x="70" y="0.0" width="305" height="98"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.21008133561643835" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GmF-GC-AME">
+                                                    <rect key="frame" x="0.0" y="21.5" width="70" height="56"/>
+                                                    <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="48"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Passo" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nnw-gX-TLE">
+                                                    <rect key="frame" x="88" y="11" width="269" height="76"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="22"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
+                                                </textView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Nc3-fY-Eed" firstAttribute="leading" secondItem="AqL-08-x8c" secondAttribute="leading" constant="17" id="0d2-Jg-hJ9"/>
+                                            <constraint firstAttribute="bottom" secondItem="Nc3-fY-Eed" secondAttribute="bottom" id="4YG-FQ-RRc"/>
+                                            <constraint firstItem="qaP-Gn-0dT" firstAttribute="leading" secondItem="AqL-08-x8c" secondAttribute="leading" id="4bl-1w-1W2"/>
+                                            <constraint firstItem="qaP-Gn-0dT" firstAttribute="top" secondItem="AqL-08-x8c" secondAttribute="top" id="5Ve-X2-SUh"/>
+                                            <constraint firstAttribute="trailing" secondItem="nnw-gX-TLE" secondAttribute="trailing" constant="18" id="6Ie-2s-Qs6"/>
+                                            <constraint firstAttribute="trailing" secondItem="U7k-33-Z4j" secondAttribute="trailing" id="CGY-ip-iKp"/>
+                                            <constraint firstItem="nnw-gX-TLE" firstAttribute="top" secondItem="AqL-08-x8c" secondAttribute="top" constant="11" id="DJ7-V8-7rO"/>
+                                            <constraint firstAttribute="bottom" secondItem="qaP-Gn-0dT" secondAttribute="bottom" id="GND-Nb-7vT"/>
+                                            <constraint firstAttribute="bottom" secondItem="nnw-gX-TLE" secondAttribute="bottom" constant="11" id="Jw5-fs-csR"/>
+                                            <constraint firstItem="nnw-gX-TLE" firstAttribute="leading" secondItem="GmF-GC-AME" secondAttribute="trailing" constant="18" id="UNt-m1-Nnj"/>
+                                            <constraint firstItem="U7k-33-Z4j" firstAttribute="leading" secondItem="AqL-08-x8c" secondAttribute="leading" constant="70" id="VCD-Xz-kSV"/>
+                                            <constraint firstItem="GmF-GC-AME" firstAttribute="leading" secondItem="AqL-08-x8c" secondAttribute="leading" id="VF5-vZ-6eM"/>
+                                            <constraint firstItem="U7k-33-Z4j" firstAttribute="leading" secondItem="Nc3-fY-Eed" secondAttribute="trailing" id="WKQ-w0-phW"/>
+                                            <constraint firstItem="Nc3-fY-Eed" firstAttribute="top" secondItem="AqL-08-x8c" secondAttribute="top" constant="8" id="gHx-K4-jib"/>
+                                            <constraint firstItem="U7k-33-Z4j" firstAttribute="top" secondItem="AqL-08-x8c" secondAttribute="top" id="k1z-IR-9v7"/>
+                                            <constraint firstItem="U7k-33-Z4j" firstAttribute="leading" secondItem="GmF-GC-AME" secondAttribute="trailing" id="lge-Ub-9Ga"/>
+                                            <constraint firstItem="GmF-GC-AME" firstAttribute="centerY" secondItem="AqL-08-x8c" secondAttribute="centerY" id="qnB-la-8lj"/>
+                                            <constraint firstAttribute="bottom" secondItem="U7k-33-Z4j" secondAttribute="bottom" id="sy0-Kz-5ej"/>
+                                            <constraint firstAttribute="trailing" secondItem="qaP-Gn-0dT" secondAttribute="trailing" id="zic-JK-ynm"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cantoMontanhaImageView" destination="Nc3-fY-Eed" id="Nk2-5U-KSC"/>
+                                            <outlet property="cellBackRectangleImageView" destination="qaP-Gn-0dT" id="8FL-Cf-kPQ"/>
+                                            <outlet property="stepNameLabel" destination="nnw-gX-TLE" id="UnE-wX-tKa"/>
+                                            <outlet property="stepNumberLabel" destination="GmF-GC-AME" id="77D-ZB-hKS"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="65O-Jc-wAB" id="0g5-RQ-Go0"/>
+                                    <outlet property="delegate" destination="65O-Jc-wAB" id="785-xE-Luy"/>
+                                </connections>
+                            </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="imz-Z9-N8f">
+                                <rect key="frame" x="0.0" y="620" width="375" height="47"/>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.81176470590000005" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="JaE-g1-BAU"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EDIÇÃO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wnj-KU-RFS">
+                                <rect key="frame" x="0.0" y="630" width="375" height="28"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
+                                <color key="textColor" red="0.29529649019999998" green="0.25201103089999999" blue="0.1675577462" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZI-pG-9ir" userLabel="backButton">
+                                <rect key="frame" x="15" y="632" width="17" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="rxC-6V-Peb"/>
+                                </constraints>
+                                <state key="normal" image="BackSign_1x"/>
+                                <connections>
+                                    <action selector="backButtonWasTapped:" destination="65O-Jc-wAB" eventType="touchUpInside" id="WAn-aK-bUA"/>
+                                    <action selector="backButtonWasTapped:" destination="4FA-jI-OoB" eventType="touchUpInside" id="cLr-UW-9Gy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s35-hV-Rg0" userLabel="Delete Button">
+                                <rect key="frame" x="336" y="632" width="23" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="23" id="MXF-t6-XhV"/>
+                                    <constraint firstAttribute="width" secondItem="s35-hV-Rg0" secondAttribute="height" multiplier="1:1" id="efu-81-Zou"/>
+                                </constraints>
+                                <state key="normal" image="DeleteSign_1x">
+                                    <color key="titleColor" red="0.60503464939999996" green="0.31700968740000002" blue="0.44379103180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99641340970993042" green="0.83028680086135864" blue="0.58036965131759644" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1469,6 +1545,7 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                             <constraint firstItem="mFd-ge-SM2" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" id="23Z-Qp-a4c"/>
                             <constraint firstItem="0mX-7l-ZsE" firstAttribute="leading" secondItem="Wpb-Vy-cN9" secondAttribute="leading" constant="17" id="2jz-XY-1eO"/>
                             <constraint firstItem="Wpb-Vy-cN9" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" constant="31" id="64Y-zP-QEd"/>
+                            <constraint firstItem="Hna-z0-0zT" firstAttribute="top" secondItem="FMk-bw-BXy" secondAttribute="bottom" id="7hw-cv-E6e"/>
                             <constraint firstItem="bOF-Kz-vJb" firstAttribute="top" secondItem="KOI-f6-AHn" secondAttribute="bottom" constant="19" id="8i9-bv-GQP"/>
                             <constraint firstAttribute="trailing" secondItem="Wpb-Vy-cN9" secondAttribute="trailing" constant="31" id="9oE-jn-jwJ"/>
                             <constraint firstItem="DVi-4W-49G" firstAttribute="top" secondItem="Wpb-Vy-cN9" secondAttribute="bottom" constant="29" id="APL-07-X2U"/>
@@ -1477,6 +1554,7 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                             <constraint firstAttribute="trailing" secondItem="imz-Z9-N8f" secondAttribute="trailing" id="FDi-fT-AyC"/>
                             <constraint firstItem="0mX-7l-ZsE" firstAttribute="trailing" secondItem="Wpb-Vy-cN9" secondAttribute="trailing" constant="-17" id="H1k-Pv-ZaA"/>
                             <constraint firstItem="W3e-DM-elR" firstAttribute="top" secondItem="imz-Z9-N8f" secondAttribute="bottom" id="HKm-w2-92M"/>
+                            <constraint firstAttribute="trailing" secondItem="Hna-z0-0zT" secondAttribute="trailing" id="I6f-Ny-G1b"/>
                             <constraint firstItem="sZI-pG-9ir" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" constant="15" id="I97-LD-0de"/>
                             <constraint firstItem="W3e-DM-elR" firstAttribute="top" secondItem="s35-hV-Rg0" secondAttribute="bottom" constant="12" id="In6-64-bkx"/>
                             <constraint firstItem="FMk-bw-BXy" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" id="Kh5-ko-Bpm"/>
@@ -1490,12 +1568,14 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                             <constraint firstItem="imz-Z9-N8f" firstAttribute="top" secondItem="mFd-ge-SM2" secondAttribute="bottom" id="YUp-U9-Z9D"/>
                             <constraint firstAttribute="trailing" secondItem="K95-ad-t1Y" secondAttribute="trailing" id="Zlg-EF-jFG"/>
                             <constraint firstItem="FMk-bw-BXy" firstAttribute="top" secondItem="Wpb-Vy-cN9" secondAttribute="bottom" constant="30" id="a2f-1H-kdZ"/>
+                            <constraint firstItem="W3e-DM-elR" firstAttribute="top" secondItem="Hna-z0-0zT" secondAttribute="bottom" id="b1i-bb-VmJ"/>
                             <constraint firstAttribute="trailing" secondItem="s35-hV-Rg0" secondAttribute="trailing" constant="16" id="bUe-On-eea"/>
                             <constraint firstItem="e2u-WL-pT5" firstAttribute="top" secondItem="D90-Mw-7ul" secondAttribute="top" id="dbx-gL-e2S"/>
                             <constraint firstAttribute="trailing" secondItem="e2u-WL-pT5" secondAttribute="trailing" id="eaK-LZ-kXX"/>
                             <constraint firstItem="K95-ad-t1Y" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" id="iPz-oW-1cC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bOF-Kz-vJb" secondAttribute="trailing" constant="55" id="iRG-VC-llE"/>
                             <constraint firstAttribute="trailing" secondItem="DVi-4W-49G" secondAttribute="trailing" constant="15" id="mIa-4l-s2R"/>
+                            <constraint firstItem="Hna-z0-0zT" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" id="n1E-RP-Ilo"/>
                             <constraint firstItem="e2u-WL-pT5" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" id="qQE-RC-2bZ"/>
                             <constraint firstItem="DVi-4W-49G" firstAttribute="leading" secondItem="FMk-bw-BXy" secondAttribute="trailing" constant="15" id="tTD-vm-mrw"/>
                             <constraint firstItem="bz2-v1-XTT" firstAttribute="top" secondItem="KOI-f6-AHn" secondAttribute="bottom" constant="43" id="uan-hV-wYK"/>
@@ -1511,6 +1591,7 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                         <outlet property="goalRectangleImageView" destination="K95-ad-t1Y" id="Eyp-9m-wZW"/>
                         <outlet property="goalTextView" destination="DVi-4W-49G" id="f76-oI-j2b"/>
                         <outlet property="navBarRectangleImageView" destination="imz-Z9-N8f" id="l9K-Tn-uqr"/>
+                        <outlet property="stepsCollectionView" destination="Hna-z0-0zT" id="Yzm-TM-Grf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zeV-7Z-LQp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1923,13 +2004,14 @@ Eu vou te ajudar a alcançá-lo!</string>
         <image name="boddi_principal" width="73" height="91"/>
         <image name="boddi_subindoMontanha6" width="132" height="180"/>
         <image name="cantoMontanha22" width="169" height="298"/>
+        <image name="cantoMontanhaSteps_1x" width="53" height="91"/>
         <image name="iconeMontanha1" width="336" height="226"/>
         <image name="iconeMontanha2" width="336" height="226"/>
         <image name="logo Acola Certinha" width="3229" height="2070"/>
         <image name="montanha2" width="500" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="grL-aW-a2k"/>
+        <segue reference="ith-tA-OpB"/>
         <segue reference="9Ll-dW-eTd"/>
     </inferredMetricsTieBreakers>
 </document>

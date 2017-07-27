@@ -19,6 +19,7 @@
 		8D1D8E3BE4493B65F2EB9056 /* Pods_ChallengeHealth_ChallengeHealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EDE00AD3D9A9C74A5FB4B1 /* Pods_ChallengeHealth_ChallengeHealthUITests.framework */; };
 		A7D27DD2CE4F11ABD87D5D64 /* Pods_ChallengeHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007A7E7652F5C10253E2FBED /* Pods_ChallengeHealth.framework */; };
 		E1032E301F286A31002E3957 /* GoalEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1032E2F1F286A31002E3957 /* GoalEditingViewController.swift */; };
+		E1032E321F298DBC002E3957 /* StepCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1032E311F298DBC002E3957 /* StepCollectionViewCell.swift */; };
 		E106AA1C1ED7C310003CDDEB /* SummitReachedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106AA1B1ED7C310003CDDEB /* SummitReachedViewController.swift */; };
 		E107E6F01F133EDE0056A1F9 /* EdgePanTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107E6EA1F133EDE0056A1F9 /* EdgePanTransition.swift */; };
 		E107E6F11F133EDE0056A1F9 /* ElasticModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107E6EB1F133EDE0056A1F9 /* ElasticModalViewController.swift */; };
@@ -76,6 +77,7 @@
 		B9EFA970596509DFC9D39CF7 /* Pods-ChallengeHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth.release.xcconfig"; sourceTree = "<group>"; };
 		C9939B2CE750259C0FFBF6A2 /* Pods-ChallengeHealth-ChallengeHealthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth-ChallengeHealthUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth-ChallengeHealthUITests/Pods-ChallengeHealth-ChallengeHealthUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E1032E2F1F286A31002E3957 /* GoalEditingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalEditingViewController.swift; sourceTree = "<group>"; };
+		E1032E311F298DBC002E3957 /* StepCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCollectionViewCell.swift; sourceTree = "<group>"; };
 		E106AA1B1ED7C310003CDDEB /* SummitReachedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummitReachedViewController.swift; sourceTree = "<group>"; };
 		E107E6EA1F133EDE0056A1F9 /* EdgePanTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgePanTransition.swift; sourceTree = "<group>"; };
 		E107E6EB1F133EDE0056A1F9 /* ElasticModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticModalViewController.swift; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				E1BD0CBE1D3D532700EC26BA /* GoalCollectionViewCell.swift */,
 				0661FE7A1D4132250075DCCA /* UserSettingsTableViewCell.swift */,
 				E126B9FF1F11B10B00A45713 /* PhoneCollectionViewCell.swift */,
+				E1032E311F298DBC002E3957 /* StepCollectionViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -593,6 +596,7 @@
 				E107E6F11F133EDE0056A1F9 /* ElasticModalViewController.swift in Sources */,
 				E1DCF4911D3F3EAF005479D6 /* Step.swift in Sources */,
 				E1C14B7E1F26867000222B15 /* NewGoalViewController.swift in Sources */,
+				E1032E321F298DBC002E3957 /* StepCollectionViewCell.swift in Sources */,
 				0661FE7B1D4132250075DCCA /* UserSettingsTableViewCell.swift in Sources */,
 				06C51C671D47157100409C26 /* extensionGoalsViewController.swift in Sources */,
 				E1BD0CC31D3D61C500EC26BA /* CurrentStepViewController.swift in Sources */,
