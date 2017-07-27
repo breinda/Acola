@@ -1429,7 +1429,7 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hna-z0-0zT">
-                                <rect key="frame" x="0.0" y="226" width="375" height="441"/>
+                                <rect key="frame" x="0.0" y="226" width="375" height="394"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Z6s-uN-Or8">
                                     <size key="itemSize" width="375" height="98"/>
@@ -1538,6 +1538,17 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                     <color key="titleColor" red="0.60503464939999996" green="0.31700968740000002" blue="0.44379103180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bz5-PF-Xb0">
+                                <rect key="frame" x="0.0" y="226" width="375" height="98"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.92941176470588238" blue="0.84705882352941175" alpha="0.80064747431506844" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="OfW-Ck-XXp"/>
+                                </constraints>
+                                <state key="normal" image="PlusSign_1x"/>
+                                <connections>
+                                    <action selector="plusButtonWasPressed:" destination="65O-Jc-wAB" eventType="touchUpInside" id="dSg-ud-F2P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99641340970993042" green="0.83028680086135864" blue="0.58036965131759644" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1548,6 +1559,7 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                             <constraint firstItem="Hna-z0-0zT" firstAttribute="top" secondItem="FMk-bw-BXy" secondAttribute="bottom" id="7hw-cv-E6e"/>
                             <constraint firstItem="bOF-Kz-vJb" firstAttribute="top" secondItem="KOI-f6-AHn" secondAttribute="bottom" constant="19" id="8i9-bv-GQP"/>
                             <constraint firstAttribute="trailing" secondItem="Wpb-Vy-cN9" secondAttribute="trailing" constant="31" id="9oE-jn-jwJ"/>
+                            <constraint firstItem="bz5-PF-Xb0" firstAttribute="top" secondItem="FMk-bw-BXy" secondAttribute="bottom" id="A6R-v8-SPq"/>
                             <constraint firstItem="DVi-4W-49G" firstAttribute="top" secondItem="Wpb-Vy-cN9" secondAttribute="bottom" constant="30" id="APL-07-X2U"/>
                             <constraint firstItem="W3e-DM-elR" firstAttribute="top" secondItem="sZI-pG-9ir" secondAttribute="bottom" constant="12" id="CAM-Jl-qup"/>
                             <constraint firstItem="W3e-DM-elR" firstAttribute="top" secondItem="Wnj-KU-RFS" secondAttribute="bottom" constant="9" id="CpC-84-1Wj"/>
@@ -1565,13 +1577,15 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                             <constraint firstItem="W3e-DM-elR" firstAttribute="top" secondItem="e2u-WL-pT5" secondAttribute="bottom" id="UYW-Af-Jal"/>
                             <constraint firstItem="imz-Z9-N8f" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" id="VGc-kG-jqt"/>
                             <constraint firstItem="K95-ad-t1Y" firstAttribute="top" secondItem="Wpb-Vy-cN9" secondAttribute="bottom" constant="24" id="YIO-Ge-Abu"/>
+                            <constraint firstItem="W3e-DM-elR" firstAttribute="top" secondItem="Hna-z0-0zT" secondAttribute="bottom" constant="47" id="YUL-0c-lmU"/>
                             <constraint firstItem="imz-Z9-N8f" firstAttribute="top" secondItem="mFd-ge-SM2" secondAttribute="bottom" id="YUp-U9-Z9D"/>
                             <constraint firstAttribute="trailing" secondItem="K95-ad-t1Y" secondAttribute="trailing" id="Zlg-EF-jFG"/>
                             <constraint firstItem="FMk-bw-BXy" firstAttribute="top" secondItem="Wpb-Vy-cN9" secondAttribute="bottom" constant="31" id="a2f-1H-kdZ"/>
-                            <constraint firstItem="W3e-DM-elR" firstAttribute="top" secondItem="Hna-z0-0zT" secondAttribute="bottom" id="b1i-bb-VmJ"/>
+                            <constraint firstItem="bz5-PF-Xb0" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" id="acg-fp-cff"/>
                             <constraint firstAttribute="trailing" secondItem="s35-hV-Rg0" secondAttribute="trailing" constant="16" id="bUe-On-eea"/>
                             <constraint firstItem="e2u-WL-pT5" firstAttribute="top" secondItem="D90-Mw-7ul" secondAttribute="top" id="dbx-gL-e2S"/>
                             <constraint firstAttribute="trailing" secondItem="e2u-WL-pT5" secondAttribute="trailing" id="eaK-LZ-kXX"/>
+                            <constraint firstAttribute="trailing" secondItem="bz5-PF-Xb0" secondAttribute="trailing" id="gVB-BO-9pc"/>
                             <constraint firstItem="K95-ad-t1Y" firstAttribute="leading" secondItem="D90-Mw-7ul" secondAttribute="leading" id="iPz-oW-1cC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bOF-Kz-vJb" secondAttribute="trailing" constant="55" id="iRG-VC-llE"/>
                             <constraint firstAttribute="trailing" secondItem="DVi-4W-49G" secondAttribute="trailing" constant="15" id="mIa-4l-s2R"/>
@@ -1591,6 +1605,7 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                         <outlet property="goalRectangleImageView" destination="K95-ad-t1Y" id="Eyp-9m-wZW"/>
                         <outlet property="goalTextView" destination="DVi-4W-49G" id="f76-oI-j2b"/>
                         <outlet property="navBarRectangleImageView" destination="imz-Z9-N8f" id="l9K-Tn-uqr"/>
+                        <outlet property="plusButton" destination="bz5-PF-Xb0" id="dus-Ut-HpS"/>
                         <outlet property="stepsCollectionView" destination="Hna-z0-0zT" id="Yzm-TM-Grf"/>
                     </connections>
                 </viewController>

@@ -2,7 +2,7 @@ struct Step {
     let name : String!
     let description : String!
     let index : String!
-    let isLastStep: Bool!
+    var isLastStep: Bool!
     
     init(index: String, snapshot: Dictionary<String,AnyObject>) {
         
