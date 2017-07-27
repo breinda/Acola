@@ -213,7 +213,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                         print("uid: \(uid)")
                         
                         let key = uid
-                        let userData = ["name": name!, "petName": "Serumaninho", "currentGoalKey": "", "currentStepNumber": "0", "customGoals": false] as [String : Any]
+                        let userData = ["name": name!, "petName": "Serumaninho", "currentGoalKey": "", "currentStepNumber": "0", "customGoals": false, "goalIsCustom": false] as [String : Any]
                         let childUpdates = ["\(key)": userData]
                         
                         DAO.USERS_REF.updateChildValues(childUpdates)

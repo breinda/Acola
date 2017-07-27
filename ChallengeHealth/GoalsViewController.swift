@@ -266,6 +266,9 @@ class GoalsViewController: UIViewController {
             currentStepVC.goal = goal.name
             currentStepVC.step = goal.firstStep.name
             currentStepVC.goalKey = goal.key
+            currentStepVC.goalIsCustom = goal.isCustom!
+            
+            print("GOALSVC -- goal.isCustom = \(goal.isCustom!)")
             
             // seta o step atual do usuário como 1 -- saber se view inicial é a de goals ou a de currentStep
             var handle : AuthStateDidChangeListenerHandle
@@ -276,6 +279,13 @@ class GoalsViewController: UIViewController {
                     let uid = user.uid;
                     
                     DAO.USERS_REF.child(uid).observe(.childAdded, with: { (snapshot) in
+                        
+                        if snapshot.key == "goalIsCustom" {
+                            if goal.isCustom == true {
+                                let childUpdates = [snapshot.key: true]
+                                DAO.USERS_REF.child(uid).updateChildValues(childUpdates)
+                            }
+                        }
                         
                         if snapshot.key == "currentStepNumber" {
                             let childUpdates = [snapshot.key: "1"]
