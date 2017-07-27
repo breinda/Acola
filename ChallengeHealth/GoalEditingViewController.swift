@@ -2,13 +2,13 @@
 //  GoalEditingViewController.swift
 //  ChallengeHealth
 //
-//  Created by Brenda Carrocino on 26/07/17.
+//  Created by Brenda Carrocino ovar6/07/17.
 //  Copyright © 2017 Brenda Carrocino. All rights reserved.
 //
 
 import UIKit
 
-class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var stepsCollectionView: UICollectionView!
     var stepsCollectionViewCenterY: CGFloat!
@@ -21,6 +21,9 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
     @IBOutlet weak var goalRectangleImageView: UIImageView!
     
     @IBOutlet weak var goalTextView: UITextView!
+    
+    @IBOutlet weak var plusButton: UIButton!
+    
     
     var steps = [Step]()
     
@@ -69,18 +72,22 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         hideKeyboardWhenTappedAround()
         
         // swipe down para acrescentar outra célula na collection view!
-//        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:)))
-//        swipeDown.direction = UISwipeGestureRecognizerDirection.down
-//        stepsCollectionView.addGestureRecognizer(swipeDown)
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:)))
+        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+        stepsCollectionView.addGestureRecognizer(swipeDown)
+        swipeDown.delegate = self
         
         let panDown = UIPanGestureRecognizer(target: self, action: #selector(wasDragged(_:)))
         //paneDown.direction = UIPanGestureRecognizerDirection.down
         stepsCollectionView.addGestureRecognizer(panDown)
         stepsCollectionView.isUserInteractionEnabled = true
+        panDown.delegate = self
         
         //stepsCollectionViewCenterY = stepsCollectionView.center.y
         stepsCollectionViewCenterY = stepsCollectionView.frame.minY + 98 + 75 - 2
         print("stepsCollectionViewCenterY = \(stepsCollectionViewCenterY)")
+        
+        plusButton.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -137,6 +144,9 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         cell.cellBackRectangleImageView.layer.borderWidth = 1
         cell.cellBackRectangleImageView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
         
+        // recalcula o stepsCollectionViewCenterY quando recarregamos a collectionView
+        stepsCollectionViewCenterY = stepsCollectionView.frame.minY + 98 + 75 - 2
+        
         return cell
     }
     
@@ -146,6 +156,8 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         return CGSize(width: UIScreen.main.bounds.size.width, height: 98)
     }
     
+    
+    // MARK: Gesture Recognizers
     
     func wasDragged(_ gestureRecognizer: UIPanGestureRecognizer) {
         
@@ -170,7 +182,6 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             
             gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
         }
-        
     }
     
     func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
@@ -185,6 +196,11 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
                 let stepsCV = gesture.view! as! UICollectionView
                 print(type(of: stepsCV))
                 
+                if plusButton.isHidden {
+                    stepsCollectionViewCenterY = stepsCollectionViewCenterY - 23 + plusButton.frame.height as CGFloat!
+                    plusButton.isHidden = false
+                }
+                
             case UISwipeGestureRecognizerDirection.left:
                 print("Swiped left")
             case UISwipeGestureRecognizerDirection.up:
@@ -193,6 +209,28 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
                 break
             }
         }
+    }
+    
+    // faz com que possamos reconhecer mais de um tipo de gesto ao mesmo tempo
+    func gestureRecognizer(_: UIGestureRecognizer,
+                           shouldRecognizeSimultaneouslyWith: UIGestureRecognizer) -> Bool {
+        print("BUBUBU")
+        return true
+    }
+    
+    
+    @IBAction func plusButtonWasPressed(_ sender: Any) {
+        
+        print("steps[steps.count - 1] = \(String(describing: steps[steps.count - 1].index))")
+        
+        steps[steps.count - 1].isLastStep = false
+        steps.append(Step(name: "", description: "", index: String(Int(steps[steps.count - 1].index)! + 1), isLastStep: true))
+        
+        plusButton.isHidden = true
+        
+        // botando a collectionView de volta no lugar
+        stepsCollectionView.frame.origin = CGPoint(x: stepsCollectionView.frame.origin.x, y: stepsCollectionView.frame.origin.y - 1 - plusButton.frame.height as CGFloat!)
+        stepsCollectionView.reloadData()
     }
     
 
