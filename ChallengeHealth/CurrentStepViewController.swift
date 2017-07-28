@@ -132,21 +132,21 @@ class CurrentStepViewController: UIViewController {
     
     func handleAsynchronousRequestForIsGoalCustom (completionHandlerIsGoalCustom: @escaping (Int) -> Void) {
         
-        var numCompleted = 0
+        var numberCompleted = 0
         
         DAO.USERS_REF.child(userID).observe(.childAdded, with: { (snapshot) in
             
             if snapshot.key == "goalIsCustom" {
                 self.goalIsCustom = snapshot.value! as! Bool
-                numCompleted += 1
-                completionHandlerIsGoalCustom(numCompleted)
+                numberCompleted += 1
+                completionHandlerIsGoalCustom(numberCompleted)
             }
         })
     }
     
     func handleAsynchronousRequestForStdSteps (completionHandlerStepNumber: @escaping (Int) -> Void) {
 
-        var numCompleted = 0
+        var numberCompleted = 0
         
         // vamos botar todos os steps referentes ao goal atual num array de steps, pra gente nao ficar perdendo tempo procurando esse treco no banco toda hora
         let uid = userID
@@ -163,8 +163,8 @@ class CurrentStepViewController: UIViewController {
                 self.goalKey = snapshotUserDict!["currentGoalKey"] as! String
                 
                 self.name = snapshotUserDict!["name"] as! String
-                numCompleted += 1
-                completionHandlerStepNumber(numCompleted)
+                numberCompleted += 1
+                completionHandlerStepNumber(numberCompleted)
                 
                 // pega o nome do goal atual e bota na label
                 DAO.STD_GOALS_REF.child(self.goalKey).observe(.childAdded, with: { (snapshotGoal) in
@@ -173,8 +173,8 @@ class CurrentStepViewController: UIViewController {
                         self.goal = String(describing: snapshotGoal.value!)
                         //self.goalLabel.text! = String(describing: snapshotGoal.value!)
                         
-                        numCompleted += 1
-                        completionHandlerStepNumber(numCompleted)
+                        numberCompleted += 1
+                        completionHandlerStepNumber(numberCompleted)
                         
                         DAO.STD_STEPS_REF.child(self.goalKey).observe(.childAdded, with: { (snapshotSteps) in
                             
@@ -183,8 +183,8 @@ class CurrentStepViewController: UIViewController {
                             if snapshotSteps.key == self.stepIndex {
                                 //self.stepLabel.text! = snapshotUserDict!["name"] as! String
                                 
-                                numCompleted += 1
-                                completionHandlerStepNumber(numCompleted)
+                                numberCompleted += 1
+                                completionHandlerStepNumber(numberCompleted)
                                 //self.stepDescriptionLabel.text! = snapshotSteps.value!["description"] as! String
                             }
                         })
@@ -196,7 +196,7 @@ class CurrentStepViewController: UIViewController {
     
     func handleAsynchronousRequestForCstSteps (completionHandlerStepNumber: @escaping (Int) -> Void) {
         
-        var numCompleted = 0
+        var numberCompleted = 0
         
         // vamos botar todos os steps referentes ao goal atual num array de steps, pra gente nao ficar perdendo tempo procurando esse treco no banco toda hora
         let uid = userID
@@ -214,8 +214,8 @@ class CurrentStepViewController: UIViewController {
                 // pega o nome do goal atual e bota na label
                 self.goal = snapshotUserDict!["currentGoalKey"] as! String
                 
-                numCompleted += 1
-                completionHandlerStepNumber(numCompleted)
+                numberCompleted += 1
+                completionHandlerStepNumber(numberCompleted)
                     
                 DAO.CST_STEPS_REF.child(uid).child(self.goalKey).observe(.childAdded, with: { (snapshotSteps) in
                     
@@ -223,8 +223,8 @@ class CurrentStepViewController: UIViewController {
                     
                     if snapshotSteps.key == self.stepIndex {
 
-                        numCompleted += 1
-                        completionHandlerStepNumber(numCompleted)
+                        numberCompleted += 1
+                        completionHandlerStepNumber(numberCompleted)
                     }
                 })
             }

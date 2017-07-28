@@ -28,7 +28,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
     var steps = [Step]()
     var everyStepDict = [[], ["description": "", "isLastStep": true, "name": ""]] as [Any]
     
-    var placeholder = "nada aqui :)"
+    var placeholderStr: String = "nada aqui :)"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,7 +67,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         boddiImageView.layer.shouldRasterize = true
         
         // setando propriedades da goalTextView
-        goalTextView.text = placeholder
+        goalTextView.text = placeholderStr
         goalTextView.keyboardAppearance = .dark
         goalTextView.delegate = self
         hideKeyboardWhenTappedAround()
@@ -85,8 +85,9 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         panDown.delegate = self
         
         //stepsCollectionViewCenterY = stepsCollectionView.center.y
-        stepsCollectionViewCenterY = stepsCollectionView.frame.minY + 98 + 75 - 2
-        print("stepsCollectionViewCenterY = \(stepsCollectionViewCenterY)")
+        //stepsCollectionViewCenterY = stepsCollectionView.frame.minY + 98 + 75 - 2
+        stepsCollectionViewCenterY = stepsCollectionView.center.y
+        print("VIEWDIDLOAD -- stepsCollectionViewCenterY = \(stepsCollectionViewCenterY)")
         
         plusButton.isHidden = true
     }
@@ -94,14 +95,14 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
     override func viewDidAppear(_ animated: Bool) {
         steps.removeAll()
         
-        handleAsynchronousRequestForSteps { numberCompleted in
-            if numberCompleted == 1 {
+        handleAsynchronousRequestForSteps { numberCompleted, numberOfSteps in
+            if numberCompleted == numberOfSteps {
                 print("AEAEAEEA")
                 print("number completed = \(numberCompleted)")
                 
                 self.stepsCollectionView.reloadData()
                 
-                DAO.CST_STEPS_REF.child(userID).child(self.placeholder).removeAllObservers()
+                DAO.CST_STEPS_REF.child(userID).child(self.placeholderStr).removeAllObservers()
             }
                 
             else {
@@ -136,10 +137,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         
         let cell = stepsCollectionView.dequeueReusableCell(withReuseIdentifier: "stepCell", for: indexPath) as! StepCollectionViewCell
         let step = steps[(indexPath as NSIndexPath).row]
-        
-        //cell.stepNumberLabel.text = "1"
-        //cell.stepNameLabel.text = "só no passinho"
-        
+
         print("ESTOU NA CELULA \(indexPath)")
         
         cell.configureCell(step)
@@ -148,7 +146,10 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         cell.cellBackRectangleImageView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
         
         // recalcula o stepsCollectionViewCenterY quando recarregamos a collectionView
-        stepsCollectionViewCenterY = stepsCollectionView.frame.minY + 98 + 75 - 2
+        //stepsCollectionViewCenterY = stepsCollectionView.frame.minY + 98 + 75 - 2
+        stepsCollectionViewCenterY = stepsCollectionView.center.y
+        
+        print("CELLFORITEMATINDEXPATH -- stepsCollectionViewCenterY = \(stepsCollectionViewCenterY)")
         
         return cell
     }
@@ -167,10 +168,10 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         if gestureRecognizer.state == UIGestureRecognizerState.began || gestureRecognizer.state == UIGestureRecognizerState.changed {
             
             let translation = gestureRecognizer.translation(in: self.view)
-            print(gestureRecognizer.view!.center.y)
+            //print(gestureRecognizer.view!.center.y)
             
             // se swipamos pra baixo
-            if (gestureRecognizer.view!.center.y > stepsCollectionViewCenterY) {
+            if gestureRecognizer.view!.center.y > stepsCollectionViewCenterY {
             gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x, y: gestureRecognizer.view!.center.y + translation.y)
             }
             else { // se swipamos pra cima, NAO DEIXAR!
@@ -197,10 +198,11 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             case UISwipeGestureRecognizerDirection.down:
                 print("Swiped down")
                 let stepsCV = gesture.view! as! UICollectionView
-                print(type(of: stepsCV))
+                //print(type(of: stepsCV))
                 
                 if plusButton.isHidden {
-                    stepsCollectionViewCenterY = stepsCollectionViewCenterY - 23 + plusButton.frame.height as CGFloat!
+                    stepsCollectionViewCenterY = stepsCollectionViewCenterY/*- 23*/ + plusButton.frame.height as CGFloat!
+                    print("RESPOND TO SWIPE -- stepsCollectionViewCenterY = \(stepsCollectionViewCenterY)")
                     plusButton.isHidden = false
                 }
                 
@@ -217,24 +219,43 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
     // faz com que possamos reconhecer mais de um tipo de gesto ao mesmo tempo
     func gestureRecognizer(_: UIGestureRecognizer,
                            shouldRecognizeSimultaneouslyWith: UIGestureRecognizer) -> Bool {
-        print("BUBUBU")
+        //print("BUBUBU")
         return true
     }
     
     
+    // MARK: Navigation
+    
     @IBAction func plusButtonWasPressed(_ sender: Any) {
         
         print("steps[steps.count - 1] = \(String(describing: steps[steps.count - 1].index))")
+        print("steps.count - 1 = \(steps.count - 1)")
         
         // apagando o que existe no array de steps e botar ali o conteúdo das células da collectionView
         let numOfCells = stepsCollectionView.numberOfItems(inSection: 0)
         steps.removeAll()
         var counter = 0
+        var indexPath = NSIndexPath(row: counter, section: 0)
+        
+        print("\nnumOfCells = \(numOfCells)")
+        print(stepsCollectionView.numberOfItems(inSection: 0))
         
         while counter < numOfCells {
             
-            let indexPath = NSIndexPath(row: counter, section: 0)
-            let cell = stepsCollectionView!.cellForItem(at: indexPath as IndexPath) as! StepCollectionViewCell
+            print(counter)
+            
+            self.view.layoutIfNeeded()
+            stepsCollectionView.layoutIfNeeded()
+            stepsCollectionView.scrollToItem(at: indexPath as IndexPath, at: UICollectionViewScrollPosition.bottom, animated: false)
+            
+            if let cell = stepsCollectionView.cellForItem(at: indexPath as IndexPath) as! StepCollectionViewCell! {
+                print("ok")
+            }
+            else {
+                print("whoops")
+            }
+            
+            let cell = stepsCollectionView.cellForItem(at: indexPath as IndexPath) as! StepCollectionViewCell
             
             // se for o último step!
             if counter == numOfCells - 1 {
@@ -245,6 +266,13 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             }
 
             counter += 1
+            
+            // scrollando collectionView pra última célula, pra que a mesma seja loadada e o cellForItem at indexPath não retorne nil
+            // estamos fazendo isso no final do loop ao invés do início -- quando essa linha tava no início, aparentemente não dava tempo de scrollar e o cellForItem at indexPath ainda retornava nil...
+            indexPath = NSIndexPath(row: counter, section: 0)
+            if counter < numOfCells {
+                stepsCollectionView.scrollToItem(at: indexPath as IndexPath, at: UICollectionViewScrollPosition.bottom, animated: false)
+            }
         }
         
         // criando um step a mais
@@ -254,12 +282,9 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         plusButton.isHidden = true
         
         // botando a collectionView de volta no lugar
-        stepsCollectionView.frame.origin = CGPoint(x: stepsCollectionView.frame.origin.x, y: stepsCollectionView.frame.origin.y - 1 - plusButton.frame.height as CGFloat!)
+        stepsCollectionView.frame.origin = CGPoint(x: stepsCollectionView.frame.origin.x, y: stepsCollectionView.frame.origin.y - plusButton.frame.height as CGFloat!)
         stepsCollectionView.reloadData()
     }
-    
-
-    // MARK: Navigation
     
     // 0. salva o novo nome do goal no banco -- PROBLEMA: mudar o nome = mudar a key?
     // 1. armazena as infos das cells existentes (caso não vazias) no array de steps
@@ -268,6 +293,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         print("")
         print("SAVE?")
         
+        print("ANTES")
         for step in steps {
             print("step \(step.index!)")
             print("step name = \(step.name!)")
@@ -280,10 +306,10 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         let numOfCells = stepsCollectionView.numberOfItems(inSection: 0)
         steps.removeAll()
         var counter = 0
+        var indexPath = NSIndexPath(row: counter, section: 0)
         
         while counter < numOfCells {
             
-            let indexPath = NSIndexPath(row: counter, section: 0)
             let cell = stepsCollectionView!.cellForItem(at: indexPath as IndexPath) as! StepCollectionViewCell
 
             // se for o último step!
@@ -295,6 +321,19 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             }
             
             counter += 1
+            
+            indexPath = NSIndexPath(row: counter, section: 0)
+            if counter < numOfCells {
+                stepsCollectionView.scrollToItem(at: indexPath as IndexPath, at: UICollectionViewScrollPosition.bottom, animated: false)
+            }
+        }
+        
+        print("DEPOIS, ANTES DE APAGAR O ULTIMO")
+        for step in steps {
+            print("step \(step.index!)")
+            print("step name = \(step.name!)")
+            print("isLastStep = \(step.isLastStep!)")
+            print("")
         }
         
         // se o último step tiver nome = "", apagá-lo
@@ -303,6 +342,14 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             steps[steps.count - 1].isLastStep = true
         }
         stepsCollectionView.reloadData()
+        
+        print("DEPOIS DE APAGAR O ULTIMO")
+        for step in steps {
+            print("step \(step.index!)")
+            print("step name = \(step.name!)")
+            print("isLastStep = \(step.isLastStep!)")
+            print("")
+        }
         
         // vamos criar um dicionário com os novos steps
         print(everyStepDict.popLast()!)
@@ -322,7 +369,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             print(everyStepDict.last!)
         }
         
-        let goalKey = placeholder
+        let goalKey = placeholderStr
         // primeiro deletamos o que tava no goal
         DAO.CST_STEPS_REF.child(userID).child(goalKey).removeValue { erro, ref in
             if (erro != nil) {
@@ -351,41 +398,56 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
     
     // MARK: Handlers for Asynchronous Stuff
     
-    func handleAsynchronousRequestForSteps (completionHandlerStepSaved: @escaping (Int) -> Void) {
+    func handleAsynchronousRequestForSteps (completionHandlerStepSaved: @escaping (_ numberCompleted: Int, _ numberOfSteps: Int) -> Void) {
         
-        var numCompleted = 0
+        var numberCompleted = 0
+        var numberOfSteps = -1
         
         // botando todos os steps referentes ao goal atual no array de steps
         let uid = userID
-        let goalKey = placeholder
+        let goalKey = placeholderStr
         
         DAO.CST_STEPS_REF.child(uid).child(goalKey).observe(.childAdded, with: { (snapshotSteps) in
             
             self.steps.append(Step(index: snapshotSteps.key, snapshot: snapshotSteps.value as! Dictionary<String, AnyObject>))
             
-            numCompleted += 1
-            completionHandlerStepSaved(numCompleted)
+            print("self.steps.last?.isLastStep! = \(self.steps[self.steps.count - 1].isLastStep!)")
+            print("self.steps.last?.isLastStep! = \(String(describing: self.steps.last?.isLastStep!))")
+            print("snapshotSteps.value = \(String(describing: snapshotSteps.value))")
+            
+//            if self.steps[self.steps.count - 1].isLastStep! {
+//                print("self.steps.count = \(self.steps.count)")
+//                numberOfSteps = self.steps.count
+//            }
+            if (self.steps.last?.isLastStep!)! {
+                print((self.steps.last?.index!)!)
+                numberOfSteps = Int((self.steps.last?.index!)!)!
+                print(numberOfSteps)
+            }
+            
+            numberCompleted += 1
+            completionHandlerStepSaved(numberCompleted, numberOfSteps)
         })
     }
     
-    // aplicar as alterações dos steps no banco !!
-    func handleAsynchronousRequestForChangingSteps (completionHandlerStepSaved: @escaping (Int) -> Void) {
-        
-        var numCompleted = 0
-        
-        // vms botar todos os steps referentes ao goal atual no array de steps
-        let uid = userID
-        let goalKey = placeholder
-        
-        // primeiro temos que apagar a key deste goal :O
-        DAO.CST_STEPS_REF.child(uid).child(goalKey).removeValue()
-        
-        // e aí adicioná-la de novo, com os steps novos
-        // cria nova entrada na CST_STEPS com uid do usuário. insere step novo (vazio) nessa nova entrada, e insere também o contador numberOfKeys na nova árvore de steps do usuário e o inicializa com o valor 1.
-        let everyStepKeyDict = [goalKey: everyStepDict]
-        let childUpdatesStep = ["\(uid)": everyStepKeyDict]
-        DAO.CST_STEPS_REF.updateChildValues(childUpdatesStep)
-    }
+//    // aplicar as alterações dos steps no banco !!
+//    func handleAsynchronousRequestForChangingSteps (completionHandlerStepSaved: @escaping (Int) -> Void) {
+//        
+//        var numberCompleted = 0
+//        
+//        // vms botar todos os steps referentes ao goal atual no array de steps
+//        let uid = userID
+//        let goalKey = placeholderStr
+//        
+//        // primeiro temos que apagar a key deste goal :O
+//        DAO.CST_STEPS_REF.child(uid).child(goalKey).removeValue()
+//        
+//        // e aí adicioná-la de novo, com os steps novos
+//        // cria nova entrada na CST_STEPS com uid do usuário. insere step novo (vazio) nessa nova entrada, e insere também o contador numberOfKeys na nova árvore de steps do usuário e o inicializa com o valor 1.
+//        let everyStepKeyDict = [goalKey: everyStepDict]
+//        let childUpdatesStep = ["\(uid)": everyStepKeyDict]
+//        DAO.CST_STEPS_REF.updateChildValues(childUpdatesStep)
+//    }
 
     
     // MARK: Text View Properties

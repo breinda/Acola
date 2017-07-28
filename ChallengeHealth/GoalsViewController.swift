@@ -253,7 +253,7 @@ class GoalsViewController: UIViewController {
             let goal = goals[(indexPath! as NSIndexPath).item]
             let goalEditingVC = segue.destination as! GoalEditingViewController
             
-            goalEditingVC.placeholder = goal.name
+            goalEditingVC.placeholderStr = goal.name
         }
         
         if segue.identifier == "goToCurrentStep" {
