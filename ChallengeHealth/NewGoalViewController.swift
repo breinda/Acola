@@ -90,10 +90,13 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
         // passar o nome do goal pra tela de edição
         if segue.identifier == "goToGoalEditingFromNewGoal" {
             
-            let goalText: String = goalTextView.text
+            let goalText: String = goalTextView.text!
             let goalEditingVC = segue.destination as! GoalEditingViewController
             
-            goalEditingVC.placeholder = goalText
+            print("goalText = \(goalText)")
+            print("goalEditingVC.placeholderStr = \(goalEditingVC.placeholderStr)")
+            
+            goalEditingVC.placeholderStr = goalText
         }
     }
     
