@@ -20,6 +20,10 @@ class GoalsViewController: UIViewController {
     @IBOutlet weak var boddiBubble: UIImageView!
     @IBOutlet weak var boddi: UIImageView!
     
+    @IBOutlet weak var bgRectangleImageView: UIImageView!
+    @IBOutlet weak var backRectangleImageView: UIImageView!
+    @IBOutlet weak var navBarRectangleImageView: UIImageView!
+    
     let mountainArray: [UIImage] = [UIImage(named: "iconeMontanha1")!, UIImage(named: "iconeMontanha2")!, UIImage(named: "iconeMontanha4")!, UIImage(named: "iconeMontanha3")!]
     var mountainArrayIndex = 0
     
@@ -30,6 +34,30 @@ class GoalsViewController: UIViewController {
         self.modalTransitionStyle = .crossDissolve
         
         //boddi.addAppearHappyJumpAnimation()
+        
+        // setando propriedades das imagens
+        bgRectangleImageView.layer.borderWidth = 1
+        bgRectangleImageView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+        
+        backRectangleImageView.layer.cornerRadius = 39
+        backRectangleImageView.layer.borderWidth = 1
+        backRectangleImageView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        
+        navBarRectangleImageView.layer.borderWidth = 1
+        navBarRectangleImageView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.12).cgColor
+        
+        boddiBubble.layer.cornerRadius = 26
+        boddiBubble.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
+        boddiBubble.layer.shadowOpacity = 0.1
+        boddiBubble.layer.shadowRadius = 4
+        boddiBubble.layer.shadowOffset = CGSize(width: 0, height: 2)
+        boddiBubble.layer.shouldRasterize = true
+        
+        boddi.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1).cgColor
+        boddi.layer.shadowOpacity = 0.1
+        boddi.layer.shadowRadius = 4
+        boddi.layer.shadowOffset = CGSize(width: 0, height: 2)
+        boddi.layer.shouldRasterize = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
