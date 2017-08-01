@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate {
+class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var stepsCollectionView: UICollectionView!
     var stepsCollectionViewCenterY: CGFloat!
@@ -24,14 +24,17 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
     
     @IBOutlet weak var plusButton: UIButton!
     
-    
     var steps = [Step]()
     var everyStepDict = [[], ["description": "", "isLastStep": true, "name": ""]] as [Any]
+    var selectedCellIndex: Int = -1
     
     var placeholderStr: String = "nada aqui :)"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // popando a parte inútil
+        print(everyStepDict.popLast()!)
         
         // setando espaçamento entre células como = 0
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -84,8 +87,6 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         stepsCollectionView.isUserInteractionEnabled = true
         panDown.delegate = self
         
-        //stepsCollectionViewCenterY = stepsCollectionView.center.y
-        //stepsCollectionViewCenterY = stepsCollectionView.frame.minY + 98 + 75 - 2
         stepsCollectionViewCenterY = stepsCollectionView.center.y
         print("VIEWDIDLOAD -- stepsCollectionViewCenterY = \(stepsCollectionViewCenterY)")
         
@@ -138,26 +139,36 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         let cell = stepsCollectionView.dequeueReusableCell(withReuseIdentifier: "stepCell", for: indexPath) as! StepCollectionViewCell
         let step = steps[(indexPath as NSIndexPath).row]
 
-        print("ESTOU NA CELULA \(indexPath)")
+        //print("ESTOU NA CELULA \(indexPath)")
         
         cell.configureCell(step)
         cell.backgroundColor = UIColor.clear
         cell.cellBackRectangleImageView.layer.borderWidth = 1
         cell.cellBackRectangleImageView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
+        cell.stepNameTextField.delegate = self
         
         // recalcula o stepsCollectionViewCenterY quando recarregamos a collectionView
-        //stepsCollectionViewCenterY = stepsCollectionView.frame.minY + 98 + 75 - 2
         stepsCollectionViewCenterY = stepsCollectionView.center.y
         
-        print("CELLFORITEMATINDEXPATH -- stepsCollectionViewCenterY = \(stepsCollectionViewCenterY)")
+        //print("CELLFORITEMATINDEXPATH -- stepsCollectionViewCenterY = \(stepsCollectionViewCenterY)")
         
         return cell
     }
     
     // cuida de o quanto a gente expande as células da collectionview
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
-        
         return CGSize(width: UIScreen.main.bounds.size.width, height: 98)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        selectedCellIndex = indexPath.row
+        print("INDEX SELECIONADO = \(selectedCellIndex)")
+        
+        //let cell = stepsCollectionView.dequeueReusableCell(withReuseIdentifier: "stepCell", for: indexPath) as! StepCollectionViewCell
+        
+        stepUserInteraction = true
+        stepsCollectionView.reloadData()
     }
     
     
@@ -219,8 +230,17 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
     // faz com que possamos reconhecer mais de um tipo de gesto ao mesmo tempo
     func gestureRecognizer(_: UIGestureRecognizer,
                            shouldRecognizeSimultaneouslyWith: UIGestureRecognizer) -> Bool {
-        //print("BUBUBU")
         return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("\nHELLO cabei de editar\n")
+        
+        // colocar aqui a salvação de step !!!!!!!!!
+        
+        print(textField.text!)
+        
+        stepUserInteraction = false
     }
     
     
@@ -237,6 +257,8 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         var counter = 0
         var indexPath = NSIndexPath(row: counter, section: 0)
         
+        var helperBool = false
+        
         print("\nnumOfCells = \(numOfCells)")
         print(stepsCollectionView.numberOfItems(inSection: 0))
         
@@ -244,25 +266,30 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             
             print(counter)
             
-            self.view.layoutIfNeeded()
-            stepsCollectionView.layoutIfNeeded()
-            stepsCollectionView.scrollToItem(at: indexPath as IndexPath, at: UICollectionViewScrollPosition.bottom, animated: false)
+//            self.view.layoutIfNeeded()
+//            stepsCollectionView.layoutIfNeeded()
+//            stepsCollectionView.scrollToItem(at: indexPath as IndexPath, at: UICollectionViewScrollPosition.bottom, animated: false)
             
-            if let cell = stepsCollectionView.cellForItem(at: indexPath as IndexPath) as! StepCollectionViewCell! {
-                print("ok")
-            }
-            else {
-                print("whoops")
+            
+            while helperBool == false {
+                if let cell = stepsCollectionView.cellForItem(at: indexPath as IndexPath) as! StepCollectionViewCell! {
+                    print("ok")
+                    helperBool = true
+                }
+                else {
+                    print("whoops")
+                    //stepsCollectionView.scrollToItem(at: indexPath as IndexPath, at: UICollectionViewScrollPosition.bottom, animated: false)
+                }
             }
             
             let cell = stepsCollectionView.cellForItem(at: indexPath as IndexPath) as! StepCollectionViewCell
             
             // se for o último step!
             if counter == numOfCells - 1 {
-                steps.append(Step(name: cell.stepNameLabel!.text!, description: "", index: cell.stepNumberLabel!.text!, isLastStep: true))
+                steps.append(Step(name: cell.stepNameTextField!.text!, description: "", index: cell.stepNumberLabel!.text!, isLastStep: true))
             }
             else { // todos os outros casos
-                steps.append(Step(name: cell.stepNameLabel!.text!, description: "", index: cell.stepNumberLabel!.text!, isLastStep: false))
+                steps.append(Step(name: cell.stepNameTextField!.text!, description: "", index: cell.stepNumberLabel!.text!, isLastStep: false))
             }
 
             counter += 1
@@ -272,7 +299,10 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             indexPath = NSIndexPath(row: counter, section: 0)
             if counter < numOfCells {
                 stepsCollectionView.scrollToItem(at: indexPath as IndexPath, at: UICollectionViewScrollPosition.bottom, animated: false)
+                //sleep(1)
             }
+            
+            helperBool = false
         }
         
         // criando um step a mais
@@ -310,14 +340,14 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         
         while counter < numOfCells {
             
-            let cell = stepsCollectionView!.cellForItem(at: indexPath as IndexPath) as! StepCollectionViewCell
+            let cell = stepsCollectionView.cellForItem(at: indexPath as IndexPath) as! StepCollectionViewCell
 
             // se for o último step!
             if counter == numOfCells - 1 {
-                steps.append(Step(name: cell.stepNameLabel!.text!, description: "", index: cell.stepNumberLabel!.text!, isLastStep: true))
+                steps.append(Step(name: cell.stepNameTextField!.text!, description: "", index: cell.stepNumberLabel!.text!, isLastStep: true))
             }
             else { // todos os outros casos
-                steps.append(Step(name: cell.stepNameLabel!.text!, description: "", index: cell.stepNumberLabel!.text!, isLastStep: false))
+                steps.append(Step(name: cell.stepNameTextField!.text!, description: "", index: cell.stepNumberLabel!.text!, isLastStep: false))
             }
             
             counter += 1
@@ -325,7 +355,9 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             indexPath = NSIndexPath(row: counter, section: 0)
             if counter < numOfCells {
                 stepsCollectionView.scrollToItem(at: indexPath as IndexPath, at: UICollectionViewScrollPosition.bottom, animated: false)
+                
             }
+            
         }
         
         print("DEPOIS, ANTES DE APAGAR O ULTIMO")
@@ -352,7 +384,13 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         }
         
         // vamos criar um dicionário com os novos steps
-        print(everyStepDict.popLast()!)
+        
+        // primeiro, apagamos o que existia aqui
+        everyStepDict.removeAll()
+        // inicializamos o dict
+        everyStepDict = [[], ["description": "", "isLastStep": true, "name": ""]] as [Any]
+        // e tiramos esse lixo do final
+        everyStepDict.popLast()
         
         print("")
         print("NOVOS STEPS:")
@@ -415,10 +453,6 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             print("self.steps.last?.isLastStep! = \(String(describing: self.steps.last?.isLastStep!))")
             print("snapshotSteps.value = \(String(describing: snapshotSteps.value))")
             
-//            if self.steps[self.steps.count - 1].isLastStep! {
-//                print("self.steps.count = \(self.steps.count)")
-//                numberOfSteps = self.steps.count
-//            }
             if (self.steps.last?.isLastStep!)! {
                 print((self.steps.last?.index!)!)
                 numberOfSteps = Int((self.steps.last?.index!)!)!

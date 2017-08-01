@@ -4,8 +4,17 @@ import MessageUI
 class AboutUsViewController: ElasticModalViewController/*UIViewController*/, UIScrollViewDelegate, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var aboutTextView: UITextView!
+    @IBOutlet weak var backRectangleImageView: UIImageView!
+    @IBOutlet weak var navBarRectangleImageView: UIImageView!
     
     override func viewDidLoad() {
+        
+        // setando propriedades das imagens
+        backRectangleImageView.layer.borderWidth = 1
+        backRectangleImageView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        
+        navBarRectangleImageView.layer.borderWidth = 1
+        navBarRectangleImageView.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.12).cgColor
     }
     
     // faz com que a textView apareça scrollada a partir do início

@@ -8,17 +8,22 @@
 
 import UIKit
 
+var stepUserInteraction: Bool = false
+
 class StepCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var cellBackRectangleImageView: UIImageView!
     @IBOutlet weak var cantoMontanhaImageView: UIImageView!
     
     @IBOutlet weak var stepNumberLabel: UILabel!
-    @IBOutlet weak var stepNameLabel: UITextView!
+    
+    @IBOutlet weak var stepNameTextField: StepCellTextField!
     
     func configureCell(_ step: Step) {
-        self.stepNameLabel.text = step.name
+        self.stepNameTextField.text = step.name
         self.stepNumberLabel.text = step.index
+        
+        self.stepNameTextField.isUserInteractionEnabled = stepUserInteraction
         
         if step.isLastStep {
             cantoMontanhaImageView.image = UIImage(named: "cantoMontanhaStepsTop_1x")
@@ -26,5 +31,7 @@ class StepCollectionViewCell: UICollectionViewCell {
         else {
             cantoMontanhaImageView.image = UIImage(named: "cantoMontanhaSteps_1x")
         }
+        
+        //self.stepNameLabel.isUserInteractionEnabled = false
     }
 }
