@@ -362,7 +362,7 @@ class CurrentStepViewController: UIViewController {
         self.present(alertView, animated: true, completion: nil)
     }
     
-    func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
+    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
         
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             

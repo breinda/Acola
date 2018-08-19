@@ -250,12 +250,12 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
         //print("uid: \(uid)")
         
         // cria nova entrada na CST_GOALS com uid do usuário. insere goal novo nessa nova entrada, e insere também o contador numberOfKeys na nova árvore de goals do usuário e o inicializa com o valor 1.
-        let goalKey = String(self.goalTextView.text)!
+        let goalKey = self.goalTextView.text!
         let name = goalKey
         let description = ""
         let firstStepDic : [String : String] = ["name": "", "description": ""]
         
-        let goalKeyDict = [goalKey: ["name": name, "description": description, "firstStep": firstStepDic]]
+        let goalKeyDict: [String : [String : Any]] = [goalKey: ["name": name, "description": description, "firstStep": firstStepDic]]
         let childUpdatesGoal = ["\(uid)": goalKeyDict]
         DAO.CST_GOALS_REF.updateChildValues(childUpdatesGoal)
         
@@ -287,7 +287,7 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
                 keyNumber += 1
                 print("keyNumber DEPOIS = \(keyNumber)")
 
-                let childUpdatesGoal = ["\(String(describing: key!))" : keyNumber]
+                let childUpdatesGoal = ["\(String(describing: key))" : keyNumber]
                 DAO.CST_GOALS_REF.updateChildValues(childUpdatesGoal)
                 
                 numberCompleted += 1
@@ -307,7 +307,7 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
                 keyNumber += 1
                 //print("keyNumber DEPOIS = \(keyNumber)")
                 
-                let childUpdatesGoal = ["\(String(describing: key!))" : keyNumber]
+                let childUpdatesGoal = ["\(String(describing: key))" : keyNumber]
                 DAO.CST_STEPS_REF.updateChildValues(childUpdatesGoal)
                 
                 numberCompleted += 1
@@ -328,7 +328,7 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
         print("uid: \(uid)")
         
         // cria nova entrada na árvore de CstGoals do usuário com novo goal
-        let goalKey = String(self.goalTextView.text)!
+        let goalKey = self.goalTextView.text!
         
         let name = goalKey
         let description = ""
@@ -363,7 +363,7 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
                 keyNumber += 1
                 print("keyNumber DEPOIS = \(keyNumber)")
                 
-                let childUpdates = ["\(String(describing: key!))" : keyNumber]
+                let childUpdates = ["\(String(describing: key))" : keyNumber]
                 DAO.CST_GOALS_REF.child(uid).updateChildValues(childUpdates)
                 
                 numberCompleted += 1
@@ -383,7 +383,7 @@ class NewGoalViewController: ElasticModalViewController, UITextViewDelegate {
                 keyNumber += 1
                 print("keyNumber DEPOIS = \(keyNumber)")
                 
-                let childUpdates = ["\(String(describing: key!))" : keyNumber]
+                let childUpdates = ["\(String(describing: key))" : keyNumber]
                 DAO.CST_STEPS_REF.child(uid).updateChildValues(childUpdates)
                 
                 numberCompleted += 1

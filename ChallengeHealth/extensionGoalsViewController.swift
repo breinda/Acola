@@ -61,7 +61,7 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     // MARK: Gesture Recognizers
     
-    func respondToTapGesture(_ gesture: UIGestureRecognizer) {
+    @objc func respondToTapGesture(_ gesture: UIGestureRecognizer) {
         print("Tapped")
         let cell = gesture.view! as! GoalCollectionViewCell
         print(type(of: cell))
@@ -72,7 +72,7 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         performSegue(withIdentifier: "goToCurrentStep", sender: cell)
     }
     
-    func respondToLongPressGesture(_ gesture: UIGestureRecognizer) {
+    @objc func respondToLongPressGesture(_ gesture: UIGestureRecognizer) {
         print("Long Pressed")
         let cell = gesture.view! as! GoalCollectionViewCell
         print(type(of: cell))
@@ -86,7 +86,7 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         }
     }
     
-    func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
+    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
         
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             

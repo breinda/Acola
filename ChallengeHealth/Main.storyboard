@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5ej-fI-ncZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5ej-fI-ncZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -694,7 +694,7 @@
             <objects>
                 <navigationController id="ydi-r6-1LE" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kUX-CS-kDk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                 </navigationController>
@@ -930,21 +930,21 @@
                         <viewControllerLayoutGuide type="bottom" id="kle-83-kgx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Y56-SC-1Uf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="337"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_Health_Login" translatesAutoresizingMaskIntoConstraints="NO" id="5k8-JM-uk6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="337"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0wB-v6-etg">
-                                <rect key="frame" x="0.0" y="620" width="375" height="47"/>
+                                <rect key="frame" x="0.0" y="290" width="375" height="47"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.81176470590000005" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="WFy-6R-MM3"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udh-qo-yGG" userLabel="backButton">
-                                <rect key="frame" x="15" y="632" width="17" height="23"/>
+                                <rect key="frame" x="15" y="302" width="17" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="sDr-3Q-hSN"/>
                                 </constraints>
@@ -954,7 +954,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STf-6n-Jcq">
-                                <rect key="frame" x="0.0" y="545" width="375" height="75"/>
+                                <rect key="frame" x="0.0" y="215" width="375" height="75"/>
                                 <color key="backgroundColor" red="0.60784313725490191" green="0.31372549019607843" blue="0.44313725490196076" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="NVU-S1-J29"/>
@@ -964,24 +964,24 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconeMontanha2" translatesAutoresizingMaskIntoConstraints="NO" id="Y0o-b6-KWA">
-                                <rect key="frame" x="0.0" y="554" width="101" height="68"/>
+                                <rect key="frame" x="0.0" y="224" width="101" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="101" id="f7z-Yu-z7m"/>
                                     <constraint firstAttribute="height" constant="68" id="z3o-SA-KzP"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FALE CONOSCO!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTf-Ez-mXp">
-                                <rect key="frame" x="101" y="550" width="274" height="65"/>
+                                <rect key="frame" x="101" y="220" width="274" height="65"/>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="28"/>
                                 <color key="textColor" red="0.99989169836044312" green="1" blue="0.99988096952438354" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jb7-9u-qea">
-                                <rect key="frame" x="0.0" y="20" width="375" height="525"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
                                 <color key="backgroundColor" white="1" alpha="0.39932041952054792" colorSpace="calibratedWhite"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PMT-tB-0h2">
-                                <rect key="frame" x="18" y="42" width="339" height="481"/>
+                                <rect key="frame" x="18" y="22" width="339" height="171"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Olá! Nós somos Brenda, Mariana e Mila, e criamos o ACOLÁ.
 
@@ -1155,14 +1155,14 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                         <viewControllerLayoutGuide type="bottom" id="Uxa-t7-DZU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zUh-JJ-teb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="337"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_Health_Login" translatesAutoresizingMaskIntoConstraints="NO" id="3X9-he-S5g">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="337"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="v1p-PG-oBO">
-                                <rect key="frame" x="0.0" y="295" width="375" height="325"/>
+                                <rect key="frame" x="0.0" y="275" width="375" height="15"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="035-vu-qoJ">
                                     <size key="itemSize" width="375" height="112"/>
@@ -1235,21 +1235,21 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 </connections>
                             </collectionView>
                             <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DdX-YI-cgJ">
-                                <rect key="frame" x="32" y="34" width="311" height="249"/>
+                                <rect key="frame" x="32" y="14" width="311" height="249"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="249" id="Cen-RC-4Jo"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.69999998807907104" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6jL-yt-OZB">
-                                <rect key="frame" x="50" y="55" width="275" height="129"/>
+                                <rect key="frame" x="50" y="35" width="275" height="129"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="129" id="A0Z-db-N52"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Estes telefones podem te ajudar em momentos difíceis. Por favor, não hesite em pedir ajuda." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mWn-1B-PvN">
-                                <rect key="frame" x="66" y="79" width="243" height="80"/>
+                                <rect key="frame" x="66" y="59" width="243" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="GeQ-v0-JGl"/>
                                 </constraints>
@@ -1258,21 +1258,21 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boddi_principal" translatesAutoresizingMaskIntoConstraints="NO" id="kAk-D7-rhQ">
-                                <rect key="frame" x="238" y="174" width="74" height="91"/>
+                                <rect key="frame" x="238" y="154" width="74" height="91"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="91" id="9tZ-cH-1pR"/>
                                     <constraint firstAttribute="width" constant="74" id="yDQ-Ns-TES"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fJd-5s-2HU">
-                                <rect key="frame" x="0.0" y="620" width="375" height="47"/>
+                                <rect key="frame" x="0.0" y="290" width="375" height="47"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.81176470590000005" blue="0.68627450980000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="ooe-lX-hcZ"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXV-6g-KHr" userLabel="backButton">
-                                <rect key="frame" x="15" y="632" width="17" height="23"/>
+                                <rect key="frame" x="15" y="302" width="17" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="Scc-2b-1GD"/>
                                 </constraints>
@@ -1283,7 +1283,7 @@ Queremos melhorar sempre e conseguir ajudar cada vez mais pessoas. Estamos sempr
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PhoneSignWhite_1x" translatesAutoresizingMaskIntoConstraints="NO" id="7TV-IA-API">
-                                <rect key="frame" x="211" y="230" width="38" height="35"/>
+                                <rect key="frame" x="211" y="210" width="38" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="38" id="IuW-uB-RoL"/>
                                     <constraint firstAttribute="height" constant="35" id="jkK-5f-DjG"/>
@@ -2055,7 +2055,8 @@ Daqui de cima dá pra ver tanta coisa… tudo pelo que nós passamos juntos pra 
         <image name="montanha2" width="500" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="32d-Dc-yln"/>
+        <segue reference="uTp-R5-LTl"/>
         <segue reference="aGi-7G-FYA"/>
+        <segue reference="gVR-V6-QaO"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0940"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A245959F9829A6FDB4E8531851F2F94C"
+               BlueprintIdentifier = "FB8F7898731EF4B78FF9F7618A05FFB9"
                BuildableName = "Pods_ChallengeHealth_ChallengeHealthUITests.framework"
                BlueprintName = "Pods-ChallengeHealth-ChallengeHealthUITests"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A245959F9829A6FDB4E8531851F2F94C"
+            BlueprintIdentifier = "FB8F7898731EF4B78FF9F7618A05FFB9"
             BuildableName = "Pods_ChallengeHealth_ChallengeHealthUITests.framework"
             BlueprintName = "Pods-ChallengeHealth-ChallengeHealthUITests"
             ReferencedContainer = "container:Pods.xcodeproj">

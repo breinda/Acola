@@ -10,7 +10,7 @@ class UserSettingsTableViewCell: UITableViewCell {
 
     var showsDetails = false {
         didSet {
-            detailViewHeightConstraint.priority = showsDetails ? lowLayoutPriority : highLayoutPriority
+            detailViewHeightConstraint.priority = UILayoutPriority(rawValue: showsDetails ? lowLayoutPriority : highLayoutPriority)
         }
     }
     

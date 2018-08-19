@@ -15,11 +15,11 @@ class DAO {
     static var CST_GOALS_REF = rootReference.child("customGoals")
     static var CST_STEPS_REF = rootReference.child("customSteps")
     
-    static func signUp(_ email: String, password: String, callback: @escaping AuthResultCallback) {
+    static func signUp(_ email: String, password: String, callback: @escaping AuthDataResultCallback) {
         Auth.auth().createUser(withEmail: email, password: password, completion: callback)
     }
     
-    static func login(_ username: String, password: String, callback: @escaping AuthResultCallback) {
+    static func login(_ username: String, password: String, callback: @escaping AuthDataResultCallback) {
         Auth.auth().signIn(withEmail: username, password: password, completion: callback)
     }
 }
