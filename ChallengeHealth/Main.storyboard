@@ -714,9 +714,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_Health_Login" translatesAutoresizingMaskIntoConstraints="NO" id="Sf5-nl-y6e">
-                                <rect key="frame" x="0.0" y="-8" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_Health_Login" translatesAutoresizingMaskIntoConstraints="NO" id="Sf5-nl-y6e">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WY2-Yu-72q">
                                 <rect key="frame" x="31" y="34" width="313" height="92"/>
@@ -895,16 +894,20 @@
                             <constraint firstItem="3MX-AQ-DjC" firstAttribute="top" secondItem="FMJ-Ab-AAz" secondAttribute="bottom" id="c0u-Zj-ipW"/>
                             <constraint firstItem="JBJ-JM-SsL" firstAttribute="top" secondItem="WY2-Yu-72q" secondAttribute="bottom" constant="23" id="cYa-YJ-1a3"/>
                             <constraint firstItem="Z8C-tG-uqK" firstAttribute="top" secondItem="WY2-Yu-72q" secondAttribute="bottom" constant="23" id="cap-xs-LLw"/>
+                            <constraint firstItem="3MX-AQ-DjC" firstAttribute="top" secondItem="Sf5-nl-y6e" secondAttribute="bottom" id="eSN-L7-nTd"/>
                             <constraint firstAttribute="trailing" secondItem="0C8-Br-Ut6" secondAttribute="trailing" constant="48" id="erW-Tr-mwq"/>
                             <constraint firstItem="jPo-J7-KBj" firstAttribute="top" secondItem="JBJ-JM-SsL" secondAttribute="bottom" id="frW-uE-wQX"/>
                             <constraint firstItem="WY2-Yu-72q" firstAttribute="leading" secondItem="DQo-nZ-dXE" secondAttribute="leading" constant="31" id="gf8-5O-ifc"/>
                             <constraint firstItem="3MX-AQ-DjC" firstAttribute="top" secondItem="2Ih-p9-1FD" secondAttribute="bottom" constant="9" id="gnp-qy-beZ"/>
                             <constraint firstItem="2Ih-p9-1FD" firstAttribute="leading" secondItem="DQo-nZ-dXE" secondAttribute="leading" id="pE2-c3-TQb"/>
+                            <constraint firstItem="Sf5-nl-y6e" firstAttribute="leading" secondItem="DQo-nZ-dXE" secondAttribute="leading" id="q0D-M5-Lgi"/>
                             <constraint firstItem="WY2-Yu-72q" firstAttribute="top" secondItem="EF7-Yv-1ux" secondAttribute="bottom" constant="14" id="qje-XB-Tny"/>
+                            <constraint firstItem="Sf5-nl-y6e" firstAttribute="top" secondItem="DQo-nZ-dXE" secondAttribute="top" id="tBU-Rd-4ZE"/>
                             <constraint firstAttribute="trailing" secondItem="FMJ-Ab-AAz" secondAttribute="trailing" constant="15" id="tcN-FJ-bHb"/>
                             <constraint firstItem="jPo-J7-KBj" firstAttribute="top" secondItem="Z8C-tG-uqK" secondAttribute="bottom" id="v6m-Bz-pgI"/>
                             <constraint firstAttribute="trailing" secondItem="JBJ-JM-SsL" secondAttribute="trailing" id="x8R-2i-3yK"/>
                             <constraint firstAttribute="trailing" secondItem="cOV-7p-v06" secondAttribute="trailing" constant="55" id="xpF-nV-ed9"/>
+                            <constraint firstAttribute="trailing" secondItem="Sf5-nl-y6e" secondAttribute="trailing" id="zKf-n1-3jO"/>
                         </constraints>
                     </view>
                     <connections>
@@ -919,7 +922,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ive-EE-Xef" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1847" y="1442"/>
+            <point key="canvasLocation" x="-1847.2" y="1441.529235382309"/>
         </scene>
         <!--About Us View Controller-->
         <scene sceneID="9fN-Ri-Wyz">
@@ -2055,8 +2058,8 @@ Daqui de cima dá pra ver tanta coisa… tudo pelo que nós passamos juntos pra 
         <image name="montanha2" width="500" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uTp-R5-LTl"/>
+        <segue reference="WBh-zj-jhb"/>
         <segue reference="aGi-7G-FYA"/>
-        <segue reference="gVR-V6-QaO"/>
+        <segue reference="32d-Dc-yln"/>
     </inferredMetricsTieBreakers>
 </document>
