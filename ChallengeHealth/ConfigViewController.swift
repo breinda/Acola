@@ -1,7 +1,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-import ElasticTransition
+//import ElasticTransition
 
 class ConfigViewController: /*UIViewController,*/ ElasticModalViewController, UITextViewDelegate {
     

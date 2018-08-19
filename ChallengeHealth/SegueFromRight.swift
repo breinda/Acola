@@ -8,7 +8,7 @@ class SegueFromRight: UIStoryboardSegue {
         //let dest: UIViewController = self.destinationViewController
         let transition : CATransition = CATransition()
         let timeFunc : CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        
+
         transition.duration = 0.25
         transition.timingFunction = timeFunc
         transition.type = kCATransitionPush

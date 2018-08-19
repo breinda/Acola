@@ -77,7 +77,7 @@ public class ElasticModalViewController: UIViewController, ElasticMenuTransition
     dismiss(animated: true, completion: nil)
   }
   
-  public func handleLeftPan(_ pan:UIPanGestureRecognizer){
+    @objc public func handleLeftPan(_ pan:UIPanGestureRecognizer){
     if pan.state == .began{
       modalTransition.transformType = dragRightTransformType
       modalTransition.edge = .right

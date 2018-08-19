@@ -23,7 +23,7 @@ class StepCollectionViewCell: UICollectionViewCell {
         self.stepNameTextField.text = step.name
         self.stepNumberLabel.text = step.index
         
-        self.stepNameTextField.isUserInteractionEnabled = stepUserInteraction
+        self.stepNameTextField.isUserInteractionEnabled = true //stepUserInteraction
         
         if step.isLastStep {
             cantoMontanhaImageView.image = UIImage(named: "cantoMontanhaStepsTop_1x")

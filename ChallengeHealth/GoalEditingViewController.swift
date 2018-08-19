@@ -156,7 +156,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
     }
     
     // cuida de o quanto a gente expande as células da collectionview
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
+    @objc func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
         return CGSize(width: UIScreen.main.bounds.size.width, height: 98)
     }
     
@@ -167,14 +167,14 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         
         //let cell = stepsCollectionView.dequeueReusableCell(withReuseIdentifier: "stepCell", for: indexPath) as! StepCollectionViewCell
         
-        stepUserInteraction = true
+        //stepUserInteraction = true
         stepsCollectionView.reloadData()
     }
     
     
     // MARK: Gesture Recognizers
     
-    func wasDragged(_ gestureRecognizer: UIPanGestureRecognizer) {
+    @objc func wasDragged(_ gestureRecognizer: UIPanGestureRecognizer) {
         
         if gestureRecognizer.state == UIGestureRecognizerState.began || gestureRecognizer.state == UIGestureRecognizerState.changed {
             
@@ -199,7 +199,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         }
     }
     
-    func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
+    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
         
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             
