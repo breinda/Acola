@@ -106,7 +106,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         do {
             regex = try NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options.caseInsensitive)
             
-            let range = NSMakeRange(0, string.characters.count)
+            let range = NSMakeRange(0, string.count)
             
             return regex.numberOfMatches(in: string, options: NSRegularExpression.MatchingOptions.reportProgress, range: range) != 0
             
@@ -171,7 +171,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             return;
         }
         
-        if (password?.characters.count < 6) {
+        if (password?.count < 6) {
             let alertView = UIAlertController(title: "erro 3 - Problema no cadastro",
                                               message: "Senha com menos de 6 caracteres." as String, preferredStyle:.alert)
             let okAction = UIAlertAction(title: "Tentar novamente", style: .default, handler: nil)
