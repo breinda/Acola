@@ -6,18 +6,18 @@ class UserSettingsViewController: UIViewController {
     
     @IBOutlet weak var userSettingsTableView: UITableView!
     
-    var expandedIndexPath: NSIndexPath? {
+    var expandedIndexPath: IndexPath? {
         didSet {
             switch expandedIndexPath {
-            case .Some(let index):
-                userSettingsTableView.reloadRowsAtIndexPaths([index], withRowAnimation: UITableViewRowAnimation.Automatic)
-            case .None:
-                userSettingsTableView.reloadRowsAtIndexPaths([oldValue!], withRowAnimation: UITableViewRowAnimation.Automatic)
+            case .some(let index):
+                userSettingsTableView.reloadRows(at: [index], with: UITableViewRowAnimation.automatic)
+            case .none:
+                userSettingsTableView.reloadRows(at: [oldValue!], with: UITableViewRowAnimation.automatic)
             }
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         userSettingsTableView.delegate = self
         userSettingsTableView.dataSource = self
@@ -31,8 +31,8 @@ class UserSettingsViewController: UIViewController {
         userSettingsTableView.estimatedRowHeight = 177
     }
     
-    @IBAction func returnButton(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func returnButton(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
 
 }

@@ -3,11 +3,13 @@ struct Goal {
     let name : String!
     let description : String!
     let firstStep : Step!
+    let isCustom : Bool!
     
-    init(key: String, snapshot: Dictionary<String,AnyObject>) {
+    init(key: String, isCustom: Bool, snapshot: Dictionary<String,AnyObject>) {
         self.key = key
         self.name = snapshot["name"] as! String
         self.description = snapshot["description"] as! String
+        self.isCustom = isCustom
         
         let firstStepDic = snapshot["firstStep"] as! [String : String]
         

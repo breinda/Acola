@@ -16,7 +16,22 @@
 		06C51C671D47157100409C26 /* extensionGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C51C661D47157100409C26 /* extensionGoalsViewController.swift */; };
 		06FF1B5C1D481CC700953BAE /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B5B1D481CC700953BAE /* SegueFromRight.swift */; };
 		06FF1B5E1D482CCB00953BAE /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06FF1B5D1D482CCB00953BAE /* TextField.swift */; };
+		8D1D8E3BE4493B65F2EB9056 /* Pods_ChallengeHealth_ChallengeHealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73EDE00AD3D9A9C74A5FB4B1 /* Pods_ChallengeHealth_ChallengeHealthUITests.framework */; };
 		A7D27DD2CE4F11ABD87D5D64 /* Pods_ChallengeHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007A7E7652F5C10253E2FBED /* Pods_ChallengeHealth.framework */; };
+		E102F84B1F30D23000F9A892 /* ConfigChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E102F84A1F30D23000F9A892 /* ConfigChildViewController.swift */; };
+		E1032E301F286A31002E3957 /* GoalEditingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1032E2F1F286A31002E3957 /* GoalEditingViewController.swift */; };
+		E1032E321F298DBC002E3957 /* StepCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1032E311F298DBC002E3957 /* StepCollectionViewCell.swift */; };
+		E106AA1C1ED7C310003CDDEB /* SummitReachedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E106AA1B1ED7C310003CDDEB /* SummitReachedViewController.swift */; };
+		E107E6F01F133EDE0056A1F9 /* EdgePanTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107E6EA1F133EDE0056A1F9 /* EdgePanTransition.swift */; };
+		E107E6F11F133EDE0056A1F9 /* ElasticModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107E6EB1F133EDE0056A1F9 /* ElasticModalViewController.swift */; };
+		E107E6F21F133EDE0056A1F9 /* ElasticShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107E6EC1F133EDE0056A1F9 /* ElasticShapeLayer.swift */; };
+		E107E6F31F133EDE0056A1F9 /* ElasticTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107E6ED1F133EDE0056A1F9 /* ElasticTransition.swift */; };
+		E107E6F41F133EDE0056A1F9 /* ElasticTransitionPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107E6EE1F133EDE0056A1F9 /* ElasticTransitionPresentationController.swift */; };
+		E107E6F51F133EDE0056A1F9 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107E6EF1F133EDE0056A1F9 /* Util.swift */; };
+		E107E7371F181F860056A1F9 /* ChallengeHealthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E107E7361F181F860056A1F9 /* ChallengeHealthUITests.swift */; };
+		E1205C0F1F2D35E100899B97 /* StepCellTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1205C0E1F2D35E100899B97 /* StepCellTextField.swift */; };
+		E126BA001F11B10B00A45713 /* PhoneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E126B9FF1F11B10B00A45713 /* PhoneCollectionViewCell.swift */; };
+		E126BA021F11B55200A45713 /* Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = E126BA011F11B55200A45713 /* Phone.swift */; };
 		E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */; };
 		E14948C61D35680E00BB8FB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E14948C51D35680E00BB8FB2 /* Assets.xcassets */; };
 		E14948C91D35680E00BB8FB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E14948C71D35680E00BB8FB2 /* LaunchScreen.storyboard */; };
@@ -24,14 +39,27 @@
 		E14948D51D356AFA00BB8FB2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14948D41D356AFA00BB8FB2 /* LoginViewController.swift */; };
 		E14948D71D356B1E00BB8FB2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14948D61D356B1E00BB8FB2 /* SignUpViewController.swift */; };
 		E14948D91D356B3C00BB8FB2 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14948D81D356B3C00BB8FB2 /* DAO.swift */; };
+		E17474121F184FBB0042893F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E17474111F184FBB0042893F /* GoogleService-Info.plist */; };
+		E1A847EE1EDDF27500A13FC3 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A847ED1EDDF27500A13FC3 /* Button.swift */; };
 		E1BD0CB91D3D463400EC26BA /* GoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD0CB81D3D463400EC26BA /* GoalsViewController.swift */; };
 		E1BD0CBB1D3D48C300EC26BA /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD0CBA1D3D48C300EC26BA /* ConfigViewController.swift */; };
 		E1BD0CBD1D3D522300EC26BA /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD0CBC1D3D522300EC26BA /* Goal.swift */; };
 		E1BD0CBF1D3D532700EC26BA /* GoalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD0CBE1D3D532700EC26BA /* GoalCollectionViewCell.swift */; };
 		E1BD0CC31D3D61C500EC26BA /* CurrentStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BD0CC21D3D61C500EC26BA /* CurrentStepViewController.swift */; };
+		E1C14B7E1F26867000222B15 /* NewGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C14B7D1F26867000222B15 /* NewGoalViewController.swift */; };
 		E1DCF4911D3F3EAF005479D6 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DCF4901D3F3EAF005479D6 /* Step.swift */; };
 		E1F8493A1D416D3700AF3E4D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F849391D416D3700AF3E4D /* User.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E107E7391F181F860056A1F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E14948B31D35680D00BB8FB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E14948BA1D35680D00BB8FB2;
+			remoteInfo = ChallengeHealth;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		007A7E7652F5C10253E2FBED /* Pods_ChallengeHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChallengeHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +73,27 @@
 		06FF1B5B1D481CC700953BAE /* SegueFromRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueFromRight.swift; sourceTree = "<group>"; };
 		06FF1B5D1D482CCB00953BAE /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		28BB55857FF9BEA5F2C9F59E /* Pods-ChallengeHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth.debug.xcconfig"; sourceTree = "<group>"; };
+		73EDE00AD3D9A9C74A5FB4B1 /* Pods_ChallengeHealth_ChallengeHealthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChallengeHealth_ChallengeHealthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93DD4E85E5F3B786AD138C6B /* Pods-ChallengeHealthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealthUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealthUITests/Pods-ChallengeHealthUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AC880BF925ACBBF036F063E4 /* Pods-ChallengeHealthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealthUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealthUITests/Pods-ChallengeHealthUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B9EFA970596509DFC9D39CF7 /* Pods-ChallengeHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth.release.xcconfig"; sourceTree = "<group>"; };
+		C9939B2CE750259C0FFBF6A2 /* Pods-ChallengeHealth-ChallengeHealthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth-ChallengeHealthUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth-ChallengeHealthUITests/Pods-ChallengeHealth-ChallengeHealthUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E102F84A1F30D23000F9A892 /* ConfigChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigChildViewController.swift; sourceTree = "<group>"; };
+		E1032E2F1F286A31002E3957 /* GoalEditingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalEditingViewController.swift; sourceTree = "<group>"; };
+		E1032E311F298DBC002E3957 /* StepCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCollectionViewCell.swift; sourceTree = "<group>"; };
+		E106AA1B1ED7C310003CDDEB /* SummitReachedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummitReachedViewController.swift; sourceTree = "<group>"; };
+		E107E6EA1F133EDE0056A1F9 /* EdgePanTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdgePanTransition.swift; sourceTree = "<group>"; };
+		E107E6EB1F133EDE0056A1F9 /* ElasticModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticModalViewController.swift; sourceTree = "<group>"; };
+		E107E6EC1F133EDE0056A1F9 /* ElasticShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticShapeLayer.swift; sourceTree = "<group>"; };
+		E107E6ED1F133EDE0056A1F9 /* ElasticTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticTransition.swift; sourceTree = "<group>"; };
+		E107E6EE1F133EDE0056A1F9 /* ElasticTransitionPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElasticTransitionPresentationController.swift; sourceTree = "<group>"; };
+		E107E6EF1F133EDE0056A1F9 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		E107E7341F181F860056A1F9 /* ChallengeHealthUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChallengeHealthUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E107E7361F181F860056A1F9 /* ChallengeHealthUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeHealthUITests.swift; sourceTree = "<group>"; };
+		E107E7381F181F860056A1F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1205C0E1F2D35E100899B97 /* StepCellTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepCellTextField.swift; sourceTree = "<group>"; };
+		E126B9FF1F11B10B00A45713 /* PhoneCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneCollectionViewCell.swift; sourceTree = "<group>"; };
+		E126BA011F11B55200A45713 /* Phone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Phone.swift; sourceTree = "<group>"; };
 		E14948BB1D35680D00BB8FB2 /* ChallengeHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChallengeHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E14948C51D35680E00BB8FB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,16 +103,28 @@
 		E14948D41D356AFA00BB8FB2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E14948D61D356B1E00BB8FB2 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		E14948D81D356B3C00BB8FB2 /* DAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		E17474111F184FBB0042893F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E1A847ED1EDDF27500A13FC3 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		E1BD0CB81D3D463400EC26BA /* GoalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsViewController.swift; sourceTree = "<group>"; };
 		E1BD0CBA1D3D48C300EC26BA /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		E1BD0CBC1D3D522300EC26BA /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		E1BD0CBE1D3D532700EC26BA /* GoalCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalCollectionViewCell.swift; sourceTree = "<group>"; };
 		E1BD0CC21D3D61C500EC26BA /* CurrentStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentStepViewController.swift; sourceTree = "<group>"; };
+		E1C14B7D1F26867000222B15 /* NewGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGoalViewController.swift; sourceTree = "<group>"; };
 		E1DCF4901D3F3EAF005479D6 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		E1F849391D416D3700AF3E4D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F02B064EA12BE3398FBC1A81 /* Pods-ChallengeHealth-ChallengeHealthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChallengeHealth-ChallengeHealthUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChallengeHealth-ChallengeHealthUITests/Pods-ChallengeHealth-ChallengeHealthUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E107E7311F181F860056A1F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D1D8E3BE4493B65F2EB9056 /* Pods_ChallengeHealth_ChallengeHealthUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E14948B81D35680D00BB8FB2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -89,14 +149,39 @@
 			isa = PBXGroup;
 			children = (
 				007A7E7652F5C10253E2FBED /* Pods_ChallengeHealth.framework */,
+				73EDE00AD3D9A9C74A5FB4B1 /* Pods_ChallengeHealth_ChallengeHealthUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E107E7351F181F860056A1F9 /* ChallengeHealthUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E107E7361F181F860056A1F9 /* ChallengeHealthUITests.swift */,
+				E107E7381F181F860056A1F9 /* Info.plist */,
+				E17474111F184FBB0042893F /* GoogleService-Info.plist */,
+			);
+			path = ChallengeHealthUITests;
+			sourceTree = "<group>";
+		};
+		E1205C0D1F2D354000899B97 /* Elastic Transition */ = {
+			isa = PBXGroup;
+			children = (
+				E107E6EA1F133EDE0056A1F9 /* EdgePanTransition.swift */,
+				E107E6EB1F133EDE0056A1F9 /* ElasticModalViewController.swift */,
+				E107E6EC1F133EDE0056A1F9 /* ElasticShapeLayer.swift */,
+				E107E6ED1F133EDE0056A1F9 /* ElasticTransition.swift */,
+				E107E6EE1F133EDE0056A1F9 /* ElasticTransitionPresentationController.swift */,
+				E107E6EF1F133EDE0056A1F9 /* Util.swift */,
+			);
+			name = "Elastic Transition";
 			sourceTree = "<group>";
 		};
 		E14948B21D35680D00BB8FB2 = {
 			isa = PBXGroup;
 			children = (
 				E14948BD1D35680E00BB8FB2 /* ChallengeHealth */,
+				E107E7351F181F860056A1F9 /* ChallengeHealthUITests */,
 				E14948BC1D35680D00BB8FB2 /* Products */,
 				F09B35C105542325BE187980 /* Pods */,
 				8891A6AFDC4F8CE0A11D9C78 /* Frameworks */,
@@ -107,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				E14948BB1D35680D00BB8FB2 /* ChallengeHealth.app */,
+				E107E7341F181F860056A1F9 /* ChallengeHealthUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,6 +203,9 @@
 				E14948BE1D35680E00BB8FB2 /* AppDelegate.swift */,
 				E14948D81D356B3C00BB8FB2 /* DAO.swift */,
 				06FF1B5B1D481CC700953BAE /* SegueFromRight.swift */,
+				06FF1B5D1D482CCB00953BAE /* TextField.swift */,
+				E1A847ED1EDDF27500A13FC3 /* Button.swift */,
+				E1205C0D1F2D354000899B97 /* Elastic Transition */,
 				E1BD0CC11D3D616A00EC26BA /* User */,
 				E1BD0CC41D3D679400EC26BA /* Goals and Steps */,
 				E1BD0CC01D3D614100EC26BA /* Structs */,
@@ -137,6 +226,7 @@
 				E1F849391D416D3700AF3E4D /* User.swift */,
 				E1BD0CBC1D3D522300EC26BA /* Goal.swift */,
 				E1DCF4901D3F3EAF005479D6 /* Step.swift */,
+				E126BA011F11B55200A45713 /* Phone.swift */,
 			);
 			name = Structs;
 			sourceTree = "<group>";
@@ -147,9 +237,9 @@
 				E14948D41D356AFA00BB8FB2 /* LoginViewController.swift */,
 				E14948D61D356B1E00BB8FB2 /* SignUpViewController.swift */,
 				E1BD0CBA1D3D48C300EC26BA /* ConfigViewController.swift */,
+				E102F84A1F30D23000F9A892 /* ConfigChildViewController.swift */,
 				069B0FB91D3F2F0F000818F0 /* UserSettingsViewController.swift */,
 				060E2BF51D3F597D00097E81 /* extensionUserSettingsViewController.swift */,
-				06FF1B5D1D482CCB00953BAE /* TextField.swift */,
 			);
 			name = User;
 			sourceTree = "<group>";
@@ -160,6 +250,10 @@
 				E1BD0CB81D3D463400EC26BA /* GoalsViewController.swift */,
 				06C51C661D47157100409C26 /* extensionGoalsViewController.swift */,
 				E1BD0CC21D3D61C500EC26BA /* CurrentStepViewController.swift */,
+				E106AA1B1ED7C310003CDDEB /* SummitReachedViewController.swift */,
+				E1C14B7D1F26867000222B15 /* NewGoalViewController.swift */,
+				E1205C0E1F2D35E100899B97 /* StepCellTextField.swift */,
+				E1032E2F1F286A31002E3957 /* GoalEditingViewController.swift */,
 			);
 			name = "Goals and Steps";
 			sourceTree = "<group>";
@@ -169,6 +263,8 @@
 			children = (
 				E1BD0CBE1D3D532700EC26BA /* GoalCollectionViewCell.swift */,
 				0661FE7A1D4132250075DCCA /* UserSettingsTableViewCell.swift */,
+				E126B9FF1F11B10B00A45713 /* PhoneCollectionViewCell.swift */,
+				E1032E311F298DBC002E3957 /* StepCollectionViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -178,6 +274,10 @@
 			children = (
 				28BB55857FF9BEA5F2C9F59E /* Pods-ChallengeHealth.debug.xcconfig */,
 				B9EFA970596509DFC9D39CF7 /* Pods-ChallengeHealth.release.xcconfig */,
+				93DD4E85E5F3B786AD138C6B /* Pods-ChallengeHealthUITests.debug.xcconfig */,
+				AC880BF925ACBBF036F063E4 /* Pods-ChallengeHealthUITests.release.xcconfig */,
+				C9939B2CE750259C0FFBF6A2 /* Pods-ChallengeHealth-ChallengeHealthUITests.debug.xcconfig */,
+				F02B064EA12BE3398FBC1A81 /* Pods-ChallengeHealth-ChallengeHealthUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -185,6 +285,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E107E7331F181F860056A1F9 /* ChallengeHealthUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E107E73B1F181F860056A1F9 /* Build configuration list for PBXNativeTarget "ChallengeHealthUITests" */;
+			buildPhases = (
+				0564E31490E42A53432C2340 /* [CP] Check Pods Manifest.lock */,
+				E107E7301F181F860056A1F9 /* Sources */,
+				E107E7311F181F860056A1F9 /* Frameworks */,
+				E107E7321F181F860056A1F9 /* Resources */,
+				199A046B941545244CD23647 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E107E73A1F181F860056A1F9 /* PBXTargetDependency */,
+			);
+			name = ChallengeHealthUITests;
+			productName = ChallengeHealthUITests;
+			productReference = E107E7341F181F860056A1F9 /* ChallengeHealthUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		E14948BA1D35680D00BB8FB2 /* ChallengeHealth */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E14948CD1D35680E00BB8FB2 /* Build configuration list for PBXNativeTarget "ChallengeHealth" */;
@@ -197,9 +317,7 @@
 				E14948B81D35680D00BB8FB2 /* Frameworks */,
 				E14948B91D35680D00BB8FB2 /* Resources */,
 				F94C38FEA94957B24BCDDDDF /* [CP] Embed Pods Frameworks */,
-				B4C2B1A8D97CD075B8243E44 /* [CP] Copy Pods Resources */,
 				2CBBE34B09D83F33F6F576D7 /* 📦 Embed Pods Frameworks */,
-				AB6AFDC61EAA61CE87CCA43D /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,13 +334,29 @@
 		E14948B31D35680D00BB8FB2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				KnownAssetTags = (
+					New,
+				);
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Brenda Carrocino";
 				TargetAttributes = {
+					E107E7331F181F860056A1F9 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = ZRWVQTGDLK;
+						LastSwiftMigration = 0940;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E14948BA1D35680D00BB8FB2;
+					};
 					E14948BA1D35680D00BB8FB2 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = ZRWVQTGDLK;
+						LastSwiftMigration = 0940;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -240,11 +374,20 @@
 			projectRoot = "";
 			targets = (
 				E14948BA1D35680D00BB8FB2 /* ChallengeHealth */,
+				E107E7331F181F860056A1F9 /* ChallengeHealthUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E107E7321F181F860056A1F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E17474121F184FBB0042893F /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E14948B91D35680D00BB8FB2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -259,6 +402,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0564E31490E42A53432C2340 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChallengeHealth-ChallengeHealthUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		0F97B991B74E6C85317ADB10 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,6 +465,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		199A046B941545244CD23647 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeHealth-ChallengeHealthUITests/Pods-ChallengeHealth-ChallengeHealthUITests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ElasticTransition/ElasticTransition.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimation/MotionAnimation.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ElasticTransition.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeHealth-ChallengeHealthUITests/Pods-ChallengeHealth-ChallengeHealthUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2CBBE34B09D83F33F6F576D7 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,49 +508,22 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AB6AFDC61EAA61CE87CCA43D /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B4C2B1A8D97CD075B8243E44 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		BE3BC549F17ADD069412ACC4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ChallengeHealth-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F94C38FEA94957B24BCDDDDF /* [CP] Embed Pods Frameworks */ = {
@@ -370,9 +532,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ElasticTransition/ElasticTransition.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimation/MotionAnimation.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ElasticTransition.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -382,24 +557,47 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E107E7301F181F860056A1F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E107E7371F181F860056A1F9 /* ChallengeHealthUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E14948B71D35680D00BB8FB2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				06FF1B5C1D481CC700953BAE /* SegueFromRight.swift in Sources */,
 				E1BD0CB91D3D463400EC26BA /* GoalsViewController.swift in Sources */,
+				E106AA1C1ED7C310003CDDEB /* SummitReachedViewController.swift in Sources */,
+				E107E6F31F133EDE0056A1F9 /* ElasticTransition.swift in Sources */,
+				E107E6F21F133EDE0056A1F9 /* ElasticShapeLayer.swift in Sources */,
 				E14948D51D356AFA00BB8FB2 /* LoginViewController.swift in Sources */,
+				E107E6F51F133EDE0056A1F9 /* Util.swift in Sources */,
 				E1BD0CBD1D3D522300EC26BA /* Goal.swift in Sources */,
 				E1BD0CBF1D3D532700EC26BA /* GoalCollectionViewCell.swift in Sources */,
+				E126BA021F11B55200A45713 /* Phone.swift in Sources */,
 				06A9D4D01D4558AC00296130 /* AboutUsViewController.swift in Sources */,
+				E1205C0F1F2D35E100899B97 /* StepCellTextField.swift in Sources */,
 				E1BD0CBB1D3D48C300EC26BA /* ConfigViewController.swift in Sources */,
 				E14948D71D356B1E00BB8FB2 /* SignUpViewController.swift in Sources */,
+				E107E6F41F133EDE0056A1F9 /* ElasticTransitionPresentationController.swift in Sources */,
 				06A9D4D21D45619400296130 /* EmergencyPhonesViewController.swift in Sources */,
+				E1032E301F286A31002E3957 /* GoalEditingViewController.swift in Sources */,
+				E102F84B1F30D23000F9A892 /* ConfigChildViewController.swift in Sources */,
 				069B0FBA1D3F2F0F000818F0 /* UserSettingsViewController.swift in Sources */,
 				E14948BF1D35680E00BB8FB2 /* AppDelegate.swift in Sources */,
+				E1A847EE1EDDF27500A13FC3 /* Button.swift in Sources */,
 				06FF1B5E1D482CCB00953BAE /* TextField.swift in Sources */,
 				060E2BF61D3F597D00097E81 /* extensionUserSettingsViewController.swift in Sources */,
+				E126BA001F11B10B00A45713 /* PhoneCollectionViewCell.swift in Sources */,
+				E107E6F01F133EDE0056A1F9 /* EdgePanTransition.swift in Sources */,
+				E107E6F11F133EDE0056A1F9 /* ElasticModalViewController.swift in Sources */,
 				E1DCF4911D3F3EAF005479D6 /* Step.swift in Sources */,
+				E1C14B7E1F26867000222B15 /* NewGoalViewController.swift in Sources */,
+				E1032E321F298DBC002E3957 /* StepCollectionViewCell.swift in Sources */,
 				0661FE7B1D4132250075DCCA /* UserSettingsTableViewCell.swift in Sources */,
 				06C51C671D47157100409C26 /* extensionGoalsViewController.swift in Sources */,
 				E1BD0CC31D3D61C500EC26BA /* CurrentStepViewController.swift in Sources */,
@@ -409,6 +607,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E107E73A1F181F860056A1F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E14948BA1D35680D00BB8FB2 /* ChallengeHealth */;
+			targetProxy = E107E7391F181F860056A1F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E14948C71D35680E00BB8FB2 /* LaunchScreen.storyboard */ = {
@@ -422,6 +628,89 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		E107E73C1F181F860056A1F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9939B2CE750259C0FFBF6A2 /* Pods-ChallengeHealth-ChallengeHealthUITests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = ZRWVQTGDLK;
+				INFOPLIST_FILE = ChallengeHealthUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"GTMSessionFetcher\"",
+					"-framework",
+					"\"GoogleToolboxForMac\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"nanopb\"",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = BrendaCarrocino.ChallengeHealthUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = ChallengeHealth;
+			};
+			name = Debug;
+		};
+		E107E73D1F181F860056A1F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F02B064EA12BE3398FBC1A81 /* Pods-ChallengeHealth-ChallengeHealthUITests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				DEVELOPMENT_TEAM = ZRWVQTGDLK;
+				INFOPLIST_FILE = ChallengeHealthUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"icucore\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"GTMSessionFetcher\"",
+					"-framework",
+					"\"GoogleToolboxForMac\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"nanopb\"",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = BrendaCarrocino.ChallengeHealthUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = ChallengeHealth;
+			};
+			name = Release;
+		};
 		E14948CB1D35680E00BB8FB2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -431,13 +720,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -476,13 +775,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -501,6 +810,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -510,6 +820,7 @@
 			baseConfigurationReference = 28BB55857FF9BEA5F2C9F59E /* Pods-ChallengeHealth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ChallengeHealth/ChallengeHealth.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ChallengeHealth/Info.plist;
@@ -517,6 +828,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = BEPiD.ChallengeHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -525,6 +838,7 @@
 			baseConfigurationReference = B9EFA970596509DFC9D39CF7 /* Pods-ChallengeHealth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ChallengeHealth/ChallengeHealth.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ChallengeHealth/Info.plist;
@@ -532,12 +846,23 @@
 				PRODUCT_BUNDLE_IDENTIFIER = BEPiD.ChallengeHealth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E107E73B1F181F860056A1F9 /* Build configuration list for PBXNativeTarget "ChallengeHealthUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E107E73C1F181F860056A1F9 /* Debug */,
+				E107E73D1F181F860056A1F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E14948B61D35680D00BB8FB2 /* Build configuration list for PBXProject "ChallengeHealth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

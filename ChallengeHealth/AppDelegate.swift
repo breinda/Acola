@@ -7,34 +7,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        FIRApp.configure()
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        var handle : FIRAuthStateDidChangeListenerHandle
+        // Use Firebase library to configure APIs
+        FirebaseApp.configure()
         
-        handle = (FIRAuth.auth()?.addAuthStateDidChangeListener { auth, user in
+        var handle : AuthStateDidChangeListenerHandle
+        
+        handle = (Auth.auth().addStateDidChangeListener { auth, user in
             if let user = user {
                 // User is signed in.
                 let uid = user.uid;
+                userID = uid
                 
-                DAO.USERS_REF.child(uid).observeEventType(.ChildAdded, withBlock: { (snapshot) in
+                DAO.USERS_REF.child(uid).observe(.childAdded, with: { (snapshot) in
                     
                     // faz com a view inicial seja a de Goals, se o usuário não tiver escolhido nenhum goal, e que seja a de Steps, caso contrário
+                    
+                    if snapshot.key == "name" {
+                        username = snapshot.value as! String
+                    }
                     
                     if snapshot.key == "currentStepNumber" {
                         
                         let userStepNumber = snapshot.value as! String
                         
                         if userStepNumber == "0" {
-                            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+                            self.window = UIWindow(frame: UIScreen.main.bounds)
                             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                            let vc = mainStoryboard.instantiateViewControllerWithIdentifier("goalsVC")
+                            let vc = mainStoryboard.instantiateViewController(withIdentifier: "goalsVC")
                             self.window?.rootViewController = vc
                         }
                         else {
-                            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+                            self.window = UIWindow(frame: UIScreen.main.bounds)
                             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                            let vc = mainStoryboard.instantiateViewControllerWithIdentifier("currentStepVC")
+                            let vc = mainStoryboard.instantiateViewController(withIdentifier: "currentStepVC")
                             self.window?.rootViewController = vc
                         }
                         
@@ -45,18 +52,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             else {
                 print("OIR")
-                self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+                self.window = UIWindow(frame: UIScreen.main.bounds)
                 let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = mainStoryboard.instantiateViewControllerWithIdentifier("loginVC")
+                let vc = mainStoryboard.instantiateViewController(withIdentifier: "loginVC")
                 self.window?.rootViewController = vc
                 
                 self.window?.makeKeyAndVisible()
             }
-            })!
+        })
         
-        FIRAuth.auth()?.removeAuthStateDidChangeListener(handle)
+        Auth.auth().removeStateDidChangeListener(handle)
         
         return true
+    }
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask(rawValue: UIInterfaceOrientationMask.portrait.rawValue)
     }
     
 }

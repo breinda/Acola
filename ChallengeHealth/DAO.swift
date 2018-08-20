@@ -2,7 +2,9 @@ import Foundation
 import Firebase
 import FirebaseAuth
 
-let rootReference = FIRDatabase.database().reference()
+let rootReference = Database.database().reference()
+var userID: String = ""
+var username: String = ""
 
 class DAO {
     
@@ -10,12 +12,14 @@ class DAO {
     static var STD_GOALS_REF = rootReference.child("standardGoals")
     static var STD_STEPS_REF = rootReference.child("standardSteps")
     static var USERS_REF = rootReference.child("users")
-
-    static func signUp(email: String, password: String, callback: FIRAuthResultCallback) {
-        FIRAuth.auth()?.createUserWithEmail(email, password: password, completion: callback)
+    static var CST_GOALS_REF = rootReference.child("customGoals")
+    static var CST_STEPS_REF = rootReference.child("customSteps")
+    
+    static func signUp(_ email: String, password: String, callback: @escaping AuthDataResultCallback) {
+        Auth.auth().createUser(withEmail: email, password: password, completion: callback)
     }
     
-    static func login(username: String, password: String, callback: FIRAuthResultCallback) {
-        FIRAuth.auth()?.signInWithEmail(username, password: password, completion: callback)
+    static func login(_ username: String, password: String, callback: @escaping AuthDataResultCallback) {
+        Auth.auth().signIn(withEmail: username, password: password, completion: callback)
     }
 }
