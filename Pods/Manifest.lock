@@ -49,7 +49,7 @@ DEPENDENCIES:
   - FirebaseAuth
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - ElasticTransition
     - Firebase
     - FirebaseAnalytics
@@ -79,4 +79,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 6113b66dd32192e74f13f2cce6fc3ffbac1dc203
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.3
