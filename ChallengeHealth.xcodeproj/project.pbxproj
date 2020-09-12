@@ -338,7 +338,7 @@
 					New,
 				);
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Brenda Carrocino";
 				TargetAttributes = {
 					E107E7331F181F860056A1F9 = {
