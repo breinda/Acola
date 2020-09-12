@@ -362,7 +362,7 @@
 			};
 			buildConfigurationList = E14948B61D35680D00BB8FB2 /* Build configuration list for PBXProject "ChallengeHealth" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -471,7 +471,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeHealth-ChallengeHealthUITests/Pods-ChallengeHealth-ChallengeHealthUITests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ChallengeHealth-ChallengeHealthUITests/Pods-ChallengeHealth-ChallengeHealthUITests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ElasticTransition/ElasticTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -490,7 +490,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeHealth-ChallengeHealthUITests/Pods-ChallengeHealth-ChallengeHealthUITests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChallengeHealth-ChallengeHealthUITests/Pods-ChallengeHealth-ChallengeHealthUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2CBBE34B09D83F33F6F576D7 /* 📦 Embed Pods Frameworks */ = {
@@ -532,7 +532,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ElasticTransition/ElasticTransition.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -551,7 +551,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChallengeHealth/Pods-ChallengeHealth-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
