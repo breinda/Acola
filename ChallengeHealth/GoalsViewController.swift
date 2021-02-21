@@ -154,7 +154,8 @@ class GoalsViewController: UIViewController {
         let uid = userID
         print("uid: \(uid)")
         
-        let handleCST_CHECK = DAO.CST_GOALS_REF.observe(.childAdded, with: { (snapshot) in
+//        let handleCST_CHECK = DAO.CST_GOALS_REF.observe(.childAdded, with: { (snapshot) in
+        let _ = DAO.CST_GOALS_REF.observe(.childAdded, with: { (snapshot) in
             
             if snapshot.key == "numberOfKeys" {
                 print("GoalsVC -- PROCURANDO SABER -- to no numberOfKeys-USERS WITH CST GOALS")
