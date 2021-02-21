@@ -312,7 +312,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         plusButton.isHidden = true
         
         // botando a collectionView de volta no lugar
-        stepsCollectionView.frame.origin = CGPoint(x: stepsCollectionView.frame.origin.x, y: stepsCollectionView.frame.origin.y - plusButton.frame.height as CGFloat?)
+        stepsCollectionView.frame.origin = CGPoint(x: stepsCollectionView.frame.origin.x, y: (stepsCollectionView.frame.origin.y - plusButton.frame.height as CGFloat?)!)
         stepsCollectionView.reloadData()
     }
     

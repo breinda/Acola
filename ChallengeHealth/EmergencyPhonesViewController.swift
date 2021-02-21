@@ -113,7 +113,7 @@ class EmergencyPhonesViewController: ElasticModalViewController/*UIViewControlle
         guard let number = URL(string: "tel://" + auxStr.substring(from: strIndex)) else { return }
         
         if #available(iOS 10.0, *) {
-            UIApplication.shared.openconvertToUIApplicationOpenExternalURLOptionsKeyDictionary(()number)
+            UIApplication.shared.open(number)
             print("FUNFE")
         } else {
             // Fallback on earlier versions
