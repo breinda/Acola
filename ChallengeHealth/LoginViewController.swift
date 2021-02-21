@@ -115,8 +115,8 @@ class LoginViewController: UIViewController {
                 
                 // DEU RUIM
             else {
-                let alert = UIAlertController(title: "erro 0 - Problema no login", message: "Combinação email-senha não reconhecida.", preferredStyle: UIAlertControllerStyle.alert)
-                let cancel = UIAlertAction(title: "Tentar novamente", style: UIAlertActionStyle.cancel, handler: nil)
+                let alert = UIAlertController(title: "erro 0 - Problema no login", message: "Combinação email-senha não reconhecida.", preferredStyle: UIAlertController.Style.alert)
+                let cancel = UIAlertAction(title: "Tentar novamente", style: UIAlertAction.Style.cancel, handler: nil)
                 
                 alert.addAction(cancel)
                 self.present(alert, animated: true, completion: nil)

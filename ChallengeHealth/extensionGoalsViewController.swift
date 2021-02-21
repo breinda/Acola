@@ -30,7 +30,7 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         // swipe para delete? que por enquanto não faz nada e só printa
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:)))
-        swipeLeft.direction = UISwipeGestureRecognizerDirection.left
+        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
         cell.addGestureRecognizer(swipeLeft)
         
         // tap para ir para CurrentStepVC
@@ -91,16 +91,16 @@ extension GoalsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             
             switch swipeGesture.direction {
-            case UISwipeGestureRecognizerDirection.right:
+            case UISwipeGestureRecognizer.Direction.right:
                 print("Swiped right")
-            case UISwipeGestureRecognizerDirection.down:
+            case UISwipeGestureRecognizer.Direction.down:
                 print("Swiped down")
-            case UISwipeGestureRecognizerDirection.left:
+            case UISwipeGestureRecognizer.Direction.left:
                 print("Swiped left")
                 let cell = gesture.view! as! GoalCollectionViewCell
                 print(type(of: cell))
                 
-            case UISwipeGestureRecognizerDirection.up:
+            case UISwipeGestureRecognizer.Direction.up:
                 print("Swiped up")
             default:
                 break

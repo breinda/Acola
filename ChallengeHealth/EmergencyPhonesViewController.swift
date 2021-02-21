@@ -113,7 +113,7 @@ class EmergencyPhonesViewController: ElasticModalViewController/*UIViewControlle
         guard let number = URL(string: "tel://" + auxStr.substring(from: strIndex)) else { return }
         
         if #available(iOS 10.0, *) {
-            UIApplication.shared.open(number)
+            UIApplication.shared.openconvertToUIApplicationOpenExternalURLOptionsKeyDictionary(()number)
             print("FUNFE")
         } else {
             // Fallback on earlier versions
@@ -129,4 +129,9 @@ class EmergencyPhonesViewController: ElasticModalViewController/*UIViewControlle
         
         return CGSize(width: UIScreen.main.bounds.size.width, height: 112)
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }

@@ -10,9 +10,9 @@ class UserSettingsViewController: UIViewController {
         didSet {
             switch expandedIndexPath {
             case .some(let index):
-                userSettingsTableView.reloadRows(at: [index], with: UITableViewRowAnimation.automatic)
+                userSettingsTableView.reloadRows(at: [index], with: UITableView.RowAnimation.automatic)
             case .none:
-                userSettingsTableView.reloadRows(at: [oldValue!], with: UITableViewRowAnimation.automatic)
+                userSettingsTableView.reloadRows(at: [oldValue!], with: UITableView.RowAnimation.automatic)
             }
         }
     }
@@ -27,7 +27,7 @@ class UserSettingsViewController: UIViewController {
         
         userSettingsTableView.contentInset.top = 0
         //userSettingsTableView.rowHeight = 97
-        userSettingsTableView.rowHeight = UITableViewAutomaticDimension
+        userSettingsTableView.rowHeight = UITableView.automaticDimension
         userSettingsTableView.estimatedRowHeight = 177
     }
     

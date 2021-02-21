@@ -188,9 +188,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             
             if error == nil {
                 
-                let alert = UIAlertController(title: "SUCESSO", message: "Cadastro efetuado com sucesso!", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "SUCESSO", message: "Cadastro efetuado com sucesso!", preferredStyle: UIAlertController.Style.alert)
                 
-                let cancel = UIAlertAction(title: "OK!", style: UIAlertActionStyle.cancel, handler: { action in
+                let cancel = UIAlertAction(title: "OK!", style: UIAlertAction.Style.cancel, handler: { action in
                     
                     self.dismiss(animated: true, completion: nil)
                 })
@@ -225,9 +225,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                 
             else { // encontrou um erro
                 
-                let alert = UIAlertController(title: "Erro", message: "vc conseguiu a façanha de achar um erro que eu não tratei???", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "Erro", message: "vc conseguiu a façanha de achar um erro que eu não tratei???", preferredStyle: UIAlertController.Style.alert)
                 
-                let cancel = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
+                let cancel = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil)
                 
                 alert.addAction(cancel)
                 self.present(alert, animated: true, completion: nil)

@@ -77,7 +77,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         
         // swipe down para acrescentar outra célula na collection view!
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture(_:)))
-        swipeDown.direction = UISwipeGestureRecognizerDirection.down
+        swipeDown.direction = UISwipeGestureRecognizer.Direction.down
         stepsCollectionView.addGestureRecognizer(swipeDown)
         swipeDown.delegate = self
         
@@ -176,7 +176,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
     
     @objc func wasDragged(_ gestureRecognizer: UIPanGestureRecognizer) {
         
-        if gestureRecognizer.state == UIGestureRecognizerState.began || gestureRecognizer.state == UIGestureRecognizerState.changed {
+        if gestureRecognizer.state == UIGestureRecognizer.State.began || gestureRecognizer.state == UIGestureRecognizer.State.changed {
             
             let translation = gestureRecognizer.translation(in: self.view)
             //print(gestureRecognizer.view!.center.y)
@@ -192,7 +192,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
         }
         // faz voltar pra posição inicial!
-        if gestureRecognizer.state == UIGestureRecognizerState.ended {
+        if gestureRecognizer.state == UIGestureRecognizer.State.ended {
             gestureRecognizer.view!.center = CGPoint(x: gestureRecognizer.view!.center.x, y: stepsCollectionViewCenterY)
             
             gestureRecognizer.setTranslation(CGPoint.zero, in: self.view)
@@ -204,22 +204,22 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         if let swipeGesture = gesture as? UISwipeGestureRecognizer {
             
             switch swipeGesture.direction {
-            case UISwipeGestureRecognizerDirection.right:
+            case UISwipeGestureRecognizer.Direction.right:
                 print("Swiped right")
-            case UISwipeGestureRecognizerDirection.down:
+            case UISwipeGestureRecognizer.Direction.down:
                 print("Swiped down")
                 let stepsCV = gesture.view! as! UICollectionView
                 //print(type(of: stepsCV))
                 
                 if plusButton.isHidden {
-                    stepsCollectionViewCenterY = stepsCollectionViewCenterY/*- 23*/ + plusButton.frame.height as CGFloat!
+                    stepsCollectionViewCenterY = stepsCollectionViewCenterY/*- 23*/ + plusButton.frame.height as CGFloat?
                     print("RESPOND TO SWIPE -- stepsCollectionViewCenterY = \(stepsCollectionViewCenterY)")
                     plusButton.isHidden = false
                 }
                 
-            case UISwipeGestureRecognizerDirection.left:
+            case UISwipeGestureRecognizer.Direction.left:
                 print("Swiped left")
-            case UISwipeGestureRecognizerDirection.up:
+            case UISwipeGestureRecognizer.Direction.up:
                 print("Swiped up")
             default:
                 break
@@ -272,7 +272,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             
             
             while helperBool == false {
-                if let cell = stepsCollectionView.cellForItem(at: indexPath as IndexPath) as! StepCollectionViewCell! {
+                if let cell = stepsCollectionView.cellForItem(at: indexPath as IndexPath) as! StepCollectionViewCell? {
                     print("ok")
                     helperBool = true
                 }
@@ -298,7 +298,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             // estamos fazendo isso no final do loop ao invés do início -- quando essa linha tava no início, aparentemente não dava tempo de scrollar e o cellForItem at indexPath ainda retornava nil...
             indexPath = NSIndexPath(row: counter, section: 0)
             if counter < numOfCells {
-                stepsCollectionView.scrollToItem(at: indexPath as IndexPath, at: UICollectionViewScrollPosition.bottom, animated: false)
+                stepsCollectionView.scrollToItem(at: indexPath as IndexPath, at: UICollectionView.ScrollPosition.bottom, animated: false)
                 //sleep(1)
             }
             
@@ -312,7 +312,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
         plusButton.isHidden = true
         
         // botando a collectionView de volta no lugar
-        stepsCollectionView.frame.origin = CGPoint(x: stepsCollectionView.frame.origin.x, y: stepsCollectionView.frame.origin.y - plusButton.frame.height as CGFloat!)
+        stepsCollectionView.frame.origin = CGPoint(x: stepsCollectionView.frame.origin.x, y: stepsCollectionView.frame.origin.y - plusButton.frame.height as CGFloat?)
         stepsCollectionView.reloadData()
     }
     
@@ -354,7 +354,7 @@ class GoalEditingViewController: UIViewController, UITextViewDelegate, UICollect
             
             indexPath = NSIndexPath(row: counter, section: 0)
             if counter < numOfCells {
-                stepsCollectionView.scrollToItem(at: indexPath as IndexPath, at: UICollectionViewScrollPosition.bottom, animated: false)
+                stepsCollectionView.scrollToItem(at: indexPath as IndexPath, at: UICollectionView.ScrollPosition.bottom, animated: false)
                 
             }
             
