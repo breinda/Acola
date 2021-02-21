@@ -1,4 +1,4 @@
-#Installation
+# Installation
 
 1. First, ensure you have the latest CocoaPods version:
 `[sudo] gem install cocoapods`
