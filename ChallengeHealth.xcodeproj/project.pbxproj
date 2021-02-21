@@ -344,14 +344,14 @@
 					E107E7331F181F860056A1F9 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = ZRWVQTGDLK;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1150;
 						ProvisioningStyle = Automatic;
 						TestTargetID = E14948BA1D35680D00BB8FB2;
 					};
 					E14948BA1D35680D00BB8FB2 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = ZRWVQTGDLK;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1150;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -665,7 +665,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = ChallengeHealth;
 			};
 			name = Debug;
@@ -706,7 +706,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = BrendaCarrocino.ChallengeHealthUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = ChallengeHealth;
 			};
 			name = Release;
@@ -829,7 +829,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -847,7 +847,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
